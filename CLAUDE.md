@@ -11,7 +11,9 @@
 - UTO 编排层（Node）已 `npm install` + `npm run build`；端口写在 `Packages/cn.etetet.yiuimcp/UTO/.port`
 - 自动化测试：Unity Test Framework，测试在 `Assets/Tests/EditMode/`（`Game.Tests.EditMode` 程序集），运行时代码在 `Game` 程序集
 - **工作流总览见 [docs/WORKFLOW.md](docs/WORKFLOW.md)；不可违背的原则见 [specs/constitution.md](specs/constitution.md)**
-- SDD 斜杠命令：`/spec-new`、`/spec-plan`、`/spec-tasks`、`/dod`（定义见 `.claude/commands/`）
+- SDD 斜杠命令：`/spec-new`、`/spec-plan`、`/spec-tasks`、`/dod`、`/feature`（定义见 `.claude/commands/`）
+- **自治流水线**：给一句需求即可——skill `unity-feature-workflow`（`.claude/skills/`，自动触发）或 `/feature <需求>` 跑完 规约→实现→DoD→审核包
+- **硬闸门**：改了 `Assets/*.cs` 后，会话结束时 Stop hook 自动跑 `scripts/dod.ps1`，未通过则阻断结束（`.claude/hooks/dod-stop-gate.ps1`）
 
 ## 2. 强制开发流程（每个改动都要走完）
 

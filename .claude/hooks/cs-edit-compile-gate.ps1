@@ -16,6 +16,9 @@ $isCs = $path -match '\.cs$'
 $inAssets = $path -match '[\\/]Assets[\\/]'
 if (-not ($isCs -and $inAssets)) { exit 0 }
 
+# 置"脏标记"：本会话改过 Assets 下 .cs，结束时 Stop 闸门据此强制跑 DoD。
+try { New-Item -ItemType File -Path (Join-Path $PSScriptRoot '..\.dod-needed') -Force | Out-Null } catch {}
+
 $msg = @'
 [工作流闸门] 你刚修改了 Assets 下的 C# 脚本。完成本轮前必须：
 1) 运行编译：powershell -ExecutionPolicy Bypass -Command "& '.\Packages\cn.etetet.yiuimcp\Config\compile-unity-flow.ps1' -Force 0 -NoWait 1"

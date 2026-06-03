@@ -25,6 +25,8 @@ $testsOk = ($LASTEXITCODE -eq 0)
 Write-Host "================================================="
 if ($compileOk -and $testsOk) {
     Write-Host "结果: DONE  (编译 Success + 测试 PASS)" -ForegroundColor Green
+    # 全绿则清除脏标记，告知 Stop 闸门本轮已达 DoD
+    Remove-Item (Join-Path $root ".claude\.dod-needed") -Force -ErrorAction SilentlyContinue
     exit 0
 } else {
     Write-Host "结果: NOT DONE（测试未全通过）" -ForegroundColor Red

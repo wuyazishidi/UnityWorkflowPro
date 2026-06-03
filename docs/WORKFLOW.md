@@ -68,10 +68,12 @@ powershell -ExecutionPolicy Bypass -File .\scripts\dod.ps1
 
 ## 4. 路线图（建议的下一步，按收益排序）
 
-1. **VContainer + UniTask**：引入 DI 与 UniTask，把游戏逻辑从 MonoBehaviour 解耦为可注入、可测的纯 C#。届时 EditMode 测试覆盖率可大幅提升。
+1. ✅ **VContainer + UniTask（已完成）**：已引入 DI 与 UniTask（git URL：VContainer 1.18.0 / UniTask 2.5.11）。样板见 `Assets/Scripts/`（`GameLifetimeScope` 组合根、`GameBootstrap` 入口点 IStartable+UniTask、可注入纯服务 `GreetingService`），EditMode 测试覆盖纯逻辑。规约见 `specs/002-di-async-bootstrap.md`。
 2. **PlayMode 测试**：为涉及场景/物理/输入的功能补 `Assets/Tests/PlayMode/`（asmdef `includePlatforms: []`）。
 3. **git + GameCI 启用**：初始化仓库、配置 secrets，让 `unity-ci.yml` 生效，形成本地+云端双门禁。
-4. **把 hook 升级为硬阻断**：当前 `.cs` 编辑 hook 是提醒；可加 Stop hook 在 `/dod` 未过时阻断收尾。
+4. ✅ **硬阻断闸门（已完成）**：Stop hook `dod-stop-gate.ps1` + 脏标记——改了 `Assets/*.cs` 后结束时自动跑 DoD，未绿则 `decision=block` 阻断，逼 Agent 继续修；Unity 不可用时优雅放行。
+5. ✅ **自治编排（已完成）**：skill `unity-feature-workflow` + `/feature <需求>`——一句需求自动跑完 规约→实现→DoD→审核包。
+6. PlayMode 测试 + 扩展 YIUIMCP（PlayMode/截图/场景读取），让行为可视化、人工审核更轻。
 
 ## 5. 已验证（本次整合的测试结果）
 

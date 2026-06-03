@@ -1,7 +1,10 @@
 {
     "name": "Game",
     "rootNamespace": "Game",
-    "references": [],
+    "references": [
+        "VContainer",
+        "UniTask"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
