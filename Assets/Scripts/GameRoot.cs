@@ -21,7 +21,26 @@ namespace Game
             Game.World.MapBuilder.Build(20, 14, GetUnitSquare());
             var player = SpawnPlayer();
             SpawnEnemy(new Vector2(4f, 3f), player.transform);
+            SpawnPickups();
             SetupCamera(player.transform);
+        }
+
+        private static void SpawnPickups()
+        {
+            Vector2[] spots = { new Vector2(-3f, -2f), new Vector2(2f, -3f), new Vector2(-5f, 4f), new Vector2(6f, 2f) };
+            foreach (var s in spots)
+            {
+                var go = new GameObject("Pickup");
+                go.transform.position = new Vector3(s.x, s.y, 0f);
+                var sr = go.AddComponent<SpriteRenderer>();
+                sr.sprite = GetUnitSquare();
+                sr.color = new Color(0.95f, 0.85f, 0.2f); // 黄色金币
+                sr.sortingOrder = 5;
+                go.transform.localScale = new Vector3(0.4f, 0.4f, 1f);
+                var col = go.AddComponent<BoxCollider2D>();
+                col.isTrigger = true;
+                go.AddComponent<Game.Items.Pickup>();
+            }
         }
 
         private static GameObject SpawnPlayer()
@@ -44,6 +63,7 @@ namespace Game
             var hp = player.AddComponent<Game.Combat.Health>();
             hp.Configure(100);
             player.AddComponent<Game.Combat.Attacker>();
+            player.AddComponent<Game.Items.InventoryHolder>();
 
             player.AddComponent<PlayerMovement2D>();
             player.AddComponent<PlayerLife>();
