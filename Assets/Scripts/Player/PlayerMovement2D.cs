@@ -17,12 +17,26 @@ namespace Game.Player
             set => _moveSpeed = value;
         }
 
-        private void Update()
+        private Rigidbody2D _rb;
+
+        private void Awake()
+        {
+            _rb = GetComponent<Rigidbody2D>();
+        }
+
+        private void FixedUpdate()
         {
             float h = Input.GetAxisRaw("Horizontal");
             float v = Input.GetAxisRaw("Vertical");
-            Vector2 delta = ComputeFrameMove(new Vector2(h, v), _moveSpeed, Time.deltaTime);
-            transform.Translate(delta.x, delta.y, 0f, Space.World);
+            Vector2 delta = ComputeFrameMove(new Vector2(h, v), _moveSpeed, Time.fixedDeltaTime);
+            if (_rb != null)
+            {
+                _rb.MovePosition(_rb.position + delta); // 经物理移动 → 墙体碰撞会阻挡
+            }
+            else
+            {
+                transform.Translate(delta.x, delta.y, 0f, Space.World);
+            }
         }
 
         /// <summary>

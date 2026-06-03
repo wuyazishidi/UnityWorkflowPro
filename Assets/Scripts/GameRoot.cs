@@ -18,6 +18,7 @@ namespace Game
             // 仅在没有玩家时搭建（避免重复 / 与已有场景冲突）
             if (Object.FindObjectOfType<PlayerMovement2D>() != null) return;
 
+            Game.World.MapBuilder.Build(20, 14, GetUnitSquare());
             var player = SpawnPlayer();
             SetupCamera(player.transform);
         }
@@ -25,10 +26,20 @@ namespace Game
         private static GameObject SpawnPlayer()
         {
             var player = new GameObject("Player");
+            player.transform.position = Vector3.zero; // 地图中心
             var sr = player.AddComponent<SpriteRenderer>();
             sr.sprite = GetUnitSquare();
             sr.color = new Color(0.3f, 0.85f, 0.4f); // 绿色占位
+            sr.sortingOrder = 10;
             player.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+
+            var rb = player.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            rb.freezeRotation = true;
+            rb.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+            player.AddComponent<BoxCollider2D>();
+
             player.AddComponent<PlayerMovement2D>();
             return player;
         }
