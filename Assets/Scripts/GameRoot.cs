@@ -20,6 +20,7 @@ namespace Game
 
             Game.World.MapBuilder.Build(20, 14, GetUnitSquare());
             var player = SpawnPlayer();
+            SpawnEnemy(new Vector2(4f, 3f), player.transform);
             SetupCamera(player.transform);
         }
 
@@ -40,8 +41,34 @@ namespace Game
             rb.interpolation = RigidbodyInterpolation2D.Interpolate;
             player.AddComponent<BoxCollider2D>();
 
+            var hp = player.AddComponent<Game.Combat.Health>();
+            hp.Configure(100);
+            player.AddComponent<Game.Combat.Attacker>();
+
             player.AddComponent<PlayerMovement2D>();
             return player;
+        }
+
+        private static void SpawnEnemy(Vector2 pos, Transform target)
+        {
+            var enemy = new GameObject("Enemy");
+            enemy.transform.position = new Vector3(pos.x, pos.y, 0f);
+            var sr = enemy.AddComponent<SpriteRenderer>();
+            sr.sprite = GetUnitSquare();
+            sr.color = new Color(0.85f, 0.3f, 0.3f); // 红色敌人
+            sr.sortingOrder = 10;
+            enemy.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+
+            var rb = enemy.AddComponent<Rigidbody2D>();
+            rb.gravityScale = 0f;
+            rb.freezeRotation = true;
+            enemy.AddComponent<BoxCollider2D>();
+
+            var hp = enemy.AddComponent<Game.Combat.Health>();
+            hp.Configure(50);
+            var chase = enemy.AddComponent<Game.Enemy.EnemyChase>();
+            chase.SetTarget(target);
+            hp.OnDied += () => Object.Destroy(enemy);
         }
 
         private static void SetupCamera(Transform target)
