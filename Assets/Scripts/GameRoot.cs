@@ -46,6 +46,7 @@ namespace Game
             player.AddComponent<Game.Combat.Attacker>();
 
             player.AddComponent<PlayerMovement2D>();
+            player.AddComponent<PlayerLife>();
             return player;
         }
 
