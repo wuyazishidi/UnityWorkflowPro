@@ -67,6 +67,7 @@ namespace Game
 
             player.AddComponent<PlayerMovement2D>();
             player.AddComponent<PlayerLife>();
+            player.AddComponent<Game.Save.SaveService>();
             return player;
         }
 

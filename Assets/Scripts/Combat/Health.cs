@@ -47,5 +47,13 @@ namespace Game.Combat
             _current = Mathf.Min(_maxHp, _current + amount);
             OnChanged?.Invoke(_current, _maxHp);
         }
+
+        /// <summary>直接设置当前血量（读档恢复用），钳制到 [0, Max] 并同步死亡标记。</summary>
+        public void SetCurrent(int value)
+        {
+            _current = Mathf.Clamp(value, 0, _maxHp);
+            _dead = _current <= 0;
+            OnChanged?.Invoke(_current, _maxHp);
+        }
     }
 }

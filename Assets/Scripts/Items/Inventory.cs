@@ -47,6 +47,9 @@ namespace Game.Items
             return true;
         }
 
+        /// <summary>清空背包（读档恢复用）。</summary>
+        public void Clear() => _items.Clear();
+
         /// <summary>移除物品；数量减到 0 释放槽位。数量不足则拒绝。</summary>
         public bool Remove(string id, int amount = 1)
         {
