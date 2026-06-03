@@ -12,9 +12,9 @@
 # Asset meta data 必须随资源提交（Unity 要求），故不忽略 *.meta
 
 # ===== Unity / IDE 生成的工程文件 =====
-*.csproj
+/*.csproj
 *.unityproj
-*.sln
+/*.sln
 *.suo
 *.tmp
 *.user
@@ -36,6 +36,10 @@ crashlytics-build.properties
 *.aab
 *.unitypackage
 *.app
+
+# ===== 后端(.NET) 生成物 =====
+server/**/bin/
+server/**/obj/
 
 # ===== Node / UTO 编排层 =====
 **/node_modules/
