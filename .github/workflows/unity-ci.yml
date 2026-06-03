@@ -1,0 +1,73 @@
+# Unity CI —— 基于 GameCI (https://game.ci) 的提交即测试/构建工作流。
+# 现状：本工程当前尚未初始化 git 仓库。该文件为"就绪件"：
+#   1) git init 并推到 GitHub 后；
+#   2) 在仓库 Settings → Secrets 添加 UNITY_LICENSE / UNITY_EMAIL / UNITY_PASSWORD（见 GameCI 文档激活）；
+#   工作流即生效。仅当 Assets/、Packages/、ProjectSettings/ 变更时触发，节省额度。
+name: Unity CI
+
+on:
+  push:
+    paths: ["Assets/**", "Packages/**", "ProjectSettings/**", ".github/workflows/unity-ci.yml"]
+  pull_request:
+    paths: ["Assets/**", "Packages/**", "ProjectSettings/**"]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: EditMode & PlayMode Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: Library-
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: .
+          testMode: all
+          artifactsPath: test-results
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: test-results
+
+  build:
+    name: Build (Windows)
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: Library-
+      - name: Build
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: .
+          targetPlatform: StandaloneWindows64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Build-StandaloneWindows64
+          path: build

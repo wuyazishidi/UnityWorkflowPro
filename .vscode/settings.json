@@ -1,0 +1,47 @@
+{
+  // 从资源管理器隐藏 Unity 生成的无关文件/目录（文件仍在磁盘上，可随时删除此项恢复显示）
+  "files.exclude": {
+    "**/Library": true,
+    "**/Temp": true,
+    "**/Logs": true,
+    "**/obj": true,
+    "**/Build": true,
+    "**/Builds": true,
+    "**/MemoryCaptures": true,
+    "**/UserSettings": true,
+    "**/.vs": true,
+    "**/*.csproj": true,
+    "**/*.sln": true,
+    "**/*.meta": true,
+    "**/*.unityproj": true,
+    "**/*.booproj": true,
+    "**/*.pidb": true,
+    "**/*.suo": true,
+    "**/*.user": true,
+    "**/*.userprefs": true
+  },
+
+  // 同步从全局搜索中排除，避免搜代码时被这些噪声淹没
+  "search.exclude": {
+    "**/Library": true,
+    "**/Temp": true,
+    "**/Logs": true,
+    "**/obj": true,
+    "**/Build": true,
+    "**/Builds": true,
+    "**/UserSettings": true,
+    "**/*.csproj": true,
+    "**/*.sln": true,
+    "**/*.meta": true
+  },
+
+  // 不监视生成目录，降低 CPU / 文件句柄占用
+  "files.watcherExclude": {
+    "**/Library/**": true,
+    "**/Temp/**": true,
+    "**/Logs/**": true,
+    "**/obj/**": true,
+    "**/Build/**": true,
+    "**/Builds/**": true
+  }
+}

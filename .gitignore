@@ -1,0 +1,54 @@
+# ===== Unity 生成目录 =====
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]serSettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Asset meta data 必须随资源提交（Unity 要求），故不忽略 *.meta
+
+# ===== Unity / IDE 生成的工程文件 =====
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vs/
+.gradle/
+ExportedObj/
+crashlytics-build.properties
+
+# ===== 构建产物 =====
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# ===== Node / UTO 编排层 =====
+**/node_modules/
+# UTO 本地端口与测试结果（运行期生成）
+Packages/cn.etetet.yiuimcp/UTO/.port
+Packages/cn.etetet.yiuimcp/UTO/.port.meta
+
+# ===== 工作流运行期产物 =====
+/Logs/EditMode-test-results.txt
+
+# ===== Claude Code 个人设置（团队共享的 settings.json / commands / hooks 仍提交）=====
+.claude/settings.local.json
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
