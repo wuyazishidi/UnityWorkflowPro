@@ -23,6 +23,17 @@ namespace Game
             SpawnEnemy(new Vector2(4f, 3f), player.transform);
             SpawnPickups();
             SetupCamera(player.transform);
+            SetupHud(player);
+        }
+
+        private static void SetupHud(GameObject player)
+        {
+            var hudGo = new GameObject("HUD");
+            var hud = hudGo.AddComponent<Game.UI.Hud>();
+            hud.Bind(
+                player.GetComponent<Game.Combat.Health>(),
+                player.GetComponent<Game.Items.InventoryHolder>(),
+                player.GetComponent<Game.Core.ScoreKeeper>());
         }
 
         private static void SpawnPickups()
@@ -64,6 +75,7 @@ namespace Game
             hp.Configure(100);
             player.AddComponent<Game.Combat.Attacker>();
             player.AddComponent<Game.Items.InventoryHolder>();
+            player.AddComponent<Game.Core.ScoreKeeper>();
 
             player.AddComponent<PlayerMovement2D>();
             player.AddComponent<PlayerLife>();
@@ -90,7 +102,12 @@ namespace Game
             hp.Configure(50);
             var chase = enemy.AddComponent<Game.Enemy.EnemyChase>();
             chase.SetTarget(target);
-            hp.OnDied += () => Object.Destroy(enemy);
+            var sk = target.GetComponent<Game.Core.ScoreKeeper>();
+            hp.OnDied += () =>
+            {
+                if (sk != null) sk.Add(10);
+                Object.Destroy(enemy);
+            };
         }
 
         private static void SetupCamera(Transform target)
