@@ -11,6 +11,10 @@
 
 # Asset meta data 必须随资源提交（Unity 要求），故不忽略 *.meta
 
+# ===== 收费插件（本地自用，不入库，避免扩散）=====
+/Assets/Plugins/
+/Assets/Plugins.meta
+
 # ===== Unity / IDE 生成的工程文件 =====
 /*.csproj
 *.unityproj

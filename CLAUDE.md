@@ -42,7 +42,7 @@
 > 若 Unity 未打开 / `.port` 不存在，不要伪造编译成功。应提示用户先打开 Unity，并把“待编译验证”明确标注为未完成。
 
 > **环境关键点（实测，已修复）**：本机设了系统代理（`HTTP_PROXY/HTTPS_PROXY`，如 Clash 7897）。UTO 的 axios 默认会把到本地 Unity `127.0.0.1:3212/health` 的心跳也走代理 → 一直“Unity 未就绪”→ 5 分钟超时。**已在 `UTO/src/index.ts`、`heartbeat-manager.ts` 加 `axios.defaults.proxy = false;` 修复**，编译闸门现约 4 秒成功。若升级/重拷 UTO 包导致该改动丢失，症状会复现——重新加这两行并 `npm run build`。
-> 其他前提：① Unity 编辑器已打开且未挂死（健康可直接 `curl http://127.0.0.1:3212/health` 验证返回 200 + serverId）；② 多开 Unity 时 3212 只被其一占用；③ 健康编辑器即使不在前台也能正常处理 MCP 请求（“必须前台”是早期误判，真因是代理）。
+> 其他前提：① Unity 编辑器已打开且未挂死（健康可直接 `curl http://127.0.0.1:3222/health` 验证返回 200 + serverId）；② **本工程端口已改为 3222**（写在 `UTO/.port`，UTO HTTP = 3223），因为 3212 被另一工程（PicoTest）占用；③ 健康编辑器即使不在前台也能正常处理 MCP 请求（“必须前台”是早期误判，真因是代理）。
 > 当 MCP 命令仍异常、又需验证编译时，可用确定性等价手段：检查 `Library/ScriptAssemblies/Assembly-CSharp*.dll` 的重编译时间与目标类型是否在其中，并 grep Editor.log 的 `error CS`。
 
 ## 3. 编码与架构规则
