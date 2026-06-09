@@ -25,7 +25,7 @@
 
 **A. Unity Test Framework（自动化测试层）** — Unity 官方
 - **为什么**：工作流最大的缺口。整合前只有"编译 + 控制台"门禁，没有逻辑正确性的自动化验证。UTF 是官方方案，支持 EditMode/PlayMode、asmdef 隔离、命令行/CI 运行。
-- **怎么做**：运行时代码归入 `Game` 程序集（`Assets/Scripts/Game.asmdef`）；测试在 `Assets/Tests/EditMode/`（`Game.Tests.EditMode` 程序集，Editor-only，引用 nunit）；可测逻辑抽成纯函数（如 `PlayerController.ComputeDisplacement`）。
+- **怎么做**：运行时代码归入 `Game` 程序集（`Assets/Scripts/Game.asmdef`）；测试在 `Assets/Tests/EditMode/`（`Game.Tests.EditMode` 程序集，Editor-only，引用 nunit）；可测逻辑抽成纯函数。
 - **创新点**：`YIUIMCPTestRunner` 把 EditMode 测试接入 YIUIMCP——`ExecuteMenu "YIUIMCP/Run EditMode Tests"` 触发，结果写控制台 `[YIUIMCP-TESTS]` 与 `Logs/EditMode-test-results.txt`，由 `AssertConsoleContains` 断言。**编辑器开着也能跑、不占项目锁**。
 - 来源：[Unity Test Framework 文档](https://docs.unity3d.com/Packages/com.unity.test-framework@1.1/manual/edit-mode-vs-play-mode-tests.html)
 
@@ -68,7 +68,7 @@ powershell -ExecutionPolicy Bypass -File .\scripts\dod.ps1
 
 ## 4. 路线图（建议的下一步，按收益排序）
 
-1. ✅ **VContainer + UniTask（已完成）**：已引入 DI 与 UniTask（git URL：VContainer 1.18.0 / UniTask 2.5.11）。样板见 `Assets/Scripts/`（`GameLifetimeScope` 组合根、`GameBootstrap` 入口点 IStartable+UniTask、可注入纯服务 `GreetingService`），EditMode 测试覆盖纯逻辑。规约见 `specs/002-di-async-bootstrap.md`。
+1. ✅ **VContainer + UniTask（已安装）**：DI 与 UniTask 已加入工程（git URL：VContainer 1.18.0 / UniTask 2.5.11，见 `Assets/Scripts/Game.asmdef` 引用），作为可注入、可单元测试架构的底座。按需在 `Assets/Scripts/` 建组合根（LifetimeScope）与入口点（IStartable + UniTask），并在 `Assets/Tests/EditMode/` 覆盖纯逻辑。
 2. **PlayMode 测试**：为涉及场景/物理/输入的功能补 `Assets/Tests/PlayMode/`（asmdef `includePlatforms: []`）。
 3. **git + GameCI 启用**：初始化仓库、配置 secrets，让 `unity-ci.yml` 生效，形成本地+云端双门禁。
 4. ✅ **硬阻断闸门（已完成）**：Stop hook `dod-stop-gate.ps1` + 脏标记——改了 `Assets/*.cs` 后结束时自动跑 DoD，未绿则 `decision=block` 阻断，逼 Agent 继续修；Unity 不可用时优雅放行。
@@ -78,5 +78,4 @@ powershell -ExecutionPolicy Bypass -File .\scripts\dod.ps1
 ## 5. 已验证（本次整合的测试结果）
 
 - 编译闸门：`Result: Success, No errors!`
-- EditMode 测试：`[YIUIMCP-TESTS] result=PASS passed=5 failed=0`（经 YIUIMCP 触发并断言）
-- 详见 `specs/001-player-movement.md` 验收记录。
+- EditMode 测试：经 YIUIMCP（`ExecuteMenu "YIUIMCP/Run EditMode Tests"`）触发，由 `[YIUIMCP-TESTS]` 结果行断言。

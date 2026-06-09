@@ -21,7 +21,7 @@ description: 本工程实现新功能/需求时的自治流水线。当用户给
 按 `_PLAN_TEMPLATE.md` / `_TASKS_TEMPLATE.md` 产出 `NNN-*.plan.md` 与 `NNN-*.tasks.md`。任务要小到可独立验证；**必须包含**"补 EditMode 测试"与"跑 DoD"两项。
 
 ### 4. 实现（遵守架构约定）
-- 业务/数学逻辑抽成**纯类**或**可注入服务**（用 VContainer 注册到 `GameLifetimeScope`，异步用 UniTask）；MonoBehaviour 仅作组合根，不放业务逻辑。
+- 业务/数学逻辑抽成**纯类**或**可注入服务**（用 VContainer 注册到组合根 LifetimeScope，异步用 UniTask）；MonoBehaviour 仅作组合根，不放业务逻辑。
 - 需被测的运行时代码归入 `Game` 程序集（`Assets/Scripts/Game.asmdef`）。
 - 为可测逻辑在 `Assets/Tests/EditMode/` 写 NUnit 测试。
 - 改动最小、贴合既有风格；不动 `Packages/cn.etetet.yiuimcp/**`、`ProjectSettings/`。
