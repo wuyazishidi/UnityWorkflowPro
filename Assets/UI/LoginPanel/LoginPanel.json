@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "referenceWidth": 810,
+  "referenceHeight": 962,
+  "rootName": "LoginPanel",
+  "root": {
+    "name": "LoginPanel",
+    "type": "Container",
+    "anchorPreset": "center",
+    "rect": { "x": 0, "y": 0, "w": 810, "h": 962 },
+    "children": [
+      { "name": "Bg", "type": "Image", "color": "#F4F5F7", "raycastTarget": false,
+        "rect": { "x": 0, "y": 0, "w": 810, "h": 962 } },
+      { "name": "Card", "type": "Image", "color": "#FFFFFF",
+        "rect": { "x": 64, "y": 40, "w": 682, "h": 882 } },
+
+      { "name": "Logo", "type": "Image", "color": "#0E0F1A",
+        "rect": { "x": 358, "y": 92, "w": 96, "h": 94 },
+        "children": [
+          { "name": "LogoMark", "type": "Image", "color": "#FFFFFF",
+            "rect": { "x": 391, "y": 124, "w": 30, "h": 30 } }
+        ] },
+
+      { "name": "Title", "type": "Text", "rect": { "x": 64, "y": 208, "w": 682, "h": 52 },
+        "text": { "content": "Welcome back", "fontSize": 40, "color": "#111111", "alignment": "Center" } },
+      { "name": "Subtitle", "type": "Text", "rect": { "x": 64, "y": 278, "w": 682, "h": 32 },
+        "text": { "content": "Sign in to your account to continue", "fontSize": 22, "color": "#9AA0AE", "alignment": "Center" } },
+
+      { "name": "EmailLabel", "type": "Text", "rect": { "x": 118, "y": 362, "w": 300, "h": 28 },
+        "text": { "content": "Email", "fontSize": 21, "color": "#111827", "alignment": "Left" } },
+      { "name": "EmailInput", "type": "Image", "color": "#F1F2F4",
+        "rect": { "x": 118, "y": 402, "w": 576, "h": 58 },
+        "children": [
+          { "name": "EmailIcon", "type": "Image", "color": "#B9BEC8",
+            "rect": { "x": 140, "y": 420, "w": 22, "h": 18 } },
+          { "name": "EmailPlaceholder", "type": "Text", "rect": { "x": 178, "y": 402, "w": 380, "h": 58 },
+            "text": { "content": "Enter your email", "fontSize": 21, "color": "#9AA0AE", "alignment": "Left" } }
+        ] },
+
+      { "name": "PasswordLabel", "type": "Text", "rect": { "x": 118, "y": 494, "w": 300, "h": 28 },
+        "text": { "content": "Password", "fontSize": 21, "color": "#111827", "alignment": "Left" } },
+      { "name": "PasswordInput", "type": "Image", "color": "#F1F2F4",
+        "rect": { "x": 118, "y": 534, "w": 576, "h": 58 },
+        "children": [
+          { "name": "PwIcon", "type": "Image", "color": "#B9BEC8",
+            "rect": { "x": 140, "y": 552, "w": 22, "h": 22 } },
+          { "name": "PwPlaceholder", "type": "Text", "rect": { "x": 178, "y": 534, "w": 360, "h": 58 },
+            "text": { "content": "Enter your password", "fontSize": 21, "color": "#9AA0AE", "alignment": "Left" } },
+          { "name": "EyeIcon", "type": "Image", "color": "#B9BEC8",
+            "rect": { "x": 648, "y": 554, "w": 26, "h": 18 } }
+        ] },
+
+      { "name": "CheckBox", "type": "Image", "color": "#D1D5DB",
+        "rect": { "x": 118, "y": 628, "w": 26, "h": 26 } },
+      { "name": "RememberText", "type": "Text", "rect": { "x": 158, "y": 626, "w": 220, "h": 30 },
+        "text": { "content": "Remember me", "fontSize": 21, "color": "#111827", "alignment": "Left" } },
+      { "name": "ForgotText", "type": "Text", "rect": { "x": 480, "y": 626, "w": 214, "h": 30 },
+        "text": { "content": "Forgot password?", "fontSize": 21, "color": "#1F2937", "alignment": "Right" } },
+
+      { "name": "SignInButton", "type": "Button", "color": "#0E0F1A",
+        "rect": { "x": 118, "y": 688, "w": 576, "h": 74 },
+        "text": { "content": "Sign in", "fontSize": 24, "color": "#FFFFFF", "alignment": "Center" } },
+
+      { "name": "Footer", "type": "Text", "rect": { "x": 64, "y": 818, "w": 682, "h": 30 },
+        "text": { "content": "Don't have an account? Sign up", "fontSize": 21, "color": "#9AA0AE", "alignment": "Center" } }
+    ]
+  }
+}
