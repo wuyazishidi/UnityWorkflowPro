@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 1,
+  "referenceWidth": 420,
+  "referenceHeight": 320,
+  "rootName": "MotorControl",
+  "root": {
+    "name": "MotorControl",
+    "type": "Container",
+    "rect": {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 420.0,
+      "h": 320.0
+    },
+    "color": null,
+    "sprite": null,
+    "imageType": "Simple",
+    "border": null,
+    "raycastTarget": true,
+    "anchorPreset": "center",
+    "text": null,
+    "children": [
+      {
+        "name": "Bg",
+        "type": "Image",
+        "rect": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 420.0,
+          "h": 320.0
+        },
+        "color": "#F5F6F8",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": false,
+        "anchorPreset": null,
+        "text": null,
+        "children": []
+      },
+      {
+        "name": "Header",
+        "type": "Image",
+        "rect": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 420.0,
+          "h": 48.0
+        },
+        "color": "#1F2A37",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "Title",
+            "type": "Text",
+            "rect": {
+              "x": 16.0,
+              "y": 14.0,
+              "w": 220.0,
+              "h": 24.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "电机控制面板",
+              "fontAsset": null,
+              "fontSize": 18.0,
+              "color": "#FFFFFF",
+              "alignment": "Left",
+              "style": null
+            },
+            "children": []
+          },
+          {
+            "name": "StatusDot",
+            "type": "Image",
+            "rect": {
+              "x": 320.0,
+              "y": 18.0,
+              "w": 14.0,
+              "h": 14.0
+            },
+            "color": "#22C55E",
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": null,
+            "children": []
+          },
+          {
+            "name": "Status",
+            "type": "Text",
+            "rect": {
+              "x": 340.0,
+              "y": 16.0,
+              "w": 64.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "运行中",
+              "fontAsset": null,
+              "fontSize": 14.0,
+              "color": "#22C55E",
+              "alignment": "Left",
+              "style": null
+            },
+            "children": []
+          },
+          {
+            "name": "Logo",
+            "type": "Image",
+            "rect": {
+              "x": 270.0,
+              "y": 12.0,
+              "w": 36.0,
+              "h": 24.0
+            },
+            "color": "#FFFFFF",
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": null,
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Card",
+        "type": "Image",
+        "rect": {
+          "x": 16.0,
+          "y": 64.0,
+          "w": 388.0,
+          "h": 120.0
+        },
+        "color": "#FFFFFF",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "LblRpm",
+            "type": "Text",
+            "rect": {
+              "x": 32.0,
+              "y": 80.0,
+              "w": 120.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "转速 (RPM)",
+              "fontAsset": null,
+              "fontSize": 14.0,
+              "color": "#6B7280",
+              "alignment": "Left",
+              "style": null
+            },
+            "children": []
+          },
+          {
+            "name": "ValRpm",
+            "type": "Text",
+            "rect": {
+              "x": 270.0,
+              "y": 80.0,
+              "w": 110.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "1450",
+              "fontAsset": null,
+              "fontSize": 15.0,
+              "color": "#111827",
+              "alignment": "Right",
+              "style": null
+            },
+            "children": []
+          },
+          {
+            "name": "Divider",
+            "type": "Image",
+            "rect": {
+              "x": 32.0,
+              "y": 112.0,
+              "w": 356.0,
+              "h": 1.0
+            },
+            "color": "#E5E7EB",
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": null,
+            "children": []
+          },
+          {
+            "name": "LblTorque",
+            "type": "Text",
+            "rect": {
+              "x": 32.0,
+              "y": 128.0,
+              "w": 120.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "扭矩 (N·m)",
+              "fontAsset": null,
+              "fontSize": 14.0,
+              "color": "#6B7280",
+              "alignment": "Left",
+              "style": null
+            },
+            "children": []
+          },
+          {
+            "name": "ValTorque",
+            "type": "Text",
+            "rect": {
+              "x": 270.0,
+              "y": 128.0,
+              "w": 110.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "32.5",
+              "fontAsset": null,
+              "fontSize": 15.0,
+              "color": "#111827",
+              "alignment": "Right",
+              "style": null
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "btn_stop",
+        "type": "Image",
+        "rect": {
+          "x": 16.0,
+          "y": 200.0,
+          "w": 180.0,
+          "h": 44.0
+        },
+        "color": "#EF4444",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "StopText",
+            "type": "Text",
+            "rect": {
+              "x": 16.0,
+              "y": 212.0,
+              "w": 180.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "停止",
+              "fontAsset": null,
+              "fontSize": 16.0,
+              "color": "#FFFFFF",
+              "alignment": "Center",
+              "style": null
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "btn_start",
+        "type": "Image",
+        "rect": {
+          "x": 224.0,
+          "y": 200.0,
+          "w": 180.0,
+          "h": 44.0
+        },
+        "color": "#21C45E",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "StartText",
+            "type": "Text",
+            "rect": {
+              "x": 224.0,
+              "y": 212.0,
+              "w": 180.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "启动",
+              "fontAsset": null,
+              "fontSize": 16.0,
+              "color": "#FFFFFF",
+              "alignment": "Center",
+              "style": null
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}

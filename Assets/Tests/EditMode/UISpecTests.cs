@@ -1,0 +1,253 @@
+using System.Collections.Generic;
+using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using Game.UI;
+
+namespace Game.Tests.EditMode
+{
+    /// <summary>
+    /// M1 纯核心覆盖：坐标数学、颜色解析、对齐映射、Spec 校验、JSON 解析、建树结构。
+    /// 不渲染，只断言数据与组件结构（EditMode 可建 GameObject/加 UI 组件）。
+    /// </summary>
+    public class UISpecTests
+    {
+        // ---------- UISpecMath ----------
+
+        [Test]
+        public void TopLeft_NestedChild_MapsToParentLocalOffset()
+        {
+            // 子(810,600,300,80) 在父(710,360) 下 → 局部偏移 (100,-240)
+            var layout = UISpecMath.TopLeft(810, 600, 300, 80, 710, 360);
+            Assert.AreEqual(new Vector2(0, 1), layout.anchorMin);
+            Assert.AreEqual(new Vector2(0, 1), layout.anchorMax);
+            Assert.AreEqual(new Vector2(0, 1), layout.pivot);
+            Assert.AreEqual(new Vector2(300, 80), layout.sizeDelta);
+            Assert.AreEqual(new Vector2(100, -240), layout.anchoredPosition);
+        }
+
+        [Test]
+        public void TopLeft_RootLevel_UsesAbsoluteCoords()
+        {
+            var layout = UISpecMath.TopLeft(100, 50, 200, 60, 0, 0);
+            Assert.AreEqual(new Vector2(100, -50), layout.anchoredPosition);
+            Assert.AreEqual(new Vector2(200, 60), layout.sizeDelta);
+        }
+
+        [Test]
+        public void CenterFixed_FixedSizeCentered()
+        {
+            var layout = UISpecMath.CenterFixed(300, 380);
+            Assert.AreEqual(new Vector2(0.5f, 0.5f), layout.anchorMin);
+            Assert.AreEqual(new Vector2(0.5f, 0.5f), layout.anchorMax);
+            Assert.AreEqual(new Vector2(0.5f, 0.5f), layout.pivot);
+            Assert.AreEqual(new Vector2(300, 380), layout.sizeDelta);
+            Assert.AreEqual(Vector2.zero, layout.anchoredPosition);
+        }
+
+        [Test]
+        public void StretchFull_FillsParent()
+        {
+            var layout = UISpecMath.StretchFull();
+            Assert.AreEqual(new Vector2(0, 0), layout.anchorMin);
+            Assert.AreEqual(new Vector2(1, 1), layout.anchorMax);
+            Assert.AreEqual(Vector2.zero, layout.sizeDelta);
+            Assert.AreEqual(Vector2.zero, layout.anchoredPosition);
+        }
+
+        // ---------- ColorUtil ----------
+
+        [Test]
+        public void ParseHex_RGB()
+        {
+            Assert.IsTrue(ColorUtil.TryParseHex("#FF8000", out var c));
+            Assert.AreEqual(1f, c.r, 1e-3);
+            Assert.AreEqual(128f / 255f, c.g, 1e-3);
+            Assert.AreEqual(0f, c.b, 1e-3);
+            Assert.AreEqual(1f, c.a, 1e-3);
+        }
+
+        [Test]
+        public void ParseHex_RGBA_AndNoHashAndLowercase()
+        {
+            Assert.IsTrue(ColorUtil.TryParseHex("00ff0080", out var c));
+            Assert.AreEqual(0f, c.r, 1e-3);
+            Assert.AreEqual(1f, c.g, 1e-3);
+            Assert.AreEqual(128f / 255f, c.a, 1e-3);
+        }
+
+        [TestCase("#GGGGGG")]
+        [TestCase("#FFF")]
+        [TestCase("")]
+        [TestCase(null)]
+        public void ParseHex_Invalid_ReturnsFalse(string bad)
+        {
+            Assert.IsFalse(ColorUtil.TryParseHex(bad, out _));
+        }
+
+        // ---------- AlignmentMap ----------
+
+        [Test]
+        public void Alignment_KnownAndCaseInsensitive()
+        {
+            Assert.IsTrue(AlignmentMap.TryGet("center", out var a));
+            Assert.AreEqual(TextAlignmentOptions.Center, a);
+            Assert.IsTrue(AlignmentMap.TryGet("TopLeft", out var b));
+            Assert.AreEqual(TextAlignmentOptions.TopLeft, b);
+        }
+
+        [Test]
+        public void Alignment_Unknown_ReturnsFalse_GetOrFallsBack()
+        {
+            Assert.IsFalse(AlignmentMap.TryGet("nope", out _));
+            Assert.AreEqual(TextAlignmentOptions.Center, AlignmentMap.GetOr("nope"));
+        }
+
+        // ---------- UISpecValidator ----------
+
+        [Test]
+        public void Validate_GoodSpec_NoErrors()
+        {
+            var spec = NewSimpleSpec();
+            Assert.IsEmpty(UISpecValidator.Validate(spec));
+        }
+
+        [Test]
+        public void Validate_MissingRoot_Errors()
+        {
+            var spec = new UISpec { rootName = "X", root = null };
+            Assert.IsNotEmpty(UISpecValidator.Validate(spec));
+        }
+
+        [Test]
+        public void Validate_BadTypeAndColorAndDuplicateSibling_Errors()
+        {
+            var spec = new UISpec
+            {
+                root = new UINode
+                {
+                    name = "Root", type = "Container", anchorPreset = "stretch-full",
+                    rect = new UIRect(0, 0, 1920, 1080),
+                    children = new List<UINode>
+                    {
+                        new UINode { name = "A", type = "Bogus", rect = new UIRect(0, 0, 10, 10) },
+                        new UINode { name = "A", type = "Image", color = "#ZZ", rect = new UIRect(0, 0, 10, 10) },
+                    }
+                }
+            };
+            var errors = UISpecValidator.Validate(spec);
+            Assert.IsTrue(errors.Exists(e => e.Contains("type")), "应报非法 type");
+            Assert.IsTrue(errors.Exists(e => e.Contains("颜色")), "应报非法颜色");
+            Assert.IsTrue(errors.Exists(e => e.Contains("重名")), "应报兄弟重名");
+        }
+
+        [Test]
+        public void Validate_TextWithoutContent_Errors()
+        {
+            var spec = NewSimpleSpec();
+            spec.root.children.Add(new UINode { name = "T", type = "Text", rect = new UIRect(0, 0, 100, 30) });
+            Assert.IsTrue(UISpecValidator.Validate(spec).Exists(e => e.Contains("text.content")));
+        }
+
+        // ---------- UISpecJson ----------
+
+        [Test]
+        public void Json_Parse_ValidRoundTrips()
+        {
+            const string json = @"{
+              ""schemaVersion"":1, ""referenceWidth"":1920, ""referenceHeight"":1080, ""rootName"":""P"",
+              ""root"":{ ""name"":""P"", ""type"":""Container"", ""anchorPreset"":""stretch-full"",
+                ""rect"":{""x"":0,""y"":0,""w"":1920,""h"":1080},
+                ""children"":[ {""name"":""Btn"",""type"":""Button"",""rect"":{""x"":810,""y"":600,""w"":300,""h"":80},
+                  ""text"":{""content"":""确认"",""fontSize"":32,""alignment"":""Center""}} ] } }";
+            var r = UISpecJson.Parse(json);
+            Assert.IsTrue(r.Ok, string.Join("; ", r.Errors));
+            Assert.AreEqual("P", r.Spec.rootName);
+            Assert.AreEqual(1, r.Spec.root.children.Count);
+            Assert.AreEqual("确认", r.Spec.root.children[0].text.content);
+        }
+
+        [Test]
+        public void Json_Parse_MalformedFails()
+        {
+            var r = UISpecJson.Parse("{ not json");
+            Assert.IsFalse(r.Ok);
+            Assert.IsNotEmpty(r.Errors);
+        }
+
+        // ---------- UIHierarchyBuilder ----------
+
+        [Test]
+        public void Build_Hierarchy_StructureAndLayoutAndOrder()
+        {
+            var spec = new UISpec
+            {
+                rootName = "Panel",
+                root = new UINode
+                {
+                    name = "Panel", type = "Container", anchorPreset = "stretch-full",
+                    rect = new UIRect(0, 0, 1920, 1080),
+                    children = new List<UINode>
+                    {
+                        new UINode { name = "Bg", type = "Image", color = "#202020", rect = new UIRect(0, 0, 1920, 1080) },
+                        new UINode
+                        {
+                            name = "Btn", type = "Button", rect = new UIRect(810, 600, 300, 80),
+                            text = new UIText { content = "确认", fontSize = 32, alignment = "Center" }
+                        },
+                    }
+                }
+            };
+
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                Assert.AreEqual("Panel", root.name);
+                Assert.AreEqual(2, root.transform.childCount);
+
+                // 绘制层级：index 0 = Bg（底），index 1 = Btn（上）
+                Assert.AreEqual("Bg", root.transform.GetChild(0).name);
+                Assert.AreEqual("Btn", root.transform.GetChild(1).name);
+
+                var bg = root.transform.GetChild(0).gameObject;
+                Assert.IsNotNull(bg.GetComponent<Image>());
+
+                var btn = root.transform.GetChild(1).gameObject;
+                Assert.IsNotNull(btn.GetComponent<Image>());
+                Assert.IsNotNull(btn.GetComponent<Button>());
+                var label = btn.transform.Find("Label");
+                Assert.IsNotNull(label, "Button 应有 Label 子节点");
+                Assert.AreEqual("确认", label.GetComponent<TextMeshProUGUI>().text);
+
+                // 布局：Btn 绝对(810,600) 在父(0,0) 下 → anchoredPosition (810,-600)，sizeDelta (300,80)
+                var brt = (RectTransform)btn.transform;
+                Assert.AreEqual(new Vector2(810, -600), brt.anchoredPosition);
+                Assert.AreEqual(new Vector2(300, 80), brt.sizeDelta);
+            }
+            finally
+            {
+                Object.DestroyImmediate(root);
+            }
+        }
+
+        // ---------- helpers ----------
+
+        private static UISpec NewSimpleSpec()
+        {
+            return new UISpec
+            {
+                schemaVersion = 1, referenceWidth = 1920, referenceHeight = 1080, rootName = "Root",
+                root = new UINode
+                {
+                    name = "Root", type = "Container", anchorPreset = "stretch-full",
+                    rect = new UIRect(0, 0, 1920, 1080),
+                    children = new List<UINode>
+                    {
+                        new UINode { name = "Bg", type = "Image", color = "#FFFFFF", rect = new UIRect(0, 0, 1920, 1080) }
+                    }
+                }
+            };
+        }
+    }
+}

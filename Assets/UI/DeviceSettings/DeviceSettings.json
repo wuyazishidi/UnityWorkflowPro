@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "referenceWidth": 360,
+  "referenceHeight": 280,
+  "rootName": "DeviceSettings",
+  "root": {
+    "name": "DeviceSettings",
+    "type": "Container",
+    "rect": {
+      "x": 0.0,
+      "y": 0.0,
+      "w": 360.0,
+      "h": 280.0
+    },
+    "color": null,
+    "sprite": null,
+    "imageType": "Simple",
+    "border": null,
+    "raycastTarget": true,
+    "anchorPreset": "center",
+    "text": null,
+    "children": [
+      {
+        "name": "Bg",
+        "type": "Image",
+        "rect": {
+          "x": 0.0,
+          "y": 0.0,
+          "w": 360.0,
+          "h": 280.0
+        },
+        "color": "#F5F6F8",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": false,
+        "anchorPreset": null,
+        "text": null,
+        "children": []
+      },
+      {
+        "name": "Title",
+        "type": "Text",
+        "rect": {
+          "x": 20.0,
+          "y": 16.0,
+          "w": 220.0,
+          "h": 28.0
+        },
+        "color": null,
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": {
+          "content": "设备参数设置",
+          "fontAsset": null,
+          "fontSize": 18.0,
+          "color": "#1F2A37",
+          "alignment": "Left",
+          "style": null
+        },
+        "children": []
+      },
+      {
+        "name": "LblV",
+        "type": "Text",
+        "rect": {
+          "x": 24.0,
+          "y": 72.0,
+          "w": 120.0,
+          "h": 20.0
+        },
+        "color": null,
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": {
+          "content": "电压 (V)",
+          "fontAsset": null,
+          "fontSize": 14.0,
+          "color": "#6B7280",
+          "alignment": "Left",
+          "style": null
+        },
+        "children": []
+      },
+      {
+        "name": "ValV",
+        "type": "Image",
+        "rect": {
+          "x": 220.0,
+          "y": 64.0,
+          "w": 116.0,
+          "h": 32.0
+        },
+        "color": "#FFFFFF",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "ValVText",
+            "type": "Text",
+            "rect": {
+              "x": 220.0,
+              "y": 70.0,
+              "w": 116.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "220",
+              "fontAsset": null,
+              "fontSize": 15.0,
+              "color": "#111827",
+              "alignment": "Center",
+              "style": null
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "LblA",
+        "type": "Text",
+        "rect": {
+          "x": 24.0,
+          "y": 120.0,
+          "w": 120.0,
+          "h": 20.0
+        },
+        "color": null,
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": {
+          "content": "电流 (A)",
+          "fontAsset": null,
+          "fontSize": 14.0,
+          "color": "#6B7280",
+          "alignment": "Left",
+          "style": null
+        },
+        "children": []
+      },
+      {
+        "name": "ValA",
+        "type": "Image",
+        "rect": {
+          "x": 220.0,
+          "y": 112.0,
+          "w": 116.0,
+          "h": 32.0
+        },
+        "color": "#FFFFFF",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "ValAText",
+            "type": "Text",
+            "rect": {
+              "x": 220.0,
+              "y": 118.0,
+              "w": 116.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "5.0",
+              "fontAsset": null,
+              "fontSize": 15.0,
+              "color": "#111827",
+              "alignment": "Center",
+              "style": null
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "LblHz",
+        "type": "Text",
+        "rect": {
+          "x": 24.0,
+          "y": 168.0,
+          "w": 120.0,
+          "h": 20.0
+        },
+        "color": null,
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": {
+          "content": "频率 (Hz)",
+          "fontAsset": null,
+          "fontSize": 14.0,
+          "color": "#6B7280",
+          "alignment": "Left",
+          "style": null
+        },
+        "children": []
+      },
+      {
+        "name": "ValHz",
+        "type": "Image",
+        "rect": {
+          "x": 220.0,
+          "y": 160.0,
+          "w": 116.0,
+          "h": 32.0
+        },
+        "color": "#FFFFFF",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "ValHzText",
+            "type": "Text",
+            "rect": {
+              "x": 220.0,
+              "y": 166.0,
+              "w": 116.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "50",
+              "fontAsset": null,
+              "fontSize": 15.0,
+              "color": "#111827",
+              "alignment": "Center",
+              "style": null
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "btn_cancel",
+        "type": "Image",
+        "rect": {
+          "x": 60.0,
+          "y": 224.0,
+          "w": 120.0,
+          "h": 40.0
+        },
+        "color": "#E5E7EB",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "CancelText",
+            "type": "Text",
+            "rect": {
+              "x": 60.0,
+              "y": 234.0,
+              "w": 120.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "取消",
+              "fontAsset": null,
+              "fontSize": 15.0,
+              "color": "#374151",
+              "alignment": "Center",
+              "style": null
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "btn_ok",
+        "type": "Image",
+        "rect": {
+          "x": 200.0,
+          "y": 224.0,
+          "w": 120.0,
+          "h": 40.0
+        },
+        "color": "#2563EB",
+        "sprite": null,
+        "imageType": "Simple",
+        "border": null,
+        "raycastTarget": true,
+        "anchorPreset": null,
+        "text": null,
+        "children": [
+          {
+            "name": "OkText",
+            "type": "Text",
+            "rect": {
+              "x": 200.0,
+              "y": 234.0,
+              "w": 120.0,
+              "h": 20.0
+            },
+            "color": null,
+            "sprite": null,
+            "imageType": "Simple",
+            "border": null,
+            "raycastTarget": true,
+            "anchorPreset": null,
+            "text": {
+              "content": "确定",
+              "fontAsset": null,
+              "fontSize": 15.0,
+              "color": "#FFFFFF",
+              "alignment": "Center",
+              "style": null
+            },
+            "children": []
+          }
+        ]
+      }
+    ]
+  }
+}
