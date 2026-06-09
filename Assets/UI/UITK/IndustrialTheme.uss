@@ -1,0 +1,105 @@
+/* ===== 设计令牌（集中改这里 = 全局和谐） ===== */
+.screen {
+    --bg: rgb(244, 245, 247);
+    --card: rgb(255, 255, 255);
+    --ink: rgb(17, 17, 17);
+    --muted: rgb(154, 160, 174);
+    --field: rgb(241, 242, 244);
+    --line: rgb(209, 213, 219);
+    --primary: rgb(14, 15, 26);
+    --on-primary: rgb(255, 255, 255);
+    flex-grow: 1;
+    background-color: var(--bg);
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===== 组件（都从 token 取值） ===== */
+.card {
+    width: 560px;
+    background-color: var(--card);
+    border-radius: 24px;
+    padding: 40px 44px;
+    align-items: stretch;
+}
+
+.logo {
+    width: 96px; height: 96px;
+    background-color: var(--primary);
+    border-radius: 22px;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+.logo-mark { width: 30px; height: 30px; background-color: var(--on-primary); border-radius: 7px; }
+
+.title {
+    -unity-text-align: middle-center;
+    font-size: 40px;
+    color: var(--ink);
+    -unity-font-style: bold;
+    margin-top: 20px;
+}
+.subtitle {
+    -unity-text-align: middle-center;
+    font-size: 20px;
+    color: var(--muted);
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.field-label {
+    font-size: 20px;
+    color: var(--ink);
+    -unity-font-style: bold;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+.input {
+    height: 56px;
+    background-color: var(--field);
+    border-radius: 14px;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.placeholder {
+    font-size: 20px;
+    color: var(--muted);
+    flex-grow: 1;
+    -unity-text-align: middle-left;
+    margin-left: 12px;
+}
+.icon { width: 22px; height: 18px; background-color: rgb(185, 190, 200); border-radius: 4px; }
+
+.row-between { flex-direction: row; justify-content: space-between; align-items: center; margin-top: 18px; }
+.row { flex-direction: row; align-items: center; }
+.checkbox {
+    width: 24px; height: 24px;
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: var(--line);
+    background-color: var(--card);
+    margin-right: 10px;
+}
+.row-text { font-size: 20px; color: var(--ink); }
+.link { font-size: 20px; color: var(--ink); -unity-font-style: bold; }
+
+.btn-primary {
+    height: 64px;
+    background-color: var(--primary);
+    color: var(--on-primary);
+    border-radius: 16px;
+    font-size: 22px;
+    -unity-font-style: bold;
+    border-width: 0;
+    margin-top: 22px;
+}
+
+.footer {
+    -unity-text-align: middle-center;
+    font-size: 20px;
+    color: var(--muted);
+    margin-top: 22px;
+}

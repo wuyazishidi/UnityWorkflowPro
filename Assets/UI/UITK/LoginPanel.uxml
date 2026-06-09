@@ -1,0 +1,36 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <Style src="IndustrialTheme.uss" />
+    <ui:VisualElement class="screen">
+        <ui:VisualElement class="card">
+            <ui:VisualElement class="logo">
+                <ui:VisualElement class="logo-mark" />
+            </ui:VisualElement>
+            <ui:Label text="Welcome back" class="title" />
+            <ui:Label text="Sign in to your account to continue" class="subtitle" />
+
+            <ui:Label text="Email" class="field-label" />
+            <ui:VisualElement class="input">
+                <ui:VisualElement class="icon" />
+                <ui:Label text="Enter your email" class="placeholder" />
+            </ui:VisualElement>
+
+            <ui:Label text="Password" class="field-label" />
+            <ui:VisualElement class="input">
+                <ui:VisualElement class="icon" />
+                <ui:Label text="Enter your password" class="placeholder" />
+                <ui:VisualElement class="icon" />
+            </ui:VisualElement>
+
+            <ui:VisualElement class="row-between">
+                <ui:VisualElement class="row">
+                    <ui:VisualElement class="checkbox" />
+                    <ui:Label text="Remember me" class="row-text" />
+                </ui:VisualElement>
+                <ui:Label text="Forgot password?" class="link" />
+            </ui:VisualElement>
+
+            <ui:Button text="Sign in" class="btn-primary" />
+            <ui:Label text="Don't have an account? Sign up" class="footer" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
