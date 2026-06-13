@@ -78,13 +78,16 @@ powershell -ExecutionPolicy Bypass -Command "& '.\Packages\cn.etetet.yiuimcp\Con
 
 | 目的 | 命令 |
 |------|------|
-| **一条命令同步**（拉取→导资源→草稿→Refresh→构建→渲染） | `figma-sync.ps1 -Node 20:387 -Panel Login` |
-| 仅拉取：导资源 + 生成 UISpec 草稿 + 版式报告 + 合成图（Unity 无需开） | `figma-pull.ps1 -Node 20:387 -Panel Login` |
-| 仅构建：自动 Refresh + 打面板图集 + 重试到产物刷新（Unity 须开） | `ui-build-render.ps1 -Spec <spec> -Prefab <prefab> [-Png <png> -Width -Height -Bg]` |
+| **一条命令同步**（拉取→导资源→生成 spec→Refresh→打图集→构建） | `figma-sync.ps1 -Node 20:387 -Panel Login` |
+| 仅拉取：导资源 + 直接生成 `<Panel>.json` + 版式报告 + 合成图（Unity 无需开） | `figma-pull.ps1 -Node 20:387 -Panel Login` |
+| 仅构建：自动 Refresh + 打面板图集 + 重试到产物刷新（Unity 须开） | `ui-build-render.ps1 -Spec <spec> -Prefab <prefab> [-Verify]` |
 
-- **常规设计更新**：直接 `figma-sync.ps1 -Node <id>`，产出 `Assets/UI/<Panel>/<Panel>.prefab` + `_render.png`，核对 `_render.png` vs `.figma/truth.png` 即可。
-- **草稿需微调时**（复杂改版）：先只跑 `figma-pull.ps1`，改 `<Panel>.draft.json` 另存为 `<Panel>.json`，再 `ui-build-render.ps1 -Spec <Panel>.json ...`。
-- figma-pull 产物：`Icons/*.png`(背景自动降采样≤1280+按卡片圆角打 alpha)、`<Panel>.draft.json`(自动翻译的 UISpec：实色→Image、IMAGE→精灵、文字→Text、fill+stroke→外层描边+内层填充边环、Button、整卡背景→圆角精灵)、`.figma/layout.txt`、`.figma/truth.png`。
+> 真相源 = Figma（spec 004 Phase 1）：`<Panel>.json` 是 Figma 的忠实生成投影、**单一真相，无 `.draft.json`**；面板根收敛到**卡片**(去画板空白)。常态**只构建不渲染**；要核对图加 `-Verify`。
+
+- **常规设计更新**：直接 `figma-sync.ps1 -Node <id>` → 生成/覆盖 `<Panel>.json` + 构建 prefab。要核对：`figma-sync.ps1 -Node <id> -Verify`（出 `_render.png` 并与 `.figma/truth.png` 算分区域 MAE）。
+- **手动微调**：直接改 `<Panel>.json`；下次重生成是覆盖式，用 `git diff` 审阅改动（不再维护 draft 并行副本）。
+- figma-pull 产物：`Icons/*.png`(背景按卡片节点导、降采样≤1280+按圆角打 alpha)、`<Panel>.json`(自动翻译：实色→Image、IMAGE→精灵、文字→Text、**fill+stroke→半透填充+镂空描边环(ring*)**、Button、整卡背景→圆角精灵)、`.figma/layout.txt`、`.figma/truth.png`(卡片节点，与渲染同框)。
+- **导入分流**(spec 004 Phase 1)：`Assets/UI/**/Icons/` 下，>1024px 的大图自动 Compressed+限 2048(防强制 Uncompressed 卡主线程)，小图标维持 Uncompressed 保真（`UIIconPostprocessor`）。
 - **降 DC**：`ui-build-render` 默认会调 `PackPanelAtlas` 给 `Assets/UI/<Panel>/Icons/` 打一张 `<Panel>.spriteatlas`(图集路径从 prefab 路径推导)，工程 Sprite Packer = V1 Always Enabled，进入 Play/构建时自动合批 → 面板内所有 Image 共用一张纹理，加图标不增 DC。`-Atlas $false` 可关。（注意：TMP 文字用自己的字体图集，与精灵是两张纹理，z 序里图文交替仍会打断合批。）
 - 前置：项目根 `.figma-token`(已 gitignore，需 `file_content:read` 作用域) 或环境变量 `FIGMA_TOKEN`；默认 file key 在 `scripts/figma_sync.py`，可 `-FileKey` 覆盖。核心逻辑在 `scripts/figma_sync.py`。
 

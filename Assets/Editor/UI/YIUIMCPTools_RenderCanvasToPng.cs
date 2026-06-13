@@ -27,10 +27,10 @@ namespace YIUIFramework.Editor.MCP
     }
 
     /// <summary>
-    /// 把面板 prefab 渲染成精确分辨率 PNG（专用正交相机 + RenderTexture），用于和效果图像素级 diff。
+    /// 把面板 prefab 渲染成精确分辨率 PNG（专用正交相机 + RenderTexture），用于与 Figma 真值核对（可选 QA，见 004 -Verify）。
     /// 不依赖游戏视图尺寸，输出尺寸恒定。临时对象渲染后销毁，不污染场景与 prefab。
     /// </summary>
-    [YIUIMCPTools("RenderCanvasToPng", "把 UI 预制体渲染为精确分辨率 PNG（供与效果图对比）")]
+    [YIUIMCPTools("RenderCanvasToPng", "把 UI 预制体渲染为精确分辨率 PNG（供与 Figma 真值核对）")]
     public class YIUIMCPTools_RenderCanvasToPng : YIUIMCPBaseExecutor<RenderCanvasToPngParams>
     {
         protected override async Task<YIUIMCPResult> Run(RenderCanvasToPngParams data)

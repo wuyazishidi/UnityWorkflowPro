@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Game.UI
 {
     /// <summary>
-    /// 计算结果：把效果图像素矩形映射成 RectTransform 的锚点/轴心/尺寸/位置。
+    /// 计算结果：把设计像素矩形映射成 RectTransform 的锚点/轴心/尺寸/位置。
     /// 纯数据结构，便于 EditMode 断言。
     /// </summary>
     public struct RectLayout
@@ -16,8 +16,8 @@ namespace Game.UI
     }
 
     /// <summary>
-    /// 纯函数：效果图像素坐标（左上原点，y 向下）→ UGUI RectTransform 布局。
-    /// 约定见 specs/002-ui-from-mockup.md。导入器仅把结果套到真实 RectTransform。
+    /// 纯函数：设计像素坐标（左上原点，y 向下）→ UGUI RectTransform 布局。
+    /// 约定见 specs/002。导入器仅把结果套到真实 RectTransform。
     /// </summary>
     public static class UISpecMath
     {
