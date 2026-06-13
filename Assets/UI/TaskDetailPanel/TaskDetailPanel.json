@@ -35,7 +35,7 @@
         }
       },
       {
-        "name": "PanelBg",
+        "name": "Container",
         "type": "Image",
         "color": "#FFFFFF00",
         "raycastTarget": false,
@@ -55,6 +55,91 @@
         },
         "children": [
           {
+            "name": "PanelBg",
+            "type": "Image",
+            "color": "#FFFFFF00",
+            "raycastTarget": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1106,
+              "h": 778
+            },
+            "sprite": "Assets/UI/Common/round16.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 16,
+              "t": 16,
+              "r": 16,
+              "b": 16
+            },
+            "children": [
+              {
+                "name": "Container1",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 1106,
+                  "h": 778
+                },
+                "children": [
+                  {
+                    "name": "Container1",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 1106,
+                      "h": 778
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 0,
+                          "y": 0,
+                          "w": 1106,
+                          "h": 778
+                        },
+                        "children": [
+                          {
+                            "name": "Image",
+                            "type": "Image",
+                            "color": "#FFFFFF",
+                            "raycastTarget": false,
+                            "sprite": "Assets/UI/TaskDetailPanel/Icons/bg.png",
+                            "rect": {
+                              "x": 0,
+                              "y": 0,
+                              "w": 1106,
+                              "h": 778
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Container2",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 1106,
+                  "h": 778
+                }
+              }
+            ]
+          },
+          {
             "name": "Container",
             "type": "Container",
             "raycastTarget": false,
@@ -66,414 +151,408 @@
             },
             "children": [
               {
-                "name": "Image",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskDetailPanel/Icons/bg.png",
-                "rect": {
-                  "x": 0,
-                  "y": 0,
-                  "w": 1106,
-                  "h": 778
-                }
-              }
-            ]
-          },
-          {
-            "name": "Container_1",
-            "type": "Container",
-            "raycastTarget": false,
-            "rect": {
-              "x": 0,
-              "y": 0,
-              "w": 1106,
-              "h": 778
-            }
-          }
-        ]
-      },
-      {
-        "name": "Container",
-        "type": "Container",
-        "raycastTarget": false,
-        "rect": {
-          "x": 0,
-          "y": 0,
-          "w": 1106,
-          "h": 778
-        },
-        "children": [
-          {
-            "name": "DetailView",
-            "type": "Container",
-            "raycastTarget": false,
-            "rect": {
-              "x": 120,
-              "y": 0,
-              "w": 866,
-              "h": 193
-            },
-            "children": [
-              {
-                "name": "Paragraph",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 415,
-                  "y": 160,
-                  "w": 276,
-                  "h": 33
-                },
-                "children": [
-                  {
-                    "name": "#1 桌面小工具归入收纳盒",
-                    "type": "Text",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 419,
-                      "y": 160,
-                      "w": 269,
-                      "h": 33
-                    },
-                    "text": {
-                      "content": "#1 桌面小工具归入收纳盒",
-                      "fontSize": 22,
-                      "color": "#E8F4FFEB",
-                      "alignment": "Center",
-                      "style": {
-                        "bold": true
-                      }
-                    }
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "DetailView_1",
-            "type": "Container",
-            "raycastTarget": false,
-            "rect": {
-              "x": 120,
-              "y": 193,
-              "w": 866,
-              "h": 151
-            },
-            "children": [
-              {
-                "name": "DetailView",
+                "name": "Container",
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
                   "x": 120,
-                  "y": 249,
-                  "w": 866,
-                  "h": 95
-                },
-                "children": [
-                  {
-                    "name": "InfoLine",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 459,
-                      "y": 249,
-                      "w": 187,
-                      "h": 21
-                    },
-                    "children": [
-                      {
-                        "name": "物体：剪刀，胶带座，订书机",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 460,
-                          "y": 249,
-                          "w": 187,
-                          "h": 21
-                        },
-                        "text": {
-                          "content": "物体：剪刀，胶带座，订书机",
-                          "fontSize": 14,
-                          "color": "#93C5FD80",
-                          "alignment": "Center"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "InfoLine_1",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 517,
-                      "y": 286,
-                      "w": 72,
-                      "h": 21
-                    },
-                    "children": [
-                      {
-                        "name": "场景：书房",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 517,
-                          "y": 286,
-                          "w": 72,
-                          "h": 21
-                        },
-                        "text": {
-                          "content": "场景：书房",
-                          "fontSize": 14,
-                          "color": "#93C5FD80",
-                          "alignment": "Center"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "InfoLine_2",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 491,
-                      "y": 323,
-                      "w": 125,
-                      "h": 21
-                    },
-                    "children": [
-                      {
-                        "name": "技能：Pick，Place",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 491,
-                          "y": 323,
-                          "w": 125,
-                          "h": 21
-                        },
-                        "text": {
-                          "content": "技能：Pick，Place",
-                          "fontSize": 14,
-                          "color": "#93C5FD80",
-                          "alignment": "Center"
-                        }
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "DetailView_2",
-            "type": "Container",
-            "raycastTarget": false,
-            "rect": {
-              "x": 313,
-              "y": 344,
-              "w": 480,
-              "h": 110
-            },
-            "children": [
-              {
-                "name": "DetailView",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 313,
-                  "y": 416,
+                  "y": 230,
                   "w": 480,
-                  "h": 38
+                  "h": 318
                 },
                 "children": [
                   {
-                    "name": "Label",
+                    "name": "Paragraph",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 313,
-                      "y": 424,
-                      "w": 103,
-                      "h": 21
+                      "x": 120,
+                      "y": 230,
+                      "w": 480,
+                      "h": 33
                     },
                     "children": [
                       {
-                        "name": "本次场景 scene",
+                        "name": "#1 桌面小工具归入收纳盒",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 313,
-                          "y": 424,
+                          "x": 120,
+                          "y": 230,
+                          "w": 269,
+                          "h": 33
+                        },
+                        "text": {
+                          "content": "#1 桌面小工具归入收纳盒",
+                          "fontSize": 22,
+                          "color": "#E8F4FFEB",
+                          "alignment": "MidlineLeft",
+                          "style": {
+                            "bold": true
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 120,
+                      "y": 303,
+                      "w": 480,
+                      "h": 87
+                    },
+                    "children": [
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 303,
+                          "w": 480,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "物体：剪刀，胶带座，订书机",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 303,
+                              "w": 187,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "物体：剪刀，胶带座，订书机",
+                              "fontSize": 14,
+                              "color": "#93C5FD80",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_1",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 336,
+                          "w": 480,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "场景：书房",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 336,
+                              "w": 72,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "场景：书房",
+                              "fontSize": 14,
+                              "color": "#93C5FD80",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_2",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 369,
+                          "w": 480,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "技能：Pick，Place",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 369,
+                              "w": 125,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "技能：Pick，Place",
+                              "fontSize": 14,
+                              "color": "#93C5FD80",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container_1",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 120,
+                      "y": 430,
+                      "w": 480,
+                      "h": 38
+                    },
+                    "children": [
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 438,
                           "w": 103,
                           "h": 21
                         },
-                        "text": {
-                          "content": "本次场景 scene",
-                          "fontSize": 14,
-                          "color": "#93C5FDB2",
-                          "alignment": "MidlineLeft"
-                        }
+                        "children": [
+                          {
+                            "name": "本次场景 scene",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 438,
+                              "w": 103,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "本次场景 scene",
+                              "fontSize": 14,
+                              "color": "#93C5FDB2",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#14285A59",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 247,
+                          "y": 430,
+                          "w": 353,
+                          "h": 38
+                        },
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "children": [
+                          {
+                            "name": "Container",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 247,
+                              "y": 430,
+                              "w": 353,
+                              "h": 38
+                            },
+                            "children": [
+                              {
+                                "name": "书房",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 259,
+                                  "y": 438,
+                                  "w": 28,
+                                  "h": 21
+                                },
+                                "text": {
+                                  "content": "书房",
+                                  "fontSize": 14,
+                                  "color": "#E8F4FFE0",
+                                  "alignment": "MidlineLeft"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Container_1",
+                            "type": "Image",
+                            "color": "#FFFFFF",
+                            "raycastTarget": false,
+                            "sprite": "Assets/UI/TaskDetailPanel/Icons/corner1.png",
+                            "rect": {
+                              "x": 247,
+                              "y": 430,
+                              "w": 353,
+                              "h": 38
+                            }
+                          }
+                        ]
                       }
                     ]
                   },
                   {
-                    "name": "TextInputFill",
-                    "type": "Image",
-                    "color": "#14285A59",
+                    "name": "Container_2",
+                    "type": "Container",
                     "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
                     "rect": {
-                      "x": 440,
-                      "y": 416,
-                      "w": 353,
-                      "h": 38
-                    },
-                    "stroke": {
-                      "color": "#388BFD59",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
+                      "x": 120,
+                      "y": 508,
+                      "w": 480,
+                      "h": 40
                     },
                     "children": [
                       {
-                        "name": "书房",
-                        "type": "Text",
+                        "name": "Button",
+                        "type": "Image",
+                        "color": "#FFFFFF0D",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 453,
-                          "y": 424,
-                          "w": 328,
-                          "h": 21
+                          "x": 120,
+                          "y": 508,
+                          "w": 230,
+                          "h": 40
                         },
-                        "text": {
-                          "content": "书房",
-                          "fontSize": 14,
-                          "color": "#E8F4FFE0",
-                          "alignment": "MidlineLeft"
-                        }
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "children": [
+                          {
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 205,
+                              "y": 518,
+                              "w": 60,
+                              "h": 21
+                            },
+                            "children": [
+                              {
+                                "name": "返回列表",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 206,
+                                  "y": 518,
+                                  "w": 59,
+                                  "h": 21
+                                },
+                                "text": {
+                                  "content": "返回列表",
+                                  "fontSize": 14,
+                                  "color": "#93C5FDA6",
+                                  "alignment": "Center",
+                                  "style": {
+                                    "bold": true
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Container",
+                            "type": "Image",
+                            "color": "#FFFFFF",
+                            "raycastTarget": false,
+                            "sprite": "Assets/UI/TaskDetailPanel/Icons/corner2.png",
+                            "rect": {
+                              "x": 120,
+                              "y": 508,
+                              "w": 230,
+                              "h": 40
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Button_1",
+                        "type": "Image",
+                        "color": "#388BFD2E",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 370,
+                          "y": 508,
+                          "w": 230,
+                          "h": 40
+                        },
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "children": [
+                          {
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 432,
+                              "y": 518,
+                              "w": 105,
+                              "h": 21
+                            },
+                            "children": [
+                              {
+                                "name": "领取并开始任务",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 432,
+                                  "y": 518,
+                                  "w": 104,
+                                  "h": 21
+                                },
+                                "text": {
+                                  "content": "领取并开始任务",
+                                  "fontSize": 14,
+                                  "color": "#A8D4FF",
+                                  "alignment": "Center",
+                                  "style": {
+                                    "bold": true
+                                  }
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "name": "Container",
+                            "type": "Image",
+                            "color": "#FFFFFF",
+                            "raycastTarget": false,
+                            "sprite": "Assets/UI/TaskDetailPanel/Icons/corner3.png",
+                            "rect": {
+                              "x": 370,
+                              "y": 508,
+                              "w": 230,
+                              "h": 40
+                            }
+                          }
+                        ]
                       }
                     ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "DetailView_3",
-            "type": "Container",
-            "raycastTarget": false,
-            "rect": {
-              "x": 313,
-              "y": 454,
-              "w": 480,
-              "h": 104
-            },
-            "children": [
-              {
-                "name": "DetailView",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 313,
-                  "y": 518,
-                  "w": 480,
-                  "h": 40
-                },
-                "children": [
-                  {
-                    "name": "DetailBtn",
-                    "type": "Button",
-                    "color": "#FFFFFF0D",
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 313,
-                      "y": 518,
-                      "w": 228,
-                      "h": 40
-                    },
-                    "text": {
-                      "content": "返回列表",
-                      "fontSize": 14,
-                      "color": "#93C5FDA6",
-                      "alignment": "Center",
-                      "style": {
-                        "bold": true
-                      }
-                    },
-                    "stroke": {
-                      "color": "#FFFFFF1F",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    }
-                  },
-                  {
-                    "name": "DetailBtn_1",
-                    "type": "Button",
-                    "color": "#388BFD2E",
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 565,
-                      "y": 518,
-                      "w": 228,
-                      "h": 40
-                    },
-                    "text": {
-                      "content": "领取并开始任务",
-                      "fontSize": 14,
-                      "color": "#A8D4FF",
-                      "alignment": "Center",
-                      "style": {
-                        "bold": true
-                      }
-                    },
-                    "stroke": {
-                      "color": "#388BFD80",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    }
                   }
                 ]
               }
