@@ -29,8 +29,8 @@
   - **语义组件映射**：按 Figma 节点命名把"看着像输入框/按钮的东西"映射成**真正的功能组件**（`TMP_InputField` / `Button` / 后续 Toggle/Slider/Dropdown），而非纯视觉 Image+Text。**生成的 UI 要和功能匹配**。
 - **不包含**（明确划界）：
   - 不重写 002 的纯核心 / headless 解耦（沿用）。
-  - 不在本期强制引入运行期矢量（SVG / `com.unity.vectorgraphics`）——列入 Phase 4 后续评估。
-  - 不在本期完整实现多分辨率响应式布局——本期只保证 `constraints` 字段"承接不丢"，驱动 RectTransform 留 Phase 4。
+  - 不引入运行期矢量（SVG / `com.unity.vectorgraphics`）——已评估暂不做（见 §7 Phase 4）。
+  - 不实现多分辨率响应式布局驱动——`constraints` 字段仅"承接不丢"，驱动 RectTransform 已评估暂不做（CanvasScaler 均匀缩放已够，见 §7 Phase 4）。
   - 不改 `Packages/cn.etetet.yiuimcp/**` 内部。
   - **B 路（纯 PNG 看图估算闭环）已整体移除**：Figma 是唯一入口，UISpec 由 Figma 精确数据生成，不再人工看图估算（003 已废弃）。
 
@@ -45,7 +45,7 @@ public class UINode {
     public UIStroke stroke;         // 描边（替代"镂空环精灵" hack）
     public UIGradient gradient;     // 渐变填充（替代纯色近似）
     public string blend;            // Normal/Multiply/Screen…（可选，先只认 Normal）
-    public UIConstraints constraints; // 锚定意图：承接不丢，Phase 4 才驱动
+    public UIConstraints constraints; // 锚定意图：仅承接保留，暂不驱动（见 §7 Phase 4）
 }
 public class UIStroke   { public string color; public float weight = 1f; public string align = "Inside"; }
 public class UIGradient { public string type = "Linear"; public UIGradientStop[] stops; public float angle; }
@@ -75,7 +75,7 @@ public class UIConstraints { public string horizontal = "Left"; public string ve
 - 向后兼容 `schemaVersion: 1`：旧 spec 必须仍能 build（回归测试守住）。
 - 纯逻辑仍在 `Game` 程序集、可 EditMode 测；遵循 `CLAUDE.md` 第 3 节命名/目录。
 - SDF shader 改动不得破坏现有面板渲染（有回退路径）。
-- 不引第三方包（SVG 留 Phase 4 单独评估）。
+- 不引第三方包（SVG 已评估暂不做，见 §7 Phase 4）。
 - 禁止：再用"镂空环精灵 / 纯色"去近似 Figma 已精确给出的 stroke/gradient（v2 后视为反模式）。
 
 ## 5. 验收标准（Acceptance — 必须可验证）
@@ -133,7 +133,8 @@ public class UIConstraints { public string horizontal = "Left"; public string ve
 - 替换 round*/ring* 用法；形状类元素**零纹理、矢量级清晰**。
 - **验收**：圆角/描边不再依赖精灵；DC 不升；视觉与 Figma 一致。
 
-### Phase 4（可选）— 矢量与响应式
-- 矢量节点走 SVG（`com.unity.vectorgraphics`）或 Figma `geometry=paths` 生成 mesh。
-- `constraints/auto-layout` 真正驱动 RectTransform 锚定 → 多分辨率自适应。
-- **验收**：矢量图标清晰可缩放；面板在不同分辨率自适应。
+### Phase 4 —（已评估，暂不做）矢量与响应式
+经评估暂不实施，理由：
+- **矢量(SVG)**：当前设计主视觉（机器人/Logo）是 Figma 里上传的**位图**，无矢量源，SVG 只能惠及极小的角标/眼睛，ROI 低，且需引入 `com.unity.vectorgraphics` 包依赖。
+- **响应式(constraints 驱动锚定)**：现有面板为**居中卡片**，已靠 UIRoot 的 `CanvasScaler`（Scale With Screen Size）均匀缩放适配多分辨率；per-element constraints 仅对"可拉伸/边缘锚定"型面板有意义。`constraints` 字段已承接保留（Phase 2），将来出现此类面板再驱动。
+- 待出现**矢量设计**或**可拉伸面板**的真实需求时再启动本阶段。
