@@ -17,7 +17,7 @@
       {
         "name": "CardBase",
         "type": "Image",
-        "color": "#0A1118",
+        "color": "#080F1E",
         "raycastTarget": false,
         "rect": {
           "x": 0,
@@ -35,7 +35,7 @@
         }
       },
       {
-        "name": "Container",
+        "name": "PanelBg",
         "type": "Image",
         "color": "#FFFFFF00",
         "raycastTarget": false,
@@ -55,91 +55,6 @@
         },
         "children": [
           {
-            "name": "PanelBg",
-            "type": "Image",
-            "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 0,
-              "y": 0,
-              "w": 1106,
-              "h": 778
-            },
-            "sprite": "Assets/UI/Common/round16.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 16,
-              "t": 16,
-              "r": 16,
-              "b": 16
-            },
-            "children": [
-              {
-                "name": "Container",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 0,
-                  "y": 0,
-                  "w": 1106,
-                  "h": 778
-                },
-                "children": [
-                  {
-                    "name": "PanelBg",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 0,
-                      "y": 0,
-                      "w": 1106,
-                      "h": 778
-                    },
-                    "children": [
-                      {
-                        "name": "Container",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 0,
-                          "y": 0,
-                          "w": 1106,
-                          "h": 778
-                        },
-                        "children": [
-                          {
-                            "name": "Image",
-                            "type": "Image",
-                            "color": "#FFFFFF",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/UpLoadPanel/Icons/bg.png",
-                            "rect": {
-                              "x": 0,
-                              "y": 0,
-                              "w": 1106,
-                              "h": 778
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Container_1",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 0,
-                  "y": 0,
-                  "w": 1106,
-                  "h": 778
-                }
-              }
-            ]
-          },
-          {
             "name": "Container",
             "type": "Container",
             "raycastTarget": false,
@@ -151,55 +66,105 @@
             },
             "children": [
               {
-                "name": "Container",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 120,
-                  "y": 64,
-                  "w": 866,
-                  "h": 73
-                },
-                "children": [
-                  {
-                    "name": "Container",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 120,
-                      "y": 64,
-                      "w": 866,
-                      "h": 33
-                    },
-                    "children": [
-                      {
-                        "name": "数据上传",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 120,
-                          "y": 64,
-                          "w": 866,
-                          "h": 33
-                        },
-                        "text": {
-                          "content": "数据上传",
-                          "fontSize": 22,
-                          "color": "#E8F4FFEB",
-                          "alignment": "Center",
-                          "style": {
-                            "bold": true
-                          }
-                        }
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "ContainerFill",
+                "name": "Image",
                 "type": "Image",
-                "color": "#050F2873",
+                "color": "#FFFFFF",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/UpLoadPanel/Icons/bg.png",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 1106,
+                  "h": 778
+                }
+              }
+            ]
+          },
+          {
+            "name": "Container_1",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1106,
+              "h": 778
+            }
+          }
+        ]
+      },
+      {
+        "name": "Paragraph",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 506,
+          "y": 64,
+          "w": 94,
+          "h": 33
+        },
+        "children": [
+          {
+            "name": "数据上传",
+            "type": "Text",
+            "raycastTarget": false,
+            "rect": {
+              "x": 507,
+              "y": 64,
+              "w": 93,
+              "h": 33
+            },
+            "text": {
+              "content": "数据上传",
+              "fontSize": 22,
+              "color": "#E8F4FFEB",
+              "alignment": "Center",
+              "style": {
+                "bold": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "CustomScrollList",
+        "type": "ScrollList",
+        "raycastTarget": true,
+        "rect": {
+          "x": 120,
+          "y": 129,
+          "w": 866,
+          "h": 485
+        },
+        "scroll": {
+          "horizontal": false,
+          "vertical": true
+        },
+        "color": "#040C22BF",
+        "sprite": "Assets/UI/Common/round12.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 12,
+          "t": 12,
+          "r": 12,
+          "b": 12
+        },
+        "children": [
+          {
+            "name": "Container",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 121,
+              "y": 130,
+              "w": 849,
+              "h": 484
+            },
+            "children": [
+              {
+                "name": "SegmentRowFill",
+                "type": "Image",
+                "color": "#081432B2",
                 "raycastTarget": false,
                 "sprite": "Assets/UI/Common/round12.png",
                 "imageType": "Sliced",
@@ -210,13 +175,13 @@
                   "b": 12
                 },
                 "rect": {
-                  "x": 120,
-                  "y": 137,
-                  "w": 866,
-                  "h": 469
+                  "x": 135,
+                  "y": 144,
+                  "w": 821,
+                  "h": 56
                 },
                 "stroke": {
-                  "color": "#388BFD1F",
+                  "color": "#388BFD2E",
                   "weight": 0.67,
                   "align": "Inside",
                   "sprite": "Assets/UI/Common/ring12.png",
@@ -229,1810 +194,26 @@
                 },
                 "children": [
                   {
-                    "name": "SegmentRowFill",
-                    "type": "Image",
-                    "color": "#0A183773",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 137,
-                      "y": 154,
-                      "w": 833,
-                      "h": 58
-                    },
-                    "stroke": {
-                      "color": "#388BFD26",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    },
-                    "children": [
-                      {
-                        "name": "Container",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 154,
-                          "w": 831,
-                          "h": 54
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#93C5FD59",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 157,
-                              "y": 178,
-                              "w": 6,
-                              "h": 6
-                            },
-                            "sprite": "Assets/UI/Common/round24.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 24,
-                              "t": 24,
-                              "r": 24,
-                              "b": 24
-                            }
-                          },
-                          {
-                            "name": "Paragraph",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 183,
-                              "y": 170,
-                              "w": 560,
-                              "h": 22
-                            },
-                            "children": [
-                              {
-                                "name": "20260608_202511",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 183,
-                                  "y": 171,
-                                  "w": 133,
-                                  "h": 22
-                                },
-                                "text": {
-                                  "content": "20260608_202511",
-                                  "fontSize": 14,
-                                  "color": "#E8F4FFE0",
-                                  "alignment": "MidlineLeft",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Paragraph_1",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 763,
-                              "y": 171,
-                              "w": 50,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "98.1 MB",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 763,
-                                  "y": 171,
-                                  "w": 50,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "98.1 MB",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD66",
-                                  "alignment": "MidlineLeft"
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "ContainerFill",
-                            "type": "Image",
-                            "color": "#388BFD0F",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
-                            },
-                            "rect": {
-                              "x": 833,
-                              "y": 170,
-                              "w": 56,
-                              "h": 22
-                            },
-                            "stroke": {
-                              "color": "#93C5FD59",
-                              "weight": 0.67,
-                              "align": "Inside",
-                              "sprite": "Assets/UI/Common/ring12.png",
-                              "border": {
-                                "l": 12,
-                                "t": 12,
-                                "r": 12,
-                                "b": 12
-                              }
-                            },
-                            "children": [
-                              {
-                                "name": "Text",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 844,
-                                  "y": 173,
-                                  "w": 34,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "待上传",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 844,
-                                      "y": 173,
-                                      "w": 34,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "待上传",
-                                      "fontSize": 11,
-                                      "color": "#93C5FD59",
-                                      "alignment": "MidlineLeft"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Text",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 909,
-                              "y": 172,
-                              "w": 40,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "—",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 936,
-                                  "y": 172,
-                                  "w": 13,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "—",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD59",
-                                  "alignment": "MidlineRight",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Container_1",
-                        "type": "Image",
-                        "color": "#388BFD14",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 208,
-                          "w": 821,
-                          "h": 3
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#388BFD99",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 137,
-                              "y": 208,
-                              "w": 0,
-                              "h": 3
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "SegmentRowFill_1",
-                    "type": "Image",
-                    "color": "#0A183773",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 137,
-                      "y": 220,
-                      "w": 833,
-                      "h": 58
-                    },
-                    "stroke": {
-                      "color": "#388BFD26",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    },
-                    "children": [
-                      {
-                        "name": "Container",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 221,
-                          "w": 831,
-                          "h": 54
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#93C5FD59",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 157,
-                              "y": 245,
-                              "w": 6,
-                              "h": 6
-                            },
-                            "sprite": "Assets/UI/Common/round24.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 24,
-                              "t": 24,
-                              "r": 24,
-                              "b": 24
-                            }
-                          },
-                          {
-                            "name": "Paragraph",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 183,
-                              "y": 237,
-                              "w": 551,
-                              "h": 22
-                            },
-                            "children": [
-                              {
-                                "name": "20260608_203145",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 183,
-                                  "y": 237,
-                                  "w": 136,
-                                  "h": 22
-                                },
-                                "text": {
-                                  "content": "20260608_203145",
-                                  "fontSize": 14,
-                                  "color": "#E8F4FFE0",
-                                  "alignment": "MidlineLeft",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Paragraph_1",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 754,
-                              "y": 238,
-                              "w": 59,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "134.7 MB",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 754,
-                                  "y": 238,
-                                  "w": 59,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "134.7 MB",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD66",
-                                  "alignment": "MidlineLeft"
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "ContainerFill",
-                            "type": "Image",
-                            "color": "#388BFD0F",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
-                            },
-                            "rect": {
-                              "x": 833,
-                              "y": 237,
-                              "w": 56,
-                              "h": 22
-                            },
-                            "stroke": {
-                              "color": "#93C5FD59",
-                              "weight": 0.67,
-                              "align": "Inside",
-                              "sprite": "Assets/UI/Common/ring12.png",
-                              "border": {
-                                "l": 12,
-                                "t": 12,
-                                "r": 12,
-                                "b": 12
-                              }
-                            },
-                            "children": [
-                              {
-                                "name": "Text",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 844,
-                                  "y": 239,
-                                  "w": 34,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "待上传",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 844,
-                                      "y": 240,
-                                      "w": 34,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "待上传",
-                                      "fontSize": 11,
-                                      "color": "#93C5FD59",
-                                      "alignment": "MidlineLeft"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Text",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 909,
-                              "y": 238,
-                              "w": 40,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "—",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 936,
-                                  "y": 238,
-                                  "w": 13,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "—",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD59",
-                                  "alignment": "MidlineRight",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Container_1",
-                        "type": "Image",
-                        "color": "#388BFD14",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 275,
-                          "w": 821,
-                          "h": 3
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#388BFD99",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 137,
-                              "y": 275,
-                              "w": 0,
-                              "h": 3
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "SegmentRowFill_2",
-                    "type": "Image",
-                    "color": "#0A183773",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 137,
-                      "y": 286,
-                      "w": 833,
-                      "h": 58
-                    },
-                    "stroke": {
-                      "color": "#388BFD26",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    },
-                    "children": [
-                      {
-                        "name": "Container",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 287,
-                          "w": 831,
-                          "h": 54
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#93C5FD59",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 157,
-                              "y": 311,
-                              "w": 6,
-                              "h": 6
-                            },
-                            "sprite": "Assets/UI/Common/round24.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 24,
-                              "t": 24,
-                              "r": 24,
-                              "b": 24
-                            }
-                          },
-                          {
-                            "name": "Paragraph",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 183,
-                              "y": 303,
-                              "w": 558,
-                              "h": 22
-                            },
-                            "children": [
-                              {
-                                "name": "20260608_203902",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 183,
-                                  "y": 304,
-                                  "w": 138,
-                                  "h": 22
-                                },
-                                "text": {
-                                  "content": "20260608_203902",
-                                  "fontSize": 14,
-                                  "color": "#E8F4FFE0",
-                                  "alignment": "MidlineLeft",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Paragraph_1",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 761,
-                              "y": 304,
-                              "w": 52,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "76.4 MB",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 761,
-                                  "y": 304,
-                                  "w": 52,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "76.4 MB",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD66",
-                                  "alignment": "MidlineLeft"
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "ContainerFill",
-                            "type": "Image",
-                            "color": "#388BFD0F",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
-                            },
-                            "rect": {
-                              "x": 833,
-                              "y": 303,
-                              "w": 56,
-                              "h": 22
-                            },
-                            "stroke": {
-                              "color": "#93C5FD59",
-                              "weight": 0.67,
-                              "align": "Inside",
-                              "sprite": "Assets/UI/Common/ring12.png",
-                              "border": {
-                                "l": 12,
-                                "t": 12,
-                                "r": 12,
-                                "b": 12
-                              }
-                            },
-                            "children": [
-                              {
-                                "name": "Text",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 844,
-                                  "y": 306,
-                                  "w": 34,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "待上传",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 844,
-                                      "y": 306,
-                                      "w": 34,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "待上传",
-                                      "fontSize": 11,
-                                      "color": "#93C5FD59",
-                                      "alignment": "MidlineLeft"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Text",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 909,
-                              "y": 304,
-                              "w": 40,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "—",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 936,
-                                  "y": 305,
-                                  "w": 13,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "—",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD59",
-                                  "alignment": "MidlineRight",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Container_1",
-                        "type": "Image",
-                        "color": "#388BFD14",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 341,
-                          "w": 821,
-                          "h": 3
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#388BFD99",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 137,
-                              "y": 341,
-                              "w": 0,
-                              "h": 3
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "SegmentRowFill_3",
-                    "type": "Image",
-                    "color": "#0A183773",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 137,
-                      "y": 353,
-                      "w": 833,
-                      "h": 58
-                    },
-                    "stroke": {
-                      "color": "#388BFD26",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    },
-                    "children": [
-                      {
-                        "name": "Container",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 353,
-                          "w": 831,
-                          "h": 54
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#93C5FD59",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 157,
-                              "y": 377,
-                              "w": 6,
-                              "h": 6
-                            },
-                            "sprite": "Assets/UI/Common/round24.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 24,
-                              "t": 24,
-                              "r": 24,
-                              "b": 24
-                            }
-                          },
-                          {
-                            "name": "Paragraph",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 183,
-                              "y": 369,
-                              "w": 553,
-                              "h": 22
-                            },
-                            "children": [
-                              {
-                                "name": "20260608_204618",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 183,
-                                  "y": 370,
-                                  "w": 136,
-                                  "h": 22
-                                },
-                                "text": {
-                                  "content": "20260608_204618",
-                                  "fontSize": 14,
-                                  "color": "#E8F4FFE0",
-                                  "alignment": "MidlineLeft",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Paragraph_1",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 756,
-                              "y": 370,
-                              "w": 57,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "112.3 MB",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 756,
-                                  "y": 370,
-                                  "w": 57,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "112.3 MB",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD66",
-                                  "alignment": "MidlineLeft"
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "ContainerFill",
-                            "type": "Image",
-                            "color": "#388BFD0F",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
-                            },
-                            "rect": {
-                              "x": 833,
-                              "y": 369,
-                              "w": 56,
-                              "h": 22
-                            },
-                            "stroke": {
-                              "color": "#93C5FD59",
-                              "weight": 0.67,
-                              "align": "Inside",
-                              "sprite": "Assets/UI/Common/ring12.png",
-                              "border": {
-                                "l": 12,
-                                "t": 12,
-                                "r": 12,
-                                "b": 12
-                              }
-                            },
-                            "children": [
-                              {
-                                "name": "Text",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 844,
-                                  "y": 372,
-                                  "w": 34,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "待上传",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 844,
-                                      "y": 372,
-                                      "w": 34,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "待上传",
-                                      "fontSize": 11,
-                                      "color": "#93C5FD59",
-                                      "alignment": "MidlineLeft"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Text",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 909,
-                              "y": 371,
-                              "w": 40,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "—",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 936,
-                                  "y": 371,
-                                  "w": 13,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "—",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD59",
-                                  "alignment": "MidlineRight",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Container_1",
-                        "type": "Image",
-                        "color": "#388BFD14",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 407,
-                          "w": 821,
-                          "h": 3
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#388BFD99",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 137,
-                              "y": 407,
-                              "w": 0,
-                              "h": 3
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "SegmentRowFill_4",
-                    "type": "Image",
-                    "color": "#0A183773",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 137,
-                      "y": 419,
-                      "w": 833,
-                      "h": 58
-                    },
-                    "stroke": {
-                      "color": "#388BFD26",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    },
-                    "children": [
-                      {
-                        "name": "Container",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 420,
-                          "w": 831,
-                          "h": 54
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#93C5FD59",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 157,
-                              "y": 444,
-                              "w": 6,
-                              "h": 6
-                            },
-                            "sprite": "Assets/UI/Common/round24.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 24,
-                              "t": 24,
-                              "r": 24,
-                              "b": 24
-                            }
-                          },
-                          {
-                            "name": "Paragraph",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 183,
-                              "y": 436,
-                              "w": 557,
-                              "h": 22
-                            },
-                            "children": [
-                              {
-                                "name": "20260608_205301",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 183,
-                                  "y": 436,
-                                  "w": 136,
-                                  "h": 22
-                                },
-                                "text": {
-                                  "content": "20260608_205301",
-                                  "fontSize": 14,
-                                  "color": "#E8F4FFE0",
-                                  "alignment": "MidlineLeft",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Paragraph_1",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 760,
-                              "y": 437,
-                              "w": 53,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "89.9 MB",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 760,
-                                  "y": 437,
-                                  "w": 53,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "89.9 MB",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD66",
-                                  "alignment": "MidlineLeft"
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "ContainerFill",
-                            "type": "Image",
-                            "color": "#388BFD0F",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
-                            },
-                            "rect": {
-                              "x": 833,
-                              "y": 436,
-                              "w": 56,
-                              "h": 22
-                            },
-                            "stroke": {
-                              "color": "#93C5FD59",
-                              "weight": 0.67,
-                              "align": "Inside",
-                              "sprite": "Assets/UI/Common/ring12.png",
-                              "border": {
-                                "l": 12,
-                                "t": 12,
-                                "r": 12,
-                                "b": 12
-                              }
-                            },
-                            "children": [
-                              {
-                                "name": "Text",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 844,
-                                  "y": 438,
-                                  "w": 34,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "待上传",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 844,
-                                      "y": 439,
-                                      "w": 34,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "待上传",
-                                      "fontSize": 11,
-                                      "color": "#93C5FD59",
-                                      "alignment": "MidlineLeft"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Text",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 909,
-                              "y": 437,
-                              "w": 40,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "—",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 936,
-                                  "y": 437,
-                                  "w": 13,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "—",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD59",
-                                  "alignment": "MidlineRight",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Container_1",
-                        "type": "Image",
-                        "color": "#388BFD14",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 474,
-                          "w": 821,
-                          "h": 3
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#388BFD99",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 137,
-                              "y": 474,
-                              "w": 0,
-                              "h": 3
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "SegmentRowFill_5",
-                    "type": "Image",
-                    "color": "#0A183773",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 137,
-                      "y": 485,
-                      "w": 833,
-                      "h": 58
-                    },
-                    "stroke": {
-                      "color": "#388BFD26",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    },
-                    "children": [
-                      {
-                        "name": "Container",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 486,
-                          "w": 831,
-                          "h": 54
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#93C5FD59",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 157,
-                              "y": 510,
-                              "w": 6,
-                              "h": 6
-                            },
-                            "sprite": "Assets/UI/Common/round24.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 24,
-                              "t": 24,
-                              "r": 24,
-                              "b": 24
-                            }
-                          },
-                          {
-                            "name": "Paragraph",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 183,
-                              "y": 502,
-                              "w": 551,
-                              "h": 22
-                            },
-                            "children": [
-                              {
-                                "name": "20260608_210044",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 183,
-                                  "y": 503,
-                                  "w": 137,
-                                  "h": 22
-                                },
-                                "text": {
-                                  "content": "20260608_210044",
-                                  "fontSize": 14,
-                                  "color": "#E8F4FFE0",
-                                  "alignment": "MidlineLeft",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Paragraph_1",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 755,
-                              "y": 503,
-                              "w": 59,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "155.2 MB",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 755,
-                                  "y": 503,
-                                  "w": 59,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "155.2 MB",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD66",
-                                  "alignment": "MidlineLeft"
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "ContainerFill",
-                            "type": "Image",
-                            "color": "#388BFD0F",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
-                            },
-                            "rect": {
-                              "x": 833,
-                              "y": 502,
-                              "w": 56,
-                              "h": 22
-                            },
-                            "stroke": {
-                              "color": "#93C5FD59",
-                              "weight": 0.67,
-                              "align": "Inside",
-                              "sprite": "Assets/UI/Common/ring12.png",
-                              "border": {
-                                "l": 12,
-                                "t": 12,
-                                "r": 12,
-                                "b": 12
-                              }
-                            },
-                            "children": [
-                              {
-                                "name": "Text",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 844,
-                                  "y": 505,
-                                  "w": 34,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "待上传",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 844,
-                                      "y": 505,
-                                      "w": 34,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "待上传",
-                                      "fontSize": 11,
-                                      "color": "#93C5FD59",
-                                      "alignment": "MidlineLeft"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Text",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 909,
-                              "y": 503,
-                              "w": 40,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "—",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 936,
-                                  "y": 504,
-                                  "w": 13,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "—",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD59",
-                                  "alignment": "MidlineRight",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Container_1",
-                        "type": "Image",
-                        "color": "#388BFD14",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 540,
-                          "w": 821,
-                          "h": 3
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#388BFD99",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 137,
-                              "y": 540,
-                              "w": 0,
-                              "h": 3
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "SegmentRowFill_6",
-                    "type": "Image",
-                    "color": "#0A183773",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 137,
-                      "y": 552,
-                      "w": 833,
-                      "h": 58
-                    },
-                    "stroke": {
-                      "color": "#388BFD26",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    },
-                    "children": [
-                      {
-                        "name": "Container",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 552,
-                          "w": 831,
-                          "h": 54
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#93C5FD59",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 157,
-                              "y": 576,
-                              "w": 6,
-                              "h": 6
-                            },
-                            "sprite": "Assets/UI/Common/round24.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 24,
-                              "t": 24,
-                              "r": 24,
-                              "b": 24
-                            }
-                          },
-                          {
-                            "name": "Paragraph",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 183,
-                              "y": 568,
-                              "w": 557,
-                              "h": 22
-                            },
-                            "children": [
-                              {
-                                "name": "20260608_210830",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 183,
-                                  "y": 569,
-                                  "w": 136,
-                                  "h": 22
-                                },
-                                "text": {
-                                  "content": "20260608_210830",
-                                  "fontSize": 14,
-                                  "color": "#E8F4FFE0",
-                                  "alignment": "MidlineLeft",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Paragraph_1",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 760,
-                              "y": 569,
-                              "w": 53,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "63.5 MB",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 760,
-                                  "y": 569,
-                                  "w": 53,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "63.5 MB",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD66",
-                                  "alignment": "MidlineLeft"
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "ContainerFill",
-                            "type": "Image",
-                            "color": "#388BFD0F",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
-                            },
-                            "rect": {
-                              "x": 833,
-                              "y": 568,
-                              "w": 56,
-                              "h": 22
-                            },
-                            "stroke": {
-                              "color": "#93C5FD59",
-                              "weight": 0.67,
-                              "align": "Inside",
-                              "sprite": "Assets/UI/Common/ring12.png",
-                              "border": {
-                                "l": 12,
-                                "t": 12,
-                                "r": 12,
-                                "b": 12
-                              }
-                            },
-                            "children": [
-                              {
-                                "name": "Text",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 844,
-                                  "y": 571,
-                                  "w": 34,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "待上传",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 844,
-                                      "y": 571,
-                                      "w": 34,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "待上传",
-                                      "fontSize": 11,
-                                      "color": "#93C5FD59",
-                                      "alignment": "MidlineLeft"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Text",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 909,
-                              "y": 570,
-                              "w": 40,
-                              "h": 20
-                            },
-                            "children": [
-                              {
-                                "name": "—",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 936,
-                                  "y": 570,
-                                  "w": 13,
-                                  "h": 20
-                                },
-                                "text": {
-                                  "content": "—",
-                                  "fontSize": 13,
-                                  "color": "#93C5FD59",
-                                  "alignment": "MidlineRight",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Container_1",
-                        "type": "Image",
-                        "color": "#388BFD14",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 137,
-                          "y": 606,
-                          "w": 821,
-                          "h": 3
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#388BFD99",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 137,
-                              "y": 606,
-                              "w": 0,
-                              "h": 3
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Container_1",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 120,
-                  "y": 606,
-                  "w": 866,
-                  "h": 44
-                },
-                "children": [
-                  {
                     "name": "Container",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 120,
-                      "y": 626,
-                      "w": 866,
-                      "h": 24
+                      "x": 135,
+                      "y": 144,
+                      "w": 819,
+                      "h": 52
                     },
                     "children": [
                       {
                         "name": "Container",
                         "type": "Image",
-                        "color": "#388BFD1A",
+                        "color": "#93C5FD59",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 120,
-                          "y": 637,
-                          "w": 866,
-                          "h": 2
+                          "x": 155,
+                          "y": 167,
+                          "w": 6,
+                          "h": 6
                         },
                         "sprite": "Assets/UI/Common/round24.png",
                         "imageType": "Sliced",
@@ -2041,43 +222,228 @@
                           "t": 24,
                           "r": 24,
                           "b": 24
+                        }
+                      },
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 181,
+                          "y": 159,
+                          "w": 550,
+                          "h": 22
                         },
                         "children": [
                           {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#388BFD99",
+                            "name": "20260608_202511",
+                            "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 120,
-                              "y": 637,
-                              "w": 0,
-                              "h": 2
+                              "x": 181,
+                              "y": 160,
+                              "w": 133,
+                              "h": 22
                             },
-                            "sprite": "Assets/UI/Common/round24.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 24,
-                              "t": 24,
-                              "r": 24,
-                              "b": 24
+                            "text": {
+                              "content": "20260608_202511",
+                              "fontSize": 14,
+                              "color": "#E8F4FFE5",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              }
                             }
                           }
                         ]
+                      },
+                      {
+                        "name": "Paragraph_1",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 751,
+                          "y": 160,
+                          "w": 48,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "98.1 MB",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 751,
+                              "y": 160,
+                              "w": 49,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "98.1 MB",
+                              "fontSize": 13,
+                              "color": "#93C5FD73",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ContainerFill",
+                        "type": "Image",
+                        "color": "#388BFD0F",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "rect": {
+                          "x": 819,
+                          "y": 159,
+                          "w": 56,
+                          "h": 22
+                        },
+                        "stroke": {
+                          "color": "#93C5FD59",
+                          "weight": 0.67,
+                          "align": "Inside",
+                          "sprite": "Assets/UI/Common/ring12.png",
+                          "border": {
+                            "l": 12,
+                            "t": 12,
+                            "r": 12,
+                            "b": 12
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 830,
+                              "y": 162,
+                              "w": 34,
+                              "h": 16
+                            },
+                            "children": [
+                              {
+                                "name": "待上传",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 830,
+                                  "y": 162,
+                                  "w": 34,
+                                  "h": 17
+                                },
+                                "text": {
+                                  "content": "待上传",
+                                  "fontSize": 11,
+                                  "color": "#93C5FD59",
+                                  "alignment": "MidlineLeft"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 895,
+                          "y": 161,
+                          "w": 40,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "—",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 922,
+                              "y": 161,
+                              "w": 13,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "—",
+                              "fontSize": 13,
+                              "color": "#93C5FD59",
+                              "alignment": "MidlineRight",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container_1",
+                    "type": "Image",
+                    "color": "#388BFD14",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 196,
+                      "w": 819,
+                      "h": 3
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#388BFDA6",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 135,
+                          "y": 196,
+                          "w": 0,
+                          "h": 3
+                        }
                       }
                     ]
                   }
                 ]
               },
               {
-                "name": "Container_2",
-                "type": "Container",
+                "name": "SegmentRowFill_1",
+                "type": "Image",
+                "color": "#081432B2",
                 "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
                 "rect": {
-                  "x": 120,
-                  "y": 650,
-                  "w": 866,
-                  "h": 64
+                  "x": 135,
+                  "y": 208,
+                  "w": 821,
+                  "h": 56
+                },
+                "stroke": {
+                  "color": "#388BFD2E",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
                 },
                 "children": [
                   {
@@ -2085,78 +451,100 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 120,
-                      "y": 674,
-                      "w": 866,
-                      "h": 40
+                      "x": 135,
+                      "y": 209,
+                      "w": 819,
+                      "h": 52
                     },
                     "children": [
                       {
-                        "name": "Button",
+                        "name": "Container",
                         "type": "Image",
-                        "color": "#FFFFFF0D",
+                        "color": "#93C5FD59",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 120,
-                          "y": 674,
-                          "w": 423,
-                          "h": 40
+                          "x": 155,
+                          "y": 232,
+                          "w": 6,
+                          "h": 6
                         },
-                        "sprite": "Assets/UI/Common/round12.png",
+                        "sprite": "Assets/UI/Common/round24.png",
                         "imageType": "Sliced",
                         "border": {
-                          "l": 12,
-                          "t": 12,
-                          "r": 12,
-                          "b": 12
+                          "l": 24,
+                          "t": 24,
+                          "r": 24,
+                          "b": 24
+                        }
+                      },
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 181,
+                          "y": 224,
+                          "w": 541,
+                          "h": 22
                         },
                         "children": [
                           {
-                            "name": "继续采集",
+                            "name": "20260608_203145",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 302,
-                              "y": 684,
-                              "w": 59,
-                              "h": 21
+                              "x": 181,
+                              "y": 224,
+                              "w": 136,
+                              "h": 22
                             },
                             "text": {
-                              "content": "继续采集",
+                              "content": "20260608_203145",
                               "fontSize": 14,
-                              "color": "#93C5FDA6",
-                              "alignment": "Center",
+                              "color": "#E8F4FFE5",
+                              "alignment": "MidlineLeft",
                               "style": {
                                 "bold": true
                               }
-                            }
-                          },
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#FFFFFF",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/UpLoadPanel/Icons/corner1.png",
-                            "rect": {
-                              "x": 120,
-                              "y": 674,
-                              "w": 423,
-                              "h": 40
                             }
                           }
                         ]
                       },
                       {
-                        "name": "Button_1",
-                        "type": "Image",
-                        "color": "#388BFD2E",
+                        "name": "Paragraph_1",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 563,
-                          "y": 674,
-                          "w": 423,
-                          "h": 40
+                          "x": 742,
+                          "y": 225,
+                          "w": 57,
+                          "h": 20
                         },
+                        "children": [
+                          {
+                            "name": "134.7 MB",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 742,
+                              "y": 225,
+                              "w": 57,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "134.7 MB",
+                              "fontSize": 13,
+                              "color": "#93C5FD73",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ContainerFill",
+                        "type": "Image",
+                        "color": "#388BFD0F",
+                        "raycastTarget": false,
                         "sprite": "Assets/UI/Common/round12.png",
                         "imageType": "Sliced",
                         "border": {
@@ -2165,64 +553,1636 @@
                           "r": 12,
                           "b": 12
                         },
+                        "rect": {
+                          "x": 819,
+                          "y": 224,
+                          "w": 56,
+                          "h": 22
+                        },
+                        "stroke": {
+                          "color": "#93C5FD59",
+                          "weight": 0.67,
+                          "align": "Inside",
+                          "sprite": "Assets/UI/Common/ring12.png",
+                          "border": {
+                            "l": 12,
+                            "t": 12,
+                            "r": 12,
+                            "b": 12
+                          }
+                        },
                         "children": [
                           {
-                            "name": "去上传",
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 830,
+                              "y": 226,
+                              "w": 34,
+                              "h": 16
+                            },
+                            "children": [
+                              {
+                                "name": "待上传",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 830,
+                                  "y": 227,
+                                  "w": 34,
+                                  "h": 17
+                                },
+                                "text": {
+                                  "content": "待上传",
+                                  "fontSize": 11,
+                                  "color": "#93C5FD59",
+                                  "alignment": "MidlineLeft"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 895,
+                          "y": 225,
+                          "w": 40,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "—",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 752,
-                              "y": 684,
-                              "w": 44,
-                              "h": 21
+                              "x": 922,
+                              "y": 225,
+                              "w": 13,
+                              "h": 20
                             },
                             "text": {
-                              "content": "去上传",
-                              "fontSize": 14,
-                              "color": "#A8D4FF",
-                              "alignment": "Center",
+                              "content": "—",
+                              "fontSize": 13,
+                              "color": "#93C5FD59",
+                              "alignment": "MidlineRight",
                               "style": {
                                 "bold": true
-                              }
-                            }
-                          },
-                          {
-                            "name": "ContainerFill",
-                            "type": "Image",
-                            "color": "#FFFFFF00",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
-                            },
-                            "rect": {
-                              "x": 563,
-                              "y": 674,
-                              "w": 423,
-                              "h": 40
-                            },
-                            "stroke": {
-                              "color": "#388BFD80",
-                              "weight": 0.67,
-                              "align": "Inside",
-                              "sprite": "Assets/UI/Common/ring12.png",
-                              "border": {
-                                "l": 12,
-                                "t": 12,
-                                "r": 12,
-                                "b": 12
                               }
                             }
                           }
                         ]
                       }
                     ]
+                  },
+                  {
+                    "name": "Container_1",
+                    "type": "Image",
+                    "color": "#388BFD14",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 261,
+                      "w": 819,
+                      "h": 3
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#388BFDA6",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 135,
+                          "y": 261,
+                          "w": 0,
+                          "h": 3
+                        }
+                      }
+                    ]
                   }
                 ]
+              },
+              {
+                "name": "SegmentRowFill_2",
+                "type": "Image",
+                "color": "#081432B2",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 135,
+                  "y": 272,
+                  "w": 821,
+                  "h": 56
+                },
+                "stroke": {
+                  "color": "#388BFD2E",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 273,
+                      "w": 819,
+                      "h": 52
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#93C5FD59",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 155,
+                          "y": 296,
+                          "w": 6,
+                          "h": 6
+                        },
+                        "sprite": "Assets/UI/Common/round24.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 24,
+                          "t": 24,
+                          "r": 24,
+                          "b": 24
+                        }
+                      },
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 181,
+                          "y": 288,
+                          "w": 547,
+                          "h": 22
+                        },
+                        "children": [
+                          {
+                            "name": "20260608_203902",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 181,
+                              "y": 289,
+                              "w": 138,
+                              "h": 22
+                            },
+                            "text": {
+                              "content": "20260608_203902",
+                              "fontSize": 14,
+                              "color": "#E8F4FFE5",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_1",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 749,
+                          "y": 289,
+                          "w": 50,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "76.4 MB",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 749,
+                              "y": 289,
+                              "w": 51,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "76.4 MB",
+                              "fontSize": 13,
+                              "color": "#93C5FD73",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ContainerFill",
+                        "type": "Image",
+                        "color": "#388BFD0F",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "rect": {
+                          "x": 819,
+                          "y": 288,
+                          "w": 56,
+                          "h": 22
+                        },
+                        "stroke": {
+                          "color": "#93C5FD59",
+                          "weight": 0.67,
+                          "align": "Inside",
+                          "sprite": "Assets/UI/Common/ring12.png",
+                          "border": {
+                            "l": 12,
+                            "t": 12,
+                            "r": 12,
+                            "b": 12
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 830,
+                              "y": 291,
+                              "w": 34,
+                              "h": 16
+                            },
+                            "children": [
+                              {
+                                "name": "待上传",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 830,
+                                  "y": 291,
+                                  "w": 34,
+                                  "h": 17
+                                },
+                                "text": {
+                                  "content": "待上传",
+                                  "fontSize": 11,
+                                  "color": "#93C5FD59",
+                                  "alignment": "MidlineLeft"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 895,
+                          "y": 289,
+                          "w": 40,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "—",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 922,
+                              "y": 290,
+                              "w": 13,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "—",
+                              "fontSize": 13,
+                              "color": "#93C5FD59",
+                              "alignment": "MidlineRight",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container_1",
+                    "type": "Image",
+                    "color": "#388BFD14",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 325,
+                      "w": 819,
+                      "h": 3
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#388BFDA6",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 135,
+                          "y": 325,
+                          "w": 0,
+                          "h": 3
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SegmentRowFill_3",
+                "type": "Image",
+                "color": "#081432B2",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 135,
+                  "y": 337,
+                  "w": 821,
+                  "h": 56
+                },
+                "stroke": {
+                  "color": "#388BFD2E",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 337,
+                      "w": 819,
+                      "h": 52
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#93C5FD59",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 155,
+                          "y": 360,
+                          "w": 6,
+                          "h": 6
+                        },
+                        "sprite": "Assets/UI/Common/round24.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 24,
+                          "t": 24,
+                          "r": 24,
+                          "b": 24
+                        }
+                      },
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 181,
+                          "y": 352,
+                          "w": 543,
+                          "h": 22
+                        },
+                        "children": [
+                          {
+                            "name": "20260608_204618",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 181,
+                              "y": 353,
+                              "w": 136,
+                              "h": 22
+                            },
+                            "text": {
+                              "content": "20260608_204618",
+                              "fontSize": 14,
+                              "color": "#E8F4FFE5",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_1",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 744,
+                          "y": 353,
+                          "w": 55,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "112.3 MB",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 744,
+                              "y": 353,
+                              "w": 56,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "112.3 MB",
+                              "fontSize": 13,
+                              "color": "#93C5FD73",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ContainerFill",
+                        "type": "Image",
+                        "color": "#388BFD0F",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "rect": {
+                          "x": 819,
+                          "y": 352,
+                          "w": 56,
+                          "h": 22
+                        },
+                        "stroke": {
+                          "color": "#93C5FD59",
+                          "weight": 0.67,
+                          "align": "Inside",
+                          "sprite": "Assets/UI/Common/ring12.png",
+                          "border": {
+                            "l": 12,
+                            "t": 12,
+                            "r": 12,
+                            "b": 12
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 830,
+                              "y": 355,
+                              "w": 34,
+                              "h": 16
+                            },
+                            "children": [
+                              {
+                                "name": "待上传",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 830,
+                                  "y": 355,
+                                  "w": 34,
+                                  "h": 17
+                                },
+                                "text": {
+                                  "content": "待上传",
+                                  "fontSize": 11,
+                                  "color": "#93C5FD59",
+                                  "alignment": "MidlineLeft"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 895,
+                          "y": 354,
+                          "w": 40,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "—",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 922,
+                              "y": 354,
+                              "w": 13,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "—",
+                              "fontSize": 13,
+                              "color": "#93C5FD59",
+                              "alignment": "MidlineRight",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container_1",
+                    "type": "Image",
+                    "color": "#388BFD14",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 389,
+                      "w": 819,
+                      "h": 3
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#388BFDA6",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 135,
+                          "y": 389,
+                          "w": 0,
+                          "h": 3
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SegmentRowFill_4",
+                "type": "Image",
+                "color": "#081432B2",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 135,
+                  "y": 401,
+                  "w": 821,
+                  "h": 56
+                },
+                "stroke": {
+                  "color": "#388BFD2E",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 402,
+                      "w": 819,
+                      "h": 52
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#93C5FD59",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 155,
+                          "y": 425,
+                          "w": 6,
+                          "h": 6
+                        },
+                        "sprite": "Assets/UI/Common/round24.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 24,
+                          "t": 24,
+                          "r": 24,
+                          "b": 24
+                        }
+                      },
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 181,
+                          "y": 417,
+                          "w": 547,
+                          "h": 22
+                        },
+                        "children": [
+                          {
+                            "name": "20260608_205301",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 181,
+                              "y": 417,
+                              "w": 136,
+                              "h": 22
+                            },
+                            "text": {
+                              "content": "20260608_205301",
+                              "fontSize": 14,
+                              "color": "#E8F4FFE5",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_1",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 748,
+                          "y": 418,
+                          "w": 51,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "89.9 MB",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 748,
+                              "y": 418,
+                              "w": 52,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "89.9 MB",
+                              "fontSize": 13,
+                              "color": "#93C5FD73",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ContainerFill",
+                        "type": "Image",
+                        "color": "#388BFD0F",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "rect": {
+                          "x": 819,
+                          "y": 417,
+                          "w": 56,
+                          "h": 22
+                        },
+                        "stroke": {
+                          "color": "#93C5FD59",
+                          "weight": 0.67,
+                          "align": "Inside",
+                          "sprite": "Assets/UI/Common/ring12.png",
+                          "border": {
+                            "l": 12,
+                            "t": 12,
+                            "r": 12,
+                            "b": 12
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 830,
+                              "y": 419,
+                              "w": 34,
+                              "h": 16
+                            },
+                            "children": [
+                              {
+                                "name": "待上传",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 830,
+                                  "y": 420,
+                                  "w": 34,
+                                  "h": 17
+                                },
+                                "text": {
+                                  "content": "待上传",
+                                  "fontSize": 11,
+                                  "color": "#93C5FD59",
+                                  "alignment": "MidlineLeft"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 895,
+                          "y": 418,
+                          "w": 40,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "—",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 922,
+                              "y": 418,
+                              "w": 13,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "—",
+                              "fontSize": 13,
+                              "color": "#93C5FD59",
+                              "alignment": "MidlineRight",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container_1",
+                    "type": "Image",
+                    "color": "#388BFD14",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 454,
+                      "w": 819,
+                      "h": 3
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#388BFDA6",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 135,
+                          "y": 454,
+                          "w": 0,
+                          "h": 3
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SegmentRowFill_5",
+                "type": "Image",
+                "color": "#081432B2",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 135,
+                  "y": 465,
+                  "w": 821,
+                  "h": 56
+                },
+                "stroke": {
+                  "color": "#388BFD2E",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 466,
+                      "w": 819,
+                      "h": 52
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#93C5FD59",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 155,
+                          "y": 489,
+                          "w": 6,
+                          "h": 6
+                        },
+                        "sprite": "Assets/UI/Common/round24.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 24,
+                          "t": 24,
+                          "r": 24,
+                          "b": 24
+                        }
+                      },
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 181,
+                          "y": 481,
+                          "w": 541,
+                          "h": 22
+                        },
+                        "children": [
+                          {
+                            "name": "20260608_210044",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 181,
+                              "y": 482,
+                              "w": 137,
+                              "h": 22
+                            },
+                            "text": {
+                              "content": "20260608_210044",
+                              "fontSize": 14,
+                              "color": "#E8F4FFE5",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_1",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 743,
+                          "y": 482,
+                          "w": 57,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "155.2 MB",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 743,
+                              "y": 482,
+                              "w": 57,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "155.2 MB",
+                              "fontSize": 13,
+                              "color": "#93C5FD73",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ContainerFill",
+                        "type": "Image",
+                        "color": "#388BFD0F",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "rect": {
+                          "x": 819,
+                          "y": 481,
+                          "w": 56,
+                          "h": 22
+                        },
+                        "stroke": {
+                          "color": "#93C5FD59",
+                          "weight": 0.67,
+                          "align": "Inside",
+                          "sprite": "Assets/UI/Common/ring12.png",
+                          "border": {
+                            "l": 12,
+                            "t": 12,
+                            "r": 12,
+                            "b": 12
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 830,
+                              "y": 484,
+                              "w": 34,
+                              "h": 16
+                            },
+                            "children": [
+                              {
+                                "name": "待上传",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 830,
+                                  "y": 484,
+                                  "w": 34,
+                                  "h": 17
+                                },
+                                "text": {
+                                  "content": "待上传",
+                                  "fontSize": 11,
+                                  "color": "#93C5FD59",
+                                  "alignment": "MidlineLeft"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 895,
+                          "y": 482,
+                          "w": 40,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "—",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 922,
+                              "y": 483,
+                              "w": 13,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "—",
+                              "fontSize": 13,
+                              "color": "#93C5FD59",
+                              "alignment": "MidlineRight",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container_1",
+                    "type": "Image",
+                    "color": "#388BFD14",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 518,
+                      "w": 819,
+                      "h": 3
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#388BFDA6",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 135,
+                          "y": 518,
+                          "w": 0,
+                          "h": 3
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "SegmentRowFill_6",
+                "type": "Image",
+                "color": "#081432B2",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 135,
+                  "y": 530,
+                  "w": 821,
+                  "h": 56
+                },
+                "stroke": {
+                  "color": "#388BFD2E",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 530,
+                      "w": 819,
+                      "h": 52
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#93C5FD59",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 155,
+                          "y": 553,
+                          "w": 6,
+                          "h": 6
+                        },
+                        "sprite": "Assets/UI/Common/round24.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 24,
+                          "t": 24,
+                          "r": 24,
+                          "b": 24
+                        }
+                      },
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 181,
+                          "y": 545,
+                          "w": 547,
+                          "h": 22
+                        },
+                        "children": [
+                          {
+                            "name": "20260608_210830",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 181,
+                              "y": 546,
+                              "w": 136,
+                              "h": 22
+                            },
+                            "text": {
+                              "content": "20260608_210830",
+                              "fontSize": 14,
+                              "color": "#E8F4FFE5",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_1",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 748,
+                          "y": 546,
+                          "w": 51,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "63.5 MB",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 748,
+                              "y": 546,
+                              "w": 52,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "63.5 MB",
+                              "fontSize": 13,
+                              "color": "#93C5FD73",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "ContainerFill",
+                        "type": "Image",
+                        "color": "#388BFD0F",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/Common/round12.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 12,
+                          "t": 12,
+                          "r": 12,
+                          "b": 12
+                        },
+                        "rect": {
+                          "x": 819,
+                          "y": 545,
+                          "w": 56,
+                          "h": 22
+                        },
+                        "stroke": {
+                          "color": "#93C5FD59",
+                          "weight": 0.67,
+                          "align": "Inside",
+                          "sprite": "Assets/UI/Common/ring12.png",
+                          "border": {
+                            "l": 12,
+                            "t": 12,
+                            "r": 12,
+                            "b": 12
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Text",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 830,
+                              "y": 548,
+                              "w": 34,
+                              "h": 16
+                            },
+                            "children": [
+                              {
+                                "name": "待上传",
+                                "type": "Text",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 830,
+                                  "y": 548,
+                                  "w": 34,
+                                  "h": 17
+                                },
+                                "text": {
+                                  "content": "待上传",
+                                  "fontSize": 11,
+                                  "color": "#93C5FD59",
+                                  "alignment": "MidlineLeft"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 895,
+                          "y": 547,
+                          "w": 40,
+                          "h": 20
+                        },
+                        "children": [
+                          {
+                            "name": "—",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 922,
+                              "y": 547,
+                              "w": 13,
+                              "h": 20
+                            },
+                            "text": {
+                              "content": "—",
+                              "fontSize": 13,
+                              "color": "#93C5FD59",
+                              "alignment": "MidlineRight",
+                              "style": {
+                                "bold": true
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container_1",
+                    "type": "Image",
+                    "color": "#388BFD14",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 135,
+                      "y": 582,
+                      "w": 819,
+                      "h": 3
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Image",
+                        "color": "#388BFDA6",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 135,
+                          "y": 582,
+                          "w": 0,
+                          "h": 3
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Container_1",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 969,
+              "y": 130,
+              "w": 16,
+              "h": 484
+            },
+            "children": [
+              {
+                "name": "Container",
+                "type": "Image",
+                "color": "#388BFD1A",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 973,
+                  "y": 142,
+                  "w": 4,
+                  "h": 460
+                },
+                "sprite": "Assets/UI/Common/round24.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 24,
+                  "t": 24,
+                  "r": 24,
+                  "b": 24
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Image",
+                    "color": "#388BFD2E",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 973,
+                      "y": 142,
+                      "w": 4,
+                      "h": 129
+                    },
+                    "sprite": "Assets/UI/Common/round24.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 24,
+                      "t": 24,
+                      "r": 24,
+                      "b": 24
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Container",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 120,
+          "y": 632,
+          "w": 866,
+          "h": 22
+        },
+        "children": [
+          {
+            "name": "Container",
+            "type": "Image",
+            "color": "#388BFD1A",
+            "raycastTarget": false,
+            "rect": {
+              "x": 120,
+              "y": 642,
+              "w": 866,
+              "h": 2
+            },
+            "sprite": "Assets/UI/Common/round24.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 24,
+              "t": 24,
+              "r": 24,
+              "b": 24
+            },
+            "children": [
+              {
+                "name": "Container",
+                "type": "Image",
+                "color": "#388BFD99",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 120,
+                  "y": 642,
+                  "w": 0,
+                  "h": 2
+                },
+                "sprite": "Assets/UI/Common/round24.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 24,
+                  "t": 24,
+                  "r": 24,
+                  "b": 24
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Container_1",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 120,
+          "y": 674,
+          "w": 866,
+          "h": 40
+        },
+        "children": [
+          {
+            "name": "Button",
+            "type": "Image",
+            "color": "#FFFFFF0D",
+            "raycastTarget": false,
+            "rect": {
+              "x": 120,
+              "y": 674,
+              "w": 423,
+              "h": 40
+            },
+            "sprite": "Assets/UI/Common/round12.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 12,
+              "t": 12,
+              "r": 12,
+              "b": 12
+            },
+            "children": [
+              {
+                "name": "继续采集",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 302,
+                  "y": 684,
+                  "w": 59,
+                  "h": 21
+                },
+                "text": {
+                  "content": "继续采集",
+                  "fontSize": 14,
+                  "color": "#93C5FDA6",
+                  "alignment": "Center",
+                  "style": {
+                    "bold": true
+                  }
+                }
+              },
+              {
+                "name": "Container",
+                "type": "Image",
+                "color": "#FFFFFF",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/UpLoadPanel/Icons/corner1.png",
+                "rect": {
+                  "x": 120,
+                  "y": 674,
+                  "w": 423,
+                  "h": 40
+                }
+              }
+            ]
+          },
+          {
+            "name": "Button_1",
+            "type": "Image",
+            "color": "#388BFD2E",
+            "raycastTarget": false,
+            "rect": {
+              "x": 563,
+              "y": 674,
+              "w": 423,
+              "h": 40
+            },
+            "sprite": "Assets/UI/Common/round12.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 12,
+              "t": 12,
+              "r": 12,
+              "b": 12
+            },
+            "children": [
+              {
+                "name": "去上传",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 752,
+                  "y": 684,
+                  "w": 44,
+                  "h": 21
+                },
+                "text": {
+                  "content": "去上传",
+                  "fontSize": 14,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "style": {
+                    "bold": true
+                  }
+                }
+              },
+              {
+                "name": "ContainerFill",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 563,
+                  "y": 674,
+                  "w": 423,
+                  "h": 40
+                },
+                "stroke": {
+                  "color": "#388BFD80",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                }
               }
             ]
           }

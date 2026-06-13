@@ -21,7 +21,7 @@ namespace Game.UI
     {
         public string name;
 
-        /// <summary>Container | Image | RawImage | Text | Button</summary>
+        /// <summary>Container | Image | RawImage | Text | Button | InputField | ScrollList | Dropdown | Toggle | Slider | Scrollbar</summary>
         public string type = "Container";
 
         /// <summary>设计绝对像素矩形（左上原点）。</summary>
@@ -81,7 +81,42 @@ namespace Game.UI
         /// <summary>type=InputField 的密码显隐切换图标（眼睛）；null=无。</summary>
         public UIPasswordToggle passwordToggle;
 
+        // ===== 标准 UGUI 组件（spec 004 Phase 2.6）：补齐 GameObject▸UI 全套 =====
+
+        /// <summary>type=ScrollList 的滚动方向配置；null = 竖向滚动默认。children 落到 Content 下，保留各自绝对坐标。</summary>
+        public UIScroll scroll;
+
+        /// <summary>type=Dropdown 的候选项文本；空=无项。type=Dropdown 时 text 作为默认显示项(caption)。</summary>
+        public List<string> options;
+
+        /// <summary>type=Toggle 的初始勾选状态。</summary>
+        public bool isOn;
+
+        /// <summary>type=Slider / Scrollbar 的取值范围与当前值（Scrollbar 用 value，size 见 scrollbarSize）。</summary>
+        public UIRange range;
+
+        /// <summary>type=Slider / Scrollbar 方向：LeftToRight | RightToLeft | BottomToTop | TopToBottom。null=横向默认。</summary>
+        public string direction;
+
+        /// <summary>type=Scrollbar 滑块占比 0-1（视口/内容比例）。默认 0.3。</summary>
+        public float scrollbarSize = 0.3f;
+
         public List<UINode> children = new List<UINode>();
+    }
+
+    /// <summary>type=ScrollList 滚动配置（spec 004 Phase 2.6）。</summary>
+    public class UIScroll
+    {
+        public bool horizontal = false;
+        public bool vertical = true;
+    }
+
+    /// <summary>type=Slider / Scrollbar 的取值范围（spec 004 Phase 2.6）。</summary>
+    public class UIRange
+    {
+        public float min = 0f;
+        public float max = 1f;
+        public float value = 1f;
     }
 
     /// <summary>密码框显隐切换图标（spec 004 Phase 2.5）。运行期点击切换 InputField 的 Standard/Password。</summary>

@@ -68,6 +68,10 @@ secrets.local.md
 # ===== Figma 同步：拉取中间产物（易变，勿入库）。注意 /figma/ 顶层快照与索引【入库】用于恢复 =====
 /Assets/UI/*/.figma/
 
+# ===== Python 字节码缓存（脚本运行/语法检查产生）=====
+__pycache__/
+*.pyc
+
 # ===== OS =====
 .DS_Store
 Thumbs.db

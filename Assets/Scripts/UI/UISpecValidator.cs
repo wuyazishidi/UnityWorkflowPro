@@ -6,10 +6,14 @@ namespace Game.UI
     public static class UISpecValidator
     {
         public static readonly HashSet<string> ValidTypes =
-            new HashSet<string> { "Container", "Image", "RawImage", "Text", "Button", "InputField" };
+            new HashSet<string> { "Container", "Image", "RawImage", "Text", "Button", "InputField",
+                                  "ScrollList", "Dropdown", "Toggle", "Slider", "Scrollbar" };
 
         public static readonly HashSet<string> ValidImageTypes =
             new HashSet<string> { "Simple", "Sliced", "Tiled", "Filled" };
+
+        public static readonly HashSet<string> ValidDirections =
+            new HashSet<string> { "LeftToRight", "RightToLeft", "BottomToTop", "TopToBottom" };
 
         public static List<string> Validate(UISpec spec)
         {
@@ -53,6 +57,15 @@ namespace Game.UI
 
             if (node.type == "Text" && (node.text == null || string.IsNullOrEmpty(node.text.content)))
                 errors.Add($"{path}({node.name}): type=Text 必须有 text.content");
+
+            // 标准 UGUI 组件（spec 004 Phase 2.6）
+            if ((node.type == "Slider" || node.type == "Scrollbar")
+                && !string.IsNullOrWhiteSpace(node.direction) && !ValidDirections.Contains(node.direction))
+                errors.Add($"{path}({node.name}): 非法 direction='{node.direction}'");
+            if (node.range != null && node.range.max < node.range.min)
+                errors.Add($"{path}({node.name}): range.max < range.min ({node.range.max} < {node.range.min})");
+            if (node.type == "Scrollbar" && (node.scrollbarSize < 0f || node.scrollbarSize > 1f))
+                errors.Add($"{path}({node.name}): scrollbarSize 越界 {node.scrollbarSize}（应 0-1）");
 
             if (node.text != null && !string.IsNullOrWhiteSpace(node.text.alignment)
                 && !AlignmentMap.TryGet(node.text.alignment, out _))

@@ -382,7 +382,149 @@ namespace Game.Tests.EditMode
             finally { Object.DestroyImmediate(root); }
         }
 
+        // ---------- 标准 UGUI 组件（spec 004 Phase 2.6） ----------
+
+        [Test]
+        public void Validate_NewUGUITypes_Accepted()
+        {
+            var spec = NewSimpleSpec();
+            spec.root.children.Add(new UINode { name = "L", type = "ScrollList", rect = new UIRect(0, 0, 10, 10) });
+            spec.root.children.Add(new UINode { name = "D", type = "Dropdown", rect = new UIRect(0, 0, 10, 10) });
+            spec.root.children.Add(new UINode { name = "T", type = "Toggle", rect = new UIRect(0, 0, 10, 10) });
+            spec.root.children.Add(new UINode { name = "S", type = "Slider", rect = new UIRect(0, 0, 10, 10) });
+            spec.root.children.Add(new UINode { name = "B", type = "Scrollbar", rect = new UIRect(0, 0, 10, 10) });
+            Assert.IsEmpty(UISpecValidator.Validate(spec));
+        }
+
+        [Test]
+        public void Validate_BadDirectionAndRange_Errors()
+        {
+            var spec = NewSimpleSpec();
+            spec.root.children.Add(new UINode { name = "S", type = "Slider", rect = new UIRect(0, 0, 10, 10),
+                direction = "Sideways", range = new UIRange { min = 5, max = 1 } });
+            var errs = UISpecValidator.Validate(spec);
+            Assert.IsTrue(errs.Exists(e => e.Contains("direction")), "应报非法 direction");
+            Assert.IsTrue(errs.Exists(e => e.Contains("range")), "应报 range 越界");
+        }
+
+        [Test]
+        public void Build_ScrollList_WiresScrollRectAndReparentsChildren()
+        {
+            var spec = WrapSingle(new UINode
+            {
+                name = "List", type = "ScrollList", rect = new UIRect(0, 0, 400, 200),
+                scroll = new UIScroll { horizontal = false, vertical = true },
+                children = new List<UINode>
+                {
+                    new UINode { name = "Row0", type = "Image", color = "#222222", rect = new UIRect(0, 0, 400, 56) },
+                    new UINode { name = "Row1", type = "Image", color = "#333333", rect = new UIRect(0, 60, 400, 56) },
+                }
+            });
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                var list = root.transform.Find("List");
+                var sr = list.GetComponent<ScrollRect>();
+                Assert.IsNotNull(sr, "应有 ScrollRect");
+                Assert.IsTrue(sr.vertical); Assert.IsFalse(sr.horizontal);
+                Assert.IsNotNull(list.Find("Viewport").GetComponent<RectMask2D>(), "Viewport 应有 RectMask2D");
+                var content = root.transform.Find("List/Viewport/Content");
+                Assert.IsNotNull(content, "应有 Viewport/Content");
+                Assert.AreSame(content, sr.content, "ScrollRect.content 接线");
+                Assert.AreEqual(2, content.childCount, "行应重定向到 Content 下");
+                Assert.IsNotNull(content.Find("Row0"));
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
+        [Test]
+        public void Build_Dropdown_WiresTMPDropdown()
+        {
+            var spec = WrapSingle(new UINode
+            {
+                name = "DD", type = "Dropdown", color = "#0A1E46", rect = new UIRect(0, 0, 200, 40),
+                options = new List<string> { "A", "B", "C" },
+                text = new UIText { content = "选择", fontSize = 14, alignment = "MidlineLeft" }
+            });
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                var dd = root.transform.Find("DD").GetComponent<TMP_Dropdown>();
+                Assert.IsNotNull(dd, "应有 TMP_Dropdown");
+                Assert.IsNotNull(dd.captionText, "captionText 接线");
+                Assert.IsNotNull(dd.itemText, "itemText 接线");
+                Assert.IsNotNull(dd.template, "template 接线");
+                Assert.AreEqual(3, dd.options.Count, "options 写入");
+                Assert.IsFalse(root.transform.Find("DD/Template").gameObject.activeSelf, "模板默认隐藏");
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
+        [Test]
+        public void Build_Toggle_WiresToggle()
+        {
+            var spec = WrapSingle(new UINode { name = "Tg", type = "Toggle", color = "#1B2B52", rect = new UIRect(0, 0, 30, 30), isOn = true });
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                var t = root.transform.Find("Tg").GetComponent<Toggle>();
+                Assert.IsNotNull(t, "应有 Toggle");
+                Assert.IsTrue(t.isOn, "isOn 写入");
+                Assert.IsNotNull(t.targetGraphic, "targetGraphic 接线");
+                Assert.IsNotNull(t.graphic, "graphic(勾选) 接线");
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
+        [Test]
+        public void Build_Slider_WiresSlider()
+        {
+            var spec = WrapSingle(new UINode { name = "Sl", type = "Slider", rect = new UIRect(0, 0, 200, 20),
+                direction = "LeftToRight", range = new UIRange { min = 0, max = 10, value = 5 } });
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                var s = root.transform.Find("Sl").GetComponent<Slider>();
+                Assert.IsNotNull(s, "应有 Slider");
+                Assert.IsNotNull(s.fillRect, "fillRect 接线");
+                Assert.IsNotNull(s.handleRect, "handleRect 接线");
+                Assert.AreEqual(10f, s.maxValue, 1e-4);
+                Assert.AreEqual(5f, s.value, 1e-4);
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
+        [Test]
+        public void Build_Scrollbar_WiresScrollbar()
+        {
+            var spec = WrapSingle(new UINode { name = "Sb", type = "Scrollbar", rect = new UIRect(0, 0, 20, 200),
+                scrollbarSize = 0.4f, range = new UIRange { value = 0.5f } });
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                var sb = root.transform.Find("Sb").GetComponent<Scrollbar>();
+                Assert.IsNotNull(sb, "应有 Scrollbar");
+                Assert.IsNotNull(sb.handleRect, "handleRect 接线");
+                Assert.AreEqual(0.4f, sb.size, 1e-4);
+                Assert.AreEqual(0.5f, sb.value, 1e-4);
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
         // ---------- helpers ----------
+
+        private static UISpec WrapSingle(UINode child)
+        {
+            return new UISpec
+            {
+                schemaVersion = 1, referenceWidth = 800, referenceHeight = 600, rootName = "P",
+                root = new UINode
+                {
+                    name = "P", type = "Container", anchorPreset = "stretch-full", rect = new UIRect(0, 0, 800, 600),
+                    children = new List<UINode> { child }
+                }
+            };
+        }
 
         private static UISpec NewSimpleSpec()
         {

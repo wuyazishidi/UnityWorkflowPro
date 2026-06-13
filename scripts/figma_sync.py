@@ -472,8 +472,98 @@ def main():
             nd["stroke"] = stroke
         return _apply_v2(nd, n)
 
+    # ===== 标准 UGUI 组件映射（spec 004 Phase 2.6）：按命名识别 → 功能组件 =====
+    def _name_has(n, *keys):
+        low = (n.get("name", "") or "").lower()
+        return any(k.lower() in low for k in keys)
+
+    def _is_scrollbar(n):
+        return n.get("type") in ("FRAME", "INSTANCE", "COMPONENT", "GROUP", "RECTANGLE") \
+            and _name_has(n, "scrollbar", "滚动条")
+
+    def _is_slider(n):
+        return n.get("type") in ("FRAME", "INSTANCE", "COMPONENT") \
+            and _name_has(n, "slider", "滑块", "滑动条", "进度条", "progress")
+
+    def _is_dropdown(n):
+        return n.get("type") in ("FRAME", "INSTANCE", "COMPONENT") \
+            and _name_has(n, "dropdown", "下拉", "选择器", "select")
+
+    def _is_toggle(n):
+        return n.get("type") in ("FRAME", "INSTANCE", "COMPONENT", "RECTANGLE", "GROUP") \
+            and _name_has(n, "toggle", "checkbox", "复选", "勾选", "radio", "单选")
+
+    def _is_scroll_list(n):
+        """命名含 scroll/list/列表/滚动，或 clipsContent 且含 >=3 个等高行 → 滚动列表。"""
+        if n.get("type") != "FRAME":
+            return False
+        if _name_has(n, "scrolllist", "scrollview", "scroll", "list", "列表", "滚动"):
+            return True
+        if n.get("clipsContent"):
+            rows = [c for c in n.get("children", []) if c.get("type") in ("FRAME", "INSTANCE", "COMPONENT", "GROUP")]
+            if len(rows) >= 3:
+                hs = sorted(rect(c)["h"] for c in rows)
+                if hs[0] > 4 and hs[-1] <= hs[0] * 1.6:   # 行高聚类（最高≤最矮的1.6倍）
+                    return True
+        return False
+
+    def _round_fields(n, default_cr=0):
+        cr = int(n.get("cornerRadius") or default_cr)
+        if not cr:
+            return {}
+        sp, b = round_sprite(cr)
+        return {"sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}}
+
+    def emit_scroll_list(n):
+        nd = {"name": _san(n.get("name", "List")), "type": "ScrollList", "raycastTarget": True,
+              "rect": rect(n), "scroll": {"horizontal": False, "vertical": True}}
+        fill = first_solid_fill(n)
+        if fill:
+            nd["color"] = fill
+            nd.update(_round_fields(n))
+        return _apply_v2(nd, n)
+
+    def emit_dropdown(n):
+        nd = {"name": _san(n.get("name", "Dropdown")), "type": "Dropdown",
+              "color": first_solid_fill(n) or "#0A1E46", "rect": rect(n)}
+        nd.update(_round_fields(n, 8))
+        cap = _find_text(n)
+        if cap is not None:
+            stl = cap.get("style", {})
+            nd["text"] = {"content": cap.get("characters", ""), "fontSize": round(stl.get("fontSize", 16)),
+                          "color": first_solid_fill(cap) or "#E8F4FF", "alignment": "MidlineLeft"}
+        st = _stroke_field(n, int(n.get("cornerRadius") or 8))
+        if st:
+            nd["stroke"] = st
+        return _apply_v2(nd, n)
+
+    def emit_toggle(n):
+        nd = {"name": _san(n.get("name", "Toggle")), "type": "Toggle",
+              "color": first_solid_fill(n) or "#1B2B52", "rect": rect(n), "isOn": False}
+        nd.update(_round_fields(n))
+        st = _stroke_field(n, int(n.get("cornerRadius") or 6))
+        if st:
+            nd["stroke"] = st
+        return _apply_v2(nd, n)
+
+    def emit_slider(n):
+        nd = {"name": _san(n.get("name", "Slider")), "type": "Slider",
+              "color": first_solid_fill(n) or "#1B2B52", "rect": rect(n),
+              "direction": "LeftToRight", "range": {"min": 0, "max": 1, "value": 1}}
+        return _apply_v2(nd, n)
+
+    def emit_scrollbar(n):
+        r = rect(n)
+        horiz = r["w"] >= r["h"]
+        nd = {"name": _san(n.get("name", "Scrollbar")), "type": "Scrollbar",
+              "color": first_solid_fill(n) or "#1B2B52", "rect": r,
+              "direction": "LeftToRight" if horiz else "TopToBottom",
+              "scrollbarSize": 0.3, "range": {"min": 0, "max": 1, "value": 1}}
+        return _apply_v2(nd, n)
+
     # 递归建嵌套树：镜像 Figma 层级（上下级关系），坐标用整帧绝对值（builder 按 parentAbsX 解算相对偏移）。
-    def build_node(n):
+    # in_scroll: 已在某个 ScrollList 内部 → 不再把后代识别为 ScrollList（避免 ScrollRect 套 ScrollRect）。
+    def build_node(n, in_scroll=False):
         t = n["type"]
         if t == "VECTOR":
             return None
@@ -486,17 +576,32 @@ def main():
             return emit_input_field(n)              # 自包含（占位符/眼睛在内）
         if is_button(n) and first_stroke(n)[0]:
             return emit_bordered(n, as_button=True)  # 按钮（文字在内）
-        has_fill = first_solid_fill(n) is not None
-        has_stroke = first_stroke(n)[0] is not None
-        cr = int(n.get("cornerRadius") or 0)
-        if has_fill and has_stroke:
-            nd = emit_bordered(n)                   # 圆角+描边容器（如行底）
-        elif has_fill or has_stroke or cr:
-            nd = emit_solid(n)                      # 实色/圆角/描边容器
+        # 标准 UGUI 组件：自包含叶子（内部结构由 builder 构造，不再下钻 Figma 子节点）。
+        # 顺序：scrollbar 先于 scroll_list（名字含 "scroll"/"滚动" 会同时命中）。
+        if _is_scrollbar(n):
+            return emit_scrollbar(n)
+        if _is_slider(n):
+            return emit_slider(n)
+        if _is_dropdown(n):
+            return emit_dropdown(n)
+        if _is_toggle(n):
+            return emit_toggle(n)
+        # ScrollList：容器型，保留子项（下钻），子项落到 builder 的 Content 下。嵌套内不再识别。
+        if _is_scroll_list(n) and not in_scroll:
+            nd = emit_scroll_list(n)
         else:
-            nd = {"name": _san(n.get("name", "Group")), "type": "Container",
-                  "raycastTarget": False, "rect": rect(n)}   # 纯分组容器
-        kids = [k for k in (build_node(c) for c in n.get("children", [])) if k]
+            has_fill = first_solid_fill(n) is not None
+            has_stroke = first_stroke(n)[0] is not None
+            cr = int(n.get("cornerRadius") or 0)
+            if has_fill and has_stroke:
+                nd = emit_bordered(n)               # 圆角+描边容器（如行底）
+            elif has_fill or has_stroke or cr:
+                nd = emit_solid(n)                  # 实色/圆角/描边容器
+            else:
+                nd = {"name": _san(n.get("name", "Group")), "type": "Container",
+                      "raycastTarget": False, "rect": rect(n)}   # 纯分组容器
+        child_in_scroll = in_scroll or nd.get("type") == "ScrollList"
+        kids = [k for k in (build_node(c, child_in_scroll) for c in n.get("children", [])) if k]
         if kids:
             nd["children"] = kids
         return nd

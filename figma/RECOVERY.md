@@ -21,7 +21,7 @@
 | LoginPanel | Assets/UI/LoginPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `20:388` | ✅ `figma/LoginPanel.nodes.json` | 2026-06-13T07:37:39Z |
 | TaskDetailPanel | Assets/UI/TaskDetailPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `8:40` | ❌ 源 node 已失效，真相=spec | - |
 | TaskListPanel | Assets/UI/TaskListPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `1:3` | ❌ 源 node 已失效，真相=spec | - |
-| UpLoadPanel | Assets/UI/UpLoadPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `1:2` | ❌ 源 node 已失效，真相=spec | - |
+| UpLoadPanel | Assets/UI/UpLoadPanel | `0yO2Lx5vRsG7X6OtbPqzb2` | `6:763` | ✅ `figma/UpLoadPanel.nodes.json` | 2026-06-13T10:47:37Z |
 <!-- END auto-index -->
 
 > ⚠️ 早期面板（Upload/TaskList/TaskDetail）的源 node 因从 **Figma Make 重新粘贴进 Design** 被覆盖/改名而失效（见记忆 `figma-make-paste-corruption`）。它们生成的 `<Panel>.json` 已入库，是当前存活真相；要再改设计须在 Figma 重做并给新 node-id。

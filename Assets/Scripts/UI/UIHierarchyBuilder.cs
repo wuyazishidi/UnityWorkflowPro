@@ -45,7 +45,8 @@ namespace Game.UI
                 layout = UISpecMath.TopLeft(node.rect.x, node.rect.y, node.rect.w, node.rect.h, parentAbsX, parentAbsY);
             UISpecMath.Apply(rt, layout);
 
-            // 组件
+            // 组件。childParent = 子节点的实际挂点（多数组件即 go 本身；ScrollList 重定向到 Content）。
+            Transform childParent = go.transform;
             switch (node.type)
             {
                 case "Image": BuildImage(go, node, resolver); break;
@@ -53,6 +54,11 @@ namespace Game.UI
                 case "Text": BuildText(go, node, resolver); break;
                 case "Button": BuildButton(go, node, resolver); break;
                 case "InputField": BuildInputField(go, node, resolver); break;
+                case "ScrollList": childParent = BuildScrollList(go, node, resolver); break;
+                case "Dropdown": BuildDropdown(go, node, resolver); break;
+                case "Toggle": BuildToggle(go, node, resolver); break;
+                case "Slider": BuildSlider(go, node, resolver); break;
+                case "Scrollbar": BuildScrollbar(go, node, resolver); break;
                 case "Container":
                 default: break;
             }
@@ -64,7 +70,7 @@ namespace Game.UI
                 {
                     if (child == null) continue;
                     var childGo = BuildNode(child, node.rect.x, node.rect.y, resolver);
-                    childGo.transform.SetParent(go.transform, false);
+                    childGo.transform.SetParent(childParent, false);
                 }
             }
 
@@ -227,6 +233,315 @@ namespace Game.UI
                 var toggle = eyeGo.AddComponent<PasswordVisibilityToggle>();
                 toggle.input = input;
                 toggle.button = ebtn;
+            }
+        }
+
+        // ===== 标准 UGUI 组件（spec 004 Phase 2.6） =====
+
+        /// <summary>ScrollList → ScrollRect：Viewport(RectMask2D 裁剪) + Content(承接子项，保留绝对坐标)。返回 Content 作为子节点挂点。</summary>
+        private static Transform BuildScrollList(GameObject go, UINode node, IUIAssetResolver resolver)
+        {
+            // 可选底图（有 color/sprite 才加，避免无意义白底）
+            if (!string.IsNullOrWhiteSpace(node.color) || !string.IsNullOrWhiteSpace(node.sprite))
+                AddBackground(go, node, resolver, true);
+
+            var sr = go.AddComponent<ScrollRect>();
+            sr.horizontal = node.scroll != null && node.scroll.horizontal;
+            sr.vertical = node.scroll == null || node.scroll.vertical;
+            sr.movementType = ScrollRect.MovementType.Clamped;
+            sr.scrollSensitivity = 24f;
+
+            // Viewport：裁剪窗口（RectMask2D 无需图形，省一次 draw）
+            var vpGo = new GameObject("Viewport", typeof(RectTransform));
+            UISpecMath.Apply((RectTransform)vpGo.transform, UISpecMath.StretchFull());
+            vpGo.transform.SetParent(go.transform, false);
+            vpGo.AddComponent<RectMask2D>();
+            sr.viewport = (RectTransform)vpGo.transform;
+
+            // Content：竖向滚动=顶对齐拉伸+高度；横向=左对齐拉伸+宽度
+            var contentGo = new GameObject("Content", typeof(RectTransform));
+            var crt = (RectTransform)contentGo.transform;
+            if (sr.horizontal && !sr.vertical)
+            {
+                crt.anchorMin = new Vector2(0f, 0f); crt.anchorMax = new Vector2(0f, 1f);
+                crt.pivot = new Vector2(0f, 0.5f);
+                crt.sizeDelta = new Vector2(ContentExtent(node, vertical: false), 0f);
+            }
+            else
+            {
+                crt.anchorMin = new Vector2(0f, 1f); crt.anchorMax = new Vector2(1f, 1f);
+                crt.pivot = new Vector2(0.5f, 1f);
+                crt.sizeDelta = new Vector2(0f, ContentExtent(node, vertical: true));
+            }
+            crt.anchoredPosition = Vector2.zero;
+            contentGo.transform.SetParent(vpGo.transform, false);
+            sr.content = crt;
+
+            return contentGo.transform;
+        }
+
+        /// <summary>子项绝对坐标算内容跨度（竖向=最大下沿-自身y；横向=最大右沿-自身x）。无子项退回自身宽/高。</summary>
+        private static float ContentExtent(UINode node, bool vertical)
+        {
+            float max = 0f;
+            if (node.children != null)
+                foreach (var c in node.children)
+                    if (c != null && c.rect != null)
+                        max = Mathf.Max(max, vertical ? (c.rect.y + c.rect.h - node.rect.y)
+                                                      : (c.rect.x + c.rect.w - node.rect.x));
+            float self = vertical ? node.rect.h : node.rect.w;
+            return Mathf.Max(max, self);
+        }
+
+        /// <summary>Dropdown → TMP_Dropdown：底图 + Label(caption) + Arrow + Template(下拉列表，默认隐藏)。</summary>
+        private static void BuildDropdown(GameObject go, UINode node, IUIAssetResolver resolver)
+        {
+            var bg = AddBackground(go, node, resolver, true);
+            var dd = go.AddComponent<TMP_Dropdown>();
+            dd.targetGraphic = bg;
+
+            // Label（显示当前选中项）
+            var labelGo = new GameObject("Label", typeof(RectTransform));
+            var lrt = (RectTransform)labelGo.transform;
+            lrt.anchorMin = Vector2.zero; lrt.anchorMax = Vector2.one; lrt.pivot = new Vector2(0.5f, 0.5f);
+            lrt.offsetMin = new Vector2(12f, 6f); lrt.offsetMax = new Vector2(-28f, -7f);
+            labelGo.transform.SetParent(go.transform, false);
+            var label = labelGo.AddComponent<TextMeshProUGUI>();
+            ApplyText(label, node.text ?? new UIText { content = "", fontSize = 16f, color = "#E8F4FF", alignment = "MidlineLeft" }, resolver);
+            label.raycastTarget = false;
+            dd.captionText = label;
+
+            // Arrow（右侧下拉箭头）
+            var arrowGo = new GameObject("Arrow", typeof(RectTransform));
+            var art = (RectTransform)arrowGo.transform;
+            art.anchorMin = new Vector2(1f, 0.5f); art.anchorMax = new Vector2(1f, 0.5f); art.pivot = new Vector2(0.5f, 0.5f);
+            art.sizeDelta = new Vector2(20f, 20f); art.anchoredPosition = new Vector2(-16f, 0f);
+            arrowGo.transform.SetParent(go.transform, false);
+            var arrow = arrowGo.AddComponent<Image>();
+            arrow.color = ColorUtil.ParseHexOr("#E8F4FF", Color.white);
+            arrow.raycastTarget = false;
+
+            // Template（展开列表，TMP_Dropdown 要求；默认隐藏）
+            var templateGo = BuildDropdownTemplate(go, node, resolver, out var itemLabel);
+            dd.template = (RectTransform)templateGo.transform;
+            dd.itemText = itemLabel;
+
+            dd.ClearOptions();
+            if (node.options != null && node.options.Count > 0)
+                dd.AddOptions(node.options);
+
+            templateGo.SetActive(false);
+        }
+
+        /// <summary>TMP_Dropdown 标准模板：Template(ScrollRect)+Viewport(Mask)+Content+Item(Toggle+背景/勾选/文字)。</summary>
+        private static GameObject BuildDropdownTemplate(GameObject parent, UINode node, IUIAssetResolver resolver, out TextMeshProUGUI itemLabel)
+        {
+            string panelBg = node.color ?? "#0A1E46";
+
+            var template = new GameObject("Template", typeof(RectTransform));
+            var trt = (RectTransform)template.transform;
+            trt.anchorMin = new Vector2(0f, 0f); trt.anchorMax = new Vector2(1f, 0f); trt.pivot = new Vector2(0.5f, 1f);
+            trt.anchoredPosition = new Vector2(0f, 2f); trt.sizeDelta = new Vector2(0f, 150f);
+            template.transform.SetParent(parent.transform, false);
+            var tsr = template.AddComponent<ScrollRect>();
+            var timg = template.AddComponent<Image>();
+            timg.color = ColorUtil.ParseHexOr(panelBg, Color.white);
+            tsr.horizontal = false; tsr.vertical = true; tsr.movementType = ScrollRect.MovementType.Clamped;
+
+            // Viewport（Mask 裁剪）
+            var vp = new GameObject("Viewport", typeof(RectTransform));
+            var vrt = (RectTransform)vp.transform;
+            vrt.anchorMin = Vector2.zero; vrt.anchorMax = Vector2.one; vrt.pivot = new Vector2(0f, 1f);
+            vrt.sizeDelta = Vector2.zero; vrt.anchoredPosition = Vector2.zero;
+            vp.transform.SetParent(template.transform, false);
+            var vmask = vp.AddComponent<Mask>(); vmask.showMaskGraphic = false;
+            var vimg = vp.AddComponent<Image>(); vimg.color = Color.white;
+            tsr.viewport = vrt;
+
+            // Content
+            var content = new GameObject("Content", typeof(RectTransform));
+            var crt = (RectTransform)content.transform;
+            crt.anchorMin = new Vector2(0f, 1f); crt.anchorMax = new Vector2(1f, 1f); crt.pivot = new Vector2(0.5f, 1f);
+            crt.sizeDelta = new Vector2(0f, 28f); crt.anchoredPosition = Vector2.zero;
+            content.transform.SetParent(vp.transform, false);
+            tsr.content = crt;
+
+            // Item（被 TMP_Dropdown 复制为每个候选项）
+            var item = new GameObject("Item", typeof(RectTransform));
+            var irt = (RectTransform)item.transform;
+            irt.anchorMin = new Vector2(0f, 0.5f); irt.anchorMax = new Vector2(1f, 0.5f); irt.pivot = new Vector2(0.5f, 0.5f);
+            irt.sizeDelta = new Vector2(0f, 24f); irt.anchoredPosition = Vector2.zero;
+            item.transform.SetParent(content.transform, false);
+            var itemToggle = item.AddComponent<Toggle>();
+
+            // Item Background
+            var itemBg = new GameObject("Item Background", typeof(RectTransform));
+            UISpecMath.Apply((RectTransform)itemBg.transform, UISpecMath.StretchFull());
+            itemBg.transform.SetParent(item.transform, false);
+            var itemBgImg = itemBg.AddComponent<Image>();
+            itemBgImg.color = new Color(1f, 1f, 1f, 0.04f);
+            itemToggle.targetGraphic = itemBgImg;
+
+            // Item Checkmark
+            var check = new GameObject("Item Checkmark", typeof(RectTransform));
+            var chrt = (RectTransform)check.transform;
+            chrt.anchorMin = new Vector2(0f, 0.5f); chrt.anchorMax = new Vector2(0f, 0.5f); chrt.pivot = new Vector2(0.5f, 0.5f);
+            chrt.sizeDelta = new Vector2(16f, 16f); chrt.anchoredPosition = new Vector2(12f, 0f);
+            check.transform.SetParent(item.transform, false);
+            var checkImg = check.AddComponent<Image>();
+            checkImg.color = ColorUtil.ParseHexOr("#4F8CFF", Color.white);
+            itemToggle.graphic = checkImg;
+
+            // Item Label
+            var itemLabelGo = new GameObject("Item Label", typeof(RectTransform));
+            var ilrt = (RectTransform)itemLabelGo.transform;
+            ilrt.anchorMin = Vector2.zero; ilrt.anchorMax = Vector2.one; ilrt.pivot = new Vector2(0.5f, 0.5f);
+            ilrt.offsetMin = new Vector2(28f, 1f); ilrt.offsetMax = new Vector2(-10f, -2f);
+            itemLabelGo.transform.SetParent(item.transform, false);
+            itemLabel = itemLabelGo.AddComponent<TextMeshProUGUI>();
+            ApplyText(itemLabel, new UIText { content = "Option", fontSize = 14f, color = "#E8F4FF", alignment = "MidlineLeft" }, resolver);
+            itemLabel.raycastTarget = false;
+
+            return template;
+        }
+
+        /// <summary>Toggle：背景图(targetGraphic 占满节点) + 勾选图(graphic 内缩)。节点带 text 时右侧加 Label。</summary>
+        private static void BuildToggle(GameObject go, UINode node, IUIAssetResolver resolver)
+        {
+            var toggle = go.AddComponent<Toggle>();
+
+            var bgGo = new GameObject("Background", typeof(RectTransform));
+            UISpecMath.Apply((RectTransform)bgGo.transform, UISpecMath.StretchFull());
+            bgGo.transform.SetParent(go.transform, false);
+            var bgImg = bgGo.AddComponent<Image>();
+            bgImg.color = ColorUtil.ParseHexOr(node.color, Color.white);
+            if (resolver != null && !string.IsNullOrWhiteSpace(node.sprite))
+                bgImg.sprite = resolver.ResolveSprite(node.sprite);
+            bgImg.type = ParseImageType(node.imageType);
+            toggle.targetGraphic = bgImg;
+
+            var checkGo = new GameObject("Checkmark", typeof(RectTransform));
+            var chrt = (RectTransform)checkGo.transform;
+            chrt.anchorMin = Vector2.zero; chrt.anchorMax = Vector2.one; chrt.pivot = new Vector2(0.5f, 0.5f);
+            chrt.offsetMin = new Vector2(4f, 4f); chrt.offsetMax = new Vector2(-4f, -4f);
+            checkGo.transform.SetParent(go.transform, false);
+            var checkImg = checkGo.AddComponent<Image>();
+            checkImg.color = ColorUtil.ParseHexOr("#4F8CFF", Color.white);
+            checkImg.raycastTarget = false;
+            toggle.graphic = checkImg;
+
+            toggle.isOn = node.isOn;
+
+            if (node.text != null && !string.IsNullOrEmpty(node.text.content))
+            {
+                var labelGo = new GameObject("Label", typeof(RectTransform));
+                var lrt = (RectTransform)labelGo.transform;
+                lrt.anchorMin = new Vector2(1f, 0f); lrt.anchorMax = new Vector2(1f, 1f); lrt.pivot = new Vector2(0f, 0.5f);
+                lrt.sizeDelta = new Vector2(node.rect.w * 3f, 0f); lrt.anchoredPosition = new Vector2(8f, 0f);
+                labelGo.transform.SetParent(go.transform, false);
+                var tmp = labelGo.AddComponent<TextMeshProUGUI>();
+                ApplyText(tmp, node.text, resolver);
+                tmp.raycastTarget = false;
+            }
+        }
+
+        /// <summary>Slider：Background + Fill Area/Fill + Handle Slide Area/Handle，按 range/direction 接线。</summary>
+        private static void BuildSlider(GameObject go, UINode node, IUIAssetResolver resolver)
+        {
+            var slider = go.AddComponent<Slider>();
+
+            var bgGo = new GameObject("Background", typeof(RectTransform));
+            var brt = (RectTransform)bgGo.transform;
+            brt.anchorMin = new Vector2(0f, 0.25f); brt.anchorMax = new Vector2(1f, 0.75f);
+            brt.pivot = new Vector2(0.5f, 0.5f); brt.sizeDelta = Vector2.zero; brt.anchoredPosition = Vector2.zero;
+            bgGo.transform.SetParent(go.transform, false);
+            var bgImg = bgGo.AddComponent<Image>();
+            bgImg.color = ColorUtil.ParseHexOr(node.color ?? "#1B2B52", Color.white);
+
+            var fillArea = new GameObject("Fill Area", typeof(RectTransform));
+            var fart = (RectTransform)fillArea.transform;
+            fart.anchorMin = new Vector2(0f, 0.25f); fart.anchorMax = new Vector2(1f, 0.75f);
+            fart.pivot = new Vector2(0.5f, 0.5f); fart.offsetMin = new Vector2(5f, 0f); fart.offsetMax = new Vector2(-15f, 0f);
+            fillArea.transform.SetParent(go.transform, false);
+            var fill = new GameObject("Fill", typeof(RectTransform));
+            var frt = (RectTransform)fill.transform;
+            frt.anchorMin = new Vector2(0f, 0f); frt.anchorMax = new Vector2(0f, 1f); frt.pivot = new Vector2(0.5f, 0.5f);
+            frt.sizeDelta = new Vector2(10f, 0f);
+            fill.transform.SetParent(fillArea.transform, false);
+            var fillImg = fill.AddComponent<Image>();
+            fillImg.color = ColorUtil.ParseHexOr("#4F8CFF", Color.white);
+
+            var handleArea = new GameObject("Handle Slide Area", typeof(RectTransform));
+            var hart = (RectTransform)handleArea.transform;
+            hart.anchorMin = new Vector2(0f, 0f); hart.anchorMax = new Vector2(1f, 1f); hart.pivot = new Vector2(0.5f, 0.5f);
+            hart.offsetMin = new Vector2(10f, 0f); hart.offsetMax = new Vector2(-10f, 0f);
+            handleArea.transform.SetParent(go.transform, false);
+            var handle = new GameObject("Handle", typeof(RectTransform));
+            var hrt = (RectTransform)handle.transform;
+            hrt.anchorMin = new Vector2(0f, 0f); hrt.anchorMax = new Vector2(0f, 1f); hrt.pivot = new Vector2(0.5f, 0.5f);
+            hrt.sizeDelta = new Vector2(20f, 0f);
+            handle.transform.SetParent(handleArea.transform, false);
+            var handleImg = handle.AddComponent<Image>();
+            handleImg.color = ColorUtil.ParseHexOr("#E8F4FF", Color.white);
+
+            slider.fillRect = frt;
+            slider.handleRect = hrt;
+            slider.targetGraphic = handleImg;
+            slider.direction = ParseSliderDirection(node.direction);
+            var range = node.range ?? new UIRange();
+            slider.minValue = range.min; slider.maxValue = range.max; slider.value = range.value;
+        }
+
+        /// <summary>Scrollbar：底图 + Sliding Area/Handle，按 size/value/direction 接线。</summary>
+        private static void BuildScrollbar(GameObject go, UINode node, IUIAssetResolver resolver)
+        {
+            var bgImg = go.AddComponent<Image>();
+            bgImg.color = ColorUtil.ParseHexOr(node.color ?? "#1B2B52", Color.white);
+
+            var scrollbar = go.AddComponent<Scrollbar>();
+
+            var slideArea = new GameObject("Sliding Area", typeof(RectTransform));
+            var sart = (RectTransform)slideArea.transform;
+            sart.anchorMin = Vector2.zero; sart.anchorMax = Vector2.one; sart.pivot = new Vector2(0.5f, 0.5f);
+            sart.offsetMin = new Vector2(10f, 10f); sart.offsetMax = new Vector2(-10f, -10f);
+            slideArea.transform.SetParent(go.transform, false);
+
+            var handle = new GameObject("Handle", typeof(RectTransform));
+            var hrt = (RectTransform)handle.transform;
+            hrt.anchorMin = Vector2.zero; hrt.anchorMax = Vector2.one; hrt.pivot = new Vector2(0.5f, 0.5f);
+            hrt.offsetMin = Vector2.zero; hrt.offsetMax = Vector2.zero;
+            handle.transform.SetParent(slideArea.transform, false);
+            var handleImg = handle.AddComponent<Image>();
+            handleImg.color = ColorUtil.ParseHexOr("#4F8CFF", Color.white);
+
+            scrollbar.handleRect = hrt;
+            scrollbar.targetGraphic = handleImg;
+            scrollbar.direction = ParseScrollbarDirection(node.direction);
+            scrollbar.size = Mathf.Clamp01(node.scrollbarSize);
+            scrollbar.value = node.range != null ? Mathf.Clamp01(node.range.value) : 1f;
+        }
+
+        private static Slider.Direction ParseSliderDirection(string d)
+        {
+            switch (d)
+            {
+                case "RightToLeft": return Slider.Direction.RightToLeft;
+                case "BottomToTop": return Slider.Direction.BottomToTop;
+                case "TopToBottom": return Slider.Direction.TopToBottom;
+                case "LeftToRight":
+                default: return Slider.Direction.LeftToRight;
+            }
+        }
+
+        private static Scrollbar.Direction ParseScrollbarDirection(string d)
+        {
+            switch (d)
+            {
+                case "RightToLeft": return Scrollbar.Direction.RightToLeft;
+                case "BottomToTop": return Scrollbar.Direction.BottomToTop;
+                case "TopToBottom": return Scrollbar.Direction.TopToBottom;
+                case "LeftToRight":
+                default: return Scrollbar.Direction.LeftToRight;
             }
         }
 
