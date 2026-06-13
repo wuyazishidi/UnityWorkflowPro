@@ -59,8 +59,13 @@ Packages/cn.etetet.yiuimcp/UTO/.port.meta
 # DoD 脏标记（运行期状态）
 .claude/.dod-needed
 
-# ===== Figma 同步：个人 token（含 file_content:read，勿入库）+ 拉取中间产物 =====
+# ===== 私密：token / 密钥 / 凭据本地账本（勿入库）=====
 .figma-token
+secrets.local.md
+*.local.secret
+/secrets.local/
+
+# ===== Figma 同步：拉取中间产物（易变，勿入库）。注意 /figma/ 顶层快照与索引【入库】用于恢复 =====
 /Assets/UI/*/.figma/
 
 # ===== OS =====

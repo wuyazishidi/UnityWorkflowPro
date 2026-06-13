@@ -1,0 +1,16 @@
+{
+  "panel": "TaskListPanel",
+  "fileKey": "wGp5DXqAjtpwuPS4qMWkxP",
+  "node": "1:3",
+  "folder": "Assets/UI/TaskListPanel",
+  "spec": "Assets/UI/TaskListPanel/TaskListPanel.json",
+  "lastModified": null,
+  "snapshotAvailable": false,
+  "note": "源 node 已不在 Figma 文件中（早期同步，后被覆盖/改名）。存活真相 = 上面的 spec(已入库)。如需重建：在 Figma 重做该面板并给新 node-id 同步，会自动生成快照。",
+  "api": {
+    "nodes": "https://api.figma.com/v1/files/wGp5DXqAjtpwuPS4qMWkxP/nodes?ids=1:3",
+    "images": "https://api.figma.com/v1/images/wGp5DXqAjtpwuPS4qMWkxP?ids=<NODE_ID>&format=png&scale=2",
+    "auth": "header X-Figma-Token: <token>（scope=file_content:read）"
+  },
+  "resync": "figma-sync.ps1 -Node <NEW_NODE> -Panel TaskListPanel -FileKey wGp5DXqAjtpwuPS4qMWkxP -Verify"
+}

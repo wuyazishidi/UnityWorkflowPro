@@ -21,6 +21,9 @@ namespace Game.UI
     /// </summary>
     public static class UIHierarchyBuilder
     {
+        /// <summary>全局字号放大系数：Figma 字号在 TMP 下视觉偏小，统一温和放大。</summary>
+        private const float FontScale = 1.15f;
+
         public static GameObject Build(UISpec spec, IUIAssetResolver resolver)
         {
             if (spec == null || spec.root == null) return null;
@@ -231,9 +234,13 @@ namespace Game.UI
         {
             if (text == null) return;
             tmp.text = text.content ?? "";
-            tmp.fontSize = text.fontSize;
+            // 全局适当放大字号：Figma 字号在 TMP 下视觉偏小
+            tmp.fontSize = text.fontSize * FontScale;
             tmp.color = ColorUtil.ParseHexOr(text.color, Color.white);
             tmp.alignment = AlignmentMap.GetOr(text.alignment);
+            // 单行标签不换行、不裁切：避免窄盒子（如“刷 新”）把文字挤成两行或截断
+            tmp.enableWordWrapping = false;
+            tmp.overflowMode = TextOverflowModes.Overflow;
             if (text.style != null)
             {
                 var style = FontStyles.Normal;

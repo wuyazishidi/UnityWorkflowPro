@@ -147,6 +147,34 @@ def text_align(n):
     return {"LEFT": "MidlineLeft", "RIGHT": "MidlineRight", "CENTER": "Center", "JUSTIFIED": "MidlineLeft"}.get(h, "MidlineLeft")
 
 
+def save_source_snapshot(panel, file_key, node, panel_dir, data):
+    """把原始 Figma 节点树 + 来源元数据写进仓库内 figma/（committed），用于离线恢复。
+    - figma/<Panel>.nodes.json : 该 node 的完整子树（设计备份，Figma 清掉也还在）
+    - figma/<Panel>.meta.json  : 来源 = {fileKey, node, folder, lastModified, 用到的接口}
+    figma/RECOVERY.md 为人读总索引（手工维护），机器索引 = figma/*.meta.json 之并集。"""
+    snap_dir = "figma"
+    os.makedirs(snap_dir, exist_ok=True)
+    meta = {
+        "panel": panel,
+        "fileKey": file_key,
+        "node": node,
+        "folder": panel_dir,
+        "spec": f"{panel_dir}/{panel}.json",
+        "lastModified": data.get("lastModified"),
+        "api": {
+            "nodes": f"{API}/files/{file_key}/nodes?ids={node}",
+            "images": f"{API}/images/{file_key}?ids=<NODE_ID>&format=png&scale=2",
+            "auth": "header X-Figma-Token: <token>（scope=file_content:read）",
+        },
+        "resync": f"figma-sync.ps1 -Node {node} -Panel {panel} -FileKey {file_key} -Verify",
+    }
+    with io.open(f"{snap_dir}/{panel}.meta.json", "w", encoding="utf-8") as f:
+        json.dump(meta, f, ensure_ascii=False, indent=2)
+    with io.open(f"{snap_dir}/{panel}.nodes.json", "w", encoding="utf-8") as f:
+        json.dump(data["nodes"][node], f, ensure_ascii=False, indent=2)
+    print(f"snapshot -> {snap_dir}/{panel}.nodes.json + {panel}.meta.json (committed, 离线可恢复)")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("node")
@@ -173,6 +201,11 @@ def main():
     if data.get("nodes", {}).get(node) is None:
         print(f"ERROR: node {node} not found. lastModified={data.get('lastModified')}"); sys.exit(2)
     doc = data["nodes"][node]["document"]
+
+    # 1.5) 快照（仓库内、committed）：把本次拉取的原始 Figma 节点树 + 来源元数据存进 figma/，
+    #      这样即便以后 Figma 里清掉/改了这个 node，也无需重新扫描——离线即可恢复设计与来源。
+    #      （注意：Assets/UI/*/.figma/ 被 gitignore，是易变中间产物；figma/ 顶层目录入库。）
+    save_source_snapshot(a.panel, a.file, node, panel_dir, data)
     root_bb = doc["absoluteBoundingBox"]
     OX, OY = root_bb["x"], root_bb["y"]
     FW, FH = round(root_bb["width"]), round(root_bb["height"])
@@ -495,7 +528,7 @@ def main():
 
     # 7) 版式报告（人读）
     with io.open(f"{meta_dir}/layout.txt", "w", encoding="utf-8") as f:
-        f.write(f"node={node} frame={FW}x{FH} card_r={card['r']}\n")
+        f.write(f"fileKey={a.file} node={node} frame={FW}x{FH} card_r={card['r']} lastModified={data.get('lastModified')}\n")
         _dump(doc, OX, OY, exports, f)
 
     print("=== figma-sync done ===")

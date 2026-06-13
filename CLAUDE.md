@@ -76,9 +76,13 @@ powershell -ExecutionPolicy Bypass -Command "& '.\Packages\cn.etetet.yiuimcp\Con
 
 ### Figma → UGUI 同步（给 node-id 一条命令）
 
+> **首选入口**：Skill `figma-sync`（贴 Figma 链接/说"XX 面板更新了"自动触发）或 `/figma <URL或node>`。二者共用底层 `figma.ps1`，自动处理代理/发现/快照/索引——日常同步用它，不必手敲下面的分步命令。
+
 | 目的 | 命令 |
 |------|------|
-| **一条命令同步**（拉取→导资源→生成 spec→Refresh→打图集→构建） | `figma-sync.ps1 -Node 20:387 -Panel Login` |
+| **智能同步（共用底层）**：解析 URL→设代理→发现/同步→快照→核对→回填索引 | `figma.ps1 -Url "<URL>" -Panel <P>`　或 `-Node <id> -Panel <P> [-FileKey <k>]` |
+| node 未知/失效时**发现帧**（按名筛） | `figma.ps1 -Discover -Panel <关键词>`（`-FileKey` 列某文件全部顶层帧） |
+| 一条命令同步（拉取→导资源→生成 spec→Refresh→打图集→构建） | `figma-sync.ps1 -Node 20:387 -Panel Login` |
 | 仅拉取：导资源 + 直接生成 `<Panel>.json` + 版式报告 + 合成图（Unity 无需开） | `figma-pull.ps1 -Node 20:387 -Panel Login` |
 | 仅构建：自动 Refresh + 打面板图集 + 重试到产物刷新（Unity 须开） | `ui-build-render.ps1 -Spec <spec> -Prefab <prefab> [-Verify]` |
 
@@ -93,6 +97,8 @@ powershell -ExecutionPolicy Bypass -Command "& '.\Packages\cn.etetet.yiuimcp\Con
 - **导入分流**(spec 004 Phase 1)：`Assets/UI/**/Icons/` 下，>1024px 的大图自动 Compressed+限 2048(防强制 Uncompressed 卡主线程)，小图标维持 Uncompressed 保真（`UIIconPostprocessor`）。
 - **降 DC**：`ui-build-render` 默认会调 `PackPanelAtlas` 给 `Assets/UI/<Panel>/Icons/` 打一张 `<Panel>.spriteatlas`(图集路径从 prefab 路径推导)，工程 Sprite Packer = V1 Always Enabled，进入 Play/构建时自动合批 → 面板内所有 Image 共用一张纹理，加图标不增 DC。`-Atlas $false` 可关。（注意：TMP 文字用自己的字体图集，与精灵是两张纹理，z 序里图文交替仍会打断合批。）
 - 前置：项目根 `.figma-token`(已 gitignore，需 `file_content:read` 作用域) 或环境变量 `FIGMA_TOKEN`；默认 file key 在 `scripts/figma_sync.py`，可 `-FileKey` 覆盖。核心逻辑在 `scripts/figma_sync.py`。
+- **恢复索引（上下文丢失先看这）**：`figma/RECOVERY.md` —— 面板来源(fileKey+node)、用到的接口、恢复命令、30 秒清单；密钥在 `secrets.local.md`(gitignore)。每次 `figma-sync` 会自动把原始节点树快照写到 `figma/<Panel>.nodes.json` + 来源元数据 `figma/<Panel>.meta.json`(均入库)，Figma 被清掉也能离线恢复设计。注意 `figma/`(顶层，入库) ≠ `Assets/UI/*/.figma/`(中间产物，gitignore)。
+- **调闸门/同步前**在该 shell 设 `$env:NO_PROXY="127.0.0.1,localhost"`(本机 Clash 代理会拦 `127.0.0.1` 致 502/超时；Figma 外网仍走代理、本地 Unity 直连)。本工程端口实测 **3212/3213**(无 `.port` 走默认)。
 
 ## 5. 扩展工作流（让 AI 越用越强）
 
