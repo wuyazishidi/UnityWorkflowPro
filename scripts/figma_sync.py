@@ -75,8 +75,35 @@ def has_image_fill(n):
 def first_stroke(n):
     for s in n.get("strokes", []):
         if s.get("type") == "SOLID":
-            return hex_of(s["color"], 1.0), n.get("strokeWeight", 1.0)
+            return hex_of(s["color"], s.get("opacity", 1.0)), n.get("strokeWeight", 1.0)
     return None, 0
+
+
+def first_gradient(n):
+    """提取线性渐变填充 → {type, angle, stops}（spec 004 Phase 2）。无则 None。"""
+    import math
+    for f in n.get("fills", []):
+        if not f.get("visible", True):
+            continue
+        if f["type"] != "GRADIENT_LINEAR":
+            continue
+        stops = [{"color": hex_of(s["color"], s["color"].get("a", 1.0)), "pos": round(s.get("position", 0.0), 4)}
+                 for s in f.get("gradientStops", [])]
+        if len(stops) < 2:
+            continue
+        # 由两个手柄点(归一化、y 向下)算角度；UIVertexGradient: angle=atan2(dy,dx)
+        hp = f.get("gradientHandlePositions") or []
+        ang = 0.0
+        if len(hp) >= 2:
+            dx = hp[1]["x"] - hp[0]["x"]; dy = hp[1]["y"] - hp[0]["y"]
+            ang = round(math.degrees(math.atan2(dy, dx)), 1)
+        return {"type": "Linear", "angle": ang, "stops": stops}
+    return None
+
+
+def node_opacity(n):
+    o = n.get("opacity")
+    return o if (o is not None and o < 0.999) else None
 
 
 def all_vector_leaves(n):
@@ -105,6 +132,13 @@ def round_sprite(r):
     if r <= 18:
         return "Assets/UI/Common/round16.png", 16
     return "Assets/UI/Common/round24.png", 24
+
+
+def ring_sprite(r):
+    """镚空描边环精灵(中间透明)，用于半透面板描边，避免实心底色把半透填充染色。"""
+    if r <= 12:
+        return "Assets/UI/Common/ring12.png", 12
+    return "Assets/UI/Common/ring16.png", 16
 
 
 def text_align(n):
@@ -159,6 +193,12 @@ def main():
     find_card(doc)
     card_id = card["node"]["id"] if card["node"] else None
     card_bb = card["node"]["absoluteBoundingBox"] if card["node"] else root_bb
+
+    # 参考系收敛到“卡片”而非外层画板：面板根 = 卡片(1106x778)，去掉画板四周的空白；
+    # 这样渲染与卡片真值同框，-Verify 的 MAE 才有意义。card 在画板原点时坐标不变。
+    if card["node"]:
+        OX, OY = card_bb["x"], card_bb["y"]
+        FW, FH = round(card_bb["width"]), round(card_bb["height"])
 
     # 3) 收集需导出的节点：背景大图 / 其它 IMAGE / 纯描边小框(角标) / 全线稿(图标·装饰)
     exports = {}  # id -> role ('bg'|'image'|'corner'|'art')
@@ -225,9 +265,10 @@ def main():
         else:
             exported.append(f"{asset_path(nid)} ({exports.get(nid)})")
 
-    # 5) 合成图（真值参照）
-    j = get_json(f"{API}/images/{a.file}?ids={node}&format=png&scale=2", a.token)
-    tu = j.get("images", {}).get(node)
+    # 5) 合成图（真值参照）：导卡片节点（与渲染同框，便于 -Verify 做可靠 MAE），无卡片则退回整帧
+    truth_id = card_id or node
+    j = get_json(f"{API}/images/{a.file}?ids={truth_id}&format=png&scale=2", a.token)
+    tu = j.get("images", {}).get(truth_id)
     if tu:
         curl(tu, out=f"{meta_dir}/truth.png")
 
@@ -261,9 +302,32 @@ def main():
             nd["text"]["style"] = {"bold": True}
         return nd
 
+    def _apply_v2(nd, n):
+        """把 Figma 的渐变/整体不透明度写进节点的 v2 字段（spec 004 Phase 2）。"""
+        g = first_gradient(n)
+        if g:
+            nd["gradient"] = g
+            nd["color"] = "#FFFFFF"   # 渐变由顶点色驱动，底色置白避免相乘偏色
+        o = node_opacity(n)
+        if o is not None:
+            nd["opacity"] = round(o, 3)
+        return nd
+
+    def _stroke_field(n, cr):
+        """fill+stroke 中的 stroke 收敛为节点 v2 字段（builder 用镂空环实现），不再另起节点。"""
+        scol, sw = first_stroke(n)
+        if not scol:
+            return None
+        rp, rb = ring_sprite(cr)
+        return {"color": scol, "weight": round(sw, 2), "align": "Inside",
+                "sprite": rp, "border": {"l": rb, "t": rb, "r": rb, "b": rb}}
+
     def emit_image(n, role):
         nd = {"name": _san(n.get("name", "Image")), "type": "Image", "color": "#FFFFFF", "raycastTarget": False,
               "sprite": f"{panel_dir}/Icons/{asset_path(n['id'])}", "rect": rect(n)}
+        o = node_opacity(n)
+        if o is not None:
+            nd["opacity"] = round(o, 3)
         out_nodes.append(nd)
 
     def emit_solid(n):
@@ -273,38 +337,35 @@ def main():
         if cr:
             sp, b = round_sprite(cr)
             nd.update({"sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}})
-        out_nodes.append(nd)
+        st = _stroke_field(n, cr or 12)
+        if st:
+            nd["stroke"] = st
+        out_nodes.append(_apply_v2(nd, n))
 
     def emit_bordered(n, as_button=False):
-        """fill+stroke -> 外层描边 round + 内层填充内缩2px；as_button 则内层用 Button。"""
-        scol, sw = first_stroke(n)
+        """fill+stroke -> 单节点：半透填充(Figma 精确色) + v2 stroke 字段(builder 用镚空环实现)。"""
         cr = int(n.get("cornerRadius") or 12)
         sp, b = round_sprite(cr)
         r = rect(n)
-        inset = max(2, round(sw) + 1)
-        # 外层边环
-        out_nodes.append({"name": _san(n.get("name", "Field")) + "Border", "type": "Image", "color": scol or "#3B82F6B3",
-                          "raycastTarget": False, "sprite": sp, "imageType": "Sliced",
-                          "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r})
-        # 内层填充：半透自动提到 0.92 避免边环糊进内部
-        fill = first_solid_fill(n) or "#0E1E40"
-        fill = _bump_alpha(fill, 0.92)
-        ir = {"x": r["x"] + inset, "y": r["y"] + inset, "w": r["w"] - 2 * inset, "h": r["h"] - 2 * inset}
+        nm = _san(n.get("name", "Field"))
+        fill = first_solid_fill(n)
+        stroke = _stroke_field(n, cr)
         if as_button:
             txt = _find_centered_text(n)
-            bnode = {"name": _san(n.get("name", "Button")), "type": "Button", "color": fill,
-                     "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": ir}
+            nd = {"name": nm, "type": "Button", "color": fill or "#FFFFFF",
+                  "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r}
             if txt:
-                st = txt.get("style", {})
-                bnode["text"] = {"content": txt.get("characters", ""), "fontSize": round(st.get("fontSize", 16)),
-                                 "color": first_solid_fill(txt) or "#FFFFFF", "alignment": "Center"}
-                if st.get("fontWeight", 400) >= 600:
-                    bnode["text"]["style"] = {"bold": True}
-            out_nodes.append(bnode)
+                stl = txt.get("style", {})
+                nd["text"] = {"content": txt.get("characters", ""), "fontSize": round(stl.get("fontSize", 16)),
+                              "color": first_solid_fill(txt) or "#FFFFFF", "alignment": "Center"}
+                if stl.get("fontWeight", 400) >= 600:
+                    nd["text"]["style"] = {"bold": True}
         else:
-            out_nodes.append({"name": _san(n.get("name", "Field")) + "Fill", "type": "Image", "color": fill,
-                              "raycastTarget": False, "sprite": sp, "imageType": "Sliced",
-                              "border": {"l": b, "t": b, "r": b, "b": b}, "rect": ir})
+            nd = {"name": nm + "Fill", "type": "Image", "color": fill or "#FFFFFF", "raycastTarget": False,
+                  "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r}
+        if stroke:
+            nd["stroke"] = stroke
+        out_nodes.append(_apply_v2(nd, n))
 
     def visit(n, in_button=False):
         t = n["type"]
@@ -353,8 +414,11 @@ def main():
             "rootName": a.panel,
             "root": {"name": a.panel, "type": "Container", "anchorPreset": "center",
                      "rect": {"x": 0, "y": 0, "w": FW, "h": FH}, "children": out_nodes}}
-    draft = f"{panel_dir}/{a.panel}.draft.json"
-    with io.open(draft, "w", encoding="utf-8") as f:
+    # 真相源收敛（spec 004 Phase 1）：直接生成/覆盖 <Panel>.json，不再写 .draft.json。
+    # 人工微调走"覆盖式重生成 + git diff 审阅"，spec 是 Figma 的忠实生成投影、单一真相。
+    out_json = f"{panel_dir}/{a.panel}.json"
+    existed = os.path.exists(out_json)
+    with io.open(out_json, "w", encoding="utf-8") as f:
         json.dump(spec, f, ensure_ascii=False, indent=2)
 
     # 7) 版式报告（人读）
@@ -367,16 +431,10 @@ def main():
     print(f"assets -> {icons_dir}/ :")
     for e in exported:
         print("  " + e)
-    print(f"draft spec   -> {draft}")
+    print(f"spec  -> {out_json}" + ("  (覆盖式重生成，用 git diff 审阅改动)" if existed else "  (新建)"))
     print(f"layout report-> {meta_dir}/layout.txt")
     print(f"truth image  -> {meta_dir}/truth.png")
-    live = f"{panel_dir}/{a.panel}.json"
-    if not os.path.exists(live):
-        with io.open(live, "w", encoding="utf-8") as f:
-            json.dump(spec, f, ensure_ascii=False, indent=2)
-        print(f"NOTE: no existing {live}; wrote draft there directly.")
-    else:
-        print(f"NEXT: review draft vs {live} (diff), apply changes, then run ui-build-render.ps1")
+    print("NEXT: 用 ui-build-render.ps1 构建（常态不渲染；要核对图加 -Verify $true）")
 
 
 def _dedupe_names(nodes):

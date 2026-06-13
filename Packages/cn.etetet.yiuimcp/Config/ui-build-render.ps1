@@ -25,7 +25,8 @@ param(
   [string]$Bg = "#03060E",
   [int]$Retries = 50,
   [int]$RefreshTimes = 3,
-  [bool]$Atlas = $true
+  [bool]$Atlas = $true,
+  [switch]$Verify
 )
 # 不能用 Stop：invoke-uto-tool 内部健康检查重试会产生错误记录，Stop 会干扰 *>&1 捕获导致永远匹配不到 SUCCESS
 $ErrorActionPreference = "Continue"
@@ -73,7 +74,18 @@ if ($Atlas) {
 }
 
 if (-not (Invoke-Retry "BuildUIFromSpec" @{ specPath = $Spec; outputPrefabPath = $Prefab } "build" $Prefab)) { exit 1 }
-if ($Png) {
+
+# 渲染降级（spec 004 Phase 1）：常态只构建、不渲染（摘掉最不稳的冷渲染环节）。
+# 仅 -Verify $true 时出核对图 _render.png，并与 .figma/truth.png 算分区域 MAE。
+if ($Verify) {
+  if (-not $Png) { $Png = ((Split-Path $Prefab -Parent) -replace '\\', '/') + "/_render.png" }
   if (-not (Invoke-Retry "RenderCanvasToPng" @{ prefabPath = $Prefab; outputPngPath = $Png; width = $Width; height = $Height; backgroundColor = $Bg } "render" $Png)) { exit 1 }
+  $truth = ((Split-Path $Prefab -Parent) -replace '\\', '/') + "/.figma/truth.png"
+  if (Test-Path $truth) {
+    $py = (Get-Command python -ErrorAction SilentlyContinue).Source
+    if (-not $py) { $py = (Get-Command py -ErrorAction SilentlyContinue).Source }
+    $diff = (Resolve-Path (Join-Path $PSScriptRoot "..\..\..\scripts\ui_diff.py")).Path
+    if ($py -and (Test-Path $diff)) { & $py $diff $Png $truth }
+  }
 }
 Write-Host "ALL DONE"
