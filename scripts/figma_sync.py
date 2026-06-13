@@ -402,7 +402,8 @@ def main():
 
     def emit_solid(n):
         cr = int(n.get("cornerRadius") or 0)
-        nd = {"name": _san(n.get("name", "Rect")), "type": "Image", "color": first_solid_fill(n) or "#FFFFFF",
+        # 无实色填充的节点（如只有描边的分隔/容器框）用透明底，避免误填不透明白把面板冲白
+        nd = {"name": _san(n.get("name", "Rect")), "type": "Image", "color": first_solid_fill(n) or "#FFFFFF00",
               "raycastTarget": False, "rect": rect(n)}
         if cr:
             sp, b = round_sprite(cr)
@@ -422,7 +423,7 @@ def main():
         stroke = _stroke_field(n, cr)
         if as_button:
             txt = _find_centered_text(n)
-            nd = {"name": nm, "type": "Button", "color": fill or "#FFFFFF",
+            nd = {"name": nm, "type": "Button", "color": fill or "#FFFFFF00",
                   "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r}
             if txt:
                 stl = txt.get("style", {})
