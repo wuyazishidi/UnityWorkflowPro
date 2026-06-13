@@ -162,10 +162,9 @@
         }
       },
       {
-        "name": "ContainerFill",
-        "type": "Image",
+        "name": "ContainerInput",
+        "type": "InputField",
         "color": "#0A1E4640",
-        "raycastTarget": false,
         "sprite": "Assets/UI/Common/round12.png",
         "imageType": "Sliced",
         "border": {
@@ -180,6 +179,7 @@
           "w": 307,
           "h": 57
         },
+        "contentType": "Standard",
         "stroke": {
           "color": "#388BFD73",
           "weight": 0.67,
@@ -191,24 +191,20 @@
             "r": 12,
             "b": 12
           }
-        }
-      },
-      {
-        "name": "请输入用户名",
-        "type": "Text",
-        "raycastTarget": false,
-        "rect": {
-          "x": 452,
-          "y": 243,
-          "w": 274,
-          "h": 19
         },
-        "text": {
+        "placeholder": {
           "content": "请输入用户名",
           "fontSize": 16,
           "color": "#8EC5FF40",
           "alignment": "MidlineLeft"
-        }
+        },
+        "padding": {
+          "l": 16,
+          "t": 6,
+          "r": 17,
+          "b": 6
+        },
+        "textColor": "#8EC5FF"
       },
       {
         "name": "密 码",
@@ -228,10 +224,9 @@
         }
       },
       {
-        "name": "ContainerFill_1",
-        "type": "Image",
+        "name": "ContainerInput_1",
+        "type": "InputField",
         "color": "#0A1E4640",
-        "raycastTarget": false,
         "sprite": "Assets/UI/Common/round12.png",
         "imageType": "Sliced",
         "border": {
@@ -246,6 +241,7 @@
           "w": 307,
           "h": 57
         },
+        "contentType": "Password",
         "stroke": {
           "color": "#388BFD73",
           "weight": 0.67,
@@ -257,36 +253,29 @@
             "r": 12,
             "b": 12
           }
-        }
-      },
-      {
-        "name": "请输入密码",
-        "type": "Text",
-        "raycastTarget": false,
-        "rect": {
-          "x": 452,
-          "y": 328,
-          "w": 251,
-          "h": 19
         },
-        "text": {
+        "placeholder": {
           "content": "请输入密码",
           "fontSize": 16,
           "color": "#8EC5FF40",
           "alignment": "MidlineLeft"
-        }
-      },
-      {
-        "name": "Icon",
-        "type": "Image",
-        "color": "#FFFFFF",
-        "raycastTarget": false,
-        "sprite": "Assets/UI/Login/Icons/art1.png",
-        "rect": {
-          "x": 711,
-          "y": 330,
-          "w": 15,
-          "h": 15
+        },
+        "padding": {
+          "l": 16,
+          "t": 6,
+          "r": 40,
+          "b": 6
+        },
+        "textColor": "#8EC5FF",
+        "passwordToggle": {
+          "sprite": "Assets/UI/Login/Icons/art1.png",
+          "color": "#FFFFFF",
+          "rect": {
+            "x": 711,
+            "y": 330,
+            "w": 15,
+            "h": 15
+          }
         }
       },
       {
@@ -307,10 +296,9 @@
         }
       },
       {
-        "name": "ContainerFill_2",
-        "type": "Image",
+        "name": "ContainerInput_2",
+        "type": "InputField",
         "color": "#0A1E4640",
-        "raycastTarget": false,
         "sprite": "Assets/UI/Common/round12.png",
         "imageType": "Sliced",
         "border": {
@@ -325,6 +313,7 @@
           "w": 307,
           "h": 57
         },
+        "contentType": "Standard",
         "stroke": {
           "color": "#388BFD73",
           "weight": 0.67,
@@ -336,24 +325,20 @@
             "r": 12,
             "b": 12
           }
-        }
-      },
-      {
-        "name": "请输入动态码",
-        "type": "Text",
-        "raycastTarget": false,
-        "rect": {
-          "x": 452,
-          "y": 414,
-          "w": 274,
-          "h": 19
         },
-        "text": {
+        "placeholder": {
           "content": "请输入动态码",
           "fontSize": 16,
           "color": "#8EC5FF40",
           "alignment": "MidlineLeft"
-        }
+        },
+        "padding": {
+          "l": 16,
+          "t": 6,
+          "r": 17,
+          "b": 6
+        },
+        "textColor": "#8EC5FF"
       },
       {
         "name": "Button",
