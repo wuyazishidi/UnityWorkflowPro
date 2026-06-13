@@ -390,28 +390,28 @@ def main():
             if eye is not None:
                 nd["passwordToggle"] = {"sprite": f"{panel_dir}/Icons/{asset_path(eye['id'])}",
                                         "color": "#FFFFFF", "rect": rect(eye)}
-        out_nodes.append(_apply_v2(nd, n))
+        return _apply_v2(nd, n)
 
-    def emit_image(n, role):
+    def emit_image(n, role=None):
         nd = {"name": _san(n.get("name", "Image")), "type": "Image", "color": "#FFFFFF", "raycastTarget": False,
               "sprite": f"{panel_dir}/Icons/{asset_path(n['id'])}", "rect": rect(n)}
         o = node_opacity(n)
         if o is not None:
             nd["opacity"] = round(o, 3)
-        out_nodes.append(nd)
+        return nd
 
-    def emit_solid(n):
+    def emit_solid(n, name=None):
         cr = int(n.get("cornerRadius") or 0)
         # 无实色填充的节点（如只有描边的分隔/容器框）用透明底，避免误填不透明白把面板冲白
-        nd = {"name": _san(n.get("name", "Rect")), "type": "Image", "color": first_solid_fill(n) or "#FFFFFF00",
-              "raycastTarget": False, "rect": rect(n)}
+        nd = {"name": name or _san(n.get("name", "Rect")), "type": "Image",
+              "color": first_solid_fill(n) or "#FFFFFF00", "raycastTarget": False, "rect": rect(n)}
         if cr:
             sp, b = round_sprite(cr)
             nd.update({"sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}})
         st = _stroke_field(n, cr or 12)
         if st:
             nd["stroke"] = st
-        out_nodes.append(_apply_v2(nd, n))
+        return _apply_v2(nd, n)
 
     def emit_bordered(n, as_button=False):
         """fill+stroke -> 单节点：round 精灵填充 + v2 stroke(环精灵)，built-in UGUI。"""
@@ -436,53 +436,49 @@ def main():
                   "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r}
         if stroke:
             nd["stroke"] = stroke
-        out_nodes.append(_apply_v2(nd, n))
+        return _apply_v2(nd, n)
 
-    def visit(n, in_button=False):
+    # 递归建嵌套树：镜像 Figma 层级（上下级关系），坐标用整帧绝对值（builder 按 parentAbsX 解算相对偏移）。
+    def build_node(n):
         t = n["type"]
+        if t == "VECTOR":
+            return None
         role = exports.get(n["id"])
-        if t == "TEXT":
-            if not in_button:
-                out_nodes.append(text_node(n))
-            return
         if role in ("bg", "image", "art", "corner"):
-            emit_image(n, role)
-            return
-        if is_button(n):
-            if first_stroke(n)[0]:
-                emit_bordered(n, as_button=True)
-            else:
-                emit_solid(n)  # 简化：无描边按钮当实色（少见）
-                for c in n.get("children", []):
-                    visit(c, in_button=False)
-            return
+            return emit_image(n, role)              # 位图叶子
+        if t == "TEXT":
+            return text_node(n)                     # 文本叶子
         if _is_input(n):
-            emit_input_field(n)  # 语义组件：→ TMP_InputField（消费占位符+眼睛，不再递归）
-            return
+            return emit_input_field(n)              # 自包含（占位符/眼睛在内）
+        if is_button(n) and first_stroke(n)[0]:
+            return emit_bordered(n, as_button=True)  # 按钮（文字在内）
         has_fill = first_solid_fill(n) is not None
         has_stroke = first_stroke(n)[0] is not None
-        is_card = n["id"] == card_id
-        if is_card:
-            emit_solid(n)  # CardBase
-            for c in n.get("children", []):
-                visit(c)
-            return
+        cr = int(n.get("cornerRadius") or 0)
         if has_fill and has_stroke:
-            emit_bordered(n)  # 非输入的 fill+stroke 框（如普通面板）
-            for c in n.get("children", []):
-                visit(c)  # 占位符文字等作为扁平兄弟
-            return
-        if has_fill or (has_stroke and n.get("children")):
-            emit_solid(n)
-            for c in n.get("children", []):
-                visit(c)
-            return
-        # 纯容器：透传递归
-        for c in n.get("children", []):
-            visit(c)
+            nd = emit_bordered(n)                   # 圆角+描边容器（如行底）
+        elif has_fill or has_stroke or cr:
+            nd = emit_solid(n)                      # 实色/圆角/描边容器
+        else:
+            nd = {"name": _san(n.get("name", "Group")), "type": "Container",
+                  "raycastTarget": False, "rect": rect(n)}   # 纯分组容器
+        kids = [k for k in (build_node(c) for c in n.get("children", [])) if k]
+        if kids:
+            nd["children"] = kids
+        return nd
 
-    # 从卡片节点开始翻译，跳过外层画板帧(如 yuanceUI/Body)——否则画板自身的白色填充会被 emit 成多余的 BG 节点。
-    visit(card["node"] if card["node"] else doc)
+    # 从卡片节点开始：CardBase(卡片底) + 卡片各子节点（保留各自层级嵌套），跳过外层画板帧。
+    card_n = card["node"]
+    if card_n:
+        out_nodes.append(emit_solid(card_n, name="CardBase"))
+        for c in card_n.get("children", []):
+            k = build_node(c)
+            if k:
+                out_nodes.append(k)
+    else:
+        top = build_node(doc)
+        if top:
+            out_nodes.extend(top.get("children") or [top])
     _dedupe_names(out_nodes)
 
     spec = {"schemaVersion": 1, "referenceWidth": FW, "referenceHeight": FH,
