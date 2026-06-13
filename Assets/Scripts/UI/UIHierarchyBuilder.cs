@@ -64,7 +64,43 @@ namespace Game.UI
                 }
             }
 
+            // v2 效果（spec 004 Phase 2）：渐变 / 描边 / 整体不透明度
+            ApplyV2Effects(go, node, resolver);
+
             return go;
+        }
+
+        /// <summary>渐变(顶点色)、描边(镂空环子物体，叠最上)、整体不透明度(CanvasGroup)。</summary>
+        private static void ApplyV2Effects(GameObject go, UINode node, IUIAssetResolver resolver)
+        {
+            // 渐变：节点本身有图形(Image)时挂顶点色修饰器
+            if (node.gradient != null && node.gradient.stops != null && node.gradient.stops.Count >= 2
+                && go.GetComponent<Graphic>() != null)
+            {
+                go.AddComponent<UIVertexGradient>().Configure(node.gradient);
+            }
+
+            // 描边：镂空环 9-slice 子物体，染描边色，置于最上层（子物体晚于父图形绘制）
+            if (node.stroke != null && !string.IsNullOrWhiteSpace(node.stroke.sprite))
+            {
+                var sgo = new GameObject(node.name + "_Stroke", typeof(RectTransform));
+                var srt = (RectTransform)sgo.transform;
+                UISpecMath.Apply(srt, UISpecMath.StretchFull());
+                sgo.transform.SetParent(go.transform, false);
+                var simg = sgo.AddComponent<Image>();
+                simg.color = ColorUtil.ParseHexOr(node.stroke.color, Color.white);
+                simg.raycastTarget = false;
+                if (resolver != null) simg.sprite = resolver.ResolveSprite(node.stroke.sprite);
+                simg.type = Image.Type.Sliced;
+            }
+
+            // 整体不透明度
+            if (node.opacity < 0.999f)
+            {
+                var cg = go.GetComponent<CanvasGroup>();
+                if (cg == null) cg = go.AddComponent<CanvasGroup>();
+                cg.alpha = Mathf.Clamp01(node.opacity);
+            }
         }
 
         private static void BuildImage(GameObject go, UINode node, IUIAssetResolver resolver)

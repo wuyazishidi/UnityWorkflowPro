@@ -13,6 +13,9 @@ namespace YIUIFramework.Editor.MCP
         public int size = 64;
         /// <summary>圆角半径（像素，默认 20）。会作为 9-slice 边框写入导入设置。</summary>
         public int radius = 20;
+        /// <summary>描边宽度（像素，默认 0=实心填充）。>0 时生成"镂空描边环"（中间透明，只留圆角描边），
+        /// 用于半透明面板：填充用实心圆角(染 Figma 原始半透色) + 上层叠这张描边环(染描边色) → 颜色与 Figma 一致、背景可透出。</summary>
+        public float strokeWidth = 0;
     }
 
     /// <summary>
@@ -39,7 +42,18 @@ namespace YIUIFramework.Editor.MCP
                 float cx = Mathf.Clamp(x + 0.5f, r, s - r);
                 float cy = Mathf.Clamp(y + 0.5f, r, s - r);
                 float d = Mathf.Sqrt((x + 0.5f - cx) * (x + 0.5f - cx) + (y + 0.5f - cy) * (y + 0.5f - cy));
-                float a = Mathf.Clamp01(r - d + 0.5f); // 0.5px 抗锯齿
+                float a;
+                if (data.strokeWidth <= 0f)
+                {
+                    a = Mathf.Clamp01(r - d + 0.5f); // 实心：0.5px 抗锯齿
+                }
+                else
+                {
+                    float t = Mathf.Min(data.strokeWidth, r);
+                    float outer = Mathf.Clamp01(r - d + 0.5f);       // 外缘内淡出
+                    float inner = Mathf.Clamp01(d - (r - t) + 0.5f); // 内缘外淡出 → 只留宽度 t 的环
+                    a = Mathf.Min(outer, inner);
+                }
                 px[y * s + x] = new Color(1f, 1f, 1f, a);
             }
             tex.SetPixels(px);

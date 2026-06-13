@@ -231,6 +231,93 @@ namespace Game.Tests.EditMode
             }
         }
 
+        // ---------- v2 无损字段（spec 004 Phase 2） ----------
+
+        [Test]
+        public void Json_Parse_V2Fields_RoundTrip()
+        {
+            const string json = @"{
+              ""schemaVersion"":1, ""referenceWidth"":1106, ""referenceHeight"":778, ""rootName"":""P"",
+              ""root"":{ ""name"":""P"", ""type"":""Container"", ""rect"":{""x"":0,""y"":0,""w"":1106,""h"":778},
+                ""children"":[ {""name"":""Field"",""type"":""Image"",""color"":""#0A1E4640"",
+                  ""rect"":{""x"":0,""y"":0,""w"":300,""h"":56}, ""opacity"":0.5,
+                  ""stroke"":{""color"":""#388BFDB3"",""weight"":2,""sprite"":""Assets/UI/Common/ring12.png"",
+                    ""border"":{""l"":12,""t"":12,""r"":12,""b"":12}},
+                  ""gradient"":{""type"":""Linear"",""angle"":90,""stops"":[{""color"":""#2563EB"",""pos"":0},{""color"":""#4F46E5"",""pos"":1}]},
+                  ""constraints"":{""horizontal"":""Center"",""vertical"":""Top""}} ] } }";
+            var r = UISpecJson.Parse(json);
+            Assert.IsTrue(r.Ok, string.Join("; ", r.Errors));
+            var f = r.Spec.root.children[0];
+            Assert.AreEqual(0.5f, f.opacity, 1e-4);
+            Assert.IsNotNull(f.stroke);
+            Assert.AreEqual("Assets/UI/Common/ring12.png", f.stroke.sprite);
+            Assert.IsNotNull(f.gradient);
+            Assert.AreEqual(2, f.gradient.stops.Count);
+            Assert.AreEqual(90f, f.gradient.angle, 1e-4);
+            Assert.AreEqual("Center", f.constraints.horizontal);
+        }
+
+        [Test]
+        public void Json_Parse_V1Spec_DefaultsAndStillBuilds()
+        {
+            // v1 旧 spec（无任何 v2 字段）：opacity 默认 1、无 stroke/gradient，照常 build（回归）
+            const string json = @"{ ""schemaVersion"":1, ""referenceWidth"":800, ""referenceHeight"":600, ""rootName"":""P"",
+              ""root"":{ ""name"":""P"", ""type"":""Image"", ""color"":""#222222"", ""rect"":{""x"":0,""y"":0,""w"":800,""h"":600} } }";
+            var r = UISpecJson.Parse(json);
+            Assert.IsTrue(r.Ok, string.Join("; ", r.Errors));
+            Assert.AreEqual(1f, r.Spec.root.opacity, 1e-4);
+            Assert.IsNull(r.Spec.root.stroke);
+            var go = UIHierarchyBuilder.Build(r.Spec, null);
+            try { Assert.IsNull(go.GetComponent<CanvasGroup>()); Assert.IsNull(go.transform.Find("P_Stroke")); }
+            finally { Object.DestroyImmediate(go); }
+        }
+
+        [Test]
+        public void Build_StrokeOpacityGradient_Realized()
+        {
+            var spec = new UISpec
+            {
+                rootName = "Field",
+                root = new UINode
+                {
+                    name = "Field", type = "Image", color = "#0A1E4640", anchorPreset = "center",
+                    rect = new UIRect(0, 0, 300, 56), opacity = 0.5f,
+                    stroke = new UIStroke { color = "#388BFD", sprite = "Assets/UI/Common/ring12.png",
+                        border = new UIBorder { l = 12, t = 12, r = 12, b = 12 } },
+                    gradient = new UIGradient { type = "Linear", angle = 90,
+                        stops = new List<UIGradientStop> {
+                            new UIGradientStop { color = "#2563EB", pos = 0 },
+                            new UIGradientStop { color = "#4F46E5", pos = 1 } } }
+                }
+            };
+            var go = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                // 描边 → 子物体 _Stroke（Sliced Image，置最上）
+                var stroke = go.transform.Find("Field_Stroke");
+                Assert.IsNotNull(stroke, "应生成描边子物体");
+                Assert.AreEqual(Image.Type.Sliced, stroke.GetComponent<Image>().type);
+                Assert.AreEqual(go.transform.childCount - 1, stroke.GetSiblingIndex(), "描边应在最上层");
+                // 不透明度 → CanvasGroup
+                var cg = go.GetComponent<CanvasGroup>();
+                Assert.IsNotNull(cg); Assert.AreEqual(0.5f, cg.alpha, 1e-4);
+                // 渐变 → 顶点色修饰器
+                Assert.IsNotNull(go.GetComponent<UIVertexGradient>());
+            }
+            finally { Object.DestroyImmediate(go); }
+        }
+
+        [Test]
+        public void Validate_BadV2Fields_Errors()
+        {
+            var spec = NewSimpleSpec();
+            spec.root.children[0].opacity = 1.5f;                         // 越界
+            spec.root.children[0].stroke = new UIStroke { color = "#ZZZ" }; // 非法色
+            var errs = UISpecValidator.Validate(spec);
+            Assert.IsTrue(errs.Exists(e => e.Contains("opacity")));
+            Assert.IsTrue(errs.Exists(e => e.Contains("描边色")));
+        }
+
         // ---------- helpers ----------
 
         private static UISpec NewSimpleSpec()

@@ -58,6 +58,19 @@ namespace Game.UI
                 && !AlignmentMap.TryGet(node.text.alignment, out _))
                 errors.Add($"{path}({node.name}): 非法 alignment='{node.text.alignment}'");
 
+            // v2 字段（spec 004 Phase 2）
+            if (node.opacity < 0f || node.opacity > 1f)
+                errors.Add($"{path}({node.name}): opacity 越界 {node.opacity}（应 0-1）");
+            if (node.stroke != null && !string.IsNullOrWhiteSpace(node.stroke.color)
+                && !ColorUtil.TryParseHex(node.stroke.color, out _))
+                errors.Add($"{path}({node.name}): 非法描边色 '{node.stroke.color}'");
+            if (node.gradient != null && node.gradient.stops != null)
+            {
+                foreach (var s in node.gradient.stops)
+                    if (s != null && !string.IsNullOrWhiteSpace(s.color) && !ColorUtil.TryParseHex(s.color, out _))
+                        errors.Add($"{path}({node.name}): 非法渐变色 '{s.color}'");
+            }
+
             // 兄弟名唯一（同层 SetSiblingIndex/查找不歧义）
             if (node.children != null && node.children.Count > 0)
             {
