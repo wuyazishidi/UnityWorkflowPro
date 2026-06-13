@@ -523,6 +523,43 @@ def main():
             nd.update(_round_fields(n))
         return _apply_v2(nd, n)
 
+    def _finalize_scroll_list(nd, kids):
+        """ScrollList 收尾：把纯容器包装的内容上提一层(让真实行成 Content 直接子项)，按 y 排序，按行推算 spacing/padding。"""
+        # Figma 常把行套在一个(或多个)与视口同尺寸的纯分组容器里 → 上提其子，否则布局组只堆一个项、撑不开。
+        # 只展开"纯 Container"(无填充/精灵的分组)，避免误拆有视觉的行底。仅展开 ScrollList 的直接子层。
+        flat = []
+        for k in kids:
+            if k.get("type") == "Container" and k.get("children") \
+                    and not k.get("color") and not k.get("sprite"):
+                flat.extend(k["children"])
+            else:
+                flat.append(k)
+        kids = flat
+        # 竖向列表按 y 顺序堆叠（横向按 x）；LayoutGroup 按子节点顺序排布，需先排好。
+        horiz = (nd.get("scroll") or {}).get("horizontal") and not (nd.get("scroll") or {}).get("vertical", True)
+        axis, ext = ("x", "w") if horiz else ("y", "h")
+        items = [k for k in kids if k.get("rect")]
+        # 用行高(或行宽)中位数过滤掉异常尺寸的装饰（如侧边滚动条轨道、整列底框），只留均匀的列表项。
+        if len(items) >= 3:
+            med = sorted(k["rect"][ext] for k in items)[len(items) // 2]
+            if med > 0:
+                items = [k for k in items if 0.5 * med <= k["rect"][ext] <= 1.8 * med]
+        rows = sorted(items, key=lambda k: k["rect"].get(axis, 0))
+        kids = rows + [k for k in kids if not k.get("rect")]
+
+        sc = nd.get("scroll") or {"horizontal": False, "vertical": True}
+        if rows:
+            r = nd["rect"]; f = rows[0]["rect"]
+            top = max(0, round(f["y"] - r["y"]))
+            sc["padding"] = {"l": max(0, round(f["x"] - r["x"])), "t": top,
+                             "r": max(0, round((r["x"] + r["w"]) - (f["x"] + f["w"]))), "b": top}
+            if len(rows) >= 2:
+                sc["spacing"] = max(0, round(rows[1]["rect"]["y"] - (rows[0]["rect"]["y"] + rows[0]["rect"]["h"])))
+            else:
+                sc["spacing"] = 0
+        nd["scroll"] = sc
+        return kids
+
     def emit_dropdown(n):
         nd = {"name": _san(n.get("name", "Dropdown")), "type": "Dropdown",
               "color": first_solid_fill(n) or "#0A1E46", "rect": rect(n)}
@@ -602,6 +639,8 @@ def main():
                       "raycastTarget": False, "rect": rect(n)}   # 纯分组容器
         child_in_scroll = in_scroll or nd.get("type") == "ScrollList"
         kids = [k for k in (build_node(c, child_in_scroll) for c in n.get("children", [])) if k]
+        if nd.get("type") == "ScrollList":
+            kids = _finalize_scroll_list(nd, kids)
         if kids:
             nd["children"] = kids
         return nd

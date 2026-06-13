@@ -18,8 +18,8 @@
 <!-- BEGIN auto-index -->
 | Panel | folder | fileKey | node | 设计快照 | lastModified |
 |-------|--------|---------|------|----------|--------------|
-| LoginPanel | Assets/UI/LoginPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `20:388` | ✅ `figma/LoginPanel.nodes.json` | 2026-06-13T07:37:39Z |
-| TaskDetailPanel | Assets/UI/TaskDetailPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `8:40` | ❌ 源 node 已失效，真相=spec | - |
+| LoginPanel | Assets/UI/LoginPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `41:426` | ✅ `figma/LoginPanel.nodes.json` | 2026-06-13T12:21:45Z |
+| TaskDetailPanel | Assets/UI/TaskDetailPanel | `7FmwGzdri9vWoVLWESP6Ja` | `8:40` | ✅ `figma/TaskDetailPanel.nodes.json` | 2026-06-13T08:55:36Z |
 | TaskListPanel | Assets/UI/TaskListPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `1:3` | ❌ 源 node 已失效，真相=spec | - |
 | UpLoadPanel | Assets/UI/UpLoadPanel | `0yO2Lx5vRsG7X6OtbPqzb2` | `6:763` | ✅ `figma/UpLoadPanel.nodes.json` | 2026-06-13T10:47:37Z |
 <!-- END auto-index -->

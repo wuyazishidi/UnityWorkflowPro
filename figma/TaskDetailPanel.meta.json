@@ -1,16 +1,14 @@
 {
   "panel": "TaskDetailPanel",
-  "fileKey": "wGp5DXqAjtpwuPS4qMWkxP",
+  "fileKey": "7FmwGzdri9vWoVLWESP6Ja",
   "node": "8:40",
   "folder": "Assets/UI/TaskDetailPanel",
   "spec": "Assets/UI/TaskDetailPanel/TaskDetailPanel.json",
-  "lastModified": null,
-  "snapshotAvailable": false,
-  "note": "源 node 已不在 Figma 文件中（早期同步，后被覆盖/改名）。存活真相 = 上面的 spec(已入库)。如需重建：在 Figma 重做该面板并给新 node-id 同步，会自动生成快照。",
+  "lastModified": "2026-06-13T08:55:36Z",
   "api": {
-    "nodes": "https://api.figma.com/v1/files/wGp5DXqAjtpwuPS4qMWkxP/nodes?ids=8:40",
-    "images": "https://api.figma.com/v1/images/wGp5DXqAjtpwuPS4qMWkxP?ids=<NODE_ID>&format=png&scale=2",
+    "nodes": "https://api.figma.com/v1/files/7FmwGzdri9vWoVLWESP6Ja/nodes?ids=8:40",
+    "images": "https://api.figma.com/v1/images/7FmwGzdri9vWoVLWESP6Ja?ids=<NODE_ID>&format=png&scale=2",
     "auth": "header X-Figma-Token: <token>（scope=file_content:read）"
   },
-  "resync": "figma-sync.ps1 -Node <NEW_NODE> -Panel TaskDetailPanel -FileKey wGp5DXqAjtpwuPS4qMWkxP -Verify"
+  "resync": "figma-sync.ps1 -Node 8:40 -Panel TaskDetailPanel -FileKey 7FmwGzdri9vWoVLWESP6Ja -Verify"
 }

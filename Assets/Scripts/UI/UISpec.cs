@@ -104,11 +104,17 @@ namespace Game.UI
         public List<UINode> children = new List<UINode>();
     }
 
-    /// <summary>type=ScrollList 滚动配置（spec 004 Phase 2.6）。</summary>
+    /// <summary>type=ScrollList 滚动配置（spec 004 Phase 2.6）。Content 用 LayoutGroup+ContentSizeFitter 自动撑开，项多了即可拖拽滚动。</summary>
     public class UIScroll
     {
         public bool horizontal = false;
         public bool vertical = true;
+
+        /// <summary>列表项之间的间距（像素），由设计中相邻行间隙推算。</summary>
+        public float spacing = 0f;
+
+        /// <summary>Content 四周内边距（像素），由首行相对列表的内缩推算；null=无。</summary>
+        public UIBorder padding;
     }
 
     /// <summary>type=Slider / Scrollbar 的取值范围（spec 004 Phase 2.6）。</summary>

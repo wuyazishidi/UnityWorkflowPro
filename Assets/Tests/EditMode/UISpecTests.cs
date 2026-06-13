@@ -433,6 +433,15 @@ namespace Game.Tests.EditMode
                 Assert.AreSame(content, sr.content, "ScrollRect.content 接线");
                 Assert.AreEqual(2, content.childCount, "行应重定向到 Content 下");
                 Assert.IsNotNull(content.Find("Row0"));
+                // 自动撑开：VerticalLayoutGroup + ContentSizeFitter(竖向 PreferredSize)
+                Assert.IsNotNull(content.GetComponent<VerticalLayoutGroup>(), "Content 应有 VerticalLayoutGroup");
+                var fitter = content.GetComponent<ContentSizeFitter>();
+                Assert.IsNotNull(fitter, "Content 应有 ContentSizeFitter");
+                Assert.AreEqual(ContentSizeFitter.FitMode.PreferredSize, fitter.verticalFit);
+                // 每个列表项带 LayoutElement(行高)，使布局组按行高堆叠
+                var le0 = content.Find("Row0").GetComponent<LayoutElement>();
+                Assert.IsNotNull(le0, "列表项应有 LayoutElement");
+                Assert.AreEqual(56f, le0.preferredHeight, 1e-3, "preferredHeight=设计行高");
             }
             finally { Object.DestroyImmediate(root); }
         }

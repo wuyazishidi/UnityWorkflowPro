@@ -55,6 +55,7 @@ namespace Game.UI
                 case "Button": BuildButton(go, node, resolver); break;
                 case "InputField": BuildInputField(go, node, resolver); break;
                 case "ScrollList": childParent = BuildScrollList(go, node, resolver); break;
+                // ScrollList 的列表项接线放到子节点建好后（见下方 AddLayoutElements 调用）
                 case "Dropdown": BuildDropdown(go, node, resolver); break;
                 case "Toggle": BuildToggle(go, node, resolver); break;
                 case "Slider": BuildSlider(go, node, resolver); break;
@@ -73,6 +74,10 @@ namespace Game.UI
                     childGo.transform.SetParent(childParent, false);
                 }
             }
+
+            // ScrollList：子项建好后给每项加 LayoutElement，使 LayoutGroup 按设计尺寸堆叠、ContentSizeFitter 正确撑开
+            if (node.type == "ScrollList")
+                AddScrollItemLayoutElements(childParent, node.scroll);
 
             // v2 效果（spec 004 Phase 2）：渐变 / 描边 / 整体不透明度
             ApplyV2Effects(go, node, resolver);
@@ -238,17 +243,19 @@ namespace Game.UI
 
         // ===== 标准 UGUI 组件（spec 004 Phase 2.6） =====
 
-        /// <summary>ScrollList → ScrollRect：Viewport(RectMask2D 裁剪) + Content(承接子项，保留绝对坐标)。返回 Content 作为子节点挂点。</summary>
+        /// <summary>ScrollList → ScrollRect：Viewport(RectMask2D 裁剪) + Content(LayoutGroup 自动堆叠 + ContentSizeFitter 自动撑开)。
+        /// 列表项越多 Content 越高，超过视口即可拖拽滚动。返回 Content 作为子节点挂点。</summary>
         private static Transform BuildScrollList(GameObject go, UINode node, IUIAssetResolver resolver)
         {
             // 可选底图（有 color/sprite 才加，避免无意义白底）
             if (!string.IsNullOrWhiteSpace(node.color) || !string.IsNullOrWhiteSpace(node.sprite))
                 AddBackground(go, node, resolver, true);
 
+            bool horizontal = node.scroll != null && node.scroll.horizontal && !(node.scroll.vertical);
             var sr = go.AddComponent<ScrollRect>();
-            sr.horizontal = node.scroll != null && node.scroll.horizontal;
-            sr.vertical = node.scroll == null || node.scroll.vertical;
-            sr.movementType = ScrollRect.MovementType.Clamped;
+            sr.horizontal = horizontal;
+            sr.vertical = !horizontal;
+            sr.movementType = ScrollRect.MovementType.Elastic;
             sr.scrollSensitivity = 24f;
 
             // Viewport：裁剪窗口（RectMask2D 无需图形，省一次 draw）
@@ -258,21 +265,41 @@ namespace Game.UI
             vpGo.AddComponent<RectMask2D>();
             sr.viewport = (RectTransform)vpGo.transform;
 
-            // Content：竖向滚动=顶对齐拉伸+高度；横向=左对齐拉伸+宽度
+            // Content：横向=左对齐沿 x 撑开；竖向(默认)=顶对齐沿 y 撑开
             var contentGo = new GameObject("Content", typeof(RectTransform));
             var crt = (RectTransform)contentGo.transform;
-            if (sr.horizontal && !sr.vertical)
+            var pad = node.scroll != null ? node.scroll.padding : null;
+            float spacing = node.scroll != null ? node.scroll.spacing : 0f;
+            var ro = pad != null
+                ? new RectOffset((int)pad.l, (int)pad.r, (int)pad.t, (int)pad.b)
+                : new RectOffset(0, 0, 0, 0);
+
+            ContentSizeFitter fitter = contentGo.AddComponent<ContentSizeFitter>();
+            if (horizontal)
             {
                 crt.anchorMin = new Vector2(0f, 0f); crt.anchorMax = new Vector2(0f, 1f);
                 crt.pivot = new Vector2(0f, 0.5f);
-                crt.sizeDelta = new Vector2(ContentExtent(node, vertical: false), 0f);
+                var hlg = contentGo.AddComponent<HorizontalLayoutGroup>();
+                hlg.childControlWidth = false; hlg.childControlHeight = true;
+                hlg.childForceExpandWidth = false; hlg.childForceExpandHeight = true;
+                hlg.childAlignment = TextAnchor.MiddleLeft;
+                hlg.spacing = spacing; hlg.padding = ro;
+                fitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+                fitter.verticalFit = ContentSizeFitter.FitMode.Unconstrained;
             }
             else
             {
                 crt.anchorMin = new Vector2(0f, 1f); crt.anchorMax = new Vector2(1f, 1f);
                 crt.pivot = new Vector2(0.5f, 1f);
-                crt.sizeDelta = new Vector2(0f, ContentExtent(node, vertical: true));
+                var vlg = contentGo.AddComponent<VerticalLayoutGroup>();
+                vlg.childControlWidth = true; vlg.childControlHeight = false;
+                vlg.childForceExpandWidth = true; vlg.childForceExpandHeight = false;
+                vlg.childAlignment = TextAnchor.UpperCenter;
+                vlg.spacing = spacing; vlg.padding = ro;
+                fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+                fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
             }
+            crt.sizeDelta = Vector2.zero;
             crt.anchoredPosition = Vector2.zero;
             contentGo.transform.SetParent(vpGo.transform, false);
             sr.content = crt;
@@ -280,17 +307,26 @@ namespace Game.UI
             return contentGo.transform;
         }
 
-        /// <summary>子项绝对坐标算内容跨度（竖向=最大下沿-自身y；横向=最大右沿-自身x）。无子项退回自身宽/高。</summary>
-        private static float ContentExtent(UINode node, bool vertical)
+        /// <summary>给 ScrollList 每个列表项加 LayoutElement(按设计尺寸)，让 LayoutGroup 按行高堆叠、ContentSizeFitter 正确撑开。</summary>
+        private static void AddScrollItemLayoutElements(Transform content, UIScroll scroll)
         {
-            float max = 0f;
-            if (node.children != null)
-                foreach (var c in node.children)
-                    if (c != null && c.rect != null)
-                        max = Mathf.Max(max, vertical ? (c.rect.y + c.rect.h - node.rect.y)
-                                                      : (c.rect.x + c.rect.w - node.rect.x));
-            float self = vertical ? node.rect.h : node.rect.w;
-            return Mathf.Max(max, self);
+            bool horizontal = scroll != null && scroll.horizontal && !scroll.vertical;
+            for (int i = 0; i < content.childCount; i++)
+            {
+                if (!(content.GetChild(i) is RectTransform rt)) continue;
+                var le = rt.GetComponent<LayoutElement>();
+                if (le == null) le = rt.gameObject.AddComponent<LayoutElement>();
+                if (horizontal)
+                {
+                    le.minWidth = rt.sizeDelta.x;
+                    le.preferredWidth = rt.sizeDelta.x;
+                }
+                else
+                {
+                    le.minHeight = rt.sizeDelta.y;
+                    le.preferredHeight = rt.sizeDelta.y;
+                }
+            }
         }
 
         /// <summary>Dropdown → TMP_Dropdown：底图 + Label(caption) + Arrow + Template(下拉列表，默认隐藏)。</summary>
