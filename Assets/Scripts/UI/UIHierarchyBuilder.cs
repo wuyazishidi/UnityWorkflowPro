@@ -49,6 +49,7 @@ namespace Game.UI
                 case "RawImage": BuildRawImage(go, node, resolver); break;
                 case "Text": BuildText(go, node, resolver); break;
                 case "Button": BuildButton(go, node, resolver); break;
+                case "InputField": BuildInputField(go, node, resolver); break;
                 case "Container":
                 default: break;
             }
@@ -153,6 +154,80 @@ namespace Game.UI
                 var tmp = labelGo.AddComponent<TextMeshProUGUI>();
                 ApplyText(tmp, node.text, resolver);
                 tmp.raycastTarget = false;
+            }
+        }
+
+        private static void BuildInputField(GameObject go, UINode node, IUIAssetResolver resolver)
+        {
+            // 背景图（作 targetGraphic）
+            var bg = go.AddComponent<Image>();
+            bg.color = ColorUtil.ParseHexOr(node.color, Color.white);
+            bg.raycastTarget = true;
+            if (resolver != null && !string.IsNullOrWhiteSpace(node.sprite))
+                bg.sprite = resolver.ResolveSprite(node.sprite);
+            bg.type = ParseImageType(node.imageType);
+
+            var input = go.AddComponent<TMP_InputField>();
+            input.lineType = TMP_InputField.LineType.SingleLine;
+            input.contentType = node.contentType == "Password"
+                ? TMP_InputField.ContentType.Password
+                : TMP_InputField.ContentType.Standard;
+
+            // Text Area（视口）：RectMask2D + 内边距
+            var pad = node.padding ?? new UIBorder { l = 16, t = 8, r = 16, b = 8 };
+            var areaGo = new GameObject("Text Area", typeof(RectTransform));
+            var art = (RectTransform)areaGo.transform;
+            art.anchorMin = Vector2.zero; art.anchorMax = Vector2.one; art.pivot = new Vector2(0.5f, 0.5f);
+            art.offsetMin = new Vector2(pad.l, pad.b);
+            art.offsetMax = new Vector2(-pad.r, -pad.t);
+            areaGo.AddComponent<RectMask2D>();
+            areaGo.transform.SetParent(go.transform, false);
+
+            // 占位符
+            var phGo = new GameObject("Placeholder", typeof(RectTransform));
+            UISpecMath.Apply((RectTransform)phGo.transform, UISpecMath.StretchFull());
+            phGo.transform.SetParent(areaGo.transform, false);
+            var ph = phGo.AddComponent<TextMeshProUGUI>();
+            ApplyText(ph, node.placeholder ?? new UIText { content = "", color = "#8EC5FF40" }, resolver);
+            ph.raycastTarget = false;
+
+            // 输入文字
+            var txtGo = new GameObject("Text", typeof(RectTransform));
+            UISpecMath.Apply((RectTransform)txtGo.transform, UISpecMath.StretchFull());
+            txtGo.transform.SetParent(areaGo.transform, false);
+            var txt = txtGo.AddComponent<TextMeshProUGUI>();
+            ApplyText(txt, new UIText
+            {
+                content = "",
+                fontSize = node.placeholder != null ? node.placeholder.fontSize : 16f,
+                color = node.textColor ?? "#E8F4FF",
+                alignment = node.placeholder != null ? node.placeholder.alignment : "MidlineLeft",
+                fontAsset = node.placeholder != null ? node.placeholder.fontAsset : null
+            }, resolver);
+            txt.raycastTarget = false;
+
+            input.textViewport = art;
+            input.textComponent = txt;
+            input.placeholder = ph;
+            input.targetGraphic = bg;
+            input.text = "";
+
+            // 密码显隐切换（眼睛）
+            if (node.passwordToggle != null && !string.IsNullOrWhiteSpace(node.passwordToggle.sprite))
+            {
+                var eyeGo = new GameObject("PwToggle", typeof(RectTransform));
+                var ert = (RectTransform)eyeGo.transform;
+                var t = node.passwordToggle.rect;
+                UISpecMath.Apply(ert, UISpecMath.TopLeft(t.x, t.y, t.w, t.h, node.rect.x, node.rect.y));
+                eyeGo.transform.SetParent(go.transform, false);
+                var eimg = eyeGo.AddComponent<Image>();
+                eimg.color = ColorUtil.ParseHexOr(node.passwordToggle.color, Color.white);
+                if (resolver != null) eimg.sprite = resolver.ResolveSprite(node.passwordToggle.sprite);
+                var ebtn = eyeGo.AddComponent<Button>();
+                ebtn.targetGraphic = eimg;
+                var toggle = eyeGo.AddComponent<PasswordVisibilityToggle>();
+                toggle.input = input;
+                toggle.button = ebtn;
             }
         }
 

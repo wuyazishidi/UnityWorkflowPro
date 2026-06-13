@@ -64,7 +64,32 @@ namespace Game.UI
         /// <summary>锚定意图：承接不丢；Phase 4 才真正驱动 RectTransform。</summary>
         public UIConstraints constraints;
 
+        // ===== 语义组件（spec 004 Phase 2.5）：type=InputField 时生效 =====
+
+        /// <summary>type=InputField 的占位符（文本+色+字号+对齐）。</summary>
+        public UIText placeholder;
+
+        /// <summary>type=InputField 内容类型：Standard | Password。</summary>
+        public string contentType;
+
+        /// <summary>type=InputField 输入文字颜色（null=亮色默认）。</summary>
+        public string textColor;
+
+        /// <summary>type=InputField 文本区内边距（null=默认）。</summary>
+        public UIBorder padding;
+
+        /// <summary>type=InputField 的密码显隐切换图标（眼睛）；null=无。</summary>
+        public UIPasswordToggle passwordToggle;
+
         public List<UINode> children = new List<UINode>();
+    }
+
+    /// <summary>密码框显隐切换图标（spec 004 Phase 2.5）。运行期点击切换 InputField 的 Standard/Password。</summary>
+    public class UIPasswordToggle
+    {
+        public string sprite;            // 眼睛图标精灵路径
+        public string color = "#FFFFFF";
+        public UIRect rect = new UIRect(); // 相对面板的绝对像素矩形（左上原点）
     }
 
     public class UIRect

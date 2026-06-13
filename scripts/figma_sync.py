@@ -322,6 +322,76 @@ def main():
         return {"color": scol, "weight": round(sw, 2), "align": "Inside",
                 "sprite": rp, "border": {"l": rb, "t": rb, "r": rb, "b": rb}}
 
+    # ===== 语义组件映射（spec 004 Phase 2.5）：Figma 命名 → 功能组件 =====
+    def _find_text(n):
+        if n.get("type") == "TEXT":
+            return n
+        for c in n.get("children", []):
+            r = _find_text(c)
+            if r:
+                return r
+        return None
+
+    def _find_export_descendant(n):
+        for c in n.get("children", []):
+            if exports.get(c["id"]):
+                return c
+            r = _find_export_descendant(c)
+            if r:
+                return r
+        return None
+
+    def _is_input(n):
+        """fill+stroke 框，且含命名带 'input'/'输入' 的后代 → 视为输入框。"""
+        if n.get("type") != "FRAME" or not (first_solid_fill(n) and first_stroke(n)[0]):
+            return False
+        def named_input(x):
+            if x is not n and "input" in (x.get("name", "") or "").lower():
+                return True
+            if x.get("type") == "TEXT" and "输入" in (x.get("characters", "") or ""):
+                return True
+            return any(named_input(c) for c in x.get("children", []))
+        return named_input(n)
+
+    def _is_password(n):
+        def chk(x):
+            nm = x.get("name", "") or ""
+            if "password" in nm.lower() or "密码" in nm:
+                return True
+            if x.get("type") == "TEXT" and "密码" in (x.get("characters", "") or ""):
+                return True
+            return any(chk(c) for c in x.get("children", []))
+        return chk(n)
+
+    def _opaque(hexc):
+        return hexc[:7] if (hexc and len(hexc) == 9) else hexc
+
+    def emit_input_field(n):
+        cr = int(n.get("cornerRadius") or 12)
+        sp, b = round_sprite(cr)
+        r = rect(n)
+        nm = _san(n.get("name", "Input"))
+        nd = {"name": nm + "Input", "type": "InputField", "color": first_solid_fill(n) or "#0A1E46",
+              "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r,
+              "contentType": "Password" if _is_password(n) else "Standard"}
+        stroke = _stroke_field(n, cr)
+        if stroke:
+            nd["stroke"] = stroke
+        ph = _find_text(n)
+        if ph is not None:
+            pr = rect(ph); stl = ph.get("style", {})
+            nd["placeholder"] = {"content": ph.get("characters", ""), "fontSize": round(stl.get("fontSize", 16)),
+                                 "color": first_solid_fill(ph) or "#8EC5FF40", "alignment": text_align(ph)}
+            nd["padding"] = {"l": max(0, pr["x"] - r["x"]), "t": 6,
+                             "r": max(0, (r["x"] + r["w"]) - (pr["x"] + pr["w"])), "b": 6}
+            nd["textColor"] = _opaque(first_solid_fill(ph)) or "#E8F4FF"
+        if nd["contentType"] == "Password":
+            eye = _find_export_descendant(n)
+            if eye is not None:
+                nd["passwordToggle"] = {"sprite": f"{panel_dir}/Icons/{asset_path(eye['id'])}",
+                                        "color": "#FFFFFF", "rect": rect(eye)}
+        out_nodes.append(_apply_v2(nd, n))
+
     def emit_image(n, role):
         nd = {"name": _san(n.get("name", "Image")), "type": "Image", "color": "#FFFFFF", "raycastTarget": False,
               "sprite": f"{panel_dir}/Icons/{asset_path(n['id'])}", "rect": rect(n)}
@@ -385,6 +455,9 @@ def main():
                 for c in n.get("children", []):
                     visit(c, in_button=False)
             return
+        if _is_input(n):
+            emit_input_field(n)  # 语义组件：→ TMP_InputField（消费占位符+眼睛，不再递归）
+            return
         has_fill = first_solid_fill(n) is not None
         has_stroke = first_stroke(n)[0] is not None
         is_card = n["id"] == card_id
@@ -394,7 +467,7 @@ def main():
                 visit(c)
             return
         if has_fill and has_stroke:
-            emit_bordered(n)  # 输入框样式
+            emit_bordered(n)  # 非输入的 fill+stroke 框（如普通面板）
             for c in n.get("children", []):
                 visit(c)  # 占位符文字等作为扁平兄弟
             return

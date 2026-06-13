@@ -318,6 +318,70 @@ namespace Game.Tests.EditMode
             Assert.IsTrue(errs.Exists(e => e.Contains("描边色")));
         }
 
+        // ---------- 语义组件：InputField（spec 004 Phase 2.5） ----------
+
+        [Test]
+        public void Json_Parse_InputField_RoundTrips()
+        {
+            const string json = @"{ ""schemaVersion"":1, ""referenceWidth"":1106, ""referenceHeight"":778, ""rootName"":""P"",
+              ""root"":{ ""name"":""P"", ""type"":""Container"", ""rect"":{""x"":0,""y"":0,""w"":1106,""h"":778},
+                ""children"":[ {""name"":""PwInput"",""type"":""InputField"",""color"":""#0A1E4640"",
+                  ""rect"":{""x"":436,""y"":309,""w"":307,""h"":57},""contentType"":""Password"",
+                  ""placeholder"":{""content"":""请输入密码"",""fontSize"":16,""color"":""#8EC5FF40"",""alignment"":""MidlineLeft""},
+                  ""passwordToggle"":{""sprite"":""Assets/UI/Login/Icons/art1.png"",""color"":""#FFFFFF"",""rect"":{""x"":711,""y"":330,""w"":15,""h"":15}}} ] } }";
+            var r = UISpecJson.Parse(json);
+            Assert.IsTrue(r.Ok, string.Join("; ", r.Errors));
+            var f = r.Spec.root.children[0];
+            Assert.AreEqual("InputField", f.type);
+            Assert.AreEqual("Password", f.contentType);
+            Assert.AreEqual("请输入密码", f.placeholder.content);
+            Assert.IsNotNull(f.passwordToggle);
+        }
+
+        [Test]
+        public void Build_InputField_WiresTMPInputField()
+        {
+            var spec = new UISpec
+            {
+                rootName = "P",
+                root = new UINode
+                {
+                    name = "P", type = "Container", anchorPreset = "center", rect = new UIRect(0, 0, 1106, 778),
+                    children = new List<UINode>
+                    {
+                        new UINode
+                        {
+                            name = "PwInput", type = "InputField", color = "#0A1E4640",
+                            rect = new UIRect(436, 309, 307, 57), contentType = "Password",
+                            placeholder = new UIText { content = "请输入密码", fontSize = 16, color = "#8EC5FF40", alignment = "MidlineLeft" },
+                            passwordToggle = new UIPasswordToggle { sprite = "x.png", color = "#FFFFFF", rect = new UIRect(711, 330, 15, 15) }
+                        }
+                    }
+                }
+            };
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                var fieldGo = root.transform.Find("PwInput").gameObject;
+                var input = fieldGo.GetComponent<TMP_InputField>();
+                Assert.IsNotNull(input, "应生成 TMP_InputField");
+                Assert.IsNotNull(input.textComponent, "textComponent 接线");
+                Assert.IsNotNull(input.placeholder, "placeholder 接线");
+                Assert.IsNotNull(input.textViewport, "textViewport 接线");
+                Assert.IsNotNull(input.targetGraphic, "targetGraphic 接线");
+                Assert.AreEqual(TMP_InputField.ContentType.Password, input.contentType);
+                Assert.IsNotNull(fieldGo.transform.Find("Text Area").GetComponent<RectMask2D>(), "Text Area 应有 RectMask2D");
+                // 眼睛切换：PwToggle 子物体 + 组件接线
+                var eye = fieldGo.transform.Find("PwToggle");
+                Assert.IsNotNull(eye, "密码框应有眼睛切换");
+                var toggle = eye.GetComponent<PasswordVisibilityToggle>();
+                Assert.IsNotNull(toggle);
+                Assert.AreSame(input, toggle.input, "toggle 关联到该 InputField");
+                Assert.IsNotNull(toggle.button);
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
         // ---------- helpers ----------
 
         private static UISpec NewSimpleSpec()

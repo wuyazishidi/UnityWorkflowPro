@@ -114,7 +114,8 @@ public class UIConstraints { public string horizontal = "Left"; public string ve
 - EditMode 测试覆盖新字段解析与布局；v1 回归。
 - **验收**：含描边 + 半透 + 线性渐变的面板 MAE < 阈值；色差类 bug 关闭。
 
-### Phase 2.5 — 语义组件映射（功能匹配）
+### Phase 2.5 — 语义组件映射（功能匹配）✅ 已完成
+> 已实现：`InputField` 类型 + `BuildInputField`(TMP_InputField + Text Area/RectMask2D + Placeholder/Text + targetGraphic 接线) + `PasswordVisibilityToggle`(眼睛点击切 Password/Standard，运行期自接线)。`figma_sync.py` 命名映射：`*Input*`/`输入` → InputField、`Password`/`密码` → Password+眼睛、`Button` → Button。Login 实测产出 3 个 InputField(密码框 Password+眼睛)，可输入、可切显隐；EditMode +2 用例。原始设计（保留备查）：
 > 当前痛点：生成的 UI 只还原**外观**（输入框是 Image+占位符 Text），不还原**功能**（不是 `TMP_InputField`、密码框不是密码输入、眼睛不是 toggle）。Figma 节点命名已带语义（实测内层帧名为 `Text Input` / `Password Input` / `Button`），据此映射即可，无需猜。
 
 - UISpec 新增 `InputField` 类型契约：背景（精灵+9-slice 或 SDF shape）作 targetGraphic、`placeholder`（文本+色）、`textColor`、`contentType`（Standard/Password/…）、可选 `characterLimit`。

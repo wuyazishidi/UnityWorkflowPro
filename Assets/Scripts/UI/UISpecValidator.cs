@@ -6,7 +6,7 @@ namespace Game.UI
     public static class UISpecValidator
     {
         public static readonly HashSet<string> ValidTypes =
-            new HashSet<string> { "Container", "Image", "RawImage", "Text", "Button" };
+            new HashSet<string> { "Container", "Image", "RawImage", "Text", "Button", "InputField" };
 
         public static readonly HashSet<string> ValidImageTypes =
             new HashSet<string> { "Simple", "Sliced", "Tiled", "Filled" };
