@@ -480,7 +480,8 @@ def main():
         for c in n.get("children", []):
             visit(c)
 
-    visit(doc)
+    # 从卡片节点开始翻译，跳过外层画板帧(如 yuanceUI/Body)——否则画板自身的白色填充会被 emit 成多余的 BG 节点。
+    visit(card["node"] if card["node"] else doc)
     _dedupe_names(out_nodes)
 
     spec = {"schemaVersion": 1, "referenceWidth": FW, "referenceHeight": FH,
