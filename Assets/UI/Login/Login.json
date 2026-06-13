@@ -15,7 +15,7 @@
     },
     "children": [
       {
-        "name": "Container",
+        "name": "CardBase",
         "type": "Image",
         "color": "#0A1118",
         "raycastTarget": false,
@@ -48,7 +48,7 @@
         }
       },
       {
-        "name": "Container_1",
+        "name": "Container",
         "type": "Image",
         "color": "#FFFFFF",
         "raycastTarget": false,
@@ -61,7 +61,7 @@
         }
       },
       {
-        "name": "Container_2",
+        "name": "Container_1",
         "type": "Image",
         "color": "#FFFFFF",
         "raycastTarget": false,
@@ -74,7 +74,7 @@
         }
       },
       {
-        "name": "Container_3",
+        "name": "Container_2",
         "type": "Image",
         "color": "#FFFFFF",
         "raycastTarget": false,
@@ -87,7 +87,7 @@
         }
       },
       {
-        "name": "Container_4",
+        "name": "Container_3",
         "type": "Image",
         "color": "#FFFFFF",
         "raycastTarget": false,
@@ -100,273 +100,403 @@
         }
       },
       {
-        "name": "Image_1",
-        "type": "Image",
-        "color": "#FFFFFF",
+        "name": "Container_4",
+        "type": "Container",
         "raycastTarget": false,
-        "sprite": "Assets/UI/Login/Icons/icon1.png",
         "rect": {
           "x": 40,
           "y": 32,
-          "w": 44,
+          "w": 150,
           "h": 44
-        }
+        },
+        "children": [
+          {
+            "name": "Image",
+            "type": "Image",
+            "color": "#FFFFFF",
+            "raycastTarget": false,
+            "sprite": "Assets/UI/Login/Icons/icon1.png",
+            "rect": {
+              "x": 40,
+              "y": 32,
+              "w": 44,
+              "h": 44
+            }
+          },
+          {
+            "name": "Text",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 96,
+              "y": 39,
+              "w": 94,
+              "h": 30
+            },
+            "children": [
+              {
+                "name": "源策未来",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 96,
+                  "y": 38,
+                  "w": 91,
+                  "h": 30
+                },
+                "text": {
+                  "content": "源策未来",
+                  "fontSize": 20,
+                  "color": "#E8F4FF",
+                  "alignment": "MidlineLeft",
+                  "style": {
+                    "bold": true
+                  }
+                }
+              }
+            ]
+          }
+        ]
       },
       {
-        "name": "源策未来",
-        "type": "Text",
+        "name": "Form",
+        "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 96,
-          "y": 38,
-          "w": 91,
-          "h": 30
+          "x": 323,
+          "y": 184,
+          "w": 460,
+          "h": 411
         },
-        "text": {
-          "content": "源策未来",
-          "fontSize": 20,
-          "color": "#E8F4FF",
-          "alignment": "MidlineLeft",
-          "style": {
-            "bold": true
+        "children": [
+          {
+            "name": "Container",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 363,
+              "y": 224,
+              "w": 380,
+              "h": 57
+            },
+            "children": [
+              {
+                "name": "Text",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 363,
+                  "y": 241,
+                  "w": 61,
+                  "h": 23
+                },
+                "children": [
+                  {
+                    "name": "用户名",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 362,
+                      "y": 240,
+                      "w": 62,
+                      "h": 23
+                    },
+                    "text": {
+                      "content": "用户名",
+                      "fontSize": 20,
+                      "color": "#93C5FDD9",
+                      "alignment": "MidlineRight"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "ContainerInput",
+                "type": "InputField",
+                "color": "#0A1E4640",
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 436,
+                  "y": 224,
+                  "w": 307,
+                  "h": 57
+                },
+                "contentType": "Standard",
+                "stroke": {
+                  "color": "#388BFD73",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                },
+                "placeholder": {
+                  "content": "请输入用户名",
+                  "fontSize": 16,
+                  "color": "#8EC5FF40",
+                  "alignment": "MidlineLeft"
+                },
+                "padding": {
+                  "l": 16,
+                  "t": 6,
+                  "r": 17,
+                  "b": 6
+                },
+                "textColor": "#8EC5FF"
+              }
+            ]
+          },
+          {
+            "name": "Container_1",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 363,
+              "y": 281,
+              "w": 380,
+              "h": 85
+            },
+            "children": [
+              {
+                "name": "Text",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 363,
+                  "y": 326,
+                  "w": 61,
+                  "h": 23
+                },
+                "children": [
+                  {
+                    "name": "密 码",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 376,
+                      "y": 326,
+                      "w": 48,
+                      "h": 23
+                    },
+                    "text": {
+                      "content": "密 码",
+                      "fontSize": 20,
+                      "color": "#93C5FDD9",
+                      "alignment": "MidlineRight"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "ContainerInput",
+                "type": "InputField",
+                "color": "#0A1E4640",
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 436,
+                  "y": 309,
+                  "w": 307,
+                  "h": 57
+                },
+                "contentType": "Password",
+                "stroke": {
+                  "color": "#388BFD73",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                },
+                "placeholder": {
+                  "content": "请输入密码",
+                  "fontSize": 16,
+                  "color": "#8EC5FF40",
+                  "alignment": "MidlineLeft"
+                },
+                "padding": {
+                  "l": 16,
+                  "t": 6,
+                  "r": 40,
+                  "b": 6
+                },
+                "textColor": "#8EC5FF",
+                "passwordToggle": {
+                  "sprite": "Assets/UI/Login/Icons/art1.png",
+                  "color": "#FFFFFF",
+                  "rect": {
+                    "x": 711,
+                    "y": 330,
+                    "w": 15,
+                    "h": 15
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "Container_2",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 363,
+              "y": 366,
+              "w": 380,
+              "h": 85
+            },
+            "children": [
+              {
+                "name": "Text",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 363,
+                  "y": 412,
+                  "w": 61,
+                  "h": 23
+                },
+                "children": [
+                  {
+                    "name": "动态码",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 362,
+                      "y": 411,
+                      "w": 62,
+                      "h": 23
+                    },
+                    "text": {
+                      "content": "动态码",
+                      "fontSize": 20,
+                      "color": "#93C5FDD9",
+                      "alignment": "MidlineRight"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "ContainerInput",
+                "type": "InputField",
+                "color": "#0A1E4640",
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "rect": {
+                  "x": 436,
+                  "y": 394,
+                  "w": 307,
+                  "h": 57
+                },
+                "contentType": "Standard",
+                "stroke": {
+                  "color": "#388BFD73",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring12.png",
+                  "border": {
+                    "l": 12,
+                    "t": 12,
+                    "r": 12,
+                    "b": 12
+                  }
+                },
+                "placeholder": {
+                  "content": "请输入动态码",
+                  "fontSize": 16,
+                  "color": "#8EC5FF40",
+                  "alignment": "MidlineLeft"
+                },
+                "padding": {
+                  "l": 16,
+                  "t": 6,
+                  "r": 17,
+                  "b": 6
+                },
+                "textColor": "#8EC5FF"
+              }
+            ]
+          },
+          {
+            "name": "Container_3",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 363,
+              "y": 452,
+              "w": 380,
+              "h": 103
+            },
+            "children": [
+              {
+                "name": "Button",
+                "type": "Button",
+                "color": "#143CA04D",
+                "sprite": "Assets/UI/Common/round16.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 16,
+                  "t": 16,
+                  "r": 16,
+                  "b": 16
+                },
+                "rect": {
+                  "x": 403,
+                  "y": 500,
+                  "w": 300,
+                  "h": 55
+                },
+                "text": {
+                  "content": "登 录",
+                  "fontSize": 20,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "style": {
+                    "bold": true
+                  }
+                },
+                "stroke": {
+                  "color": "#388BFD8C",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring16.png",
+                  "border": {
+                    "l": 16,
+                    "t": 16,
+                    "r": 16,
+                    "b": 16
+                  }
+                }
+              }
+            ]
           }
-        }
-      },
-      {
-        "name": "用户名",
-        "type": "Text",
-        "raycastTarget": false,
-        "rect": {
-          "x": 362,
-          "y": 240,
-          "w": 62,
-          "h": 23
-        },
-        "text": {
-          "content": "用户名",
-          "fontSize": 20,
-          "color": "#93C5FDD9",
-          "alignment": "MidlineRight"
-        }
-      },
-      {
-        "name": "ContainerInput",
-        "type": "InputField",
-        "color": "#0A1E4640",
-        "sprite": "Assets/UI/Common/round12.png",
-        "imageType": "Sliced",
-        "border": {
-          "l": 12,
-          "t": 12,
-          "r": 12,
-          "b": 12
-        },
-        "rect": {
-          "x": 436,
-          "y": 224,
-          "w": 307,
-          "h": 57
-        },
-        "contentType": "Standard",
-        "stroke": {
-          "color": "#388BFD73",
-          "weight": 0.67,
-          "align": "Inside",
-          "sprite": "Assets/UI/Common/ring12.png",
-          "border": {
-            "l": 12,
-            "t": 12,
-            "r": 12,
-            "b": 12
-          }
-        },
-        "placeholder": {
-          "content": "请输入用户名",
-          "fontSize": 16,
-          "color": "#8EC5FF40",
-          "alignment": "MidlineLeft"
-        },
-        "padding": {
-          "l": 16,
-          "t": 6,
-          "r": 17,
-          "b": 6
-        },
-        "textColor": "#8EC5FF"
-      },
-      {
-        "name": "密 码",
-        "type": "Text",
-        "raycastTarget": false,
-        "rect": {
-          "x": 376,
-          "y": 326,
-          "w": 48,
-          "h": 23
-        },
-        "text": {
-          "content": "密 码",
-          "fontSize": 20,
-          "color": "#93C5FDD9",
-          "alignment": "MidlineRight"
-        }
-      },
-      {
-        "name": "ContainerInput_1",
-        "type": "InputField",
-        "color": "#0A1E4640",
-        "sprite": "Assets/UI/Common/round12.png",
-        "imageType": "Sliced",
-        "border": {
-          "l": 12,
-          "t": 12,
-          "r": 12,
-          "b": 12
-        },
-        "rect": {
-          "x": 436,
-          "y": 309,
-          "w": 307,
-          "h": 57
-        },
-        "contentType": "Password",
-        "stroke": {
-          "color": "#388BFD73",
-          "weight": 0.67,
-          "align": "Inside",
-          "sprite": "Assets/UI/Common/ring12.png",
-          "border": {
-            "l": 12,
-            "t": 12,
-            "r": 12,
-            "b": 12
-          }
-        },
-        "placeholder": {
-          "content": "请输入密码",
-          "fontSize": 16,
-          "color": "#8EC5FF40",
-          "alignment": "MidlineLeft"
-        },
-        "padding": {
-          "l": 16,
-          "t": 6,
-          "r": 40,
-          "b": 6
-        },
-        "textColor": "#8EC5FF",
-        "passwordToggle": {
-          "sprite": "Assets/UI/Login/Icons/art1.png",
-          "color": "#FFFFFF",
-          "rect": {
-            "x": 711,
-            "y": 330,
-            "w": 15,
-            "h": 15
-          }
-        }
-      },
-      {
-        "name": "动态码",
-        "type": "Text",
-        "raycastTarget": false,
-        "rect": {
-          "x": 362,
-          "y": 411,
-          "w": 62,
-          "h": 23
-        },
-        "text": {
-          "content": "动态码",
-          "fontSize": 20,
-          "color": "#93C5FDD9",
-          "alignment": "MidlineRight"
-        }
-      },
-      {
-        "name": "ContainerInput_2",
-        "type": "InputField",
-        "color": "#0A1E4640",
-        "sprite": "Assets/UI/Common/round12.png",
-        "imageType": "Sliced",
-        "border": {
-          "l": 12,
-          "t": 12,
-          "r": 12,
-          "b": 12
-        },
-        "rect": {
-          "x": 436,
-          "y": 394,
-          "w": 307,
-          "h": 57
-        },
-        "contentType": "Standard",
-        "stroke": {
-          "color": "#388BFD73",
-          "weight": 0.67,
-          "align": "Inside",
-          "sprite": "Assets/UI/Common/ring12.png",
-          "border": {
-            "l": 12,
-            "t": 12,
-            "r": 12,
-            "b": 12
-          }
-        },
-        "placeholder": {
-          "content": "请输入动态码",
-          "fontSize": 16,
-          "color": "#8EC5FF40",
-          "alignment": "MidlineLeft"
-        },
-        "padding": {
-          "l": 16,
-          "t": 6,
-          "r": 17,
-          "b": 6
-        },
-        "textColor": "#8EC5FF"
-      },
-      {
-        "name": "Button",
-        "type": "Button",
-        "color": "#143CA04D",
-        "sprite": "Assets/UI/Common/round16.png",
-        "imageType": "Sliced",
-        "border": {
-          "l": 16,
-          "t": 16,
-          "r": 16,
-          "b": 16
-        },
-        "rect": {
-          "x": 403,
-          "y": 500,
-          "w": 300,
-          "h": 55
-        },
-        "text": {
-          "content": "登 录",
-          "fontSize": 20,
-          "color": "#A8D4FF",
-          "alignment": "Center",
-          "style": {
-            "bold": true
-          }
-        },
-        "stroke": {
-          "color": "#388BFD8C",
-          "weight": 0.67,
-          "align": "Inside",
-          "sprite": "Assets/UI/Common/ring16.png",
-          "border": {
-            "l": 16,
-            "t": 16,
-            "r": 16,
-            "b": 16
-          }
-        }
+        ]
       }
     ]
   }
