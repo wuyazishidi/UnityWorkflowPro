@@ -88,7 +88,7 @@ powershell -ExecutionPolicy Bypass -Command "& '.\Packages\cn.etetet.yiuimcp\Con
 - **手动微调**：直接改 `<Panel>.json`；下次重生成是覆盖式，用 `git diff` 审阅改动（不再维护 draft 并行副本）。
 - figma-pull 产物：`Icons/*.png`(背景按卡片节点导、降采样≤1280+按圆角打 alpha)、`<Panel>.json`(自动翻译：实色→Image、IMAGE→精灵、文字→Text、**fill+stroke→半透填充+镂空描边环(ring*)**、Button、整卡背景→圆角精灵)、`.figma/layout.txt`、`.figma/truth.png`(卡片节点，与渲染同框)。
 - **保留层级**：翻译器输出**嵌套树**镜像 Figma 层级(上下级关系)，不拍平——分组帧→Container、其子嵌在内(如列表帧含各行、行含其文本)。坐标用整帧绝对值，builder 按 `parentAbsX` 解算相对偏移，渲染不变。无实色填充的纯分组帧→Container(透明)，只有描边的框→透明底+描边(不误填白)。
-- **语义组件映射**(spec 004 Phase 2.5)：按 Figma 命名映射功能组件——`*Input*`/`输入`→`TMP_InputField`(可输入)、`Password`/`密码`→Password 类型 + 眼睛显隐切换、`Button`→Button。生成的 UI 与功能匹配，无需在 Inspector 手改组件。
+- **语义组件映射**(spec 004 Phase 2.5)：按 Figma 命名映射功能组件——`*Input*`/`输入`→`TMP_InputField`(可输入)、`Password`/`密码`→Password 类型 + 眼睛显隐切换、命名含 `Button`/`Btn`/`按钮` 且有居中文字的填充框→Button。生成的 UI 与功能匹配，无需在 Inspector 手改组件。
 - **圆角/描边**：用 `Assets/UI/Common/` 下 round*(填充)/ring*(描边) 9-slice 精灵 + built-in UGUI `Image`（编辑器内所见即所得）。渐变由 `UIVertexGradient`(顶点色)。（注：曾试 SDF `UIShape` 去纹理方案，因编辑器直查 prefab 底图不显示已回退，见 spec 004 Phase 3。）
 - **导入分流**(spec 004 Phase 1)：`Assets/UI/**/Icons/` 下，>1024px 的大图自动 Compressed+限 2048(防强制 Uncompressed 卡主线程)，小图标维持 Uncompressed 保真（`UIIconPostprocessor`）。
 - **降 DC**：`ui-build-render` 默认会调 `PackPanelAtlas` 给 `Assets/UI/<Panel>/Icons/` 打一张 `<Panel>.spriteatlas`(图集路径从 prefab 路径推导)，工程 Sprite Packer = V1 Always Enabled，进入 Play/构建时自动合批 → 面板内所有 Image 共用一张纹理，加图标不增 DC。`-Atlas $false` 可关。（注意：TMP 文字用自己的字体图集，与精灵是两张纹理，z 序里图文交替仍会打断合批。）

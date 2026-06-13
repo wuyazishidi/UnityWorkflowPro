@@ -278,7 +278,8 @@ def main():
     def is_button(n):
         if not (n["type"] == "FRAME" and first_solid_fill(n)):
             return False
-        if "button" not in n.get("name", "").lower():
+        nm = (n.get("name", "") or "").lower()
+        if not ("button" in nm or "btn" in nm or "按钮" in (n.get("name", "") or "")):
             return False
         return _find_centered_text(n) is not None
 
