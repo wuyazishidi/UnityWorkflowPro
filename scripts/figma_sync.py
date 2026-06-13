@@ -314,13 +314,11 @@ def main():
         return nd
 
     def _stroke_field(n, cr):
-        """fill+stroke 中的 stroke 收敛为节点 v2 字段（builder 用镂空环实现），不再另起节点。"""
+        """stroke 收敛为节点 v2 字段（spec 004 Phase 3：builder 用 SDF 直接画描边，不再用环精灵）。"""
         scol, sw = first_stroke(n)
         if not scol:
             return None
-        rp, rb = ring_sprite(cr)
-        return {"color": scol, "weight": round(sw, 2), "align": "Inside",
-                "sprite": rp, "border": {"l": rb, "t": rb, "r": rb, "b": rb}}
+        return {"color": scol, "weight": round(sw, 2), "align": "Inside"}
 
     # ===== 语义组件映射（spec 004 Phase 2.5）：Figma 命名 → 功能组件 =====
     def _find_text(n):
@@ -368,11 +366,10 @@ def main():
 
     def emit_input_field(n):
         cr = int(n.get("cornerRadius") or 12)
-        sp, b = round_sprite(cr)
         r = rect(n)
         nm = _san(n.get("name", "Input"))
         nd = {"name": nm + "Input", "type": "InputField", "color": first_solid_fill(n) or "#0A1E46",
-              "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r,
+              "rect": r, "cornerRadius": cr,
               "contentType": "Password" if _is_password(n) else "Standard"}
         stroke = _stroke_field(n, cr)
         if stroke:
@@ -402,28 +399,25 @@ def main():
 
     def emit_solid(n):
         cr = int(n.get("cornerRadius") or 0)
-        nd = {"name": _san(n.get("name", "Rect")), "type": "Image", "color": first_solid_fill(n) or "#FFFFFF",
-              "raycastTarget": False, "rect": rect(n)}
+        nd = {"name": _san(n.get("name", "Rect")), "type": "Shape" if cr else "Image",
+              "color": first_solid_fill(n) or "#FFFFFF", "raycastTarget": False, "rect": rect(n)}
         if cr:
-            sp, b = round_sprite(cr)
-            nd.update({"sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}})
+            nd["cornerRadius"] = cr
         st = _stroke_field(n, cr or 12)
         if st:
             nd["stroke"] = st
         out_nodes.append(_apply_v2(nd, n))
 
     def emit_bordered(n, as_button=False):
-        """fill+stroke -> 单节点：半透填充(Figma 精确色) + v2 stroke 字段(builder 用镚空环实现)。"""
+        """fill+stroke -> 单节点 SDF：cornerRadius + stroke(色/宽)，builder 用 UIShape 零纹理画圆角+描边。"""
         cr = int(n.get("cornerRadius") or 12)
-        sp, b = round_sprite(cr)
         r = rect(n)
         nm = _san(n.get("name", "Field"))
         fill = first_solid_fill(n)
         stroke = _stroke_field(n, cr)
         if as_button:
             txt = _find_centered_text(n)
-            nd = {"name": nm, "type": "Button", "color": fill or "#FFFFFF",
-                  "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r}
+            nd = {"name": nm, "type": "Button", "color": fill or "#FFFFFF", "rect": r, "cornerRadius": cr}
             if txt:
                 stl = txt.get("style", {})
                 nd["text"] = {"content": txt.get("characters", ""), "fontSize": round(stl.get("fontSize", 16)),
@@ -431,8 +425,8 @@ def main():
                 if stl.get("fontWeight", 400) >= 600:
                     nd["text"]["style"] = {"bold": True}
         else:
-            nd = {"name": nm + "Fill", "type": "Image", "color": fill or "#FFFFFF", "raycastTarget": False,
-                  "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r}
+            nd = {"name": nm + "Fill", "type": "Shape", "color": fill or "#FFFFFF", "raycastTarget": False,
+                  "rect": r, "cornerRadius": cr}
         if stroke:
             nd["stroke"] = stroke
         out_nodes.append(_apply_v2(nd, n))

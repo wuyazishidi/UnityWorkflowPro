@@ -39,6 +39,9 @@ namespace Game.UI
         /// <summary>9-slice 边框（像素），配合 imageType=Sliced。</summary>
         public UIBorder border;
 
+        /// <summary>圆角半径（像素）。type=Shape 用 SDF 画；&gt;0 且无 sprite 时 Image/Button/InputField 底改用 UIShape（零纹理）。</summary>
+        public float cornerRadius = 0f;
+
         public bool raycastTarget = true;
 
         /// <summary>null = 左上像素映射（默认）；"stretch-full" = 拉伸填满父级。</summary>
