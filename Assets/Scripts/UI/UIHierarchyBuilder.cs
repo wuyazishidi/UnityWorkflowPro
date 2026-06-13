@@ -46,7 +46,6 @@ namespace Game.UI
             switch (node.type)
             {
                 case "Image": BuildImage(go, node, resolver); break;
-                case "Shape": BuildShape(go, node, resolver); break;
                 case "RawImage": BuildRawImage(go, node, resolver); break;
                 case "Text": BuildText(go, node, resolver); break;
                 case "Button": BuildButton(go, node, resolver); break;
@@ -107,35 +106,12 @@ namespace Game.UI
 
         private static void BuildImage(GameObject go, UINode node, IUIAssetResolver resolver)
         {
-            AddBackground(go, node, resolver, node.raycastTarget, forceShape: false);
+            AddBackground(go, node, resolver, node.raycastTarget);
         }
 
-        private static void BuildShape(GameObject go, UINode node, IUIAssetResolver resolver)
+        /// <summary>节点底图：Image(精灵/纯色)。返回所建 Graphic（供 Button/InputField 作 targetGraphic）。</summary>
+        private static Graphic AddBackground(GameObject go, UINode node, IUIAssetResolver resolver, bool raycast)
         {
-            AddBackground(go, node, resolver, node.raycastTarget, forceShape: true);
-        }
-
-        /// <summary>
-        /// 节点底图：cornerRadius&gt;0 且无 sprite（或 forceShape）→ UIShape(SDF 零纹理圆角+描边)；否则 Image(精灵/纯色)。
-        /// 描边在 shape 模式由 UIShape 内画（取 node.stroke 的 color/weight）；sprite 模式下描边走 ApplyV2Effects 的环精灵。
-        /// 返回所建 Graphic（供 Button/InputField 作 targetGraphic）。
-        /// </summary>
-        private static Graphic AddBackground(GameObject go, UINode node, IUIAssetResolver resolver, bool raycast, bool forceShape)
-        {
-            bool shapeMode = forceShape || (node.cornerRadius > 0f && string.IsNullOrWhiteSpace(node.sprite));
-            if (shapeMode)
-            {
-                var s = go.AddComponent<UIShape>();
-                s.color = ColorUtil.ParseHexOr(node.color, Color.white);
-                s.raycastTarget = raycast;
-                s.cornerRadius = node.cornerRadius;
-                if (node.stroke != null)
-                {
-                    s.borderWidth = node.stroke.weight;
-                    s.borderColor = ColorUtil.ParseHexOr(node.stroke.color, Color.clear);
-                }
-                return s;
-            }
             var img = go.AddComponent<Image>();
             img.color = ColorUtil.ParseHexOr(node.color, Color.white);
             img.raycastTarget = raycast;
@@ -166,7 +142,7 @@ namespace Game.UI
 
         private static void BuildButton(GameObject go, UINode node, IUIAssetResolver resolver)
         {
-            var g = AddBackground(go, node, resolver, true, forceShape: false);
+            var g = AddBackground(go, node, resolver, true);
             var button = go.AddComponent<Button>();
             button.targetGraphic = g;
 
@@ -184,8 +160,8 @@ namespace Game.UI
 
         private static void BuildInputField(GameObject go, UINode node, IUIAssetResolver resolver)
         {
-            // 背景（作 targetGraphic）：shape 模式 → UIShape，否则 Image
-            var bg = AddBackground(go, node, resolver, true, forceShape: false);
+            // 背景（作 targetGraphic）：Image(精灵/纯色)
+            var bg = AddBackground(go, node, resolver, true);
 
             var input = go.AddComponent<TMP_InputField>();
             input.lineType = TMP_InputField.LineType.SingleLine;

@@ -382,60 +382,6 @@ namespace Game.Tests.EditMode
             finally { Object.DestroyImmediate(root); }
         }
 
-        // ---------- SDF Shape（spec 004 Phase 3） ----------
-
-        [Test]
-        public void Build_Shape_AddsUIShapeWithRadiusAndBorder()
-        {
-            var spec = new UISpec
-            {
-                rootName = "P",
-                root = new UINode
-                {
-                    name = "P", type = "Container", anchorPreset = "center", rect = new UIRect(0, 0, 400, 300),
-                    children = new List<UINode>
-                    {
-                        new UINode { name = "Card", type = "Shape", color = "#0A1118", rect = new UIRect(0, 0, 400, 300),
-                            cornerRadius = 16, stroke = new UIStroke { color = "#388BFD", weight = 2 } }
-                    }
-                }
-            };
-            var root = UIHierarchyBuilder.Build(spec, null);
-            try
-            {
-                var card = root.transform.Find("Card").GetComponent<UIShape>();
-                Assert.IsNotNull(card, "type=Shape 应生成 UIShape");
-                Assert.AreEqual(16f, card.cornerRadius, 1e-4);
-                Assert.AreEqual(2f, card.borderWidth, 1e-4);
-                // 无环精灵子物体（SDF 自画描边）
-                Assert.IsNull(root.transform.Find("Card/Card_Stroke"));
-            }
-            finally { Object.DestroyImmediate(root); }
-        }
-
-        [Test]
-        public void Build_ImageWithRadiusNoSprite_UsesUIShape()
-        {
-            var spec = new UISpec
-            {
-                rootName = "P",
-                root = new UINode
-                {
-                    name = "P", type = "Container", anchorPreset = "center", rect = new UIRect(0, 0, 100, 100),
-                    children = new List<UINode>
-                    {
-                        new UINode { name = "Box", type = "Image", color = "#FFFFFF", rect = new UIRect(0, 0, 100, 40), cornerRadius = 10 }
-                    }
-                }
-            };
-            var root = UIHierarchyBuilder.Build(spec, null);
-            try
-            {
-                Assert.IsNotNull(root.transform.Find("Box").GetComponent<UIShape>(), "Image+cornerRadius 无 sprite → UIShape");
-            }
-            finally { Object.DestroyImmediate(root); }
-        }
-
         // ---------- helpers ----------
 
         private static UISpec NewSimpleSpec()

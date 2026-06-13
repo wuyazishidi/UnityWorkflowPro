@@ -124,14 +124,11 @@ public class UIConstraints { public string horizontal = "Left"; public string ve
 - Validator 放行新类型；EditMode 测试覆盖命名映射与 InputField 接线。
 - **验收**：Login 同步出的输入框是可输入的 `TMP_InputField`，密码框为 Password、可切换显隐；按钮可点击；无需手动在 Inspector 改组件。
 
-### Phase 3 — SDF shape 渲染（去纹理）✅ 已完成
-> 已实现：`Assets/Shaders/UIShapeSDF.shader`(UI/ShapeSDF：圆角+描边 SDF，参数走顶点 uv1/uv2 → 共享材质可合批) + `UIShape`(MaskableGraphic，进程级共享材质，OnEnable 补开 Canvas 的 TexCoord1/2 通道) + builder `Shape` 类型 + `AddBackground`(cornerRadius>0 且无 sprite → UIShape，复用于 Image/Button/InputField 底)。translator 对卡片/输入框/按钮发 `cornerRadius`+`stroke(色/宽)`，**不再用 round*/ring* 精灵**。
-> 实测：Login 同步后 round/ring 引用=0，CardBase=Shape、输入框/按钮底=UIShape，渲染正确、AA 更干净，MAE 13.3。渐变沿用 `UIVertexGradient`(顶点色)。
-> 注意：正式出包需把 `UI/ShapeSDF` 加入 Project Settings → Graphics → Always Included Shaders（否则运行期 Shader.Find 可能拿不到）。
-> 原始设计：
-- 写 SDF UI shader（圆角 + 描边）；builder 新增 `Shape` 走材质，精灵作回退。
-- 替换 round*/ring* 用法；形状类元素**零纹理、矢量级清晰**。
-- **验收**：圆角/描边不再依赖精灵；DC 不升；视觉与 Figma 一致。
+### Phase 3 — SDF shape 渲染（去纹理）⏸️ 已实现后回退，暂用 built-in UGUI
+曾实现 `UI/ShapeSDF` shader + `UIShape`(MaskableGraphic) + builder `Shape` 类型，渲染工具下 MAE 13.3。
+但 **SDF 依赖 shader + Canvas 额外 uv 通道，在编辑器里直接查看 prefab 时底图不显示**（运行/渲染才正常），体验不直观。
+按需求**整体回退**：删除 `UIShape.cs` / `UIShapeSDF.shader` / builder `Shape` 类型 / `cornerRadius` 字段，圆角/描边改回 **round\*/ring\* 9-slice 精灵（built-in UGUI Image）** —— 编辑器内所见即所得。渐变仍由 `UIVertexGradient`(顶点色)。
+> 若将来要去纹理/矢量级清晰，可重启本阶段，但需解决"编辑器直查 prefab 即可见"（如改用材质资源 + 预设 Canvas 通道，而非运行期 Shader.Find）。
 
 ### Phase 4 —（已评估，暂不做）矢量与响应式
 经评估暂不实施，理由：
