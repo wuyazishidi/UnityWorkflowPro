@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "referenceWidth": 1106,
+  "referenceHeight": 778,
+  "rootName": "Login",
+  "root": {
+    "name": "Login",
+    "type": "Container",
+    "anchorPreset": "center",
+    "rect": { "x": 0, "y": 0, "w": 1106, "h": 778 },
+    "children": [
+      { "name": "CardBase", "type": "Image", "color": "#0A1118", "raycastTarget": false,
+        "sprite": "Assets/UI/Common/round16.png", "imageType": "Sliced",
+        "border": { "l": 16, "t": 16, "r": 16, "b": 16 },
+        "rect": { "x": 0, "y": 0, "w": 1106, "h": 778 } },
+      { "name": "BgImage", "type": "Image", "color": "#FFFFFF", "raycastTarget": false,
+        "sprite": "Assets/UI/Login/Icons/bg.png",
+        "rect": { "x": 0, "y": 0, "w": 1106, "h": 778 } },
+
+      { "name": "CornerTL", "type": "Image", "color": "#FFFFFF", "raycastTarget": false,
+        "sprite": "Assets/UI/Login/Icons/corner_tl.png", "rect": { "x": 16, "y": 16, "w": 20, "h": 20 } },
+      { "name": "CornerTR", "type": "Image", "color": "#FFFFFF", "raycastTarget": false,
+        "sprite": "Assets/UI/Login/Icons/corner_tr.png", "rect": { "x": 1070, "y": 16, "w": 20, "h": 20 } },
+      { "name": "CornerBL", "type": "Image", "color": "#FFFFFF", "raycastTarget": false,
+        "sprite": "Assets/UI/Login/Icons/corner_bl.png", "rect": { "x": 16, "y": 742, "w": 20, "h": 20 } },
+      { "name": "CornerBR", "type": "Image", "color": "#FFFFFF", "raycastTarget": false,
+        "sprite": "Assets/UI/Login/Icons/corner_br.png", "rect": { "x": 1070, "y": 742, "w": 20, "h": 20 } },
+
+      { "name": "Logo", "type": "Image", "color": "#FFFFFF", "raycastTarget": false,
+        "sprite": "Assets/UI/Login/Icons/logo.png", "rect": { "x": 40, "y": 32, "w": 44, "h": 44 } },
+      { "name": "Title", "type": "Text", "raycastTarget": false,
+        "rect": { "x": 96, "y": 32, "w": 150, "h": 44 },
+        "text": { "content": "源策未来", "fontSize": 20, "color": "#E8F4FF", "alignment": "MidlineLeft",
+          "style": { "bold": true } } },
+
+      { "name": "UserLabel", "type": "Text", "raycastTarget": false,
+        "rect": { "x": 363, "y": 224, "w": 61, "h": 57 },
+        "text": { "content": "用户名", "fontSize": 15, "color": "#93C5FDD9", "alignment": "MidlineRight" } },
+      { "name": "UserBorder", "type": "Image", "color": "#388BFDB3", "raycastTarget": false,
+        "sprite": "Assets/UI/Common/round12.png", "imageType": "Sliced",
+        "border": { "l": 12, "t": 12, "r": 12, "b": 12 },
+        "rect": { "x": 436, "y": 224, "w": 307, "h": 57 },
+        "children": [
+          { "name": "UserFill", "type": "Image", "color": "#0E1E40", "raycastTarget": false,
+            "sprite": "Assets/UI/Common/round12.png", "imageType": "Sliced",
+            "border": { "l": 12, "t": 12, "r": 12, "b": 12 },
+            "rect": { "x": 438, "y": 226, "w": 303, "h": 53 },
+            "children": [
+              { "name": "UserPlaceholder", "type": "Text", "raycastTarget": false,
+                "rect": { "x": 452, "y": 226, "w": 274, "h": 53 },
+                "text": { "content": "请输入用户名", "fontSize": 16, "color": "#8EC5FF40", "alignment": "MidlineLeft" } }
+            ] }
+        ] },
+
+      { "name": "PwLabel", "type": "Text", "raycastTarget": false,
+        "rect": { "x": 363, "y": 309, "w": 61, "h": 57 },
+        "text": { "content": "密 码", "fontSize": 15, "color": "#93C5FDD9", "alignment": "MidlineRight" } },
+      { "name": "PwBorder", "type": "Image", "color": "#388BFDB3", "raycastTarget": false,
+        "sprite": "Assets/UI/Common/round12.png", "imageType": "Sliced",
+        "border": { "l": 12, "t": 12, "r": 12, "b": 12 },
+        "rect": { "x": 436, "y": 309, "w": 307, "h": 57 },
+        "children": [
+          { "name": "PwFill", "type": "Image", "color": "#0E1E40", "raycastTarget": false,
+            "sprite": "Assets/UI/Common/round12.png", "imageType": "Sliced",
+            "border": { "l": 12, "t": 12, "r": 12, "b": 12 },
+            "rect": { "x": 438, "y": 311, "w": 303, "h": 53 },
+            "children": [
+              { "name": "PwPlaceholder", "type": "Text", "raycastTarget": false,
+                "rect": { "x": 452, "y": 311, "w": 240, "h": 53 },
+                "text": { "content": "请输入密码", "fontSize": 16, "color": "#8EC5FF40", "alignment": "MidlineLeft" } },
+              { "name": "PwEye", "type": "Image", "color": "#FFFFFF", "raycastTarget": false,
+                "sprite": "Assets/UI/Login/Icons/eye.png", "rect": { "x": 711, "y": 330, "w": 16, "h": 16 } }
+            ] }
+        ] },
+
+      { "name": "OtpLabel", "type": "Text", "raycastTarget": false,
+        "rect": { "x": 363, "y": 394, "w": 61, "h": 57 },
+        "text": { "content": "动态码", "fontSize": 15, "color": "#93C5FDD9", "alignment": "MidlineRight" } },
+      { "name": "OtpBorder", "type": "Image", "color": "#388BFDB3", "raycastTarget": false,
+        "sprite": "Assets/UI/Common/round12.png", "imageType": "Sliced",
+        "border": { "l": 12, "t": 12, "r": 12, "b": 12 },
+        "rect": { "x": 436, "y": 394, "w": 307, "h": 57 },
+        "children": [
+          { "name": "OtpFill", "type": "Image", "color": "#0E1E40", "raycastTarget": false,
+            "sprite": "Assets/UI/Common/round12.png", "imageType": "Sliced",
+            "border": { "l": 12, "t": 12, "r": 12, "b": 12 },
+            "rect": { "x": 438, "y": 396, "w": 303, "h": 53 },
+            "children": [
+              { "name": "OtpPlaceholder", "type": "Text", "raycastTarget": false,
+                "rect": { "x": 452, "y": 396, "w": 274, "h": 53 },
+                "text": { "content": "请输入动态码", "fontSize": 16, "color": "#8EC5FF40", "alignment": "MidlineLeft" } }
+            ] }
+        ] },
+
+      { "name": "ButtonBorder", "type": "Image", "color": "#388BFDB3", "raycastTarget": false,
+        "sprite": "Assets/UI/Common/round16.png", "imageType": "Sliced",
+        "border": { "l": 16, "t": 16, "r": 16, "b": 16 },
+        "rect": { "x": 403, "y": 500, "w": 300, "h": 55 },
+        "children": [
+          { "name": "LoginButton", "type": "Button", "color": "#14296A",
+            "sprite": "Assets/UI/Common/round16.png", "imageType": "Sliced",
+            "border": { "l": 16, "t": 16, "r": 16, "b": 16 },
+            "rect": { "x": 405, "y": 502, "w": 296, "h": 51 },
+            "text": { "content": "登 录", "fontSize": 17, "color": "#A8D4FF", "alignment": "Center",
+              "style": { "bold": true } } }
+        ] }
+    ]
+  }
+}

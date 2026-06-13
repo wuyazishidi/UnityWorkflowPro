@@ -74,8 +74,24 @@ $b64 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes($json))
 powershell -ExecutionPolicy Bypass -Command "& '.\Packages\cn.etetet.yiuimcp\Config\invoke-uto-tool.ps1' -Tool 'ExecuteMenu' -ParamsBase64 $b64 -NoWait 1"
 ```
 
+### Figma → UGUI 同步（给 node-id 一条命令）
+
+| 目的 | 命令 |
+|------|------|
+| **一条命令同步**（拉取→导资源→草稿→Refresh→构建→渲染） | `figma-sync.ps1 -Node 20:387 -Panel Login` |
+| 仅拉取：导资源 + 生成 UISpec 草稿 + 版式报告 + 合成图（Unity 无需开） | `figma-pull.ps1 -Node 20:387 -Panel Login` |
+| 仅构建：自动 Refresh + 打面板图集 + 重试到产物刷新（Unity 须开） | `ui-build-render.ps1 -Spec <spec> -Prefab <prefab> [-Png <png> -Width -Height -Bg]` |
+
+- **常规设计更新**：直接 `figma-sync.ps1 -Node <id>`，产出 `Assets/UI/<Panel>/<Panel>.prefab` + `_render.png`，核对 `_render.png` vs `.figma/truth.png` 即可。
+- **草稿需微调时**（复杂改版）：先只跑 `figma-pull.ps1`，改 `<Panel>.draft.json` 另存为 `<Panel>.json`，再 `ui-build-render.ps1 -Spec <Panel>.json ...`。
+- figma-pull 产物：`Icons/*.png`(背景自动降采样≤1280+按卡片圆角打 alpha)、`<Panel>.draft.json`(自动翻译的 UISpec：实色→Image、IMAGE→精灵、文字→Text、fill+stroke→外层描边+内层填充边环、Button、整卡背景→圆角精灵)、`.figma/layout.txt`、`.figma/truth.png`。
+- **降 DC**：`ui-build-render` 默认会调 `PackPanelAtlas` 给 `Assets/UI/<Panel>/Icons/` 打一张 `<Panel>.spriteatlas`(图集路径从 prefab 路径推导)，工程 Sprite Packer = V1 Always Enabled，进入 Play/构建时自动合批 → 面板内所有 Image 共用一张纹理，加图标不增 DC。`-Atlas $false` 可关。（注意：TMP 文字用自己的字体图集，与精灵是两张纹理，z 序里图文交替仍会打断合批。）
+- 前置：项目根 `.figma-token`(已 gitignore，需 `file_content:read` 作用域) 或环境变量 `FIGMA_TOKEN`；默认 file key 在 `scripts/figma_sync.py`，可 `-FileKey` 覆盖。核心逻辑在 `scripts/figma_sync.py`。
+
 ## 5. 扩展工作流（让 AI 越用越强）
 
 - 新增 Unity 原子工具：见 `Packages/cn.etetet.yiuimcp/Docs/如何扩展Unity原子工具.md`
 - 新增高聚合 CLI flow：在 `Packages/cn.etetet.yiuimcp/Config/` 下加 `*.ps1`，并在本文件第 4 节登记
+  - 含中文的 `.ps1` **必须存为 UTF-8 BOM**（PS5.1 否则按 GB2312 解析，多字节字符会被误读成 `}` 等导致语法错误）
+  - 外部活儿（HTTP/图像处理）放 `scripts/*.py`，由 ps1 薄封装调用（如 Figma 同步 = `figma-pull.ps1` → `scripts/figma_sync.py`）
 - 新增业务流程规范：在 `specs/` 下新建 spec，并在需要时把“必须遵守”的点回填到本文件第 3 节

@@ -59,6 +59,10 @@ Packages/cn.etetet.yiuimcp/UTO/.port.meta
 # DoD 脏标记（运行期状态）
 .claude/.dod-needed
 
+# ===== Figma 同步：个人 token（含 file_content:read，勿入库）+ 拉取中间产物 =====
+.figma-token
+/Assets/UI/*/.figma/
+
 # ===== OS =====
 .DS_Store
 Thumbs.db
