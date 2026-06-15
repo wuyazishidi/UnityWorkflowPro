@@ -5,6 +5,12 @@ $root = Resolve-Path (Join-Path $PSScriptRoot "..")
 Set-Location $root
 $cfg = Join-Path $root "Packages\cn.etetet.yiuimcp\Config"
 
+# ===== 清代理：本地 Unity MCP 走回环 socket，系统代理(Clash 等)会拦致 RPC 卡死 =====
+# 设在此处会随 & powershell 子进程(编译/测试)继承，子脚本内也各自再清一次兜底。
+$env:HTTP_PROXY = ""; $env:HTTPS_PROXY = ""; $env:ALL_PROXY = ""
+$env:http_proxy = ""; $env:https_proxy = ""; $env:all_proxy = ""
+$env:NO_PROXY = "127.0.0.1,localhost,::1"; $env:no_proxy = "127.0.0.1,localhost,::1"
+
 Write-Host "==================== DoD 门禁 ===================="
 
 # 1) 编译闸门

@@ -42,6 +42,7 @@
 > 若 Unity 未打开 / `.port` 不存在，不要伪造编译成功。应提示用户先打开 Unity，并把“待编译验证”明确标注为未完成。
 
 > **环境关键点（实测，已修复）**：本机设了系统代理（`HTTP_PROXY/HTTPS_PROXY`，如 Clash 7897）。UTO 的 axios 默认会把到本地 Unity `127.0.0.1:3212/health` 的心跳也走代理 → 一直“Unity 未就绪”→ 5 分钟超时。**已在 `UTO/src/index.ts`、`heartbeat-manager.ts` 加 `axios.defaults.proxy = false;` 修复**，编译闸门现约 4 秒成功。若升级/重拷 UTO 包导致该改动丢失，症状会复现——重新加这两行并 `npm run build`。
+> **闸门已内建抗代理/抗卡死**：`compile-unity-flow.ps1`、`scripts/dod.ps1`、`scripts/run-editmode-tests.ps1` 开头都**自动清空 `HTTP_PROXY/HTTPS_PROXY/ALL_PROXY` 并设 `NO_PROXY`**（本地 MCP 走回环 socket，NO_PROXY 对 node 原始 socket 不一定生效，故直接清空根治 `message header is corrupted`/RPC 超时）；且 RPC 卡死/超时时会**自动清理 UTO 重连重试**（默认 3 次，每次间隔 4s 让 Unity 主线程 settle，应对域重载/大图导入期的瞬时占用）。**注意 `compile-unity-flow.ps1` 是 UTO 包内文件**——升级/重拷包会连同此改动 + 上面的 axios 改动一起丢失，需重新打上。仍卡死（如 Unity 挂死）则点一下编辑器窗口触发重编译可重置 MCP server。
 > 其他前提：① Unity 编辑器已打开且未挂死（健康可直接 `curl http://127.0.0.1:3222/health` 验证返回 200 + serverId）；② **本工程端口已改为 3222**（写在 `UTO/.port`，UTO HTTP = 3223），因为 3212 被另一工程（PicoTest）占用；③ 健康编辑器即使不在前台也能正常处理 MCP 请求（“必须前台”是早期误判，真因是代理）。
 > 当 MCP 命令仍异常、又需验证编译时，可用确定性等价手段：检查 `Library/ScriptAssemblies/Assembly-CSharp*.dll` 的重编译时间与目标类型是否在其中，并 grep Editor.log 的 `error CS`。
 
