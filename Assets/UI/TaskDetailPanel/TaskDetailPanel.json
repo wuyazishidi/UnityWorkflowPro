@@ -156,9 +156,9 @@
                 "raycastTarget": false,
                 "rect": {
                   "x": 120,
-                  "y": 230,
-                  "w": 480,
-                  "h": 318
+                  "y": 63,
+                  "w": 866,
+                  "h": 612
                 },
                 "children": [
                   {
@@ -167,7 +167,7 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 120,
-                      "y": 230,
+                      "y": 63,
                       "w": 480,
                       "h": 33
                     },
@@ -178,18 +178,19 @@
                         "raycastTarget": false,
                         "rect": {
                           "x": 120,
-                          "y": 230,
-                          "w": 269,
+                          "y": 63,
+                          "w": 291,
                           "h": 33
                         },
                         "text": {
                           "content": "#1 桌面小工具归入收纳盒",
-                          "fontSize": 22,
+                          "fontSize": 24,
                           "color": "#E8F4FFEB",
                           "alignment": "MidlineLeft",
                           "style": {
                             "bold": true
-                          }
+                          },
+                          "lineSpacing": 37.5
                         }
                       }
                     ]
@@ -200,9 +201,9 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 120,
-                      "y": 303,
-                      "w": 480,
-                      "h": 87
+                      "y": 136,
+                      "w": 866,
+                      "h": 535
                     },
                     "children": [
                       {
@@ -211,25 +212,42 @@
                         "raycastTarget": false,
                         "rect": {
                           "x": 120,
-                          "y": 303,
-                          "w": 480,
+                          "y": 136,
+                          "w": 866,
                           "h": 21
                         },
                         "children": [
                           {
-                            "name": "物体：剪刀，胶带座，订书机",
+                            "name": "任务编号：",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
                               "x": 120,
-                              "y": 303,
-                              "w": 187,
+                              "y": 136,
+                              "w": 102,
                               "h": 21
                             },
                             "text": {
-                              "content": "物体：剪刀，胶带座，订书机",
-                              "fontSize": 14,
-                              "color": "#93C5FD80",
+                              "content": "任务编号：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 222,
+                              "y": 136,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
                               "alignment": "MidlineLeft"
                             }
                           }
@@ -241,25 +259,42 @@
                         "raycastTarget": false,
                         "rect": {
                           "x": 120,
-                          "y": 336,
-                          "w": 480,
+                          "y": 169,
+                          "w": 866,
                           "h": 21
                         },
                         "children": [
                           {
-                            "name": "场景：书房",
+                            "name": "包体编号：",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
                               "x": 120,
-                              "y": 336,
-                              "w": 72,
+                              "y": 169,
+                              "w": 102,
                               "h": 21
                             },
                             "text": {
-                              "content": "场景：书房",
-                              "fontSize": 14,
-                              "color": "#93C5FD80",
+                              "content": "包体编号：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "84",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 222,
+                              "y": 169,
+                              "w": 26,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "84",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
                               "alignment": "MidlineLeft"
                             }
                           }
@@ -271,41 +306,644 @@
                         "raycastTarget": false,
                         "rect": {
                           "x": 120,
-                          "y": 369,
-                          "w": 480,
+                          "y": 202,
+                          "w": 866,
                           "h": 21
                         },
                         "children": [
                           {
-                            "name": "技能：Pick，Place",
+                            "name": "标头：",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
                               "x": 120,
-                              "y": 369,
-                              "w": 125,
+                              "y": 202,
+                              "w": 61,
                               "h": 21
                             },
                             "text": {
-                              "content": "技能：Pick，Place",
-                              "fontSize": 14,
-                              "color": "#93C5FD80",
+                              "content": "标头：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "把矿泉水中的水倒进透明的玻璃本",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 181,
+                              "y": 202,
+                              "w": 306,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "把矿泉水中的水倒进透明的玻璃本",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_3",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 235,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "任务描述：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 235,
+                              "w": 102,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "任务描述：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "SOP",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 222,
+                              "y": 235,
+                              "w": 42,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "SOP",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_4",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 268,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "quota_per_user：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 268,
+                              "w": 172,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "quota_per_user：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 292,
+                              "y": 268,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_5",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 301,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "quota_per_user_scene：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 301,
+                              "w": 240,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "quota_per_user_scene：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 360,
+                              "y": 301,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_6",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 334,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "teaching_video_url：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 334,
+                              "w": 202,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "teaching_video_url：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 322,
+                              "y": 334,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_7",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 367,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "reference_img_urls：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 367,
+                              "w": 206,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "reference_img_urls：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 326,
+                              "y": 367,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_8",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 400,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "initial_state：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 400,
+                              "w": 132,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "initial_state：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 252,
+                              "y": 400,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_9",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 433,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "collector_initial_pose：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 433,
+                              "w": 227,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "collector_initial_pose：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 347,
+                              "y": 433,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_10",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 466,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "collection_mode：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 466,
+                              "w": 181,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "collection_mode：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 301,
+                              "y": 466,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_11",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 499,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "narration_policy：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 499,
+                              "w": 178,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "narration_policy：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 298,
+                              "y": 499,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_12",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 532,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "sop_steps：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 532,
+                              "w": 120,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "sop_steps：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 240,
+                              "y": 532,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_13",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 565,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "lighting：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 565,
+                              "w": 93,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "lighting：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 213,
+                              "y": 565,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Paragraph_14",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 598,
+                          "w": 866,
+                          "h": 21
+                        },
+                        "children": [
+                          {
+                            "name": "clutter_level：",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 598,
+                              "w": 139,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "clutter_level：",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft"
+                            }
+                          },
+                          {
+                            "name": "1004",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 259,
+                              "y": 598,
+                              "w": 49,
+                              "h": 21
+                            },
+                            "text": {
+                              "content": "1004",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
                               "alignment": "MidlineLeft"
                             }
                           }
                         ]
                       }
                     ]
-                  },
+                  }
+                ]
+              },
+              {
+                "name": "Container_1",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 120,
+                  "y": 675,
+                  "w": 853,
+                  "h": 40
+                },
+                "children": [
                   {
-                    "name": "Container_1",
-                    "type": "Container",
+                    "name": "Button",
+                    "type": "Image",
+                    "color": "#FFFFFF0D",
                     "raycastTarget": false,
                     "rect": {
                       "x": 120,
-                      "y": 430,
-                      "w": 480,
-                      "h": 38
+                      "y": 675,
+                      "w": 416,
+                      "h": 40
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
                     },
                     "children": [
                       {
@@ -313,27 +951,31 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 120,
-                          "y": 438,
-                          "w": 103,
+                          "x": 298,
+                          "y": 684,
+                          "w": 60,
                           "h": 21
                         },
                         "children": [
                           {
-                            "name": "本次场景 scene",
+                            "name": "返回列表",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 120,
-                              "y": 438,
-                              "w": 103,
+                              "x": 299,
+                              "y": 684,
+                              "w": 59,
                               "h": 21
                             },
                             "text": {
-                              "content": "本次场景 scene",
+                              "content": "返回列表",
                               "fontSize": 14,
-                              "color": "#93C5FDB2",
-                              "alignment": "MidlineLeft"
+                              "color": "#93C5FDA6",
+                              "alignment": "Center",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0
                             }
                           }
                         ]
@@ -341,216 +983,84 @@
                       {
                         "name": "Container",
                         "type": "Image",
-                        "color": "#14285A59",
+                        "color": "#FFFFFF",
                         "raycastTarget": false,
+                        "sprite": "Assets/UI/TaskDetailPanel/Icons/corner1.png",
                         "rect": {
-                          "x": 247,
-                          "y": 430,
-                          "w": 353,
-                          "h": 38
-                        },
-                        "sprite": "Assets/UI/Common/round12.png",
-                        "imageType": "Sliced",
-                        "border": {
-                          "l": 12,
-                          "t": 12,
-                          "r": 12,
-                          "b": 12
-                        },
-                        "children": [
-                          {
-                            "name": "Container",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 247,
-                              "y": 430,
-                              "w": 353,
-                              "h": 38
-                            },
-                            "children": [
-                              {
-                                "name": "书房",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 259,
-                                  "y": 438,
-                                  "w": 28,
-                                  "h": 21
-                                },
-                                "text": {
-                                  "content": "书房",
-                                  "fontSize": 14,
-                                  "color": "#E8F4FFE0",
-                                  "alignment": "MidlineLeft"
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Container_1",
-                            "type": "Image",
-                            "color": "#FFFFFF",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/TaskDetailPanel/Icons/corner1.png",
-                            "rect": {
-                              "x": 247,
-                              "y": 430,
-                              "w": 353,
-                              "h": 38
-                            }
-                          }
-                        ]
+                          "x": 120,
+                          "y": 675,
+                          "w": 416,
+                          "h": 40
+                        }
                       }
                     ]
                   },
                   {
-                    "name": "Container_2",
-                    "type": "Container",
+                    "name": "Button_1",
+                    "type": "Image",
+                    "color": "#388BFD2E",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 120,
-                      "y": 508,
-                      "w": 480,
+                      "x": 556,
+                      "y": 675,
+                      "w": 416,
                       "h": 40
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
                     },
                     "children": [
                       {
-                        "name": "Button",
-                        "type": "Image",
-                        "color": "#FFFFFF0D",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 120,
-                          "y": 508,
-                          "w": 230,
-                          "h": 40
-                        },
-                        "sprite": "Assets/UI/Common/round12.png",
-                        "imageType": "Sliced",
-                        "border": {
-                          "l": 12,
-                          "t": 12,
-                          "r": 12,
-                          "b": 12
+                          "x": 712,
+                          "y": 684,
+                          "w": 105,
+                          "h": 21
                         },
                         "children": [
                           {
-                            "name": "Text",
-                            "type": "Container",
+                            "name": "领取并开始任务",
+                            "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 205,
-                              "y": 518,
-                              "w": 60,
+                              "x": 712,
+                              "y": 684,
+                              "w": 104,
                               "h": 21
                             },
-                            "children": [
-                              {
-                                "name": "返回列表",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 206,
-                                  "y": 518,
-                                  "w": 59,
-                                  "h": 21
-                                },
-                                "text": {
-                                  "content": "返回列表",
-                                  "fontSize": 14,
-                                  "color": "#93C5FDA6",
-                                  "alignment": "Center",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#FFFFFF",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/TaskDetailPanel/Icons/corner2.png",
-                            "rect": {
-                              "x": 120,
-                              "y": 508,
-                              "w": 230,
-                              "h": 40
+                            "text": {
+                              "content": "领取并开始任务",
+                              "fontSize": 14,
+                              "color": "#A8D4FF",
+                              "alignment": "Center",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0
                             }
                           }
                         ]
                       },
                       {
-                        "name": "Button_1",
+                        "name": "Container",
                         "type": "Image",
-                        "color": "#388BFD2E",
+                        "color": "#FFFFFF",
                         "raycastTarget": false,
+                        "sprite": "Assets/UI/TaskDetailPanel/Icons/corner2.png",
                         "rect": {
-                          "x": 370,
-                          "y": 508,
-                          "w": 230,
+                          "x": 556,
+                          "y": 675,
+                          "w": 417,
                           "h": 40
-                        },
-                        "sprite": "Assets/UI/Common/round12.png",
-                        "imageType": "Sliced",
-                        "border": {
-                          "l": 12,
-                          "t": 12,
-                          "r": 12,
-                          "b": 12
-                        },
-                        "children": [
-                          {
-                            "name": "Text",
-                            "type": "Container",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 432,
-                              "y": 518,
-                              "w": 105,
-                              "h": 21
-                            },
-                            "children": [
-                              {
-                                "name": "领取并开始任务",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 432,
-                                  "y": 518,
-                                  "w": 104,
-                                  "h": 21
-                                },
-                                "text": {
-                                  "content": "领取并开始任务",
-                                  "fontSize": 14,
-                                  "color": "#A8D4FF",
-                                  "alignment": "Center",
-                                  "style": {
-                                    "bold": true
-                                  }
-                                }
-                              }
-                            ]
-                          },
-                          {
-                            "name": "Container",
-                            "type": "Image",
-                            "color": "#FFFFFF",
-                            "raycastTarget": false,
-                            "sprite": "Assets/UI/TaskDetailPanel/Icons/corner3.png",
-                            "rect": {
-                              "x": 370,
-                              "y": 508,
-                              "w": 230,
-                              "h": 40
-                            }
-                          }
-                        ]
+                        }
                       }
                     ]
                   }

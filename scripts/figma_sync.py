@@ -364,6 +364,9 @@ def main():
         ls = _line_spacing(st)
         if ls is not None:
             nd["text"]["lineSpacing"] = ls
+        # 换行：Figma 固定宽度文本框(HEIGHT/NONE)按盒宽折行；自动宽度(WIDTH_AND_HEIGHT)是单行标签不换行
+        if st.get("textAutoResize") in ("HEIGHT", "NONE"):
+            nd["text"]["wrap"] = True
         return nd
 
     def _apply_v2(nd, n):
@@ -690,6 +693,43 @@ def main():
         if top:
             out_nodes.extend(top.get("children") or [top])
     _dedupe_names(out_nodes)
+
+    # 正文字号归一化：整屏正文(Text)拉平为同一号，消除 Figma 带来的 10/11/12/14 混杂。
+    # 标题与大按钮(>= 阈值，如 20/24)原样保留；目标号 = 正文区间内出现最多的号(并列取较大者，更易读)。
+    def _normalize_body_font_sizes(nodes, threshold=18):
+        body = []
+        def _collect(o):
+            if isinstance(o, dict):
+                if o.get("type") == "Text":
+                    fs = (o.get("text") or {}).get("fontSize")
+                    if isinstance(fs, (int, float)) and fs < threshold:
+                        body.append(round(fs))
+                for c in o.get("children") or []:
+                    _collect(c)
+            elif isinstance(o, list):
+                for c in o:
+                    _collect(c)
+        for n in nodes:
+            _collect(n)
+        if not body:
+            return None
+        target = max(set(body), key=lambda s: (body.count(s), s))  # 众数，并列取大
+        def _apply(o):
+            if isinstance(o, dict):
+                if o.get("type") == "Text":
+                    t = o.get("text") or {}
+                    fs = t.get("fontSize")
+                    if isinstance(fs, (int, float)) and fs < threshold:
+                        t["fontSize"] = target
+                for c in o.get("children") or []:
+                    _apply(c)
+            elif isinstance(o, list):
+                for c in o:
+                    _apply(c)
+        for n in nodes:
+            _apply(n)
+        return target
+    _normalize_body_font_sizes(out_nodes)
 
     spec = {"schemaVersion": 1, "referenceWidth": FW, "referenceHeight": FH,
             "rootName": a.panel,

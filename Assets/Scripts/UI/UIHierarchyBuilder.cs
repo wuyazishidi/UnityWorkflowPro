@@ -592,8 +592,9 @@ namespace Game.UI
             // 行距：0=TMP 默认；非 0 时按 Figma 行高换算的值收紧/放宽（多行段落贴合设计）
             if (Mathf.Abs(text.lineSpacing) > 0.01f)
                 tmp.lineSpacing = text.lineSpacing;
-            // 单行标签不换行、不裁切：避免窄盒子（如“刷 新”）把文字挤成两行或截断
-            tmp.enableWordWrapping = false;
+            // 换行策略：Figma 自动宽度文本(WIDTH_AND_HEIGHT)是单行标签→不换行不裁切(避免窄盒子如“刷 新”被挤断)；
+            // 固定宽度文本(HEIGHT/NONE)是段落→按盒宽自动折行。overflow 一律不裁切，让高度自增。
+            tmp.enableWordWrapping = text.wrap;
             tmp.overflowMode = TextOverflowModes.Overflow;
             if (text.style != null)
             {

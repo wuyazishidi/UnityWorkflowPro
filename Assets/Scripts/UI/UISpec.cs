@@ -157,6 +157,9 @@ namespace Game.UI
 
         /// <summary>行距(TMP lineSpacing，≈相对默认行高的百分比差，负=收紧)；0=用 TMP 默认。由 Figma 行高换算。</summary>
         public float lineSpacing = 0f;
+
+        /// <summary>自动换行：true=按盒宽折行(Figma 固定宽度段落 textAutoResize=HEIGHT/NONE)；false=单行标签不换行(Figma 自动宽度 WIDTH_AND_HEIGHT)。</summary>
+        public bool wrap = false;
     }
 
     public class UITextStyle

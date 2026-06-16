@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "referenceWidth": 800,
-  "referenceHeight": 296,
+  "referenceWidth": 588,
+  "referenceHeight": 247,
   "rootName": "Tip",
   "root": {
     "name": "Tip",
@@ -10,20 +10,20 @@
     "rect": {
       "x": 0,
       "y": 0,
-      "w": 800,
-      "h": 296
+      "w": 588,
+      "h": 247
     },
     "children": [
       {
         "name": "CardBase",
         "type": "Image",
-        "color": "#FFFFFF",
+        "color": "#08122AC7",
         "raycastTarget": false,
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 800,
-          "h": 296
+          "w": 588,
+          "h": 247
         },
         "sprite": "Assets/UI/Common/round12.png",
         "imageType": "Sliced",
@@ -44,90 +44,113 @@
             "r": 12,
             "b": 12
           }
-        },
-        "gradient": {
-          "type": "Linear",
-          "angle": -0.0,
-          "stops": [
-            {
-              "color": "#00D4C800",
-              "pos": 0.0012
-            },
-            {
-              "color": "#00000000",
-              "pos": 0.0012
-            }
-          ]
         }
       },
       {
-        "name": "Container",
-        "type": "Container",
+        "name": "ContainerFill",
+        "type": "Image",
+        "color": "#08122AC7",
         "raycastTarget": false,
+        "sprite": "Assets/UI/Common/round12.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 12,
+          "t": 12,
+          "r": 12,
+          "b": 12
+        },
         "rect": {
-          "x": 1,
-          "y": 88,
-          "w": 799,
-          "h": 120
+          "x": 0,
+          "y": 0,
+          "w": 588,
+          "h": 247
+        },
+        "stroke": {
+          "color": "#00D4C829",
+          "weight": 0.67,
+          "align": "Inside",
+          "sprite": "Assets/UI/Common/ring12.png",
+          "border": {
+            "l": 12,
+            "t": 12,
+            "r": 12,
+            "b": 12
+          }
         },
         "children": [
           {
-            "name": "Text",
+            "name": "Container",
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 373,
-              "y": 109,
-              "w": 53,
-              "h": 16
+              "x": 1,
+              "y": 1,
+              "w": 587,
+              "h": 245
             },
             "children": [
               {
-                "name": "等待就绪",
-                "type": "Text",
+                "name": "Text",
+                "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 373,
-                  "y": 109,
-                  "w": 50,
-                  "h": 17
+                  "x": 222,
+                  "y": 22,
+                  "w": 143,
+                  "h": 50
                 },
-                "text": {
-                  "content": "等待就绪",
-                  "fontSize": 11,
-                  "color": "#7A90B8",
-                  "alignment": "MidlineLeft"
-                }
-              }
-            ]
-          },
-          {
-            "name": "Text_1",
-            "type": "Container",
-            "raycastTarget": false,
-            "rect": {
-              "x": 298,
-              "y": 136,
-              "w": 203,
-              "h": 51
-            },
-            "children": [
+                "children": [
+                  {
+                    "name": "警告",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 269,
+                      "y": 38,
+                      "w": 50,
+                      "h": 17
+                    },
+                    "text": {
+                      "content": "警告",
+                      "fontSize": 24,
+                      "color": "#FFFFFF",
+                      "alignment": "MidlineLeft",
+                      "lineSpacing": -31.2
+                    }
+                  }
+                ]
+              },
               {
-                "name": "请确保手部进入摄像头视野\nTracker 设备已连接，音频正常",
-                "type": "Text",
+                "name": "Text_1",
+                "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 298,
-                  "y": 135,
-                  "w": 204,
-                  "h": 51
+                  "x": 29,
+                  "y": 82,
+                  "w": 530,
+                  "h": 142
                 },
-                "text": {
-                  "content": "请确保手部进入摄像头视野\nTracker 设备已连接，音频正常",
-                  "fontSize": 15,
-                  "color": "#A8BCD8",
-                  "alignment": "Center"
-                }
+                "children": [
+                  {
+                    "name": "请确保手部进入摄像头视野\nTracker 设备已连接，音频正常",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 81,
+                      "y": 83,
+                      "w": 425,
+                      "h": 51
+                    },
+                    "text": {
+                      "content": "追踪器断开连接，请检查是否正常工作，重新启动，校准",
+                      "fontSize": 20,
+                      "color": "#A8BCD8",
+                      "alignment": "Center",
+                      "lineSpacing": 27.5,
+                      "wrap": true
+                    }
+                  }
+                ]
               }
             ]
           }
