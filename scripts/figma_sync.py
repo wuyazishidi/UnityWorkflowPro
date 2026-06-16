@@ -106,6 +106,33 @@ def node_opacity(n):
     return o if (o is not None and o < 0.999) else None
 
 
+def _grad_max_alpha(g):
+    """渐变 stops 的最大不透明度(0-1)。判断渐变是否"可见"——全透明渐变是装饰性叠加(微光等)，不能拿来盖底色。"""
+    mx = 0.0
+    for s in (g or {}).get("stops", []):
+        c = s.get("color", "") or ""
+        a = (int(c[7:9], 16) / 255.0) if len(c) == 9 else 1.0
+        if a > mx:
+            mx = a
+    return mx
+
+
+def _line_spacing(st):
+    """由 Figma 行高换算 TMP lineSpacing(≈百分比差，负=收紧)。AUTO 行高或差异很小时返回 None(用 TMP 默认)。"""
+    unit = st.get("lineHeightUnit")
+    if unit not in ("PIXELS", "FONT_SIZE_%", "PERCENT"):
+        return None  # INTRINSIC_%(自动行高) → 不干预
+    pct = st.get("lineHeightPercentFontSize")
+    if pct is None:
+        lh, fs = st.get("lineHeightPx"), st.get("fontSize")
+        if lh and fs:
+            pct = lh / fs * 100.0
+    if pct is None:
+        return None
+    sp = round(pct - 100.0, 1)
+    return sp if abs(sp) >= 8 else None  # 只在明显偏紧/偏松时干预
+
+
 def all_vector_leaves(n):
     """节点的所有叶子是否都是 VECTOR（线稿/图标插画）。空 children 返回 False。"""
     kids = n.get("children", [])
@@ -334,12 +361,17 @@ def main():
                        "color": col, "alignment": text_align(n)}}
         if st.get("fontWeight", 400) >= 600:
             nd["text"]["style"] = {"bold": True}
+        ls = _line_spacing(st)
+        if ls is not None:
+            nd["text"]["lineSpacing"] = ls
         return nd
 
     def _apply_v2(nd, n):
         """把 Figma 的渐变/整体不透明度写进节点的 v2 字段（spec 004 Phase 2）。"""
         g = first_gradient(n)
-        if g:
+        # 仅当渐变"可见"(至少一个 stop 不透明度可观)才用它驱动顶点色；全透明渐变是装饰叠加，
+        # 不能盖掉底层实色——否则节点整块变透明(如 CountdownPanel 半透卡片被微光渐变冲没)。
+        if g and _grad_max_alpha(g) >= 0.1:
             nd["gradient"] = g
             nd["color"] = "#FFFFFF"   # 渐变由顶点色驱动，底色置白避免相乘偏色
         o = node_opacity(n)
@@ -670,6 +702,41 @@ def main():
     with io.open(out_json, "w", encoding="utf-8") as f:
         json.dump(spec, f, ensure_ascii=False, indent=2)
 
+    # 7.5) 清理孤儿图标（release）：Figma 里删掉的图标对应 PNG 仍残留在 Icons/，
+    #      新 spec 不再引用即视为可释放 → 连同 .meta 删除，避免包体里堆死图。
+    def _collect_sprites(obj, acc):
+        if isinstance(obj, dict):
+            s = obj.get("sprite")
+            if isinstance(s, str) and s:
+                acc.add(s.replace("\\", "/"))
+            for v in obj.values():
+                _collect_sprites(v, acc)
+        elif isinstance(obj, list):
+            for v in obj:
+                _collect_sprites(v, acc)
+
+    _refs = set()
+    _collect_sprites(spec["root"], _refs)
+    _icons_prefix = icons_dir.replace("\\", "/").rstrip("/") + "/"
+    _keep = {os.path.basename(s) for s in _refs if s.startswith(_icons_prefix)}
+    released = []
+    if os.path.isdir(icons_dir):
+        for fn in sorted(os.listdir(icons_dir)):
+            if not fn.lower().endswith(".png"):
+                continue
+            if fn in _keep:
+                continue
+            removed = False
+            for ext in ("", ".meta"):
+                p = os.path.join(icons_dir, fn + ext)
+                if os.path.exists(p):
+                    try:
+                        os.remove(p); removed = True
+                    except OSError:
+                        pass
+            if removed:
+                released.append(fn)
+
     # 7) 版式报告（人读）
     with io.open(f"{meta_dir}/layout.txt", "w", encoding="utf-8") as f:
         f.write(f"fileKey={a.file} node={node} frame={FW}x{FH} card_r={card['r']} lastModified={data.get('lastModified')}\n")
@@ -681,6 +748,8 @@ def main():
     for e in exported:
         print("  " + e)
     print(f"spec  -> {out_json}" + ("  (覆盖式重生成，用 git diff 审阅改动)" if existed else "  (新建)"))
+    if released:
+        print(f"released -> 清理 {len(released)} 个孤儿图标(Figma 已删/不再引用): " + ", ".join(released))
     print(f"layout report-> {meta_dir}/layout.txt")
     print(f"truth image  -> {meta_dir}/truth.png")
     print("NEXT: 用 ui-build-render.ps1 构建（常态不渲染；要核对图加 -Verify $true）")

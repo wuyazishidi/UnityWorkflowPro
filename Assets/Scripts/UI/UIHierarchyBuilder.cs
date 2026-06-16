@@ -589,6 +589,9 @@ namespace Game.UI
             tmp.fontSize = text.fontSize * FontScale;
             tmp.color = ColorUtil.ParseHexOr(text.color, Color.white);
             tmp.alignment = AlignmentMap.GetOr(text.alignment);
+            // 行距：0=TMP 默认；非 0 时按 Figma 行高换算的值收紧/放宽（多行段落贴合设计）
+            if (Mathf.Abs(text.lineSpacing) > 0.01f)
+                tmp.lineSpacing = text.lineSpacing;
             // 单行标签不换行、不裁切：避免窄盒子（如“刷 新”）把文字挤成两行或截断
             tmp.enableWordWrapping = false;
             tmp.overflowMode = TextOverflowModes.Overflow;

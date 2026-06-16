@@ -520,6 +520,42 @@ namespace Game.Tests.EditMode
             finally { Object.DestroyImmediate(root); }
         }
 
+        [Test]
+        public void Build_Text_LineSpacing_Applied()
+        {
+            var spec = WrapSingle(new UINode
+            {
+                name = "Para", type = "Text", rect = new UIRect(0, 0, 600, 200),
+                text = new UIText { content = "行一\n行二", fontSize = 24, lineSpacing = -31.2f }
+            });
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                var tmp = root.transform.Find("Para").GetComponent<TextMeshProUGUI>();
+                Assert.IsNotNull(tmp);
+                Assert.AreEqual(-31.2f, tmp.lineSpacing, 1e-3, "应套用 Figma 换算的行距");
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
+        [Test]
+        public void Build_Text_DefaultLineSpacing_Untouched()
+        {
+            // lineSpacing=0(默认) → 不动 TMP 默认行距(0)，不回归既有面板
+            var spec = WrapSingle(new UINode
+            {
+                name = "T", type = "Text", rect = new UIRect(0, 0, 100, 30),
+                text = new UIText { content = "x", fontSize = 16 }
+            });
+            var root = UIHierarchyBuilder.Build(spec, null);
+            try
+            {
+                var tmp = root.transform.Find("T").GetComponent<TextMeshProUGUI>();
+                Assert.AreEqual(0f, tmp.lineSpacing, 1e-3);
+            }
+            finally { Object.DestroyImmediate(root); }
+        }
+
         // ---------- helpers ----------
 
         private static UISpec WrapSingle(UINode child)

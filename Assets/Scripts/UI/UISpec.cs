@@ -154,6 +154,9 @@ namespace Game.UI
         public string color = "#FFFFFF";
         public string alignment = "Center";
         public UITextStyle style;
+
+        /// <summary>行距(TMP lineSpacing，≈相对默认行高的百分比差，负=收紧)；0=用 TMP 默认。由 Figma 行高换算。</summary>
+        public float lineSpacing = 0f;
     }
 
     public class UITextStyle
