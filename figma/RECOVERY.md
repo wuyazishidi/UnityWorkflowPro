@@ -18,10 +18,15 @@
 <!-- BEGIN auto-index -->
 | Panel | folder | fileKey | node | 设计快照 | lastModified |
 |-------|--------|---------|------|----------|--------------|
-| LoginPanel | Assets/UI/LoginPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `41:426` | ✅ `figma/LoginPanel.nodes.json` | 2026-06-13T12:21:45Z |
-| TaskDetailPanel | Assets/UI/TaskDetailPanel | `7FmwGzdri9vWoVLWESP6Ja` | `8:40` | ✅ `figma/TaskDetailPanel.nodes.json` | 2026-06-13T08:55:36Z |
-| TaskListPanel | Assets/UI/TaskListPanel | `wGp5DXqAjtpwuPS4qMWkxP` | `1:3` | ❌ 源 node 已失效，真相=spec | - |
-| UpLoadPanel | Assets/UI/UpLoadPanel | `0yO2Lx5vRsG7X6OtbPqzb2` | `14:886` | ✅ `figma/UpLoadPanel.nodes.json` | 2026-06-13T14:46:09Z |
+| AssignedTaskPanel | Assets/UI/AssignedTaskPanel | `T9nvew1BOovlEJisnz1oB8` | `1:3` | ✅ `figma/AssignedTaskPanel.nodes.json` | 2026-06-16T04:08:59Z |
+| Collector01Panel | Assets/UI/Collector01Panel | `kFfsdIm99RMF05m4e8m0Cn` | `5:923` | ✅ `figma/Collector01Panel.nodes.json` | 2026-06-16T03:32:34Z |
+| Collector02Panel | Assets/UI/Collector02Panel | `NodB5ro5lJQ2dMBKGwjlze` | `1:3` | ✅ `figma/Collector02Panel.nodes.json` | 2026-06-16T02:47:50Z |
+| CountdownPanel | Assets/UI/CountdownPanel | `wDuOGcqIMMgDVQ2n0EwLDH` | `2:3` | ✅ `figma/CountdownPanel.nodes.json` | 2026-06-16T03:04:23Z |
+| LoginPanel | Assets/UI/LoginPanel | `cB7nxtStcovjQxcc4s4j8P` | `41:426` | ✅ `figma/LoginPanel.nodes.json` | 2026-06-16T02:49:21Z |
+| TaskDetailPanel | Assets/UI/TaskDetailPanel | `hdY9WGGbmggdHVeGiNQEAv` | `8:40` | ✅ `figma/TaskDetailPanel.nodes.json` | 2026-06-15T04:38:23Z |
+| TaskListPanel | Assets/UI/TaskListPanel | `PpTDAzQY2rnSJsx2eZLuxb` | `1:2` | ✅ `figma/TaskListPanel.nodes.json` | 2026-06-15T04:38:48Z |
+| Tip | Assets/UI/Tip | `dSXYelB2Ekl9ULMwG2UkRe` | `1:2` | ✅ `figma/Tip.nodes.json` | 2026-06-15T10:57:21Z |
+| UpLoadPanel | Assets/UI/UpLoadPanel | `AOKqpshNjRquRGBRYgEy9m` | `14:886` | ✅ `figma/UpLoadPanel.nodes.json` | 2026-06-15T04:39:07Z |
 <!-- END auto-index -->
 
 > ⚠️ 早期面板（Upload/TaskList/TaskDetail）的源 node 因从 **Figma Make 重新粘贴进 Design** 被覆盖/改名而失效（见记忆 `figma-make-paste-corruption`）。它们生成的 `<Panel>.json` 已入库，是当前存活真相；要再改设计须在 Figma 重做并给新 node-id。
