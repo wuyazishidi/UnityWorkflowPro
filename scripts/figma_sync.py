@@ -133,6 +133,16 @@ def _line_spacing(st):
     return sp if abs(sp) >= 8 else None  # 只在明显偏紧/偏松时干预
 
 
+def _char_spacing(st):
+    """Figma letterSpacing(px) → TMP characterSpacing(≈1/100 em，与字号无关、随渲染字号缩放，兼容字号归一化)。
+    0/缺失/极小返回 None（不写该字段，保持 spec 精简）。"""
+    ls, fs = st.get("letterSpacing"), st.get("fontSize")
+    if not ls or not fs:
+        return None
+    cs = round(ls / fs * 100.0, 1)
+    return cs if abs(cs) >= 0.5 else None
+
+
 def all_vector_leaves(n):
     """节点的所有叶子是否都是 VECTOR（线稿/图标插画）。空 children 返回 False。"""
     kids = n.get("children", [])
@@ -292,7 +302,11 @@ def main():
             _cnt[role] = _cnt.get(role, 0) + 1
             _names[nid] = f"{role_short.get(role, role)}{_cnt[role]}.png"
 
+    _canon = {}  # nid -> 去重后规范文件名（同像素内容的多份只留一张，其余重定向到它）
+
     def asset_path(nid):
+        if nid in _canon:
+            return _canon[nid]
         return _names.get(nid, "n" + nid.replace(":", "-") + ".png")
 
     # 4) 调 images API 拿渲染 URL（背景按帧宽，图标按 iconscale）
@@ -325,6 +339,30 @@ def main():
         else:
             exported.append(f"{asset_path(nid)} ({exports.get(nid)})")
 
+    # 4.5) 图标去重：Figma 把重复实例(同款 pill 边框/圆点等)各导一张 → 同像素内容只留一张，
+    #      其余 nid 的引用重定向到保留图(_canon)，并删掉冗余 PNG(+旧 .meta)。降包体与图集占用。
+    import hashlib
+    _hash_keep, _dups = {}, 0
+    for nid in list(urls.keys()):
+        if not urls.get(nid) or exports.get(nid) == "bg":  # 背景唯一，不参与去重
+            continue
+        fn = asset_path(nid)
+        p = f"{icons_dir}/{fn}"
+        if not os.path.exists(p):
+            continue
+        with open(p, "rb") as fh:
+            h = hashlib.md5(fh.read()).hexdigest()
+        if h in _hash_keep:
+            _canon[nid] = _hash_keep[h]            # 重定向到已保留的同内容图
+            for rm in (p, p + ".meta"):
+                try: os.remove(rm)
+                except OSError: pass
+            _dups += 1
+        else:
+            _hash_keep[h] = fn
+    if _dups:
+        print(f"dedupe -> 合并 {_dups} 张重复图标(同像素内容)，Icons/ 唯一图 {len(_hash_keep)} 张")
+
     # 5) 合成图（真值参照）：导卡片节点（与渲染同框，便于 -Verify 做可靠 MAE），无卡片则退回整帧
     truth_id = card_id or node
     j = get_json(f"{API}/images/{a.file}?ids={truth_id}&format=png&scale=2", a.token)
@@ -336,12 +374,18 @@ def main():
     out_nodes = []
 
     def is_button(n):
-        if not (n["type"] == "FRAME" and first_solid_fill(n)):
+        # 接受 FRAME/COMPONENT/INSTANCE（按钮组件实例）。填充不强制实色（渐变/透明由 _apply_v2 处理，透明按钮仍可点）。
+        if n.get("type") not in ("FRAME", "COMPONENT", "INSTANCE"):
             return False
-        nm = (n.get("name", "") or "").lower()
-        if not ("button" in nm or "btn" in nm or "按钮" in (n.get("name", "") or "")):
-            return False
-        return _find_centered_text(n) is not None
+        nm = n.get("name", "") or ""
+        # 确定性命名约定：名字以 _Btn 结尾 → 一律 Button（无论填充/文字对齐，列表项整行可点也算）。
+        if nm.lower().endswith("_btn"):
+            return True
+        # 兜底（未加后缀的旧设计）：含 button/btn/按钮 + 内有居中文字。
+        low = nm.lower()
+        if "button" in low or "btn" in low or "按钮" in nm:
+            return _find_centered_text(n) is not None
+        return False
 
     def _find_centered_text(n):
         for c in n.get("children", []):
@@ -364,6 +408,9 @@ def main():
         ls = _line_spacing(st)
         if ls is not None:
             nd["text"]["lineSpacing"] = ls
+        cs = _char_spacing(st)
+        if cs is not None:
+            nd["text"]["characterSpacing"] = cs
         # 换行：Figma 固定宽度文本框(HEIGHT/NONE)按盒宽折行；自动宽度(WIDTH_AND_HEIGHT)是单行标签不换行
         if st.get("textAutoResize") in ("HEIGHT", "NONE"):
             nd["text"]["wrap"] = True
@@ -411,8 +458,12 @@ def main():
         return None
 
     def _is_input(n):
-        """fill+stroke 框，且含命名带 'input'/'输入' 的后代 → 视为输入框。"""
-        if n.get("type") != "FRAME" or not (first_solid_fill(n) and first_stroke(n)[0]):
+        """名字以 _InputField 结尾（命名约定，确定性），或 fill+stroke 框且含命名带 'input'/'输入' 的后代 → 输入框。"""
+        if n.get("type") not in ("FRAME", "INSTANCE", "COMPONENT"):
+            return False
+        if (n.get("name", "") or "").lower().endswith("_inputfield"):
+            return True
+        if not (first_solid_fill(n) and first_stroke(n)[0]):
             return False
         def named_input(x):
             if x is not n and "input" in (x.get("name", "") or "").lower():
@@ -492,14 +543,18 @@ def main():
         stroke = _stroke_field(n, cr)
         if as_button:
             txt = _find_centered_text(n)
-            nd = {"name": nm, "type": "Button", "color": fill or "#FFFFFF00",
-                  "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r}
+            nd = {"name": nm, "type": "Button", "color": fill or "#FFFFFF00", "rect": r}
+            if fill:  # 有实色填充才用 round sprite；透明按钮不给(避免冷渲染/sprite 未就绪露白块)
+                nd.update({"sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}})
             if txt:
                 stl = txt.get("style", {})
                 nd["text"] = {"content": txt.get("characters", ""), "fontSize": round(stl.get("fontSize", 16)),
                               "color": first_solid_fill(txt) or "#FFFFFF", "alignment": "Center"}
                 if stl.get("fontWeight", 400) >= 600:
                     nd["text"]["style"] = {"bold": True}
+                _cs = _char_spacing(stl)
+                if _cs is not None:
+                    nd["text"]["characterSpacing"] = _cs
         else:
             nd = {"name": nm + "Fill", "type": "Image", "color": fill or "#FFFFFF", "raycastTarget": False,
                   "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}, "rect": r}
@@ -521,8 +576,12 @@ def main():
             and _name_has(n, "slider", "滑块", "滑动条", "进度条", "progress")
 
     def _is_dropdown(n):
-        return n.get("type") in ("FRAME", "INSTANCE", "COMPONENT") \
-            and _name_has(n, "dropdown", "下拉", "选择器", "select")
+        if n.get("type") not in ("FRAME", "INSTANCE", "COMPONENT"):
+            return False
+        # 确定性命名约定：名字以 _Dropdown 结尾 → 下拉。兜底：含 dropdown/下拉/选择器/select。
+        if (n.get("name", "") or "").lower().endswith("_dropdown"):
+            return True
+        return _name_has(n, "dropdown", "下拉", "选择器", "select")
 
     def _is_toggle(n):
         return n.get("type") in ("FRAME", "INSTANCE", "COMPONENT", "RECTANGLE", "GROUP") \
@@ -604,6 +663,9 @@ def main():
             stl = cap.get("style", {})
             nd["text"] = {"content": cap.get("characters", ""), "fontSize": round(stl.get("fontSize", 16)),
                           "color": first_solid_fill(cap) or "#E8F4FF", "alignment": "MidlineLeft"}
+            _cs = _char_spacing(stl)
+            if _cs is not None:
+                nd["text"]["characterSpacing"] = _cs
         st = _stroke_field(n, int(n.get("cornerRadius") or 8))
         if st:
             nd["stroke"] = st
@@ -635,6 +697,32 @@ def main():
 
     # 递归建嵌套树：镜像 Figma 层级（上下级关系），坐标用整帧绝对值（builder 按 parentAbsX 解算相对偏移）。
     # in_scroll: 已在某个 ScrollList 内部 → 不再把后代识别为 ScrollList（避免 ScrollRect 套 ScrollRect）。
+    def _collapse_list_items(parent, kids):
+        """命名重复 item（用户命名约定：同名 + 类型后缀，≥2 个）→ 模板化：
+        保留位置最靠前的 1 个(标记 isItemTemplate)，删除其余；父容器标记 list(方向/间距/数量)。
+        builder 据此把模板 item 抽成独立 prefab、主 panel 父容器清空 item 并加 LayoutGroup。
+        只认带类型后缀的同名重复(用户显式定义的列表项)，不靠结构猜测。"""
+        from collections import Counter
+        SUF = ("_Btn", "_Image", "_InputField", "_Dropdown", "_Text", "_Toggle", "_Slider")
+        cnt = Counter(k.get("name", "") for k in kids)
+        repeated = [nm for nm, c in cnt.items() if c >= 2 and any(nm.endswith(s) for s in SUF)]
+        if not repeated:
+            return kids
+        base = repeated[0]   # 一个容器一般一种重复 item
+        items = [k for k in kids if k.get("name") == base and k.get("rect")]
+        others = [k for k in kids if k.get("name") != base]
+        if len(items) < 2:
+            return kids
+        items.sort(key=lambda k: (k["rect"]["y"], k["rect"]["x"]))   # 位置序，取最靠前的作模板
+        ys = sorted(k["rect"]["y"] for k in items)
+        xs = sorted(k["rect"]["x"] for k in items)
+        vertical = (ys[-1] - ys[0]) >= (xs[-1] - xs[0])
+        gap = round(ys[1] - ys[0] - items[0]["rect"]["h"]) if vertical else round(xs[1] - xs[0] - items[0]["rect"]["w"])
+        template = items[0]
+        template["isItemTemplate"] = True
+        parent["list"] = {"vertical": vertical, "spacing": max(0, gap), "count": len(items), "itemPrefab": base}
+        return others + [template]
+
     def build_node(n, in_scroll=False):
         t = n["type"]
         if t == "VECTOR":
@@ -646,8 +734,27 @@ def main():
             return text_node(n)                     # 文本叶子
         if _is_input(n):
             return emit_input_field(n)              # 自包含（占位符/眼睛在内）
-        if is_button(n) and first_stroke(n)[0]:
-            return emit_bordered(n, as_button=True)  # 按钮（文字在内）
+        if is_button(n):
+            # 简单按钮（有居中 label，内部就是文字）→ 自包含叶子，居中文字作 label，不下钻。
+            if _find_centered_text(n) is not None:
+                return emit_bordered(n, as_button=True)
+            # 容器按钮（列表项等：无居中文字、内部有需保留的子树如图标/左对齐描述）→
+            # Button 背景 + 下钻保留子节点（子文本仍作独立 Text 可绑/可刷新）。
+            cr = int(n.get("cornerRadius") or 0)
+            fill = first_solid_fill(n)
+            nd = {"name": _san(n.get("name", "Button")), "type": "Button",
+                  "color": fill or "#FFFFFF00", "rect": rect(n)}
+            if fill:  # 有实色填充才用 round sprite；透明列表项按钮不给(避免冷渲染/sprite 未就绪露白块)
+                sp, b = round_sprite(cr if cr else 12)
+                nd.update({"sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": b, "r": b, "b": b}})
+            stf = _stroke_field(n, cr if cr else 12)
+            if stf:
+                nd["stroke"] = stf
+            nd = _apply_v2(nd, n)
+            kids = [k for k in (build_node(c, in_scroll) for c in n.get("children", [])) if k]
+            if kids:
+                nd["children"] = kids
+            return nd
         # 标准 UGUI 组件：自包含叶子（内部结构由 builder 构造，不再下钻 Figma 子节点）。
         # 顺序：scrollbar 先于 scroll_list（名字含 "scroll"/"滚动" 会同时命中）。
         if _is_scrollbar(n):
@@ -667,15 +774,19 @@ def main():
             cr = int(n.get("cornerRadius") or 0)
             if has_fill and has_stroke:
                 nd = emit_bordered(n)               # 圆角+描边容器（如行底）
-            elif has_fill or has_stroke or cr:
-                nd = emit_solid(n)                  # 实色/圆角/描边容器
+            elif has_fill or has_stroke:
+                nd = emit_solid(n)                  # 实色/描边容器（圆角由 fill/stroke 决定 sprite）
             else:
+                # 无填充无描边：纯透明分组容器。即使有 cornerRadius 也不生成 Image——
+                # 圆角对透明节点不可见，且白色透明 Image(#FFFFFF00+round sprite)在冷渲染/sprite 未就绪时会露白块。
                 nd = {"name": _san(n.get("name", "Group")), "type": "Container",
                       "raycastTarget": False, "rect": rect(n)}   # 纯分组容器
         child_in_scroll = in_scroll or nd.get("type") == "ScrollList"
         kids = [k for k in (build_node(c, child_in_scroll) for c in n.get("children", [])) if k]
         if nd.get("type") == "ScrollList":
             kids = _finalize_scroll_list(nd, kids)
+        else:
+            kids = _collapse_list_items(nd, kids)   # 命名重复 item → 抽模板(保留1个 + 父容器标 list)
         if kids:
             nd["children"] = kids
         return nd
@@ -692,6 +803,27 @@ def main():
         top = build_node(doc)
         if top:
             out_nodes.extend(top.get("children") or [top])
+
+    # 组件命名后缀：给固定类型的节点名加类型后缀，便于消费方(YC-Ego)按名稳定绑定。
+    # 在 dedupe 之前做，后缀引起的同名冲突由 _dedupe_names 兜底加序号。
+    def _apply_type_suffixes(nodes):
+        suffix = {"Button": "_Btn", "Image": "_Image", "Text": "_Text",
+                  "InputField": "_InputField", "Dropdown": "_Dropdown"}
+        def _walk(o):
+            if isinstance(o, dict):
+                sfx = suffix.get(o.get("type"))
+                nm = o.get("name")
+                if sfx and isinstance(nm, str) and not nm.endswith(sfx):
+                    o["name"] = nm + sfx
+                for c in o.get("children") or []:
+                    _walk(c)
+            elif isinstance(o, list):
+                for c in o:
+                    _walk(c)
+        for n in nodes:
+            _walk(n)
+    _apply_type_suffixes(out_nodes)
+
     _dedupe_names(out_nodes)
 
     # 正文字号归一化：整屏正文(Text)拉平为同一号，消除 Figma 带来的 10/11/12/14 混杂。

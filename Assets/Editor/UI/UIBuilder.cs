@@ -13,6 +13,8 @@ namespace Game.UI.EditorTools
         public bool Ok;
         public string PrefabPath;
         public List<string> Errors = new List<string>();
+        /// <summary>抽出的列表项模板 prefab 路径（命名重复 item → 独立 prefab）。</summary>
+        public List<string> ItemPrefabs = new List<string>();
     }
 
     /// <summary>
@@ -58,6 +60,9 @@ namespace Game.UI.EditorTools
                 var dir = Path.GetDirectoryName(outputPrefabPath);
                 if (!string.IsNullOrEmpty(dir)) Directory.CreateDirectory(dir);
 
+                // 列表项模板：抽成独立 prefab 并从主树移除（标记由 UIHierarchyBuilder 加；主 panel 父容器仅保留 LayoutGroup）
+                ExtractItemTemplates(root, (dir ?? "").Replace('\\', '/'), result);
+
                 var saved = PrefabUtility.SaveAsPrefabAsset(root, outputPrefabPath, out bool ok);
                 if (!ok || saved == null)
                 {
@@ -73,6 +78,24 @@ namespace Game.UI.EditorTools
             }
 
             return result;
+        }
+
+        /// <summary>抽出所有列表项模板：SaveAsPrefabAsset 成 &lt;dir&gt;/&lt;itemName&gt;.prefab，再从主树移除（含标记组件）。
+        /// 主 panel 父容器只剩 LayoutGroup，item 由消费方运行时实例化填充。</summary>
+        private static void ExtractItemTemplates(GameObject root, string dir, UIBuildResult result)
+        {
+            var markers = root.GetComponentsInChildren<UIItemTemplateMarker>(true);
+            foreach (var marker in markers)
+            {
+                if (marker == null) continue;   // 可能已随父节点被销毁
+                var itemGo = marker.gameObject;
+                string itemPath = $"{dir}/{marker.itemName}.prefab";
+                Object.DestroyImmediate(marker);   // 标记不进 item prefab
+                PrefabUtility.SaveAsPrefabAsset(itemGo, itemPath, out bool ok);
+                if (ok) result.ItemPrefabs.Add(itemPath);
+                else result.Errors.Add($"抽列表项 prefab 失败: {itemPath}");
+                Object.DestroyImmediate(itemGo);   // 从主 panel 移除
+            }
         }
 
         /// <summary>遍历 Spec，把 Sliced 节点的 border 写回对应精灵的导入设置。</summary>

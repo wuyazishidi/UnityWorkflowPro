@@ -101,7 +101,27 @@ namespace Game.UI
         /// <summary>type=Scrollbar 滑块占比 0-1（视口/内容比例）。默认 0.3。</summary>
         public float scrollbarSize = 0.3f;
 
+        // ===== 列表项模板（命名重复 item 抽模板）=====
+
+        /// <summary>true=本节点是列表项模板(命名重复 item 抽出的第 1 个)。builder 把它存成独立 prefab 并从主树移除。</summary>
+        public bool isItemTemplate = false;
+
+        /// <summary>非空=本容器是「模板列表」父容器：item 已抽成独立 prefab、从主 panel 去掉；builder 给它加 LayoutGroup+ContentSizeFitter，运行时由消费方实例化 item prefab 填充。</summary>
+        public UIList list;
+
         public List<UINode> children = new List<UINode>();
+    }
+
+    /// <summary>模板列表配置：父容器加 LayoutGroup+ContentSizeFitter，item 抽成独立 prefab 供运行时生成。</summary>
+    public class UIList
+    {
+        public bool vertical = true;
+        /// <summary>item 之间的间距（像素），由设计中相邻 item 间隙推算。</summary>
+        public float spacing = 0f;
+        /// <summary>设计里原有的 item 数（仅供参考；运行时实际数量由数据决定）。</summary>
+        public int count = 0;
+        /// <summary>item 模板 prefab 的名字（= item 节点名，如 TaskItem_Btn）；消费方据此实例化。</summary>
+        public string itemPrefab;
     }
 
     /// <summary>type=ScrollList 滚动配置（spec 004 Phase 2.6）。Content 用 LayoutGroup+ContentSizeFitter 自动撑开，项多了即可拖拽滚动。</summary>
@@ -160,6 +180,9 @@ namespace Game.UI
 
         /// <summary>自动换行：true=按盒宽折行(Figma 固定宽度段落 textAutoResize=HEIGHT/NONE)；false=单行标签不换行(Figma 自动宽度 WIDTH_AND_HEIGHT)。</summary>
         public bool wrap = false;
+
+        /// <summary>字符间距(TMP characterSpacing，≈1/100 em)；0=不调整。由 Figma letterSpacing(px) 按 px/fontSize×100 换算。</summary>
+        public float characterSpacing = 0f;
     }
 
     public class UITextStyle

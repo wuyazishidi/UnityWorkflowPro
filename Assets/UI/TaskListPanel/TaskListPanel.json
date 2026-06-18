@@ -15,7 +15,7 @@
     },
     "children": [
       {
-        "name": "CardBase",
+        "name": "CardBase_Image",
         "type": "Image",
         "color": "#0A1118",
         "raycastTarget": false,
@@ -46,7 +46,7 @@
         },
         "children": [
           {
-            "name": "Image",
+            "name": "Image_Image",
             "type": "Image",
             "color": "#FFFFFF",
             "raycastTarget": false,
@@ -73,7 +73,7 @@
         ]
       },
       {
-        "name": "Container_1",
+        "name": "Container_Image",
         "type": "Image",
         "color": "#FFFFFF00",
         "raycastTarget": false,
@@ -97,16 +97,9 @@
         },
         "children": [
           {
-            "name": "Button",
-            "type": "Image",
+            "name": "ReturnLogin_Btn",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 32,
-              "y": 11,
-              "w": 95,
-              "h": 34
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -115,80 +108,22 @@
               "r": 12,
               "b": 12
             },
-            "children": [
-              {
-                "name": "退出登录",
-                "type": "Text",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 50,
-                  "y": 17,
-                  "w": 59,
-                  "h": 21
-                },
-                "text": {
-                  "content": "退出登录",
-                  "fontSize": 14,
-                  "color": "#FCA5A5",
-                  "alignment": "Center",
-                  "style": {
-                    "bold": true
-                  }
-                }
+            "rect": {
+              "x": 32,
+              "y": 11,
+              "w": 95,
+              "h": 34
+            },
+            "text": {
+              "content": "退出登录",
+              "fontSize": 14,
+              "color": "#FCA5A5",
+              "alignment": "Center",
+              "style": {
+                "bold": true
               },
-              {
-                "name": "Container",
-                "type": "Image",
-                "color": "#DC262633",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 32,
-                  "y": 11,
-                  "w": 96,
-                  "h": 34
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                }
-              },
-              {
-                "name": "ContainerFill",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "rect": {
-                  "x": 32,
-                  "y": 11,
-                  "w": 96,
-                  "h": 34
-                },
-                "stroke": {
-                  "color": "#DC262680",
-                  "weight": 0.67,
-                  "align": "Inside",
-                  "sprite": "Assets/UI/Common/ring12.png",
-                  "border": {
-                    "l": 12,
-                    "t": 12,
-                    "r": 12,
-                    "b": 12
-                  }
-                }
-              }
-            ]
+              "characterSpacing": 7.1
+            }
           },
           {
             "name": "Container",
@@ -202,38 +137,56 @@
             },
             "children": [
               {
-                "name": "任务列表（collector01）",
+                "name": "任务列表_Text",
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
                   "x": 445,
-                  "y": 13,
-                  "w": 240,
+                  "y": 14,
+                  "w": 93,
                   "h": 27
                 },
                 "text": {
-                  "content": "任务列表（collector01）",
+                  "content": "任务列表",
                   "fontSize": 18,
                   "color": "#E8F4FF",
                   "alignment": "Center",
                   "style": {
                     "bold": true
-                  }
+                  },
+                  "lineSpacing": 50.0,
+                  "characterSpacing": 11.1,
+                  "wrap": true
+                }
+              },
+              {
+                "name": "UserName_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 538,
+                  "y": 14,
+                  "w": 160,
+                  "h": 27
+                },
+                "text": {
+                  "content": "（collector01）",
+                  "fontSize": 18,
+                  "color": "#E8F4FF",
+                  "alignment": "Center",
+                  "style": {
+                    "bold": true
+                  },
+                  "lineSpacing": 50.0,
+                  "characterSpacing": 11.1
                 }
               }
             ]
           },
           {
-            "name": "Button_1",
-            "type": "Image",
+            "name": "Refresh_Btn",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 1004,
-              "y": 11,
-              "w": 70,
-              "h": 34
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -242,80 +195,22 @@
               "r": 12,
               "b": 12
             },
-            "children": [
-              {
-                "name": "刷 新",
-                "type": "Text",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 1022,
-                  "y": 17,
-                  "w": 34,
-                  "h": 21
-                },
-                "text": {
-                  "content": "刷 新",
-                  "fontSize": 14,
-                  "color": "#A8D4FF",
-                  "alignment": "Center",
-                  "style": {
-                    "bold": true
-                  }
-                }
+            "rect": {
+              "x": 1004,
+              "y": 11,
+              "w": 70,
+              "h": 34
+            },
+            "text": {
+              "content": "刷 新",
+              "fontSize": 14,
+              "color": "#A8D4FF",
+              "alignment": "Center",
+              "style": {
+                "bold": true
               },
-              {
-                "name": "Container",
-                "type": "Image",
-                "color": "#388BFD26",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 1004,
-                  "y": 11,
-                  "w": 70,
-                  "h": 34
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                }
-              },
-              {
-                "name": "ContainerFill",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "rect": {
-                  "x": 1004,
-                  "y": 11,
-                  "w": 70,
-                  "h": 34
-                },
-                "stroke": {
-                  "color": "#388BFD80",
-                  "weight": 0.67,
-                  "align": "Inside",
-                  "sprite": "Assets/UI/Common/ring12.png",
-                  "border": {
-                    "l": 12,
-                    "t": 12,
-                    "r": 12,
-                    "b": 12
-                  }
-                }
-              }
-            ]
+              "characterSpacing": 7.1
+            }
           }
         ]
       },
@@ -331,7 +226,7 @@
         },
         "children": [
           {
-            "name": "共 28 个任务，第 1/5 页（点击领取）",
+            "name": "CountMessage_Text",
             "type": "Text",
             "raycastTarget": false,
             "rect": {
@@ -342,15 +237,17 @@
             },
             "text": {
               "content": "共 28 个任务，第 1/5 页（点击领取）",
-              "fontSize": 13,
+              "fontSize": 15,
               "color": "#93C5FDB2",
-              "alignment": "MidlineLeft"
+              "alignment": "MidlineLeft",
+              "lineSpacing": 50.0,
+              "characterSpacing": 3.8
             }
           }
         ]
       },
       {
-        "name": "Container_2",
+        "name": "Container_1",
         "type": "Container",
         "raycastTarget": false,
         "rect": {
@@ -361,33 +258,32 @@
         },
         "children": [
           {
-            "name": "Button",
-            "type": "Image",
+            "name": "TaskItem_Btn",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
+            "sprite": "Assets/UI/Common/round12.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 12,
+              "t": 12,
+              "r": 12,
+              "b": 12
+            },
             "rect": {
               "x": 32,
               "y": 92,
               "w": 1042,
-              "h": 50
-            },
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
+              "h": 55
             },
             "children": [
               {
-                "name": "Container",
+                "name": "TaskImage_Image",
                 "type": "Image",
-                "color": "#388BFD0F",
+                "color": "#FFFFFF00",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
-                  "y": 92,
+                  "y": 94,
                   "w": 1042,
                   "h": 50
                 },
@@ -398,155 +294,86 @@
                   "t": 12,
                   "r": 12,
                   "b": 12
-                }
-              },
-              {
-                "name": "Container_1",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
-                "rect": {
-                  "x": 32,
-                  "y": 92,
-                  "w": 1042,
-                  "h": 50
-                }
-              },
-              {
-                "name": "Container_2",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 56,
-                  "y": 106,
-                  "w": 994,
-                  "h": 22
                 },
                 "children": [
                   {
-                    "name": "Text",
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 32,
+                      "y": 94,
+                      "w": 1042,
+                      "h": 50
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
+                    }
+                  },
+                  {
+                    "name": "Container_Image_1",
+                    "type": "Image",
+                    "color": "#FFFFFF",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
+                    "rect": {
+                      "x": 32,
+                      "y": 94,
+                      "w": 1042,
+                      "h": 50
+                    }
+                  },
+                  {
+                    "name": "Container",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
                       "x": 56,
-                      "y": 106,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "#1",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 105,
-                          "w": 18,
-                          "h": 23
-                        },
-                        "text": {
-                          "content": "#1",
-                          "fontSize": 15,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_1",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 100,
-                      "y": 106,
-                      "w": 220,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "桌面小工具归入收纳盒",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 100,
-                          "y": 105,
-                          "w": 155,
-                          "h": 23
-                        },
-                        "text": {
-                          "content": "桌面小工具归入收纳盒",
-                          "fontSize": 15,
-                          "color": "#E8F4FFD9",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_2",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 336,
                       "y": 108,
-                      "w": 518,
-                      "h": 20
+                      "w": 28,
+                      "h": 22
                     },
                     "children": [
                       {
-                        "name": "剪刀,胶带座,订书机,书房",
-                        "type": "Text",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 336,
+                          "x": 56,
                           "y": 108,
-                          "w": 145,
-                          "h": 20
+                          "w": 28,
+                          "h": 22
                         },
-                        "text": {
-                          "content": "剪刀,胶带座,订书机,书房",
-                          "fontSize": 13,
-                          "color": "#93C5FD99",
-                          "alignment": "MidlineLeft"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_3",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 870,
-                      "y": 108,
-                      "w": 180,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "Pick,Place",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 984,
-                          "y": 108,
-                          "w": 66,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "Pick,Place",
-                          "fontSize": 13,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineRight"
-                        }
+                        "children": [
+                          {
+                            "name": "Countent_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 56,
+                              "y": 108,
+                              "w": 999,
+                              "h": 23
+                            },
+                            "text": {
+                              "content": "#1 将水倒入水杯",
+                              "fontSize": 15,
+                              "color": "#93C5FD",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0,
+                              "wrap": true
+                            }
+                          }
+                        ]
                       }
                     ]
                   }
@@ -555,16 +382,9 @@
             ]
           },
           {
-            "name": "Button_1",
-            "type": "Image",
+            "name": "TaskItem_Btn_1",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 32,
-              "y": 150,
-              "w": 1042,
-              "h": 50
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -573,15 +393,21 @@
               "r": 12,
               "b": 12
             },
+            "rect": {
+              "x": 32,
+              "y": 155,
+              "w": 1042,
+              "h": 55
+            },
             "children": [
               {
-                "name": "Container",
+                "name": "TaskImage_Image",
                 "type": "Image",
-                "color": "#388BFD0F",
+                "color": "#FFFFFF00",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
-                  "y": 150,
+                  "y": 157,
                   "w": 1042,
                   "h": 50
                 },
@@ -592,155 +418,86 @@
                   "t": 12,
                   "r": 12,
                   "b": 12
-                }
-              },
-              {
-                "name": "Container_1",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner2.png",
-                "rect": {
-                  "x": 32,
-                  "y": 150,
-                  "w": 1042,
-                  "h": 50
-                }
-              },
-              {
-                "name": "Container_2",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 56,
-                  "y": 164,
-                  "w": 994,
-                  "h": 22
                 },
                 "children": [
                   {
-                    "name": "Text",
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 32,
+                      "y": 157,
+                      "w": 1042,
+                      "h": 50
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
+                    }
+                  },
+                  {
+                    "name": "Container_Image_1",
+                    "type": "Image",
+                    "color": "#FFFFFF",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
+                    "rect": {
+                      "x": 32,
+                      "y": 157,
+                      "w": 1042,
+                      "h": 50
+                    }
+                  },
+                  {
+                    "name": "Container",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
                       "x": 56,
-                      "y": 164,
+                      "y": 171,
                       "w": 28,
                       "h": 22
                     },
                     "children": [
                       {
-                        "name": "#2",
-                        "type": "Text",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
                           "x": 56,
-                          "y": 164,
-                          "w": 20,
-                          "h": 23
+                          "y": 171,
+                          "w": 28,
+                          "h": 22
                         },
-                        "text": {
-                          "content": "#2",
-                          "fontSize": 15,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
+                        "children": [
+                          {
+                            "name": "Countent_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 56,
+                              "y": 171,
+                              "w": 999,
+                              "h": 23
+                            },
+                            "text": {
+                              "content": "#1 将水倒入水杯",
+                              "fontSize": 15,
+                              "color": "#93C5FD",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0,
+                              "wrap": true
+                            }
                           }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_1",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 100,
-                      "y": 164,
-                      "w": 220,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "收拾笔记本放起始位置",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 100,
-                          "y": 164,
-                          "w": 155,
-                          "h": 23
-                        },
-                        "text": {
-                          "content": "收拾笔记本放起始位置",
-                          "fontSize": 15,
-                          "color": "#E8F4FFD9",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_2",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 336,
-                      "y": 166,
-                      "w": 518,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "笔记本,书房",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 336,
-                          "y": 166,
-                          "w": 71,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "笔记本,书房",
-                          "fontSize": 13,
-                          "color": "#93C5FD99",
-                          "alignment": "MidlineLeft"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_3",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 870,
-                      "y": 166,
-                      "w": 180,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "SquatAndPick,Place",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 921,
-                          "y": 166,
-                          "w": 129,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "SquatAndPick,Place",
-                          "fontSize": 13,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineRight"
-                        }
+                        ]
                       }
                     ]
                   }
@@ -749,16 +506,9 @@
             ]
           },
           {
-            "name": "Button_2",
-            "type": "Image",
+            "name": "TaskItem_Btn_2",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 32,
-              "y": 209,
-              "w": 1042,
-              "h": 50
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -767,15 +517,21 @@
               "r": 12,
               "b": 12
             },
+            "rect": {
+              "x": 32,
+              "y": 218,
+              "w": 1042,
+              "h": 55
+            },
             "children": [
               {
-                "name": "Container",
+                "name": "TaskImage_Image",
                 "type": "Image",
-                "color": "#388BFD0F",
+                "color": "#FFFFFF00",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
-                  "y": 209,
+                  "y": 220,
                   "w": 1042,
                   "h": 50
                 },
@@ -786,155 +542,86 @@
                   "t": 12,
                   "r": 12,
                   "b": 12
-                }
-              },
-              {
-                "name": "Container_1",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner3.png",
-                "rect": {
-                  "x": 32,
-                  "y": 209,
-                  "w": 1042,
-                  "h": 50
-                }
-              },
-              {
-                "name": "Container_2",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 56,
-                  "y": 223,
-                  "w": 994,
-                  "h": 22
                 },
                 "children": [
                   {
-                    "name": "Text",
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 32,
+                      "y": 220,
+                      "w": 1042,
+                      "h": 50
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
+                    }
+                  },
+                  {
+                    "name": "Container_Image_1",
+                    "type": "Image",
+                    "color": "#FFFFFF",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
+                    "rect": {
+                      "x": 32,
+                      "y": 220,
+                      "w": 1042,
+                      "h": 50
+                    }
+                  },
+                  {
+                    "name": "Container",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
                       "x": 56,
-                      "y": 223,
+                      "y": 234,
                       "w": 28,
                       "h": 22
                     },
                     "children": [
                       {
-                        "name": "#3",
-                        "type": "Text",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
                           "x": 56,
-                          "y": 222,
-                          "w": 20,
-                          "h": 23
+                          "y": 234,
+                          "w": 28,
+                          "h": 22
                         },
-                        "text": {
-                          "content": "#3",
-                          "fontSize": 15,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
+                        "children": [
+                          {
+                            "name": "Countent_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 56,
+                              "y": 234,
+                              "w": 999,
+                              "h": 23
+                            },
+                            "text": {
+                              "content": "#1 将水倒入水杯",
+                              "fontSize": 15,
+                              "color": "#93C5FD",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0,
+                              "wrap": true
+                            }
                           }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_1",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 100,
-                      "y": 223,
-                      "w": 220,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "桌面对齐叠放文件夹",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 100,
-                          "y": 222,
-                          "w": 139,
-                          "h": 23
-                        },
-                        "text": {
-                          "content": "桌面对齐叠放文件夹",
-                          "fontSize": 15,
-                          "color": "#E8F4FFD9",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_2",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 336,
-                      "y": 224,
-                      "w": 518,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "文件夹,书房",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 336,
-                          "y": 225,
-                          "w": 71,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "文件夹,书房",
-                          "fontSize": 13,
-                          "color": "#93C5FD99",
-                          "alignment": "MidlineLeft"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_3",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 870,
-                      "y": 224,
-                      "w": 180,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "Pick,Align,Place",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 948,
-                          "y": 225,
-                          "w": 102,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "Pick,Align,Place",
-                          "fontSize": 13,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineRight"
-                        }
+                        ]
                       }
                     ]
                   }
@@ -943,16 +630,9 @@
             ]
           },
           {
-            "name": "Button_3",
-            "type": "Image",
+            "name": "TaskItem_Btn_3",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 32,
-              "y": 268,
-              "w": 1042,
-              "h": 50
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -961,15 +641,21 @@
               "r": 12,
               "b": 12
             },
+            "rect": {
+              "x": 32,
+              "y": 281,
+              "w": 1042,
+              "h": 55
+            },
             "children": [
               {
-                "name": "Container",
+                "name": "TaskImage_Image",
                 "type": "Image",
-                "color": "#388BFD0F",
+                "color": "#FFFFFF00",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
-                  "y": 268,
+                  "y": 283,
                   "w": 1042,
                   "h": 50
                 },
@@ -980,155 +666,86 @@
                   "t": 12,
                   "r": 12,
                   "b": 12
-                }
-              },
-              {
-                "name": "Container_1",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner4.png",
-                "rect": {
-                  "x": 32,
-                  "y": 268,
-                  "w": 1042,
-                  "h": 50
-                }
-              },
-              {
-                "name": "Container_2",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 56,
-                  "y": 282,
-                  "w": 994,
-                  "h": 22
                 },
                 "children": [
                   {
-                    "name": "Text",
-                    "type": "Container",
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 56,
-                      "y": 282,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "#4",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 280,
-                          "w": 20,
-                          "h": 23
-                        },
-                        "text": {
-                          "content": "#4",
-                          "fontSize": 15,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_1",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 100,
-                      "y": 282,
-                      "w": 220,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "订书机归拢到固定位置",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 100,
-                          "y": 280,
-                          "w": 155,
-                          "h": 23
-                        },
-                        "text": {
-                          "content": "订书机归拢到固定位置",
-                          "fontSize": 15,
-                          "color": "#E8F4FFD9",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_2",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 336,
+                      "x": 32,
                       "y": 283,
-                      "w": 518,
-                      "h": 20
+                      "w": 1042,
+                      "h": 50
                     },
-                    "children": [
-                      {
-                        "name": "订书机,书房",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 336,
-                          "y": 283,
-                          "w": 71,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "订书机,书房",
-                          "fontSize": 13,
-                          "color": "#93C5FD99",
-                          "alignment": "MidlineLeft"
-                        }
-                      }
-                    ]
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
+                    }
                   },
                   {
-                    "name": "Text_3",
-                    "type": "Container",
+                    "name": "Container_Image_1",
+                    "type": "Image",
+                    "color": "#FFFFFF",
                     "raycastTarget": false,
+                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
                     "rect": {
-                      "x": 870,
+                      "x": 32,
                       "y": 283,
-                      "w": 180,
-                      "h": 20
+                      "w": 1042,
+                      "h": 50
+                    }
+                  },
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 56,
+                      "y": 297,
+                      "w": 28,
+                      "h": 22
                     },
                     "children": [
                       {
-                        "name": "Pick,Align,Place",
-                        "type": "Text",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 948,
-                          "y": 283,
-                          "w": 102,
-                          "h": 20
+                          "x": 56,
+                          "y": 297,
+                          "w": 28,
+                          "h": 22
                         },
-                        "text": {
-                          "content": "Pick,Align,Place",
-                          "fontSize": 13,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineRight"
-                        }
+                        "children": [
+                          {
+                            "name": "Countent_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 56,
+                              "y": 297,
+                              "w": 999,
+                              "h": 23
+                            },
+                            "text": {
+                              "content": "#1 将水倒入水杯",
+                              "fontSize": 15,
+                              "color": "#93C5FD",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0,
+                              "wrap": true
+                            }
+                          }
+                        ]
                       }
                     ]
                   }
@@ -1137,16 +754,9 @@
             ]
           },
           {
-            "name": "Button_4",
-            "type": "Image",
+            "name": "TaskItem_Btn_4",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 32,
-              "y": 326,
-              "w": 1042,
-              "h": 50
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -1155,15 +765,21 @@
               "r": 12,
               "b": 12
             },
+            "rect": {
+              "x": 32,
+              "y": 344,
+              "w": 1042,
+              "h": 55
+            },
             "children": [
               {
-                "name": "Container",
+                "name": "TaskImage_Image",
                 "type": "Image",
-                "color": "#388BFD0F",
+                "color": "#FFFFFF00",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
-                  "y": 326,
+                  "y": 346,
                   "w": 1042,
                   "h": 50
                 },
@@ -1174,155 +790,86 @@
                   "t": 12,
                   "r": 12,
                   "b": 12
-                }
-              },
-              {
-                "name": "Container_1",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner5.png",
-                "rect": {
-                  "x": 32,
-                  "y": 326,
-                  "w": 1042,
-                  "h": 50
-                }
-              },
-              {
-                "name": "Container_2",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 56,
-                  "y": 340,
-                  "w": 994,
-                  "h": 22
                 },
                 "children": [
                   {
-                    "name": "Text",
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 32,
+                      "y": 346,
+                      "w": 1042,
+                      "h": 50
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
+                    }
+                  },
+                  {
+                    "name": "Container_Image_1",
+                    "type": "Image",
+                    "color": "#FFFFFF",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
+                    "rect": {
+                      "x": 32,
+                      "y": 346,
+                      "w": 1042,
+                      "h": 50
+                    }
+                  },
+                  {
+                    "name": "Container",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
                       "x": 56,
-                      "y": 340,
+                      "y": 360,
                       "w": 28,
                       "h": 22
                     },
                     "children": [
                       {
-                        "name": "#5",
-                        "type": "Text",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
                           "x": 56,
-                          "y": 339,
-                          "w": 20,
-                          "h": 23
+                          "y": 360,
+                          "w": 28,
+                          "h": 22
                         },
-                        "text": {
-                          "content": "#5",
-                          "fontSize": 15,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
+                        "children": [
+                          {
+                            "name": "Countent_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 56,
+                              "y": 360,
+                              "w": 999,
+                              "h": 23
+                            },
+                            "text": {
+                              "content": "#1 将水倒入水杯",
+                              "fontSize": 15,
+                              "color": "#93C5FD",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0,
+                              "wrap": true
+                            }
                           }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_1",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 100,
-                      "y": 340,
-                      "w": 220,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "桌上散落回插笔筒",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 100,
-                          "y": 339,
-                          "w": 124,
-                          "h": 23
-                        },
-                        "text": {
-                          "content": "桌上散落回插笔筒",
-                          "fontSize": 15,
-                          "color": "#E8F4FFD9",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_2",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 336,
-                      "y": 342,
-                      "w": 518,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "钢笔,中性笔,铅笔,书房",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 336,
-                          "y": 342,
-                          "w": 132,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "钢笔,中性笔,铅笔,书房",
-                          "fontSize": 13,
-                          "color": "#93C5FD99",
-                          "alignment": "MidlineLeft"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_3",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 870,
-                      "y": 342,
-                      "w": 180,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "Pick,Insert",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 983,
-                          "y": 342,
-                          "w": 68,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "Pick,Insert",
-                          "fontSize": 13,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineRight"
-                        }
+                        ]
                       }
                     ]
                   }
@@ -1331,16 +878,9 @@
             ]
           },
           {
-            "name": "Button_5",
-            "type": "Image",
+            "name": "TaskItem_Btn_5",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 32,
-              "y": 384,
-              "w": 1042,
-              "h": 50
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -1349,15 +889,21 @@
               "r": 12,
               "b": 12
             },
+            "rect": {
+              "x": 32,
+              "y": 407,
+              "w": 1042,
+              "h": 55
+            },
             "children": [
               {
-                "name": "Container",
+                "name": "TaskImage_Image",
                 "type": "Image",
-                "color": "#388BFD0F",
+                "color": "#FFFFFF00",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
-                  "y": 384,
+                  "y": 409,
                   "w": 1042,
                   "h": 50
                 },
@@ -1368,155 +914,334 @@
                   "t": 12,
                   "r": 12,
                   "b": 12
-                }
-              },
-              {
-                "name": "Container_1",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner6.png",
-                "rect": {
-                  "x": 32,
-                  "y": 384,
-                  "w": 1042,
-                  "h": 50
-                }
-              },
-              {
-                "name": "Container_2",
-                "type": "Container",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 56,
-                  "y": 398,
-                  "w": 994,
-                  "h": 22
                 },
                 "children": [
                   {
-                    "name": "Text",
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 32,
+                      "y": 409,
+                      "w": 1042,
+                      "h": 50
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
+                    }
+                  },
+                  {
+                    "name": "Container_Image_1",
+                    "type": "Image",
+                    "color": "#FFFFFF",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
+                    "rect": {
+                      "x": 32,
+                      "y": 409,
+                      "w": 1042,
+                      "h": 50
+                    }
+                  },
+                  {
+                    "name": "Container",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
                       "x": 56,
-                      "y": 398,
+                      "y": 423,
                       "w": 28,
                       "h": 22
                     },
                     "children": [
                       {
-                        "name": "#6",
-                        "type": "Text",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
                           "x": 56,
-                          "y": 398,
-                          "w": 20,
-                          "h": 23
+                          "y": 423,
+                          "w": 28,
+                          "h": 22
                         },
-                        "text": {
-                          "content": "#6",
-                          "fontSize": 15,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
+                        "children": [
+                          {
+                            "name": "Countent_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 56,
+                              "y": 423,
+                              "w": 999,
+                              "h": 23
+                            },
+                            "text": {
+                              "content": "#1 将水倒入水杯",
+                              "fontSize": 15,
+                              "color": "#93C5FD",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0,
+                              "wrap": true
+                            }
                           }
-                        }
+                        ]
                       }
                     ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "TaskItem_Btn_6",
+            "type": "Button",
+            "color": "#FFFFFF00",
+            "sprite": "Assets/UI/Common/round12.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 12,
+              "t": 12,
+              "r": 12,
+              "b": 12
+            },
+            "rect": {
+              "x": 32,
+              "y": 470,
+              "w": 1042,
+              "h": 55
+            },
+            "children": [
+              {
+                "name": "TaskImage_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 32,
+                  "y": 472,
+                  "w": 1042,
+                  "h": 50
+                },
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "children": [
+                  {
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 32,
+                      "y": 472,
+                      "w": 1042,
+                      "h": 50
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
+                    }
                   },
                   {
-                    "name": "Text_1",
+                    "name": "Container_Image_1",
+                    "type": "Image",
+                    "color": "#FFFFFF",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
+                    "rect": {
+                      "x": 32,
+                      "y": 472,
+                      "w": 1042,
+                      "h": 50
+                    }
+                  },
+                  {
+                    "name": "Container",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 100,
-                      "y": 398,
-                      "w": 220,
+                      "x": 56,
+                      "y": 486,
+                      "w": 28,
                       "h": 22
                     },
                     "children": [
                       {
-                        "name": "散笔分类插入笔筒",
-                        "type": "Text",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 100,
-                          "y": 398,
-                          "w": 124,
-                          "h": 23
+                          "x": 56,
+                          "y": 486,
+                          "w": 28,
+                          "h": 22
                         },
-                        "text": {
-                          "content": "散笔分类插入笔筒",
-                          "fontSize": 15,
-                          "color": "#E8F4FFD9",
-                          "alignment": "MidlineLeft",
-                          "style": {
-                            "bold": true
+                        "children": [
+                          {
+                            "name": "Countent_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 56,
+                              "y": 486,
+                              "w": 999,
+                              "h": 23
+                            },
+                            "text": {
+                              "content": "#1 将水倒入水杯",
+                              "fontSize": 15,
+                              "color": "#93C5FD",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0,
+                              "wrap": true
+                            }
                           }
-                        }
+                        ]
                       }
                     ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "TaskItem_Btn_7",
+            "type": "Button",
+            "color": "#FFFFFF00",
+            "sprite": "Assets/UI/Common/round12.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 12,
+              "t": 12,
+              "r": 12,
+              "b": 12
+            },
+            "rect": {
+              "x": 32,
+              "y": 533,
+              "w": 1042,
+              "h": 55
+            },
+            "children": [
+              {
+                "name": "TaskImage_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 32,
+                  "y": 535,
+                  "w": 1042,
+                  "h": 50
+                },
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
+                "children": [
+                  {
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 32,
+                      "y": 535,
+                      "w": 1042,
+                      "h": 50
+                    },
+                    "sprite": "Assets/UI/Common/round12.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 12,
+                      "t": 12,
+                      "r": 12,
+                      "b": 12
+                    }
                   },
                   {
-                    "name": "Text_2",
+                    "name": "Container_Image_1",
+                    "type": "Image",
+                    "color": "#FFFFFF",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
+                    "rect": {
+                      "x": 32,
+                      "y": 535,
+                      "w": 1042,
+                      "h": 50
+                    }
+                  },
+                  {
+                    "name": "Container",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 336,
-                      "y": 400,
-                      "w": 518,
-                      "h": 20
+                      "x": 56,
+                      "y": 549,
+                      "w": 28,
+                      "h": 22
                     },
                     "children": [
                       {
-                        "name": "铅笔,中性笔,书房",
-                        "type": "Text",
+                        "name": "Text",
+                        "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 336,
-                          "y": 400,
-                          "w": 101,
-                          "h": 20
+                          "x": 56,
+                          "y": 549,
+                          "w": 28,
+                          "h": 22
                         },
-                        "text": {
-                          "content": "铅笔,中性笔,书房",
-                          "fontSize": 13,
-                          "color": "#93C5FD99",
-                          "alignment": "MidlineLeft"
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_3",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 870,
-                      "y": 400,
-                      "w": 180,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "Pick,Sort,Insert",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 951,
-                          "y": 400,
-                          "w": 99,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "Pick,Sort,Insert",
-                          "fontSize": 13,
-                          "color": "#93C5FD80",
-                          "alignment": "MidlineRight"
-                        }
+                        "children": [
+                          {
+                            "name": "Countent_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 56,
+                              "y": 549,
+                              "w": 999,
+                              "h": 23
+                            },
+                            "text": {
+                              "content": "#1 将水倒入水杯",
+                              "fontSize": 15,
+                              "color": "#93C5FD",
+                              "alignment": "MidlineLeft",
+                              "style": {
+                                "bold": true
+                              },
+                              "lineSpacing": 50.0,
+                              "wrap": true
+                            }
+                          }
+                        ]
                       }
                     ]
                   }
@@ -1527,7 +1252,7 @@
         ]
       },
       {
-        "name": "Container_3",
+        "name": "Container_2",
         "type": "Container",
         "raycastTarget": false,
         "rect": {
@@ -1538,16 +1263,9 @@
         },
         "children": [
           {
-            "name": "Button",
-            "type": "Image",
+            "name": "PrePage_Btn",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 392,
-              "y": 671,
-              "w": 102,
-              "h": 34
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -1556,62 +1274,23 @@
               "r": 12,
               "b": 12
             },
-            "opacity": 0.3,
-            "children": [
-              {
-                "name": "← 上一页",
-                "type": "Text",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 412,
-                  "y": 678,
-                  "w": 62,
-                  "h": 21
-                },
-                "text": {
-                  "content": "← 上一页",
-                  "fontSize": 14,
-                  "color": "#A8D4FF",
-                  "alignment": "Center"
-                }
-              },
-              {
-                "name": "Container",
-                "type": "Image",
-                "color": "#388BFD1A",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 392,
-                  "y": 671,
-                  "w": 102,
-                  "h": 34
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                }
-              },
-              {
-                "name": "Container_1",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner7.png",
-                "rect": {
-                  "x": 392,
-                  "y": 671,
-                  "w": 102,
-                  "h": 34
-                }
-              }
-            ]
+            "rect": {
+              "x": 392,
+              "y": 671,
+              "w": 102,
+              "h": 34
+            },
+            "text": {
+              "content": "← 上一页",
+              "fontSize": 14,
+              "color": "#A8D4FF",
+              "alignment": "Center",
+              "characterSpacing": 3.6
+            },
+            "opacity": 0.3
           },
           {
-            "name": "Container",
+            "name": "Container_Image",
             "type": "Image",
             "color": "#FFFFFF00",
             "raycastTarget": false,
@@ -1631,7 +1310,7 @@
             },
             "children": [
               {
-                "name": "Container",
+                "name": "Container_Image",
                 "type": "Image",
                 "color": "#0A1E464D",
                 "raycastTarget": false,
@@ -1651,11 +1330,11 @@
                 }
               },
               {
-                "name": "Container_1",
+                "name": "Container_Image_1",
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner8.png",
+                "sprite": "Assets/UI/TaskListPanel/Icons/corner10.png",
                 "rect": {
                   "x": 518,
                   "y": 671,
@@ -1664,7 +1343,7 @@
                 }
               },
               {
-                "name": "1 / 5",
+                "name": "PageTip_Text",
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
@@ -1675,24 +1354,19 @@
                 },
                 "text": {
                   "content": "1 / 5",
-                  "fontSize": 14,
+                  "fontSize": 15,
                   "color": "#93C5FDB2",
-                  "alignment": "MidlineLeft"
+                  "alignment": "MidlineLeft",
+                  "lineSpacing": 50.0,
+                  "characterSpacing": 3.6
                 }
               }
             ]
           },
           {
-            "name": "Button_1",
-            "type": "Image",
+            "name": "NextPage_Btn",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 612,
-              "y": 671,
-              "w": 102,
-              "h": 34
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -1701,63 +1375,24 @@
               "r": 12,
               "b": 12
             },
-            "children": [
-              {
-                "name": "下一页 →",
-                "type": "Text",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 632,
-                  "y": 678,
-                  "w": 62,
-                  "h": 21
-                },
-                "text": {
-                  "content": "下一页 →",
-                  "fontSize": 14,
-                  "color": "#A8D4FF",
-                  "alignment": "Center"
-                }
-              },
-              {
-                "name": "Container",
-                "type": "Image",
-                "color": "#388BFD1A",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 612,
-                  "y": 671,
-                  "w": 102,
-                  "h": 34
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                }
-              },
-              {
-                "name": "Container_1",
-                "type": "Image",
-                "color": "#FFFFFF",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner9.png",
-                "rect": {
-                  "x": 612,
-                  "y": 671,
-                  "w": 102,
-                  "h": 34
-                }
-              }
-            ]
+            "rect": {
+              "x": 612,
+              "y": 671,
+              "w": 102,
+              "h": 34
+            },
+            "text": {
+              "content": "下一页 →",
+              "fontSize": 14,
+              "color": "#A8D4FF",
+              "alignment": "Center",
+              "characterSpacing": 3.6
+            }
           }
         ]
       },
       {
-        "name": "Container_4",
+        "name": "Container_3",
         "type": "Container",
         "raycastTarget": false,
         "rect": {
@@ -1768,30 +1403,9 @@
         },
         "children": [
           {
-            "name": "Container",
-            "type": "Image",
-            "color": "#388BFD1F",
-            "raycastTarget": false,
-            "rect": {
-              "x": 32,
-              "y": 718,
-              "w": 1042,
-              "h": 40
-            },
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            }
-          },
-          {
-            "name": "ContainerFill",
-            "type": "Image",
+            "name": "AssignedTask_Btn",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -1805,49 +1419,6 @@
               "y": 718,
               "w": 1042,
               "h": 40
-            },
-            "stroke": {
-              "color": "#388BFD66",
-              "weight": 0.67,
-              "align": "Inside",
-              "sprite": "Assets/UI/Common/ring12.png",
-              "border": {
-                "l": 12,
-                "t": 12,
-                "r": 12,
-                "b": 12
-              }
-            }
-          },
-          {
-            "name": "Container_1",
-            "type": "Image",
-            "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 32,
-              "y": 718,
-              "w": 1042,
-              "h": 40
-            },
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            }
-          },
-          {
-            "name": "我的已领任务 / 恢复未传数据",
-            "type": "Text",
-            "raycastTarget": false,
-            "rect": {
-              "x": 453,
-              "y": 728,
-              "w": 201,
-              "h": 21
             },
             "text": {
               "content": "我的已领任务 / 恢复未传数据",
@@ -1856,7 +1427,8 @@
               "alignment": "Center",
               "style": {
                 "bold": true
-              }
+              },
+              "characterSpacing": 10.7
             }
           }
         ]

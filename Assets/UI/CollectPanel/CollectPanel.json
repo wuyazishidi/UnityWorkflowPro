@@ -15,7 +15,7 @@
     },
     "children": [
       {
-        "name": "Container",
+        "name": "Container_Image",
         "type": "Image",
         "color": "#FFFFFF00",
         "raycastTarget": false,
@@ -35,7 +35,7 @@
         },
         "children": [
           {
-            "name": "BackgroundScene",
+            "name": "BackgroundScene_Image",
             "type": "Image",
             "color": "#FFFFFF00",
             "raycastTarget": false,
@@ -77,7 +77,7 @@
                     },
                     "children": [
                       {
-                        "name": "Image",
+                        "name": "Image_Image",
                         "type": "Image",
                         "color": "#FFFFFF",
                         "raycastTarget": false,
@@ -94,7 +94,7 @@
                 ]
               },
               {
-                "name": "Container",
+                "name": "Container_Image",
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
@@ -109,7 +109,7 @@
             ]
           },
           {
-            "name": "Container",
+            "name": "Container_Image",
             "type": "Image",
             "color": "#040A1C94",
             "raycastTarget": false,
@@ -121,7 +121,7 @@
             }
           },
           {
-            "name": "ContainerFill",
+            "name": "ContainerFill_Image",
             "type": "Image",
             "color": "#040A1CC7",
             "raycastTarget": false,
@@ -136,7 +136,7 @@
             "rect": {
               "x": 116,
               "y": 77,
-              "w": 1206,
+              "w": 1106,
               "h": 32
             },
             "stroke": {
@@ -186,7 +186,7 @@
                         },
                         "children": [
                           {
-                            "name": "FPS",
+                            "name": "FPS_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -217,7 +217,7 @@
                         },
                         "children": [
                           {
-                            "name": "103",
+                            "name": "fps_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -241,7 +241,7 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 178,
+                          "x": 179,
                           "y": 84,
                           "w": 13,
                           "h": 16
@@ -252,18 +252,18 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 184,
+                              "x": 185,
                               "y": 84,
                               "w": 7,
                               "h": 16
                             },
                             "children": [
                               {
-                                "name": "|",
+                                "name": "|_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 184,
+                                  "x": 185,
                                   "y": 84,
                                   "w": 7,
                                   "h": 17
@@ -287,7 +287,7 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 201,
+                      "x": 202,
                       "y": 84,
                       "w": 82,
                       "h": 16
@@ -298,18 +298,18 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 201,
+                          "x": 202,
                           "y": 84,
                           "w": 23,
                           "h": 16
                         },
                         "children": [
                           {
-                            "name": "内存",
+                            "name": "内存_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 201,
+                              "x": 202,
                               "y": 84,
                               "w": 22,
                               "h": 17
@@ -336,7 +336,7 @@
                         },
                         "children": [
                           {
-                            "name": "4/144M",
+                            "name": "Memory_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -378,7 +378,7 @@
                             },
                             "children": [
                               {
-                                "name": "|",
+                                "name": "|_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -424,7 +424,7 @@
                         },
                         "children": [
                           {
-                            "name": "磁盘",
+                            "name": "磁盘_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -455,7 +455,7 @@
                         },
                         "children": [
                           {
-                            "name": "211.7G",
+                            "name": "Capacity_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -497,7 +497,7 @@
                             },
                             "children": [
                               {
-                                "name": "|",
+                                "name": "|_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -543,7 +543,7 @@
                         },
                         "children": [
                           {
-                            "name": "当前账号：",
+                            "name": "当前账号：_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -574,7 +574,7 @@
                         },
                         "children": [
                           {
-                            "name": "collector01",
+                            "name": "UserName_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -603,7 +603,7 @@
                 "raycastTarget": false,
                 "rect": {
                   "x": 456,
-                  "y": 42,
+                  "y": 43,
                   "w": 100,
                   "h": 100
                 }
@@ -631,7 +631,7 @@
                     },
                     "children": [
                       {
-                        "name": "任务# ae1 | a#1",
+                        "name": "TaskID_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
@@ -662,7 +662,7 @@
                     },
                     "children": [
                       {
-                        "name": "|",
+                        "name": "|_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
@@ -693,7 +693,7 @@
                     },
                     "children": [
                       {
-                        "name": "相机●",
+                        "name": "CameraState_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
@@ -717,18 +717,18 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 919,
+                      "x": 920,
                       "y": 82,
                       "w": 3,
                       "h": 21
                     },
                     "children": [
                       {
-                        "name": "|",
+                        "name": "|_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 919,
+                          "x": 920,
                           "y": 82,
                           "w": 4,
                           "h": 21
@@ -744,7 +744,7 @@
                     ]
                   },
                   {
-                    "name": "TextFill",
+                    "name": "TextFill_Image",
                     "type": "Image",
                     "color": "#00D4C824",
                     "raycastTarget": false,
@@ -757,8 +757,8 @@
                       "b": 24
                     },
                     "rect": {
-                      "x": 933,
-                      "y": 82,
+                      "x": 934,
+                      "y": 83,
                       "w": 47,
                       "h": 20
                     },
@@ -776,7 +776,7 @@
                     },
                     "children": [
                       {
-                        "name": "准备中",
+                        "name": "State_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
@@ -800,18 +800,18 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 991,
+                      "x": 992,
                       "y": 82,
                       "w": 3,
                       "h": 21
                     },
                     "children": [
                       {
-                        "name": "|",
+                        "name": "|_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 991,
+                          "x": 992,
                           "y": 82,
                           "w": 4,
                           "h": 21
@@ -831,18 +831,18 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 1005,
+                      "x": 1006,
                       "y": 84,
                       "w": 102,
                       "h": 16
                     },
                     "children": [
                       {
-                        "name": "口述策略：仅当出端",
+                        "name": "Strategy_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 1005,
+                          "x": 1006,
                           "y": 84,
                           "w": 99,
                           "h": 17
@@ -862,7 +862,7 @@
             ]
           },
           {
-            "name": "Container_1",
+            "name": "Container",
             "type": "Container",
             "raycastTarget": false,
             "rect": {
@@ -873,7 +873,7 @@
             },
             "children": [
               {
-                "name": "ContainerFill",
+                "name": "ContainerFill_Image",
                 "type": "Image",
                 "color": "#040A1C80",
                 "raycastTarget": false,
@@ -916,7 +916,7 @@
                     },
                     "children": [
                       {
-                        "name": "ContainerFill",
+                        "name": "ContainerFill_Image",
                         "type": "Image",
                         "color": "#22C55E21",
                         "raycastTarget": false,
@@ -948,7 +948,7 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -961,7 +961,7 @@
                             }
                           },
                           {
-                            "name": "左手柄",
+                            "name": "左手柄_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -981,7 +981,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill_1",
+                        "name": "ContainerFill_Image_1",
                         "type": "Image",
                         "color": "#F8717124",
                         "raycastTarget": false,
@@ -1013,7 +1013,7 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -1026,7 +1026,7 @@
                             }
                           },
                           {
-                            "name": "左手柄",
+                            "name": "左手柄_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1059,7 +1059,7 @@
                     },
                     "children": [
                       {
-                        "name": "ContainerFill",
+                        "name": "ContainerFill_Image",
                         "type": "Image",
                         "color": "#22C55E21",
                         "raycastTarget": false,
@@ -1091,11 +1091,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art3.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
                               "x": 220,
                               "y": 120,
@@ -1104,7 +1104,7 @@
                             }
                           },
                           {
-                            "name": "右手柄",
+                            "name": "右手柄_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1124,7 +1124,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill_1",
+                        "name": "ContainerFill_Image_1",
                         "type": "Image",
                         "color": "#F8717124",
                         "raycastTarget": false,
@@ -1156,11 +1156,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art4.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
                               "x": 221,
                               "y": 121,
@@ -1169,7 +1169,7 @@
                             }
                           },
                           {
-                            "name": "右 手柄",
+                            "name": "右 手柄_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1202,7 +1202,7 @@
                     },
                     "children": [
                       {
-                        "name": "ContainerFill",
+                        "name": "ContainerFill_Image",
                         "type": "Image",
                         "color": "#22C55E21",
                         "raycastTarget": false,
@@ -1234,11 +1234,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art5.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
                               "x": 299,
                               "y": 120,
@@ -1247,7 +1247,7 @@
                             }
                           },
                           {
-                            "name": "相机",
+                            "name": "相机_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1265,7 +1265,7 @@
                             }
                           },
                           {
-                            "name": "Icon_1",
+                            "name": "Icon_Image_1",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -1281,7 +1281,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill_1",
+                        "name": "ContainerFill_Image_1",
                         "type": "Image",
                         "color": "#F8717124",
                         "raycastTarget": false,
@@ -1313,11 +1313,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art7.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
                               "x": 300,
                               "y": 121,
@@ -1326,7 +1326,7 @@
                             }
                           },
                           {
-                            "name": "相机",
+                            "name": "相机_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1344,7 +1344,7 @@
                             }
                           },
                           {
-                            "name": "Icon_1",
+                            "name": "Icon_Image_1",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -1373,7 +1373,7 @@
                     },
                     "children": [
                       {
-                        "name": "ContainerFill",
+                        "name": "ContainerFill_Image",
                         "type": "Image",
                         "color": "#22C55E21",
                         "raycastTarget": false,
@@ -1405,11 +1405,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art9.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
                               "x": 384,
                               "y": 120,
@@ -1418,7 +1418,7 @@
                             }
                           },
                           {
-                            "name": "手",
+                            "name": "手_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1438,7 +1438,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill_1",
+                        "name": "ContainerFill_Image_1",
                         "type": "Image",
                         "color": "#F8717124",
                         "raycastTarget": false,
@@ -1470,11 +1470,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art10.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
                               "x": 384,
                               "y": 121,
@@ -1483,7 +1483,7 @@
                             }
                           },
                           {
-                            "name": "手",
+                            "name": "手_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1516,7 +1516,7 @@
                     },
                     "children": [
                       {
-                        "name": "ContainerFill",
+                        "name": "ContainerFill_Image",
                         "type": "Image",
                         "color": "#22C55E21",
                         "raycastTarget": false,
@@ -1548,11 +1548,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art11.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
                               "x": 439,
                               "y": 120,
@@ -1561,7 +1561,7 @@
                             }
                           },
                           {
-                            "name": "腕手适配度",
+                            "name": "腕手适配度_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1581,7 +1581,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill_1",
+                        "name": "ContainerFill_Image_1",
                         "type": "Image",
                         "color": "#F8717124",
                         "raycastTarget": false,
@@ -1613,11 +1613,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art12.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
                               "x": 439,
                               "y": 121,
@@ -1626,7 +1626,7 @@
                             }
                           },
                           {
-                            "name": "腕手适配度",
+                            "name": "腕手适配度_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1659,7 +1659,7 @@
                     },
                     "children": [
                       {
-                        "name": "ContainerFill",
+                        "name": "ContainerFill_Image",
                         "type": "Image",
                         "color": "#22C55E21",
                         "raycastTarget": false,
@@ -1691,11 +1691,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art13.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
                               "x": 542,
                               "y": 120,
@@ -1704,7 +1704,7 @@
                             }
                           },
                           {
-                            "name": "追踪器 5/5",
+                            "name": "追踪器 5/5_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1724,7 +1724,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill_1",
+                        "name": "ContainerFill_Image_1",
                         "type": "Image",
                         "color": "#F8717124",
                         "raycastTarget": false,
@@ -1756,11 +1756,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art14.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
                               "x": 542,
                               "y": 121,
@@ -1769,7 +1769,7 @@
                             }
                           },
                           {
-                            "name": "追踪器5/5",
+                            "name": "追踪器5/5_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -1813,7 +1813,7 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -1826,7 +1826,7 @@
                             }
                           },
                           {
-                            "name": "Icon_1",
+                            "name": "Icon_Image_1",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -1850,7 +1850,7 @@
                             },
                             "children": [
                               {
-                                "name": "网络",
+                                "name": "网络_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -1883,7 +1883,7 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -1896,7 +1896,7 @@
                             }
                           },
                           {
-                            "name": "Icon_1",
+                            "name": "Icon_Image_1",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -1920,7 +1920,7 @@
                             },
                             "children": [
                               {
-                                "name": "网络",
+                                "name": "网络_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -1966,11 +1966,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art19.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art15.png",
                             "rect": {
                               "x": 1149,
                               "y": 120,
@@ -1979,7 +1979,7 @@
                             }
                           },
                           {
-                            "name": "Icon_1",
+                            "name": "Icon_Image_1",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -2003,7 +2003,7 @@
                             },
                             "children": [
                               {
-                                "name": "音频",
+                                "name": "音频_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -2036,11 +2036,11 @@
                         },
                         "children": [
                           {
-                            "name": "Icon",
+                            "name": "Icon_Image",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art21.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art17.png",
                             "rect": {
                               "x": 1149,
                               "y": 121,
@@ -2049,7 +2049,7 @@
                             }
                           },
                           {
-                            "name": "Icon_1",
+                            "name": "Icon_Image_1",
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
@@ -2073,7 +2073,7 @@
                             },
                             "children": [
                               {
-                                "name": "音频",
+                                "name": "音频_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -2143,7 +2143,7 @@
                             },
                             "children": [
                               {
-                                "name": "准备中（点「结束采集」取消）",
+                                "name": "StateMessage_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -2164,7 +2164,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill",
+                        "name": "ContainerFill_Image",
                         "type": "Image",
                         "color": "#FFFFFF0A",
                         "raycastTarget": false,
@@ -2177,7 +2177,7 @@
                           "b": 12
                         },
                         "rect": {
-                          "x": 193,
+                          "x": 170,
                           "y": 229,
                           "w": 484,
                           "h": 316
@@ -2196,7 +2196,7 @@
                         }
                       },
                       {
-                        "name": "ContainerFill_1",
+                        "name": "ContainerFill_Image_1",
                         "type": "Image",
                         "color": "#FFFFFF0A",
                         "raycastTarget": false,
@@ -2209,7 +2209,7 @@
                           "b": 12
                         },
                         "rect": {
-                          "x": 700,
+                          "x": 677,
                           "y": 227,
                           "w": 484,
                           "h": 316
@@ -2232,7 +2232,7 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 706,
+                          "x": 689,
                           "y": 240,
                           "w": 471,
                           "h": 295
@@ -2243,14 +2243,14 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 706,
+                              "x": 689,
                               "y": 240,
                               "w": 471,
                               "h": 70
                             },
                             "children": [
                               {
-                                "name": "ContainerFill",
+                                "name": "ContainerFill_Image",
                                 "type": "Image",
                                 "color": "#22C55E2E",
                                 "raycastTarget": false,
@@ -2263,7 +2263,7 @@
                                   "b": 12
                                 },
                                 "rect": {
-                                  "x": 706,
+                                  "x": 689,
                                   "y": 240,
                                   "w": 471,
                                   "h": 70
@@ -2286,20 +2286,20 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 724,
+                                      "x": 707,
                                       "y": 253,
                                       "w": 16,
                                       "h": 18
                                     },
                                     "children": [
                                       {
-                                        "name": "Icon",
+                                        "name": "Icon_Image",
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
                                         "sprite": "Assets/UI/CollectPanel/Icons/art23.png",
                                         "rect": {
-                                          "x": 724,
+                                          "x": 707,
                                           "y": 255,
                                           "w": 16,
                                           "h": 16
@@ -2312,7 +2312,7 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 751,
+                                      "x": 734,
                                       "y": 253,
                                       "w": 352,
                                       "h": 44
@@ -2323,18 +2323,18 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 253,
                                           "w": 352,
                                           "h": 21
                                         },
                                         "children": [
                                           {
-                                            "name": "手部未进入摄像头视野",
+                                            "name": "手部未进入摄像头视野_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 253,
                                               "w": 140,
                                               "h": 21
@@ -2354,7 +2354,7 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 274,
                                           "w": 681,
                                           "h": 23
@@ -2365,20 +2365,20 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 279,
                                               "w": 11,
                                               "h": 12
                                             },
                                             "children": [
                                               {
-                                                "name": "Icon",
+                                                "name": "Icon_Image",
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
                                                 "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                                 "rect": {
-                                                  "x": 751,
+                                                  "x": 734,
                                                   "y": 280,
                                                   "w": 11,
                                                   "h": 11
@@ -2391,18 +2391,18 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 767,
+                                              "x": 750,
                                               "y": 279,
                                               "w": 278,
                                               "h": 18
                                             },
                                             "children": [
                                               {
-                                                "name": "请将手放在摄像头前方约 50cm 处，掌心朝前保持静止",
+                                                "name": "请将手放在摄像头前方约 50cm 处，掌心朝前保持静止_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 767,
+                                                  "x": 750,
                                                   "y": 279,
                                                   "w": 271,
                                                   "h": 18
@@ -2426,14 +2426,14 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1114,
+                                      "x": 1096,
                                       "y": 253,
                                       "w": 45,
                                       "h": 22
                                     },
                                     "children": [
                                       {
-                                        "name": "TextFill",
+                                        "name": "TextFill_Image",
                                         "type": "Image",
                                         "color": "#22C55E1F",
                                         "raycastTarget": false,
@@ -2446,7 +2446,7 @@
                                           "b": 12
                                         },
                                         "rect": {
-                                          "x": 1114,
+                                          "x": 1096,
                                           "y": 255,
                                           "w": 45,
                                           "h": 20
@@ -2465,11 +2465,11 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "准备完成",
+                                            "name": "准备完成_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1116,
+                                              "x": 1099,
                                               "y": 257,
                                               "w": 40,
                                               "h": 15
@@ -2489,7 +2489,7 @@
                                 ]
                               },
                               {
-                                "name": "ContainerFill_1",
+                                "name": "ContainerFill_Image_1",
                                 "type": "Image",
                                 "color": "#F871712E",
                                 "raycastTarget": false,
@@ -2502,7 +2502,7 @@
                                   "b": 12
                                 },
                                 "rect": {
-                                  "x": 706,
+                                  "x": 689,
                                   "y": 240,
                                   "w": 471,
                                   "h": 70
@@ -2525,20 +2525,20 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 724,
+                                      "x": 707,
                                       "y": 253,
                                       "w": 16,
                                       "h": 18
                                     },
                                     "children": [
                                       {
-                                        "name": "Icon",
+                                        "name": "Icon_Image",
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
                                         "sprite": "Assets/UI/CollectPanel/Icons/art25.png",
                                         "rect": {
-                                          "x": 724,
+                                          "x": 707,
                                           "y": 255,
                                           "w": 16,
                                           "h": 16
@@ -2551,7 +2551,7 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 751,
+                                      "x": 734,
                                       "y": 253,
                                       "w": 328,
                                       "h": 44
@@ -2562,18 +2562,18 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 253,
                                           "w": 328,
                                           "h": 21
                                         },
                                         "children": [
                                           {
-                                            "name": "手势s识别模式未切换成功",
+                                            "name": "手势s识别模式未切换成功_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 253,
                                               "w": 162,
                                               "h": 21
@@ -2593,7 +2593,7 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 274,
                                           "w": 419,
                                           "h": 23
@@ -2604,20 +2604,20 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 279,
                                               "w": 11,
                                               "h": 12
                                             },
                                             "children": [
                                               {
-                                                "name": "Icon",
+                                                "name": "Icon_Image",
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
                                                 "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
                                                 "rect": {
-                                                  "x": 751,
+                                                  "x": 734,
                                                   "y": 280,
                                                   "w": 11,
                                                   "h": 11
@@ -2630,18 +2630,18 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 767,
+                                              "x": 750,
                                               "y": 279,
                                               "w": 278,
                                               "h": 18
                                             },
                                             "children": [
                                               {
-                                                "name": "等待模式切换为手势识别，请将手放在摄像头前方约 50cm 处，掌心朝前保持静止",
+                                                "name": "等待模式切换为手势识别，请将手放在摄像头前方约 50cm 处，掌心朝前保持静止_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 767,
+                                                  "x": 750,
                                                   "y": 279,
                                                   "w": 403,
                                                   "h": 18
@@ -2665,14 +2665,14 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1090,
+                                      "x": 1072,
                                       "y": 253,
                                       "w": 69,
                                       "h": 22
                                     },
                                     "children": [
                                       {
-                                        "name": "TextFill",
+                                        "name": "TextFill_Image",
                                         "type": "Image",
                                         "color": "#F871711A",
                                         "raycastTarget": false,
@@ -2685,7 +2685,7 @@
                                           "b": 12
                                         },
                                         "rect": {
-                                          "x": 1090,
+                                          "x": 1072,
                                           "y": 255,
                                           "w": 69,
                                           "h": 20
@@ -2704,11 +2704,11 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "未准备完成",
+                                            "name": "未准备完成_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1099,
+                                              "x": 1082,
                                               "y": 257,
                                               "w": 50,
                                               "h": 15
@@ -2734,14 +2734,14 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 706,
+                              "x": 689,
                               "y": 310,
                               "w": 471,
                               "h": 75
                             },
                             "children": [
                               {
-                                "name": "ContainerFill",
+                                "name": "ContainerFill_Image",
                                 "type": "Image",
                                 "color": "#22C55E2E",
                                 "raycastTarget": false,
@@ -2754,7 +2754,7 @@
                                   "b": 12
                                 },
                                 "rect": {
-                                  "x": 706,
+                                  "x": 689,
                                   "y": 315,
                                   "w": 471,
                                   "h": 70
@@ -2777,20 +2777,20 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 724,
+                                      "x": 707,
                                       "y": 328,
                                       "w": 16,
                                       "h": 18
                                     },
                                     "children": [
                                       {
-                                        "name": "Icon",
+                                        "name": "Icon_Image",
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
-                                        "sprite": "Assets/UI/CollectPanel/Icons/art27.png",
+                                        "sprite": "Assets/UI/CollectPanel/Icons/art23.png",
                                         "rect": {
-                                          "x": 724,
+                                          "x": 707,
                                           "y": 330,
                                           "w": 16,
                                           "h": 16
@@ -2803,7 +2803,7 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 751,
+                                      "x": 734,
                                       "y": 328,
                                       "w": 352,
                                       "h": 44
@@ -2814,18 +2814,18 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 328,
                                           "w": 352,
                                           "h": 21
                                         },
                                         "children": [
                                           {
-                                            "name": "手部未识别",
+                                            "name": "手部未识别_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 328,
                                               "w": 70,
                                               "h": 21
@@ -2845,7 +2845,7 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 349,
                                           "w": 681,
                                           "h": 23
@@ -2856,20 +2856,20 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 354,
                                               "w": 11,
                                               "h": 12
                                             },
                                             "children": [
                                               {
-                                                "name": "Icon",
+                                                "name": "Icon_Image",
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art28.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                                 "rect": {
-                                                  "x": 751,
+                                                  "x": 734,
                                                   "y": 355,
                                                   "w": 11,
                                                   "h": 11
@@ -2882,18 +2882,18 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 767,
+                                              "x": 750,
                                               "y": 354,
                                               "w": 340,
                                               "h": 18
                                             },
                                             "children": [
                                               {
-                                                "name": "确保环境光线充足，避免手部被遮挡；张开五指，缓慢移入视野中心",
+                                                "name": "确保环境光线充足，避免手部被遮挡；张开五指，缓慢移入视野中心_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 767,
+                                                  "x": 750,
                                                   "y": 354,
                                                   "w": 330,
                                                   "h": 18
@@ -2917,14 +2917,14 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1114,
+                                      "x": 1096,
                                       "y": 328,
                                       "w": 45,
                                       "h": 22
                                     },
                                     "children": [
                                       {
-                                        "name": "TextFill",
+                                        "name": "TextFill_Image",
                                         "type": "Image",
                                         "color": "#22C55E1F",
                                         "raycastTarget": false,
@@ -2937,7 +2937,7 @@
                                           "b": 12
                                         },
                                         "rect": {
-                                          "x": 1114,
+                                          "x": 1096,
                                           "y": 330,
                                           "w": 45,
                                           "h": 20
@@ -2956,11 +2956,11 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "准备完成",
+                                            "name": "准备完成_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1116,
+                                              "x": 1099,
                                               "y": 332,
                                               "w": 40,
                                               "h": 15
@@ -2980,7 +2980,7 @@
                                 ]
                               },
                               {
-                                "name": "ContainerFill_1",
+                                "name": "ContainerFill_Image_1",
                                 "type": "Image",
                                 "color": "#F871712E",
                                 "raycastTarget": false,
@@ -2993,7 +2993,7 @@
                                   "b": 12
                                 },
                                 "rect": {
-                                  "x": 706,
+                                  "x": 689,
                                   "y": 315,
                                   "w": 471,
                                   "h": 70
@@ -3016,20 +3016,20 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 724,
+                                      "x": 707,
                                       "y": 328,
                                       "w": 16,
                                       "h": 18
                                     },
                                     "children": [
                                       {
-                                        "name": "Icon",
+                                        "name": "Icon_Image",
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
-                                        "sprite": "Assets/UI/CollectPanel/Icons/art29.png",
+                                        "sprite": "Assets/UI/CollectPanel/Icons/art25.png",
                                         "rect": {
-                                          "x": 724,
+                                          "x": 707,
                                           "y": 330,
                                           "w": 16,
                                           "h": 16
@@ -3042,7 +3042,7 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 751,
+                                      "x": 734,
                                       "y": 328,
                                       "w": 328,
                                       "h": 44
@@ -3053,18 +3053,18 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 328,
                                           "w": 328,
                                           "h": 21
                                         },
                                         "children": [
                                           {
-                                            "name": "相机未初始化成功",
+                                            "name": "相机未初始化成功_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 328,
                                               "w": 112,
                                               "h": 21
@@ -3084,7 +3084,7 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 349,
                                           "w": 391,
                                           "h": 23
@@ -3095,20 +3095,20 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 354,
                                               "w": 11,
                                               "h": 12
                                             },
                                             "children": [
                                               {
-                                                "name": "Icon",
+                                                "name": "Icon_Image",
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art30.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
                                                 "rect": {
-                                                  "x": 751,
+                                                  "x": 734,
                                                   "y": 355,
                                                   "w": 11,
                                                   "h": 11
@@ -3121,18 +3121,18 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 767,
+                                              "x": 750,
                                               "y": 354,
                                               "w": 340,
                                               "h": 18
                                             },
                                             "children": [
                                               {
-                                                "name": "等待一段时间，若长时间不能初始化成功，尝试重启Pico后重试",
+                                                "name": "等待一段时间，若长时间不能初始化成功，尝试重启Pico后重试_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 767,
+                                                  "x": 750,
                                                   "y": 354,
                                                   "w": 313,
                                                   "h": 18
@@ -3156,14 +3156,14 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1090,
+                                      "x": 1072,
                                       "y": 328,
                                       "w": 69,
                                       "h": 22
                                     },
                                     "children": [
                                       {
-                                        "name": "TextFill",
+                                        "name": "TextFill_Image",
                                         "type": "Image",
                                         "color": "#F871711A",
                                         "raycastTarget": false,
@@ -3176,7 +3176,7 @@
                                           "b": 12
                                         },
                                         "rect": {
-                                          "x": 1090,
+                                          "x": 1072,
                                           "y": 330,
                                           "w": 69,
                                           "h": 20
@@ -3195,11 +3195,11 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "未准备完成",
+                                            "name": "未准备完成_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1099,
+                                              "x": 1082,
                                               "y": 332,
                                               "w": 50,
                                               "h": 15
@@ -3225,14 +3225,14 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 706,
+                              "x": 689,
                               "y": 385,
                               "w": 471,
                               "h": 75
                             },
                             "children": [
                               {
-                                "name": "ContainerFill",
+                                "name": "ContainerFill_Image",
                                 "type": "Image",
                                 "color": "#22C55E2E",
                                 "raycastTarget": false,
@@ -3245,7 +3245,7 @@
                                   "b": 12
                                 },
                                 "rect": {
-                                  "x": 706,
+                                  "x": 689,
                                   "y": 390,
                                   "w": 471,
                                   "h": 70
@@ -3268,20 +3268,20 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 724,
+                                      "x": 707,
                                       "y": 403,
                                       "w": 16,
                                       "h": 18
                                     },
                                     "children": [
                                       {
-                                        "name": "Icon",
+                                        "name": "Icon_Image",
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
                                         "sprite": "Assets/UI/CollectPanel/Icons/art31.png",
                                         "rect": {
-                                          "x": 724,
+                                          "x": 707,
                                           "y": 405,
                                           "w": 16,
                                           "h": 16
@@ -3294,7 +3294,7 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 751,
+                                      "x": 734,
                                       "y": 403,
                                       "w": 352,
                                       "h": 44
@@ -3305,18 +3305,18 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 403,
                                           "w": 352,
                                           "h": 21
                                         },
                                         "children": [
                                           {
-                                            "name": "追踪器 设备连接中…",
+                                            "name": "追踪器 设备连接中…_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 403,
                                               "w": 127,
                                               "h": 21
@@ -3336,7 +3336,7 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 424,
                                           "w": 681,
                                           "h": 23
@@ -3347,20 +3347,20 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 429,
                                               "w": 11,
                                               "h": 12
                                             },
                                             "children": [
                                               {
-                                                "name": "Icon",
+                                                "name": "Icon_Image",
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art32.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                                 "rect": {
-                                                  "x": 751,
+                                                  "x": 734,
                                                   "y": 430,
                                                   "w": 11,
                                                   "h": 11
@@ -3373,18 +3373,18 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 767,
+                                              "x": 750,
                                               "y": 429,
                                               "w": 331,
                                               "h": 18
                                             },
                                             "children": [
                                               {
-                                                "name": "检查 追踪器是否开机，蓝灯常亮表示已配对；可尝试重新校准，可尝试重启设备",
+                                                "name": "检查 追踪器是否开机，蓝灯常亮表示已配对；可尝试重新校准，可尝试重启设备_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 767,
+                                                  "x": 750,
                                                   "y": 429,
                                                   "w": 392,
                                                   "h": 18
@@ -3408,14 +3408,14 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1114,
+                                      "x": 1096,
                                       "y": 403,
                                       "w": 45,
                                       "h": 22
                                     },
                                     "children": [
                                       {
-                                        "name": "TextFill",
+                                        "name": "TextFill_Image",
                                         "type": "Image",
                                         "color": "#22C55E1F",
                                         "raycastTarget": false,
@@ -3428,7 +3428,7 @@
                                           "b": 12
                                         },
                                         "rect": {
-                                          "x": 1114,
+                                          "x": 1096,
                                           "y": 405,
                                           "w": 45,
                                           "h": 20
@@ -3447,11 +3447,11 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "准备完成",
+                                            "name": "准备完成_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1116,
+                                              "x": 1099,
                                               "y": 407,
                                               "w": 40,
                                               "h": 15
@@ -3471,7 +3471,7 @@
                                 ]
                               },
                               {
-                                "name": "ContainerFill_1",
+                                "name": "ContainerFill_Image_1",
                                 "type": "Image",
                                 "color": "#F871712E",
                                 "raycastTarget": false,
@@ -3484,7 +3484,7 @@
                                   "b": 12
                                 },
                                 "rect": {
-                                  "x": 706,
+                                  "x": 689,
                                   "y": 390,
                                   "w": 471,
                                   "h": 70
@@ -3507,20 +3507,20 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 724,
+                                      "x": 707,
                                       "y": 403,
                                       "w": 16,
                                       "h": 18
                                     },
                                     "children": [
                                       {
-                                        "name": "Icon",
+                                        "name": "Icon_Image",
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
-                                        "sprite": "Assets/UI/CollectPanel/Icons/art33.png",
+                                        "sprite": "Assets/UI/CollectPanel/Icons/art25.png",
                                         "rect": {
-                                          "x": 724,
+                                          "x": 707,
                                           "y": 405,
                                           "w": 16,
                                           "h": 16
@@ -3533,7 +3533,7 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 751,
+                                      "x": 734,
                                       "y": 403,
                                       "w": 328,
                                       "h": 44
@@ -3544,18 +3544,18 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 403,
                                           "w": 328,
                                           "h": 21
                                         },
                                         "children": [
                                           {
-                                            "name": "追踪器未全部连接成功…",
+                                            "name": "追踪器未全部连接成功…_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 403,
                                               "w": 152,
                                               "h": 21
@@ -3575,7 +3575,7 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 424,
                                           "w": 411,
                                           "h": 23
@@ -3586,20 +3586,20 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 429,
                                               "w": 11,
                                               "h": 12
                                             },
                                             "children": [
                                               {
-                                                "name": "Icon",
+                                                "name": "Icon_Image",
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art34.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
                                                 "rect": {
-                                                  "x": 751,
+                                                  "x": 734,
                                                   "y": 430,
                                                   "w": 11,
                                                   "h": 11
@@ -3612,18 +3612,18 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 767,
+                                              "x": 750,
                                               "y": 429,
                                               "w": 331,
                                               "h": 18
                                             },
                                             "children": [
                                               {
-                                                "name": "检查追踪器 是否开机，是否配对成功；可重新校准，可尝试重启设备",
+                                                "name": "检查追踪器 是否开机，是否配对成功；可重新校准，可尝试重启设备_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 767,
+                                                  "x": 750,
                                                   "y": 429,
                                                   "w": 337,
                                                   "h": 18
@@ -3647,14 +3647,14 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1090,
+                                      "x": 1072,
                                       "y": 403,
                                       "w": 69,
                                       "h": 22
                                     },
                                     "children": [
                                       {
-                                        "name": "TextFill",
+                                        "name": "TextFill_Image",
                                         "type": "Image",
                                         "color": "#F871711A",
                                         "raycastTarget": false,
@@ -3667,7 +3667,7 @@
                                           "b": 12
                                         },
                                         "rect": {
-                                          "x": 1090,
+                                          "x": 1072,
                                           "y": 405,
                                           "w": 69,
                                           "h": 20
@@ -3686,11 +3686,11 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "未准备完成",
+                                            "name": "未准备完成_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1099,
+                                              "x": 1082,
                                               "y": 407,
                                               "w": 50,
                                               "h": 15
@@ -3716,14 +3716,14 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 706,
+                              "x": 689,
                               "y": 460,
                               "w": 471,
                               "h": 75
                             },
                             "children": [
                               {
-                                "name": "ContainerFill",
+                                "name": "ContainerFill_Image",
                                 "type": "Image",
                                 "color": "#22C55E2E",
                                 "raycastTarget": false,
@@ -3736,7 +3736,7 @@
                                   "b": 12
                                 },
                                 "rect": {
-                                  "x": 706,
+                                  "x": 689,
                                   "y": 465,
                                   "w": 471,
                                   "h": 70
@@ -3759,20 +3759,20 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 724,
+                                      "x": 707,
                                       "y": 478,
                                       "w": 16,
                                       "h": 18
                                     },
                                     "children": [
                                       {
-                                        "name": "Icon",
+                                        "name": "Icon_Image",
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
-                                        "sprite": "Assets/UI/CollectPanel/Icons/art35.png",
+                                        "sprite": "Assets/UI/CollectPanel/Icons/art23.png",
                                         "rect": {
-                                          "x": 724,
+                                          "x": 707,
                                           "y": 480,
                                           "w": 16,
                                           "h": 16
@@ -3785,7 +3785,7 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 751,
+                                      "x": 734,
                                       "y": 478,
                                       "w": 352,
                                       "h": 44
@@ -3796,18 +3796,18 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 478,
                                           "w": 352,
                                           "h": 21
                                         },
                                         "children": [
                                           {
-                                            "name": "音频设备就绪",
+                                            "name": "音频设备就绪_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 478,
                                               "w": 84,
                                               "h": 21
@@ -3827,7 +3827,7 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 499,
                                           "w": 681,
                                           "h": 23
@@ -3838,20 +3838,20 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 504,
                                               "w": 11,
                                               "h": 12
                                             },
                                             "children": [
                                               {
-                                                "name": "Icon",
+                                                "name": "Icon_Image",
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art36.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                                 "rect": {
-                                                  "x": 751,
+                                                  "x": 734,
                                                   "y": 505,
                                                   "w": 11,
                                                   "h": 11
@@ -3864,18 +3864,18 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 767,
+                                              "x": 750,
                                               "y": 504,
                                               "w": 278,
                                               "h": 18
                                             },
                                             "children": [
                                               {
-                                                "name": "麦克风已连接，采样率 48kHz，电平正常，可开始采集",
+                                                "name": "麦克风已连接，采样率 48kHz，电平正常，可开始采集_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 767,
+                                                  "x": 750,
                                                   "y": 504,
                                                   "w": 271,
                                                   "h": 18
@@ -3899,14 +3899,14 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1114,
+                                      "x": 1096,
                                       "y": 478,
                                       "w": 45,
                                       "h": 22
                                     },
                                     "children": [
                                       {
-                                        "name": "TextFill",
+                                        "name": "TextFill_Image",
                                         "type": "Image",
                                         "color": "#22C55E1F",
                                         "raycastTarget": false,
@@ -3919,7 +3919,7 @@
                                           "b": 12
                                         },
                                         "rect": {
-                                          "x": 1114,
+                                          "x": 1096,
                                           "y": 480,
                                           "w": 45,
                                           "h": 20
@@ -3938,11 +3938,11 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "准备完成",
+                                            "name": "准备完成_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1116,
+                                              "x": 1099,
                                               "y": 482,
                                               "w": 40,
                                               "h": 15
@@ -3962,7 +3962,7 @@
                                 ]
                               },
                               {
-                                "name": "ContainerFill_1",
+                                "name": "ContainerFill_Image_1",
                                 "type": "Image",
                                 "color": "#F871712E",
                                 "raycastTarget": false,
@@ -3975,7 +3975,7 @@
                                   "b": 12
                                 },
                                 "rect": {
-                                  "x": 706,
+                                  "x": 689,
                                   "y": 465,
                                   "w": 471,
                                   "h": 70
@@ -3998,20 +3998,20 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 724,
+                                      "x": 707,
                                       "y": 478,
                                       "w": 16,
                                       "h": 18
                                     },
                                     "children": [
                                       {
-                                        "name": "Icon",
+                                        "name": "Icon_Image",
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
-                                        "sprite": "Assets/UI/CollectPanel/Icons/art37.png",
+                                        "sprite": "Assets/UI/CollectPanel/Icons/art25.png",
                                         "rect": {
-                                          "x": 724,
+                                          "x": 707,
                                           "y": 480,
                                           "w": 16,
                                           "h": 16
@@ -4024,7 +4024,7 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 751,
+                                      "x": 734,
                                       "y": 478,
                                       "w": 328,
                                       "h": 44
@@ -4035,18 +4035,18 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 478,
                                           "w": 328,
                                           "h": 21
                                         },
                                         "children": [
                                           {
-                                            "name": "音频设备就绪",
+                                            "name": "音频设备就绪_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 478,
                                               "w": 84,
                                               "h": 21
@@ -4066,7 +4066,7 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 751,
+                                          "x": 734,
                                           "y": 499,
                                           "w": 414,
                                           "h": 23
@@ -4077,20 +4077,20 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 751,
+                                              "x": 734,
                                               "y": 504,
                                               "w": 11,
                                               "h": 12
                                             },
                                             "children": [
                                               {
-                                                "name": "Icon",
+                                                "name": "Icon_Image",
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art38.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
                                                 "rect": {
-                                                  "x": 751,
+                                                  "x": 734,
                                                   "y": 505,
                                                   "w": 11,
                                                   "h": 11
@@ -4103,18 +4103,18 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 767,
+                                              "x": 750,
                                               "y": 504,
                                               "w": 278,
                                               "h": 18
                                             },
                                             "children": [
                                               {
-                                                "name": "麦克风已连接，采样率 48kHz，电平正常，可开始采集",
+                                                "name": "麦克风已连接，采样率 48kHz，电平正常，可开始采集_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 767,
+                                                  "x": 750,
                                                   "y": 504,
                                                   "w": 271,
                                                   "h": 18
@@ -4138,14 +4138,14 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1090,
+                                      "x": 1072,
                                       "y": 478,
                                       "w": 69,
                                       "h": 22
                                     },
                                     "children": [
                                       {
-                                        "name": "TextFill",
+                                        "name": "TextFill_Image",
                                         "type": "Image",
                                         "color": "#F871711A",
                                         "raycastTarget": false,
@@ -4158,7 +4158,7 @@
                                           "b": 12
                                         },
                                         "rect": {
-                                          "x": 1090,
+                                          "x": 1072,
                                           "y": 480,
                                           "w": 69,
                                           "h": 20
@@ -4177,11 +4177,11 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "未准备完成",
+                                            "name": "未准备完成_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1099,
+                                              "x": 1082,
                                               "y": 482,
                                               "w": 50,
                                               "h": 15
@@ -4209,7 +4209,7 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 205,
+                          "x": 188,
                           "y": 234,
                           "w": 460,
                           "h": 311
@@ -4220,18 +4220,18 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 205,
+                              "x": 188,
                               "y": 234,
                               "w": 460,
                               "h": 310
                             },
                             "children": [
                               {
-                                "name": "content",
+                                "name": "content_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 205,
+                                  "x": 188,
                                   "y": 234,
                                   "w": 460,
                                   "h": 310
@@ -4241,7 +4241,8 @@
                                   "fontSize": 11,
                                   "color": "#FFFFFF",
                                   "alignment": "MidlineLeft",
-                                  "lineSpacing": 90.9
+                                  "lineSpacing": 90.9,
+                                  "characterSpacing": 3.6
                                 }
                               }
                             ]
@@ -4249,7 +4250,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill_2",
+                        "name": "ContainerFill_Image_2",
                         "type": "Image",
                         "color": "#FFFFFF0A",
                         "raycastTarget": false,
@@ -4296,214 +4297,29 @@
                                 "type": "Container",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 417,
+                                  "x": 192,
                                   "y": 564,
-                                  "w": 42,
+                                  "w": 954,
                                   "h": 16
                                 },
                                 "children": [
                                   {
-                                    "name": "head:0",
+                                    "name": "Message_Text",
                                     "type": "Text",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 417,
-                                      "y": 563,
-                                      "w": 40,
+                                      "x": 192,
+                                      "y": 564,
+                                      "w": 969,
                                       "h": 17
                                     },
                                     "text": {
                                       "content": "head:0",
                                       "fontSize": 11,
                                       "color": "#7A90B8",
-                                      "alignment": "MidlineLeft",
-                                      "lineSpacing": 50.0
-                                    }
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "Text_1",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 480,
-                                  "y": 564,
-                                  "w": 81,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "controller:0",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 480,
-                                      "y": 563,
-                                      "w": 80,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "controller:0",
-                                      "fontSize": 11,
-                                      "color": "#7A90B8",
-                                      "alignment": "MidlineLeft",
-                                      "lineSpacing": 50.0
-                                    }
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "Text_2",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 582,
-                                  "y": 564,
-                                  "w": 61,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "tracker:0",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 582,
-                                      "y": 563,
-                                      "w": 60,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "tracker:0",
-                                      "fontSize": 11,
-                                      "color": "#7A90B8",
-                                      "alignment": "MidlineLeft",
-                                      "lineSpacing": 50.0
-                                    }
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "Text_3",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 664,
-                                  "y": 564,
-                                  "w": 55,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "camera:0",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 664,
-                                      "y": 563,
-                                      "w": 53,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "camera:0",
-                                      "fontSize": 11,
-                                      "color": "#7A90B8",
-                                      "alignment": "MidlineLeft",
-                                      "lineSpacing": 50.0
-                                    }
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "Text_4",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 740,
-                                  "y": 564,
-                                  "w": 48,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "audio:0",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 740,
-                                      "y": 563,
-                                      "w": 47,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "audio:0",
-                                      "fontSize": 11,
-                                      "color": "#7A90B8",
-                                      "alignment": "MidlineLeft",
-                                      "lineSpacing": 50.0
-                                    }
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "Text_5",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 809,
-                                  "y": 564,
-                                  "w": 48,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "mocap:0",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 809,
-                                      "y": 563,
-                                      "w": 47,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "mocap:0",
-                                      "fontSize": 11,
-                                      "color": "#7A90B8",
-                                      "alignment": "MidlineLeft",
-                                      "lineSpacing": 50.0
-                                    }
-                                  }
-                                ]
-                              },
-                              {
-                                "name": "Text_6",
-                                "type": "Container",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 878,
-                                  "y": 564,
-                                  "w": 42,
-                                  "h": 16
-                                },
-                                "children": [
-                                  {
-                                    "name": "hand:0",
-                                    "type": "Text",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 878,
-                                      "y": 563,
-                                      "w": 40,
-                                      "h": 17
-                                    },
-                                    "text": {
-                                      "content": "hand:0",
-                                      "fontSize": 11,
-                                      "color": "#7A90B8",
-                                      "alignment": "MidlineLeft",
-                                      "lineSpacing": 50.0
+                                      "alignment": "Center",
+                                      "lineSpacing": 50.0,
+                                      "wrap": true
                                     }
                                   }
                                 ]
@@ -4524,23 +4340,32 @@
                         },
                         "children": [
                           {
-                            "name": "Button",
-                            "type": "Image",
+                            "name": "CollectState_Btn",
+                            "type": "Button",
                             "color": "#FFFFFF",
-                            "raycastTarget": false,
+                            "sprite": "Assets/UI/Common/round12.png",
+                            "imageType": "Sliced",
+                            "border": {
+                              "l": 12,
+                              "t": 12,
+                              "r": 12,
+                              "b": 12
+                            },
                             "rect": {
                               "x": 173,
                               "y": 607,
                               "w": 441,
                               "h": 62
                             },
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
+                            "text": {
+                              "content": "准备中",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "Center",
+                              "style": {
+                                "bold": true
+                              },
+                              "characterSpacing": 5.0
                             },
                             "gradient": {
                               "type": "Linear",
@@ -4555,49 +4380,35 @@
                                   "pos": 1.0
                                 }
                               ]
-                            },
-                            "children": [
-                              {
-                                "name": "准备中",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 362,
-                                  "y": 623,
-                                  "w": 62,
-                                  "h": 30
-                                },
-                                "text": {
-                                  "content": "准备中",
-                                  "fontSize": 20,
-                                  "color": "#FFFFFF",
-                                  "alignment": "Center",
-                                  "style": {
-                                    "bold": true
-                                  },
-                                  "lineSpacing": 50.0
-                                }
-                              }
-                            ]
+                            }
                           },
                           {
-                            "name": "Button_1",
-                            "type": "Image",
+                            "name": "EndCollect_Btn",
+                            "type": "Button",
                             "color": "#FFFFFF",
-                            "raycastTarget": false,
+                            "sprite": "Assets/UI/Common/round12.png",
+                            "imageType": "Sliced",
+                            "border": {
+                              "l": 12,
+                              "t": 12,
+                              "r": 12,
+                              "b": 12
+                            },
                             "rect": {
                               "x": 723,
                               "y": 607,
                               "w": 441,
                               "h": 62
                             },
-                            "sprite": "Assets/UI/Common/round12.png",
-                            "imageType": "Sliced",
-                            "border": {
-                              "l": 12,
-                              "t": 12,
-                              "r": 12,
-                              "b": 12
+                            "text": {
+                              "content": "结束采集",
+                              "fontSize": 20,
+                              "color": "#FFFFFF",
+                              "alignment": "Center",
+                              "style": {
+                                "bold": true
+                              },
+                              "characterSpacing": 5.0
                             },
                             "gradient": {
                               "type": "Linear",
@@ -4612,35 +4423,12 @@
                                   "pos": 1.0
                                 }
                               ]
-                            },
-                            "children": [
-                              {
-                                "name": "结束采集",
-                                "type": "Text",
-                                "raycastTarget": false,
-                                "rect": {
-                                  "x": 902,
-                                  "y": 623,
-                                  "w": 83,
-                                  "h": 30
-                                },
-                                "text": {
-                                  "content": "结束采集",
-                                  "fontSize": 20,
-                                  "color": "#FFFFFF",
-                                  "alignment": "Center",
-                                  "style": {
-                                    "bold": true
-                                  },
-                                  "lineSpacing": 50.0
-                                }
-                              }
-                            ]
+                            }
                           }
                         ]
                       },
                       {
-                        "name": "ContainerFill_3",
+                        "name": "ContainerFill_Image_3",
                         "type": "Image",
                         "color": "#FFFFFF08",
                         "raycastTarget": false,
@@ -4683,7 +4471,7 @@
                             },
                             "children": [
                               {
-                                "name": "使用说明",
+                                "name": "使用说明_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -4714,7 +4502,7 @@
                             },
                             "children": [
                               {
-                                "name": "手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿\n点「开始准备」保持手柄约 1",
+                                "name": "手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿\n点「开始准备」保持手柄约 1_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -4741,7 +4529,7 @@
                 ]
               },
               {
-                "name": "ContainerFill_1",
+                "name": "ContainerFill_Image_1",
                 "type": "Image",
                 "color": "#040A1C80",
                 "raycastTarget": false,
@@ -4773,7 +4561,7 @@
                 },
                 "children": [
                   {
-                    "name": "Button",
+                    "name": "Return_Btn",
                     "type": "Button",
                     "color": "#FFFFFF61",
                     "sprite": "Assets/UI/Common/round12.png",

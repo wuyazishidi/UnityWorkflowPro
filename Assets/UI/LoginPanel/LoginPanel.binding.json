@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "LoginPanel",
+  "prefab": "Assets/UI/LoginPanel/LoginPanel.prefab",
+  "size": { "w": 1106, "h": 778 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring12", "ring16", "round12", "round16"],
+    "atlas": "Assets/UI/LoginPanel/LoginPanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "text1", "path": "Logo/Paragraph/源策未来_Text", "type": "Text", "text": "源策未来", "keyAuto": true },
+    { "key": "text2", "path": "Form/Account/Container/用户名_Text", "type": "Text", "text": "用户名", "keyAuto": true },
+    { "key": "containerInputInputField", "path": "Form/Account/ContainerInput_InputField", "type": "InputField", "text": "请输入用户名" },
+    { "key": "text3", "path": "Form/Password/Container/密 码_Text", "type": "Text", "text": "密 码", "keyAuto": true },
+    { "key": "containerInputInputField", "path": "Form/Password/ContainerInput_InputField", "type": "InputField", "text": "请输入密码" },
+    { "key": "text4", "path": "Form/TOTP/Container/动态码_Text", "type": "Text", "text": "动态码", "keyAuto": true },
+    { "key": "containerInputInputField", "path": "Form/TOTP/ContainerInput_InputField", "type": "InputField", "text": "请输入动态码" },
+    { "key": "loginBtn", "path": "Form/Container/Login_Btn", "type": "Button", "text": "登 录" }
+  ]
+}

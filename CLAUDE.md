@@ -65,6 +65,7 @@
 | 读控制台日志 | `get_console_log.ps1 -NoWait 1` |
 | 读编译结果/报错 | `get_console_error.ps1 -NoWait 1` |
 | 调任意工具 | `invoke-uto-tool.ps1 -Tool '<工具名>' -ParamsBase64 <base64> -NoWait 1` |
+| 发布 UI 交付包 | `publish-ui.ps1 -Panel <P> [-Build]`（产 binding.json/.md + `delivery/<P>.unitypackage`，供消费方解耦消费；命令 `/publish-ui`、Skill `ui-publish`；见 spec 005） |
 
 布尔参数命令行用 `1/0`。`invoke-uto-tool` 的常用工具：`Log` / `LogError` / `TriggerCompile` / `ExecuteMenu` / `GetConsoleLog` / `AssertConsoleContains`（详见 `Packages/cn.etetet.yiuimcp/Config/README.md`）。
 

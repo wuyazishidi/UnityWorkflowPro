@@ -15,7 +15,7 @@
     },
     "children": [
       {
-        "name": "CardBase",
+        "name": "CardBase_Image",
         "type": "Image",
         "color": "#060F1E",
         "raycastTarget": false,
@@ -35,7 +35,7 @@
         }
       },
       {
-        "name": "BackgroundScene",
+        "name": "BackgroundScene_Image",
         "type": "Image",
         "color": "#FFFFFF00",
         "raycastTarget": false,
@@ -55,7 +55,7 @@
         },
         "children": [
           {
-            "name": "Image",
+            "name": "Image_Image",
             "type": "Image",
             "color": "#FFFFFF",
             "raycastTarget": false,
@@ -92,7 +92,7 @@
         },
         "children": [
           {
-            "name": "Image",
+            "name": "Image_Image",
             "type": "Image",
             "color": "#FFFFFF",
             "raycastTarget": false,
@@ -116,7 +116,7 @@
             },
             "children": [
               {
-                "name": "源策未来",
+                "name": "源策未来_Text",
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
@@ -132,7 +132,9 @@
                   "alignment": "MidlineLeft",
                   "style": {
                     "bold": true
-                  }
+                  },
+                  "lineSpacing": 50.0,
+                  "characterSpacing": 18.0
                 }
               }
             ]
@@ -147,11 +149,11 @@
           "x": 323,
           "y": 183,
           "w": 460,
-          "h": 412
+          "h": 485
         },
         "children": [
           {
-            "name": "InputField",
+            "name": "Account",
             "type": "Container",
             "raycastTarget": false,
             "rect": {
@@ -173,7 +175,7 @@
                 },
                 "children": [
                   {
-                    "name": "用户名",
+                    "name": "用户名_Text",
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
@@ -186,13 +188,15 @@
                       "content": "用户名",
                       "fontSize": 20,
                       "color": "#B4DAFFE0",
-                      "alignment": "MidlineRight"
+                      "alignment": "MidlineRight",
+                      "lineSpacing": 14.0,
+                      "characterSpacing": 3.8
                     }
                   }
                 ]
               },
               {
-                "name": "ContainerInput",
+                "name": "ContainerInput_InputField",
                 "type": "InputField",
                 "color": "#06164673",
                 "sprite": "Assets/UI/Common/round12.png",
@@ -239,7 +243,7 @@
             ]
           },
           {
-            "name": "InputField_1",
+            "name": "Password",
             "type": "Container",
             "raycastTarget": false,
             "rect": {
@@ -261,7 +265,7 @@
                 },
                 "children": [
                   {
-                    "name": "密 码",
+                    "name": "密 码_Text",
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
@@ -274,13 +278,15 @@
                       "content": "密 码",
                       "fontSize": 20,
                       "color": "#B4DAFFE0",
-                      "alignment": "MidlineRight"
+                      "alignment": "MidlineRight",
+                      "lineSpacing": 14.0,
+                      "characterSpacing": 3.8
                     }
                   }
                 ]
               },
               {
-                "name": "ContainerInput",
+                "name": "ContainerInput_InputField",
                 "type": "InputField",
                 "color": "#06164673",
                 "sprite": "Assets/UI/Common/round12.png",
@@ -337,7 +343,7 @@
             ]
           },
           {
-            "name": "InputField_2",
+            "name": "TOTP",
             "type": "Container",
             "raycastTarget": false,
             "rect": {
@@ -359,7 +365,7 @@
                 },
                 "children": [
                   {
-                    "name": "动态码",
+                    "name": "动态码_Text",
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
@@ -372,13 +378,15 @@
                       "content": "动态码",
                       "fontSize": 20,
                       "color": "#B4DAFFE0",
-                      "alignment": "MidlineRight"
+                      "alignment": "MidlineRight",
+                      "lineSpacing": 14.0,
+                      "characterSpacing": 3.8
                     }
                   }
                 ]
               },
               {
-                "name": "ContainerInput",
+                "name": "ContainerInput_InputField",
                 "type": "InputField",
                 "color": "#06164673",
                 "sprite": "Assets/UI/Common/round12.png",
@@ -436,7 +444,7 @@
             },
             "children": [
               {
-                "name": "LoginButton",
+                "name": "Login_Btn",
                 "type": "Button",
                 "color": "#0E34A085",
                 "sprite": "Assets/UI/Common/round16.png",
@@ -460,7 +468,8 @@
                   "alignment": "Center",
                   "style": {
                     "bold": true
-                  }
+                  },
+                  "characterSpacing": 15.1
                 },
                 "stroke": {
                   "color": "#3C8CFF99",
@@ -474,6 +483,51 @@
                     "b": 16
                   }
                 }
+              }
+            ]
+          },
+          {
+            "name": "Container_1",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 363,
+              "y": 555,
+              "w": 380,
+              "h": 73
+            },
+            "children": [
+              {
+                "name": "Text",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 526,
+                  "y": 603,
+                  "w": 54,
+                  "h": 25
+                },
+                "children": [
+                  {
+                    "name": "LoginState_Text",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 515,
+                      "y": 602,
+                      "w": 77,
+                      "h": 26
+                    },
+                    "text": {
+                      "content": "登录中...",
+                      "fontSize": 16,
+                      "color": "#FF8C57F2",
+                      "alignment": "Center",
+                      "lineSpacing": 57.5,
+                      "characterSpacing": 18.9
+                    }
+                  }
+                ]
               }
             ]
           }

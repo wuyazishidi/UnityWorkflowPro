@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "SelectPanel",
+  "prefab": "Assets/UI/SelectPanel/SelectPanel.prefab",
+  "size": { "w": 1106, "h": 778 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring12", "round12", "round16"],
+    "atlas": "Assets/UI/SelectPanel/SelectPanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "taskIDText", "path": "Container_Image/Container/TaskID_Text", "type": "Text", "text": "任务#2" },
+    { "key": "taskDescriptionText", "path": "Container_Image/Container/Text/TaskDescription_Text", "type": "Text", "text": "场景：书房         状态：assigned        已传0段" },
+    { "key": "returnBtn", "path": "Container_1/Return_Btn", "type": "Button", "text": "返回" },
+    { "key": "continueCollectBtn", "path": "ContainerFill_Image/Container/ContinueCollect_Btn", "type": "Button", "text": "继续采集" },
+    { "key": "uploadBtn", "path": "ContainerFill_Image/Container/Upload_Btn", "type": "Button", "text": "上传" },
+    { "key": "abandonBtn", "path": "ContainerFill_Image/Container/Abandon_Btn", "type": "Button", "text": "放弃任务" }
+  ]
+}

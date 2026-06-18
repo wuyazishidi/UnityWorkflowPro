@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "Tip",
+  "prefab": "Assets/UI/Tip/Tip.prefab",
+  "size": { "w": 588, "h": 247 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring12", "round12"],
+    "atlas": "Assets/UI/Tip/Tip.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "text1", "path": "ContainerFill_Image/Container/Text/警告_Text", "type": "Text", "text": "警告", "keyAuto": true },
+    { "key": "messageText", "path": "ContainerFill_Image/Container/Text_1/Message_Text", "type": "Text", "text": "追踪器断开连接，请检查是否正常工作，重新启动，校准" }
+  ]
+}

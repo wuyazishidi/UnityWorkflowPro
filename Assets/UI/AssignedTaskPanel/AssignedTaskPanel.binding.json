@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "AssignedTaskPanel",
+  "prefab": "Assets/UI/AssignedTaskPanel/AssignedTaskPanel.prefab",
+  "size": { "w": 1106, "h": 778 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring12", "round16"],
+    "atlas": "Assets/UI/AssignedTaskPanel/AssignedTaskPanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "text1", "path": "Container_Image/Container/我的已领任务_Text", "type": "Text", "text": "我的已领任务", "keyAuto": true },
+    { "key": "countText", "path": "Container_Image/Container/Text/Count_Text", "type": "Text", "text": "共3个进行中任务，点击继续/审核" },
+    { "key": "itemParent", "path": "ItemParent", "type": "List", "text": null, "itemPrefab": "TaskItem_Btn" },
+    { "key": "returnBtn", "path": "Container_1/Return_Btn", "type": "Button", "text": "返回" }
+  ]
+}

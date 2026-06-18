@@ -15,7 +15,7 @@
     },
     "children": [
       {
-        "name": "CardBase",
+        "name": "CardBase_Image",
         "type": "Image",
         "color": "#0A1118",
         "raycastTarget": false,
@@ -46,7 +46,7 @@
         },
         "children": [
           {
-            "name": "Image",
+            "name": "Image_Image",
             "type": "Image",
             "color": "#FFFFFF",
             "raycastTarget": false,
@@ -73,7 +73,7 @@
         ]
       },
       {
-        "name": "Container_1",
+        "name": "Container_Image",
         "type": "Image",
         "color": "#FFFFFF00",
         "raycastTarget": false,
@@ -108,7 +108,7 @@
             },
             "children": [
               {
-                "name": "我的已领任务",
+                "name": "TaskID_Text",
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
@@ -125,7 +125,8 @@
                   "style": {
                     "bold": true
                   },
-                  "lineSpacing": -10.0
+                  "lineSpacing": -10.0,
+                  "characterSpacing": 6.7
                 }
               },
               {
@@ -140,7 +141,7 @@
                 },
                 "children": [
                   {
-                    "name": "共3个进行中任务，点击继续/审核",
+                    "name": "TaskDescription_Text",
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
@@ -153,7 +154,8 @@
                       "content": "场景：书房         状态：assigned        已传0段",
                       "fontSize": 20,
                       "color": "#DEEEFF",
-                      "alignment": "MidlineLeft"
+                      "alignment": "MidlineLeft",
+                      "characterSpacing": 2.5
                     }
                   }
                 ]
@@ -163,7 +165,7 @@
         ]
       },
       {
-        "name": "Container_2",
+        "name": "Container_1",
         "type": "Container",
         "raycastTarget": false,
         "rect": {
@@ -174,16 +176,9 @@
         },
         "children": [
           {
-            "name": "Button",
-            "type": "Image",
+            "name": "Return_Btn",
+            "type": "Button",
             "color": "#FFFFFF00",
-            "raycastTarget": false,
-            "rect": {
-              "x": 956,
-              "y": 671,
-              "w": 130,
-              "h": 34
-            },
             "sprite": "Assets/UI/Common/round12.png",
             "imageType": "Sliced",
             "border": {
@@ -192,85 +187,27 @@
               "r": 12,
               "b": 12
             },
-            "children": [
-              {
-                "name": "返回",
-                "type": "Text",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 1001,
-                  "y": 678,
-                  "w": 41,
-                  "h": 21
-                },
-                "text": {
-                  "content": "返回",
-                  "fontSize": 20,
-                  "color": "#A8D4FF",
-                  "alignment": "Center",
-                  "style": {
-                    "bold": true
-                  }
-                }
+            "rect": {
+              "x": 956,
+              "y": 671,
+              "w": 130,
+              "h": 34
+            },
+            "text": {
+              "content": "返回",
+              "fontSize": 20,
+              "color": "#A8D4FF",
+              "alignment": "Center",
+              "style": {
+                "bold": true
               },
-              {
-                "name": "Container",
-                "type": "Image",
-                "color": "#388BFD26",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 956,
-                  "y": 672,
-                  "w": 130,
-                  "h": 34
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                }
-              },
-              {
-                "name": "ContainerFill",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "rect": {
-                  "x": 956,
-                  "y": 671,
-                  "w": 130,
-                  "h": 34
-                },
-                "stroke": {
-                  "color": "#85B8FF",
-                  "weight": 0.67,
-                  "align": "Inside",
-                  "sprite": "Assets/UI/Common/ring12.png",
-                  "border": {
-                    "l": 12,
-                    "t": 12,
-                    "r": 12,
-                    "b": 12
-                  }
-                }
-              }
-            ]
+              "characterSpacing": 5.0
+            }
           }
         ]
       },
       {
-        "name": "ContainerFill",
+        "name": "ContainerFill_Image",
         "type": "Image",
         "color": "#08122AC7",
         "raycastTarget": false,
@@ -313,16 +250,38 @@
             },
             "children": [
               {
-                "name": "Button",
-                "type": "Image",
+                "name": "ContinueCollect_Btn",
+                "type": "Button",
                 "color": "#FFFFFF00",
-                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round12.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 12,
+                  "t": 12,
+                  "r": 12,
+                  "b": 12
+                },
                 "rect": {
                   "x": 372,
                   "y": 347,
                   "w": 130,
                   "h": 34
                 },
+                "text": {
+                  "content": "继续采集",
+                  "fontSize": 20,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "style": {
+                    "bold": true
+                  },
+                  "characterSpacing": 5.0
+                }
+              },
+              {
+                "name": "Upload_Btn",
+                "type": "Button",
+                "color": "#FFFFFF00",
                 "sprite": "Assets/UI/Common/round12.png",
                 "imageType": "Sliced",
                 "border": {
@@ -331,92 +290,27 @@
                   "r": 12,
                   "b": 12
                 },
-                "children": [
-                  {
-                    "name": "继续采集",
-                    "type": "Text",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 395,
-                      "y": 354,
-                      "w": 83,
-                      "h": 21
-                    },
-                    "text": {
-                      "content": "继续采集",
-                      "fontSize": 20,
-                      "color": "#A8D4FF",
-                      "alignment": "Center",
-                      "style": {
-                        "bold": true
-                      }
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Image",
-                    "color": "#388BFD26",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 372,
-                      "y": 348,
-                      "w": 130,
-                      "h": 34
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "ContainerFill",
-                    "type": "Image",
-                    "color": "#FFFFFF00",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 372,
-                      "y": 347,
-                      "w": 130,
-                      "h": 34
-                    },
-                    "stroke": {
-                      "color": "#85B8FF",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    }
-                  }
-                ]
-              },
-              {
-                "name": "Button_1",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
                 "rect": {
                   "x": 526,
                   "y": 347,
                   "w": 130,
                   "h": 34
                 },
+                "text": {
+                  "content": "上传",
+                  "fontSize": 20,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "style": {
+                    "bold": true
+                  },
+                  "characterSpacing": 5.0
+                }
+              },
+              {
+                "name": "Abandon_Btn",
+                "type": "Button",
+                "color": "#FFFFFF00",
                 "sprite": "Assets/UI/Common/round12.png",
                 "imageType": "Sliced",
                 "border": {
@@ -425,174 +319,22 @@
                   "r": 12,
                   "b": 12
                 },
-                "children": [
-                  {
-                    "name": "上传",
-                    "type": "Text",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 570,
-                      "y": 354,
-                      "w": 41,
-                      "h": 21
-                    },
-                    "text": {
-                      "content": "上传",
-                      "fontSize": 20,
-                      "color": "#A8D4FF",
-                      "alignment": "Center",
-                      "style": {
-                        "bold": true
-                      }
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Image",
-                    "color": "#388BFD26",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 526,
-                      "y": 348,
-                      "w": 130,
-                      "h": 34
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "ContainerFill",
-                    "type": "Image",
-                    "color": "#FFFFFF00",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 526,
-                      "y": 347,
-                      "w": 130,
-                      "h": 34
-                    },
-                    "stroke": {
-                      "color": "#85B8FF",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    }
-                  }
-                ]
-              },
-              {
-                "name": "Button_2",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
                 "rect": {
                   "x": 680,
                   "y": 347,
                   "w": 130,
                   "h": 34
                 },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "children": [
-                  {
-                    "name": "返回",
-                    "type": "Text",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 703,
-                      "y": 354,
-                      "w": 83,
-                      "h": 21
-                    },
-                    "text": {
-                      "content": "放弃任务",
-                      "fontSize": 20,
-                      "color": "#FFFFFF",
-                      "alignment": "Center",
-                      "style": {
-                        "bold": true
-                      }
-                    }
+                "text": {
+                  "content": "放弃任务",
+                  "fontSize": 20,
+                  "color": "#FFFFFF",
+                  "alignment": "Center",
+                  "style": {
+                    "bold": true
                   },
-                  {
-                    "name": "Container",
-                    "type": "Image",
-                    "color": "#FD3F3826",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 680,
-                      "y": 348,
-                      "w": 130,
-                      "h": 34
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "ContainerFill",
-                    "type": "Image",
-                    "color": "#FFFFFF00",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    },
-                    "rect": {
-                      "x": 680,
-                      "y": 347,
-                      "w": 130,
-                      "h": 34
-                    },
-                    "stroke": {
-                      "color": "#FF8585",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring12.png",
-                      "border": {
-                        "l": 12,
-                        "t": 12,
-                        "r": 12,
-                        "b": 12
-                      }
-                    }
-                  }
-                ]
+                  "characterSpacing": 5.0
+                }
               }
             ]
           }

@@ -15,7 +15,7 @@
     },
     "children": [
       {
-        "name": "CardBase",
+        "name": "CardBase_Image",
         "type": "Image",
         "color": "#08122AC7",
         "raycastTarget": false,
@@ -47,7 +47,7 @@
         }
       },
       {
-        "name": "ContainerFill",
+        "name": "ContainerFill_Image",
         "type": "Image",
         "color": "#08122AC7",
         "raycastTarget": false,
@@ -101,7 +101,7 @@
                 },
                 "children": [
                   {
-                    "name": "警告",
+                    "name": "警告_Text",
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
@@ -115,7 +115,8 @@
                       "fontSize": 24,
                       "color": "#FFFFFF",
                       "alignment": "MidlineLeft",
-                      "lineSpacing": -31.2
+                      "lineSpacing": -31.2,
+                      "characterSpacing": 8.3
                     }
                   }
                 ]
@@ -132,7 +133,7 @@
                 },
                 "children": [
                   {
-                    "name": "请确保手部进入摄像头视野\nTracker 设备已连接，音频正常",
+                    "name": "Message_Text",
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {

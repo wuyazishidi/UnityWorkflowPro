@@ -15,7 +15,7 @@
     },
     "children": [
       {
-        "name": "Container",
+        "name": "Container_Image",
         "type": "Image",
         "color": "#FFFFFF00",
         "raycastTarget": false,
@@ -35,7 +35,7 @@
         },
         "children": [
           {
-            "name": "BackgroundScene",
+            "name": "BackgroundScene_Image",
             "type": "Image",
             "color": "#FFFFFF00",
             "raycastTarget": false,
@@ -77,7 +77,7 @@
                     },
                     "children": [
                       {
-                        "name": "Image",
+                        "name": "Image_Image",
                         "type": "Image",
                         "color": "#FFFFFF",
                         "raycastTarget": false,
@@ -94,7 +94,7 @@
                 ]
               },
               {
-                "name": "Container",
+                "name": "Container_Image",
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
@@ -109,7 +109,7 @@
             ]
           },
           {
-            "name": "Container",
+            "name": "Container_Image",
             "type": "Image",
             "color": "#040A1C94",
             "raycastTarget": false,
@@ -121,7 +121,7 @@
             }
           },
           {
-            "name": "ContainerFill",
+            "name": "ContainerFill_Image",
             "type": "Image",
             "color": "#040A1CC7",
             "raycastTarget": false,
@@ -186,7 +186,7 @@
                         },
                         "children": [
                           {
-                            "name": "FPS",
+                            "name": "FPS_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -217,7 +217,7 @@
                         },
                         "children": [
                           {
-                            "name": "105",
+                            "name": "fps_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -227,7 +227,7 @@
                               "h": 17
                             },
                             "text": {
-                              "content": "105",
+                              "content": "103",
                               "fontSize": 11,
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
@@ -241,7 +241,7 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 178,
+                          "x": 179,
                           "y": 84,
                           "w": 13,
                           "h": 16
@@ -252,18 +252,18 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 184,
+                              "x": 185,
                               "y": 84,
                               "w": 7,
                               "h": 16
                             },
                             "children": [
                               {
-                                "name": "|",
+                                "name": "|_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 184,
+                                  "x": 185,
                                   "y": 84,
                                   "w": 7,
                                   "h": 17
@@ -287,7 +287,7 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 201,
+                      "x": 202,
                       "y": 84,
                       "w": 82,
                       "h": 16
@@ -298,18 +298,18 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 201,
+                          "x": 202,
                           "y": 84,
                           "w": 23,
                           "h": 16
                         },
                         "children": [
                           {
-                            "name": "内存",
+                            "name": "内存_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 201,
+                              "x": 202,
                               "y": 84,
                               "w": 22,
                               "h": 17
@@ -336,7 +336,7 @@
                         },
                         "children": [
                           {
-                            "name": "4/144M",
+                            "name": "Memory_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -378,7 +378,7 @@
                             },
                             "children": [
                               {
-                                "name": "|",
+                                "name": "|_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -424,7 +424,7 @@
                         },
                         "children": [
                           {
-                            "name": "磁盘",
+                            "name": "磁盘_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -455,7 +455,7 @@
                         },
                         "children": [
                           {
-                            "name": "211.7G",
+                            "name": "Capacity_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
@@ -497,7 +497,7 @@
                             },
                             "children": [
                               {
-                                "name": "|",
+                                "name": "|_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -543,17 +543,17 @@
                         },
                         "children": [
                           {
-                            "name": "collector",
+                            "name": "当前账号：_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
                               "x": 386,
                               "y": 84,
-                              "w": 60,
+                              "w": 55,
                               "h": 17
                             },
                             "text": {
-                              "content": "collector",
+                              "content": "当前账号：",
                               "fontSize": 11,
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
@@ -574,17 +574,17 @@
                         },
                         "children": [
                           {
-                            "name": "1",
+                            "name": "UserName_Text",
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
                               "x": 449,
                               "y": 84,
-                              "w": 7,
+                              "w": 73,
                               "h": 17
                             },
                             "text": {
-                              "content": "1",
+                              "content": "collector01",
                               "fontSize": 11,
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
@@ -598,13 +598,24 @@
                 ]
               },
               {
-                "name": "Container_1",
+                "name": "Frame1",
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
                   "x": 456,
+                  "y": 43,
+                  "w": 100,
+                  "h": 100
+                }
+              },
+              {
+                "name": "Container_1",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 556,
                   "y": 82,
-                  "w": 671,
+                  "w": 754,
                   "h": 21
                 },
                 "children": [
@@ -613,18 +624,18 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 617,
+                      "x": 758,
                       "y": 84,
                       "w": 95,
                       "h": 16
                     },
                     "children": [
                       {
-                        "name": "任务# ae1 | a#1",
+                        "name": "TaskID_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 617,
+                          "x": 758,
                           "y": 84,
                           "w": 95,
                           "h": 17
@@ -644,25 +655,25 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 722,
+                      "x": 864,
                       "y": 82,
                       "w": 3,
                       "h": 21
                     },
                     "children": [
                       {
-                        "name": "|",
+                        "name": "|_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 722,
+                          "x": 864,
                           "y": 82,
                           "w": 4,
                           "h": 21
                         },
                         "text": {
                           "content": "|",
-                          "fontSize": 14,
+                          "fontSize": 11,
                           "color": "#FFFFFF26",
                           "alignment": "MidlineLeft",
                           "lineSpacing": 50.0
@@ -675,18 +686,18 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 736,
+                      "x": 878,
                       "y": 84,
                       "w": 31,
                       "h": 16
                     },
                     "children": [
                       {
-                        "name": "相机●",
+                        "name": "CameraState_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 736,
+                          "x": 878,
                           "y": 84,
                           "w": 32,
                           "h": 17
@@ -706,25 +717,25 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 778,
+                      "x": 920,
                       "y": 82,
                       "w": 3,
                       "h": 21
                     },
                     "children": [
                       {
-                        "name": "|",
+                        "name": "|_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 778,
+                          "x": 920,
                           "y": 82,
                           "w": 4,
                           "h": 21
                         },
                         "text": {
                           "content": "|",
-                          "fontSize": 14,
+                          "fontSize": 11,
                           "color": "#FFFFFF26",
                           "alignment": "MidlineLeft",
                           "lineSpacing": 50.0
@@ -733,7 +744,7 @@
                     ]
                   },
                   {
-                    "name": "TextFill",
+                    "name": "TextFill_Image",
                     "type": "Image",
                     "color": "#00D4C824",
                     "raycastTarget": false,
@@ -746,8 +757,8 @@
                       "b": 24
                     },
                     "rect": {
-                      "x": 792,
-                      "y": 82,
+                      "x": 934,
+                      "y": 83,
                       "w": 47,
                       "h": 20
                     },
@@ -765,18 +776,18 @@
                     },
                     "children": [
                       {
-                        "name": "准备中",
+                        "name": "State_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 800,
+                          "x": 941,
                           "y": 85,
                           "w": 30,
                           "h": 15
                         },
                         "text": {
                           "content": "准备中",
-                          "fontSize": 10,
+                          "fontSize": 11,
                           "color": "#00D4C8",
                           "alignment": "MidlineLeft",
                           "lineSpacing": 50.0
@@ -789,25 +800,25 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 850,
+                      "x": 992,
                       "y": 82,
                       "w": 3,
                       "h": 21
                     },
                     "children": [
                       {
-                        "name": "|",
+                        "name": "|_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 850,
+                          "x": 992,
                           "y": 82,
                           "w": 4,
                           "h": 21
                         },
                         "text": {
                           "content": "|",
-                          "fontSize": 14,
+                          "fontSize": 11,
                           "color": "#FFFFFF26",
                           "alignment": "MidlineLeft",
                           "lineSpacing": 50.0
@@ -820,18 +831,18 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 864,
+                      "x": 1006,
                       "y": 84,
                       "w": 102,
                       "h": 16
                     },
                     "children": [
                       {
-                        "name": "口述策略：仅当出端",
+                        "name": "Strategy_Text",
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 864,
+                          "x": 1006,
                           "y": 84,
                           "w": 99,
                           "h": 17
@@ -847,48 +858,11 @@
                     ]
                   }
                 ]
-              },
-              {
-                "name": "Button",
-                "type": "Button",
-                "color": "#FFFFFF0D",
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "rect": {
-                  "x": 1127,
-                  "y": 81,
-                  "w": 83,
-                  "h": 23
-                },
-                "text": {
-                  "content": "· · 自然状态",
-                  "fontSize": 10,
-                  "color": "#7A90B8",
-                  "alignment": "Center"
-                },
-                "stroke": {
-                  "color": "#FFFFFF1A",
-                  "weight": 0.67,
-                  "align": "Inside",
-                  "sprite": "Assets/UI/Common/ring12.png",
-                  "border": {
-                    "l": 12,
-                    "t": 12,
-                    "r": 12,
-                    "b": 12
-                  }
-                }
               }
             ]
           },
           {
-            "name": "Container_1",
+            "name": "Container",
             "type": "Container",
             "raycastTarget": false,
             "rect": {
@@ -943,7 +917,7 @@
                             },
                             "children": [
                               {
-                                "name": "准备中 3秒后开始采集",
+                                "name": "Countdown_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -964,7 +938,7 @@
                         ]
                       },
                       {
-                        "name": "ContainerFill",
+                        "name": "ContainerFill_Image",
                         "type": "Image",
                         "color": "#08122AC7",
                         "raycastTarget": false,
@@ -1018,7 +992,7 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "注意事项",
+                                    "name": "注意事项_Text",
                                     "type": "Text",
                                     "raycastTarget": false,
                                     "rect": {
@@ -1032,13 +1006,14 @@
                                       "fontSize": 24,
                                       "color": "#FFFFFF",
                                       "alignment": "MidlineLeft",
-                                      "lineSpacing": -31.2
+                                      "lineSpacing": -31.2,
+                                      "characterSpacing": 8.3
                                     }
                                   }
                                 ]
                               },
                               {
-                                "name": "Text_1",
+                                "name": "Text_Image",
                                 "type": "Image",
                                 "color": "#0A1329",
                                 "raycastTarget": false,
@@ -1050,7 +1025,7 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "1.请在开始采集后，语音说：开始采集 在结束采集前，语音说：结束采集 2.请全程保持手部在Pico的可视范围内，距离Pico 大致0.6m左右",
+                                    "name": "Countent_Text",
                                     "type": "Text",
                                     "raycastTarget": false,
                                     "rect": {
@@ -1064,7 +1039,8 @@
                                       "fontSize": 24,
                                       "color": "#FFFFFF",
                                       "alignment": "MidlineLeft",
-                                      "lineSpacing": -31.2
+                                      "lineSpacing": -31.2,
+                                      "characterSpacing": 8.3
                                     }
                                   }
                                 ]
@@ -1078,7 +1054,7 @@
                 ]
               },
               {
-                "name": "ContainerFill",
+                "name": "ContainerFill_Image",
                 "type": "Image",
                 "color": "#040A1C80",
                 "raycastTarget": false,
@@ -1110,7 +1086,7 @@
                 },
                 "children": [
                   {
-                    "name": "Button",
+                    "name": "Return_Btn",
                     "type": "Button",
                     "color": "#FFFFFF0A",
                     "sprite": "Assets/UI/Common/round12.png",

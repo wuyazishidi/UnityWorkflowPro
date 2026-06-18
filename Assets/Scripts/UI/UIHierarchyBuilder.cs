@@ -82,7 +82,48 @@ namespace Game.UI
             // v2 效果（spec 004 Phase 2）：渐变 / 描边 / 整体不透明度
             ApplyV2Effects(go, node, resolver);
 
+            // 模板列表父容器：加 LayoutGroup+ContentSizeFitter（item 已抽成独立 prefab，运行时由消费方实例化填充）
+            if (node.list != null) AddListLayout(go, node.list);
+            // 列表项模板：加 LayoutElement(尺寸) + 标记，供 Editor 侧抽成独立 prefab 并从主树移除
+            if (node.isItemTemplate)
+            {
+                var le = go.GetComponent<LayoutElement>() ?? go.AddComponent<LayoutElement>();
+                le.preferredWidth = node.rect.w; le.preferredHeight = node.rect.h;
+                go.AddComponent<UIItemTemplateMarker>().itemName = node.name;
+            }
+
             return go;
+        }
+
+        /// <summary>模板列表父容器：VerticalLayoutGroup(竖)/HorizontalLayoutGroup(横) + ContentSizeFitter，
+        /// 风格同 ScrollList Content。item 由消费方运行时 Instantiate 到本容器下，自动排序撑开。</summary>
+        private static void AddListLayout(GameObject go, UIList list)
+        {
+            // 持久标记：item prefab 名 + 排序，供 binding 描述器与消费方运行时读取
+            var lb = go.AddComponent<UIListBinding>();
+            lb.itemPrefab = list.itemPrefab; lb.vertical = list.vertical; lb.spacing = list.spacing;
+
+            var fitter = go.AddComponent<ContentSizeFitter>();
+            if (list.vertical)
+            {
+                var vlg = go.AddComponent<VerticalLayoutGroup>();
+                vlg.childControlWidth = true; vlg.childControlHeight = false;
+                vlg.childForceExpandWidth = true; vlg.childForceExpandHeight = false;
+                vlg.childAlignment = TextAnchor.UpperCenter;
+                vlg.spacing = list.spacing;
+                fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+                fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            }
+            else
+            {
+                var hlg = go.AddComponent<HorizontalLayoutGroup>();
+                hlg.childControlWidth = false; hlg.childControlHeight = true;
+                hlg.childForceExpandWidth = false; hlg.childForceExpandHeight = true;
+                hlg.childAlignment = TextAnchor.MiddleLeft;
+                hlg.spacing = list.spacing;
+                fitter.horizontalFit = ContentSizeFitter.FitMode.PreferredSize;
+                fitter.verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+            }
         }
 
         /// <summary>渐变(顶点色)、描边(镂空环子物体，叠最上)、整体不透明度(CanvasGroup)。</summary>
@@ -592,6 +633,9 @@ namespace Game.UI
             // 行距：0=TMP 默认；非 0 时按 Figma 行高换算的值收紧/放宽（多行段落贴合设计）
             if (Mathf.Abs(text.lineSpacing) > 0.01f)
                 tmp.lineSpacing = text.lineSpacing;
+            // 字符间距：0=不调整；非 0 时按 Figma letterSpacing 换算的 TMP characterSpacing（标题/字距贴合设计）
+            if (Mathf.Abs(text.characterSpacing) > 0.01f)
+                tmp.characterSpacing = text.characterSpacing;
             // 换行策略：Figma 自动宽度文本(WIDTH_AND_HEIGHT)是单行标签→不换行不裁切(避免窄盒子如“刷 新”被挤断)；
             // 固定宽度文本(HEIGHT/NONE)是段落→按盒宽自动折行。overflow 一律不裁切，让高度自增。
             tmp.enableWordWrapping = text.wrap;

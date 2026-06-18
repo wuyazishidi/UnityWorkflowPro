@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "UpLoadPanel",
+  "prefab": "Assets/UI/UpLoadPanel/UpLoadPanel.prefab",
+  "size": { "w": 1106, "h": 778 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring12", "round12", "round16", "round24"],
+    "atlas": "Assets/UI/UpLoadPanel/UpLoadPanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "text1", "path": "Paragraph/数据上传_Text", "type": "Text", "text": "数据上传", "keyAuto": true },
+    { "key": "customScrollList", "path": "CustomScrollList", "type": "ScrollList", "text": null },
+    { "key": "buttonBtn", "path": "Container_1/Button_Btn", "type": "Button", "text": "继续采集" },
+    { "key": "buttonBtn1", "path": "Container_1/Button_Btn_1", "type": "Button", "text": "去上传" }
+  ]
+}
