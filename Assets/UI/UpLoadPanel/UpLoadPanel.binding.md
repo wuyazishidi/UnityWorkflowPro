@@ -1,7 +1,7 @@
 # UpLoadPanel — UI 绑定描述
 
 - prefab：`Assets/UI/UpLoadPanel/UpLoadPanel.prefab`
-- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring12`, `round12`, `round16`, `round24`；图集 `Assets/UI/UpLoadPanel/UpLoadPanel.spriteatlas`；needsTmpEssentials = `true`
+- 依赖：字体 `MiSans Medium SDF`；公共精灵 `round12`, `round16`, `round24`；图集 `Assets/UI/UpLoadPanel/UpLoadPanel.spriteatlas`；needsTmpEssentials = `true`
 
 YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 

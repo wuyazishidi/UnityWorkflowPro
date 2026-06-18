@@ -100,14 +100,6 @@
             "name": "ReturnLogin_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
             "rect": {
               "x": 32,
               "y": 11,
@@ -187,14 +179,6 @@
             "name": "Refresh_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
             "rect": {
               "x": 1004,
               "y": 11,
@@ -247,7 +231,7 @@
         ]
       },
       {
-        "name": "Container_1",
+        "name": "ItemParent",
         "type": "Container",
         "raycastTarget": false,
         "rect": {
@@ -256,19 +240,17 @@
           "w": 1042,
           "h": 566
         },
+        "list": {
+          "vertical": true,
+          "spacing": 8,
+          "count": 8,
+          "itemPrefab": "TaskItem_Btn"
+        },
         "children": [
           {
             "name": "TaskItem_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
             "rect": {
               "x": 32,
               "y": 92,
@@ -277,23 +259,14 @@
             },
             "children": [
               {
-                "name": "TaskImage_Image",
-                "type": "Image",
-                "color": "#FFFFFF00",
+                "name": "TaskImage",
+                "type": "Container",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
                   "y": 94,
                   "w": 1042,
                   "h": 50
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
                 },
                 "children": [
                   {
@@ -379,880 +352,13 @@
                   }
                 ]
               }
-            ]
-          },
-          {
-            "name": "TaskItem_Btn_1",
-            "type": "Button",
-            "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
-            "rect": {
-              "x": 32,
-              "y": 155,
-              "w": 1042,
-              "h": 55
-            },
-            "children": [
-              {
-                "name": "TaskImage_Image",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 32,
-                  "y": 157,
-                  "w": 1042,
-                  "h": 50
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "children": [
-                  {
-                    "name": "Container_Image",
-                    "type": "Image",
-                    "color": "#388BFD0F",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 32,
-                      "y": 157,
-                      "w": 1042,
-                      "h": 50
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "Container_Image_1",
-                    "type": "Image",
-                    "color": "#FFFFFF",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
-                    "rect": {
-                      "x": 32,
-                      "y": 157,
-                      "w": 1042,
-                      "h": 50
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 56,
-                      "y": 171,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "Text",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 171,
-                          "w": 28,
-                          "h": 22
-                        },
-                        "children": [
-                          {
-                            "name": "Countent_Text",
-                            "type": "Text",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 56,
-                              "y": 171,
-                              "w": 999,
-                              "h": 23
-                            },
-                            "text": {
-                              "content": "#1 将水倒入水杯",
-                              "fontSize": 15,
-                              "color": "#93C5FD",
-                              "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "wrap": true
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "TaskItem_Btn_2",
-            "type": "Button",
-            "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
-            "rect": {
-              "x": 32,
-              "y": 218,
-              "w": 1042,
-              "h": 55
-            },
-            "children": [
-              {
-                "name": "TaskImage_Image",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 32,
-                  "y": 220,
-                  "w": 1042,
-                  "h": 50
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "children": [
-                  {
-                    "name": "Container_Image",
-                    "type": "Image",
-                    "color": "#388BFD0F",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 32,
-                      "y": 220,
-                      "w": 1042,
-                      "h": 50
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "Container_Image_1",
-                    "type": "Image",
-                    "color": "#FFFFFF",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
-                    "rect": {
-                      "x": 32,
-                      "y": 220,
-                      "w": 1042,
-                      "h": 50
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 56,
-                      "y": 234,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "Text",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 234,
-                          "w": 28,
-                          "h": 22
-                        },
-                        "children": [
-                          {
-                            "name": "Countent_Text",
-                            "type": "Text",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 56,
-                              "y": 234,
-                              "w": 999,
-                              "h": 23
-                            },
-                            "text": {
-                              "content": "#1 将水倒入水杯",
-                              "fontSize": 15,
-                              "color": "#93C5FD",
-                              "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "wrap": true
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "TaskItem_Btn_3",
-            "type": "Button",
-            "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
-            "rect": {
-              "x": 32,
-              "y": 281,
-              "w": 1042,
-              "h": 55
-            },
-            "children": [
-              {
-                "name": "TaskImage_Image",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 32,
-                  "y": 283,
-                  "w": 1042,
-                  "h": 50
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "children": [
-                  {
-                    "name": "Container_Image",
-                    "type": "Image",
-                    "color": "#388BFD0F",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 32,
-                      "y": 283,
-                      "w": 1042,
-                      "h": 50
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "Container_Image_1",
-                    "type": "Image",
-                    "color": "#FFFFFF",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
-                    "rect": {
-                      "x": 32,
-                      "y": 283,
-                      "w": 1042,
-                      "h": 50
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 56,
-                      "y": 297,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "Text",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 297,
-                          "w": 28,
-                          "h": 22
-                        },
-                        "children": [
-                          {
-                            "name": "Countent_Text",
-                            "type": "Text",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 56,
-                              "y": 297,
-                              "w": 999,
-                              "h": 23
-                            },
-                            "text": {
-                              "content": "#1 将水倒入水杯",
-                              "fontSize": 15,
-                              "color": "#93C5FD",
-                              "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "wrap": true
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "TaskItem_Btn_4",
-            "type": "Button",
-            "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
-            "rect": {
-              "x": 32,
-              "y": 344,
-              "w": 1042,
-              "h": 55
-            },
-            "children": [
-              {
-                "name": "TaskImage_Image",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 32,
-                  "y": 346,
-                  "w": 1042,
-                  "h": 50
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "children": [
-                  {
-                    "name": "Container_Image",
-                    "type": "Image",
-                    "color": "#388BFD0F",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 32,
-                      "y": 346,
-                      "w": 1042,
-                      "h": 50
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "Container_Image_1",
-                    "type": "Image",
-                    "color": "#FFFFFF",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
-                    "rect": {
-                      "x": 32,
-                      "y": 346,
-                      "w": 1042,
-                      "h": 50
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 56,
-                      "y": 360,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "Text",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 360,
-                          "w": 28,
-                          "h": 22
-                        },
-                        "children": [
-                          {
-                            "name": "Countent_Text",
-                            "type": "Text",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 56,
-                              "y": 360,
-                              "w": 999,
-                              "h": 23
-                            },
-                            "text": {
-                              "content": "#1 将水倒入水杯",
-                              "fontSize": 15,
-                              "color": "#93C5FD",
-                              "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "wrap": true
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "TaskItem_Btn_5",
-            "type": "Button",
-            "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
-            "rect": {
-              "x": 32,
-              "y": 407,
-              "w": 1042,
-              "h": 55
-            },
-            "children": [
-              {
-                "name": "TaskImage_Image",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 32,
-                  "y": 409,
-                  "w": 1042,
-                  "h": 50
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "children": [
-                  {
-                    "name": "Container_Image",
-                    "type": "Image",
-                    "color": "#388BFD0F",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 32,
-                      "y": 409,
-                      "w": 1042,
-                      "h": 50
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "Container_Image_1",
-                    "type": "Image",
-                    "color": "#FFFFFF",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
-                    "rect": {
-                      "x": 32,
-                      "y": 409,
-                      "w": 1042,
-                      "h": 50
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 56,
-                      "y": 423,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "Text",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 423,
-                          "w": 28,
-                          "h": 22
-                        },
-                        "children": [
-                          {
-                            "name": "Countent_Text",
-                            "type": "Text",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 56,
-                              "y": 423,
-                              "w": 999,
-                              "h": 23
-                            },
-                            "text": {
-                              "content": "#1 将水倒入水杯",
-                              "fontSize": 15,
-                              "color": "#93C5FD",
-                              "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "wrap": true
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "TaskItem_Btn_6",
-            "type": "Button",
-            "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
-            "rect": {
-              "x": 32,
-              "y": 470,
-              "w": 1042,
-              "h": 55
-            },
-            "children": [
-              {
-                "name": "TaskImage_Image",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 32,
-                  "y": 472,
-                  "w": 1042,
-                  "h": 50
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "children": [
-                  {
-                    "name": "Container_Image",
-                    "type": "Image",
-                    "color": "#388BFD0F",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 32,
-                      "y": 472,
-                      "w": 1042,
-                      "h": 50
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "Container_Image_1",
-                    "type": "Image",
-                    "color": "#FFFFFF",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
-                    "rect": {
-                      "x": 32,
-                      "y": 472,
-                      "w": 1042,
-                      "h": 50
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 56,
-                      "y": 486,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "Text",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 486,
-                          "w": 28,
-                          "h": 22
-                        },
-                        "children": [
-                          {
-                            "name": "Countent_Text",
-                            "type": "Text",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 56,
-                              "y": 486,
-                              "w": 999,
-                              "h": 23
-                            },
-                            "text": {
-                              "content": "#1 将水倒入水杯",
-                              "fontSize": 15,
-                              "color": "#93C5FD",
-                              "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "wrap": true
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "TaskItem_Btn_7",
-            "type": "Button",
-            "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
-            "rect": {
-              "x": 32,
-              "y": 533,
-              "w": 1042,
-              "h": 55
-            },
-            "children": [
-              {
-                "name": "TaskImage_Image",
-                "type": "Image",
-                "color": "#FFFFFF00",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 32,
-                  "y": 535,
-                  "w": 1042,
-                  "h": 50
-                },
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
-                "children": [
-                  {
-                    "name": "Container_Image",
-                    "type": "Image",
-                    "color": "#388BFD0F",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 32,
-                      "y": 535,
-                      "w": 1042,
-                      "h": 50
-                    },
-                    "sprite": "Assets/UI/Common/round12.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
-                    }
-                  },
-                  {
-                    "name": "Container_Image_1",
-                    "type": "Image",
-                    "color": "#FFFFFF",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
-                    "rect": {
-                      "x": 32,
-                      "y": 535,
-                      "w": 1042,
-                      "h": 50
-                    }
-                  },
-                  {
-                    "name": "Container",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 56,
-                      "y": 549,
-                      "w": 28,
-                      "h": 22
-                    },
-                    "children": [
-                      {
-                        "name": "Text",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 56,
-                          "y": 549,
-                          "w": 28,
-                          "h": 22
-                        },
-                        "children": [
-                          {
-                            "name": "Countent_Text",
-                            "type": "Text",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 56,
-                              "y": 549,
-                              "w": 999,
-                              "h": 23
-                            },
-                            "text": {
-                              "content": "#1 将水倒入水杯",
-                              "fontSize": 15,
-                              "color": "#93C5FD",
-                              "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "wrap": true
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
+            ],
+            "isItemTemplate": true
           }
         ]
       },
       {
-        "name": "Container_2",
+        "name": "Container_1",
         "type": "Container",
         "raycastTarget": false,
         "rect": {
@@ -1266,14 +372,6 @@
             "name": "PrePage_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
             "rect": {
               "x": 392,
               "y": 671,
@@ -1290,23 +388,14 @@
             "opacity": 0.3
           },
           {
-            "name": "Container_Image",
-            "type": "Image",
-            "color": "#FFFFFF00",
+            "name": "Container",
+            "type": "Container",
             "raycastTarget": false,
             "rect": {
               "x": 518,
               "y": 671,
               "w": 70,
               "h": 34
-            },
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
             },
             "children": [
               {
@@ -1367,14 +456,6 @@
             "name": "NextPage_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
             "rect": {
               "x": 612,
               "y": 671,
@@ -1392,7 +473,7 @@
         ]
       },
       {
-        "name": "Container_3",
+        "name": "Container_2",
         "type": "Container",
         "raycastTarget": false,
         "rect": {
@@ -1406,14 +487,6 @@
             "name": "AssignedTask_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
             "rect": {
               "x": 32,
               "y": 718,

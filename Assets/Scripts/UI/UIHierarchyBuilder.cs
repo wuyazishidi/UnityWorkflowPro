@@ -82,8 +82,11 @@ namespace Game.UI
             // v2 效果（spec 004 Phase 2）：渐变 / 描边 / 整体不透明度
             ApplyV2Effects(go, node, resolver);
 
-            // 模板列表父容器：加 LayoutGroup+ContentSizeFitter（item 已抽成独立 prefab，运行时由消费方实例化填充）
-            if (node.list != null) AddListLayout(go, node.list);
+            // 模板列表父容器：item 已抽成独立 prefab，运行时由消费方实例化填充。
+            // ScrollList：UIListBinding 加到 Content(childParent)，其 LayoutGroup 已存在；普通容器：自身加全套。
+            // UIListBinding 总加到 go 本身(含 ScrollList)；ScrollList 的 LayoutGroup 已在 Content 上，故 layoutExists=true 跳过重复加。
+            if (node.list != null)
+                AddListLayout(go, node.list, layoutExists: node.type == "ScrollList");
             // 列表项模板：加 LayoutElement(尺寸) + 标记，供 Editor 侧抽成独立 prefab 并从主树移除
             if (node.isItemTemplate)
             {
@@ -97,11 +100,12 @@ namespace Game.UI
 
         /// <summary>模板列表父容器：VerticalLayoutGroup(竖)/HorizontalLayoutGroup(横) + ContentSizeFitter，
         /// 风格同 ScrollList Content。item 由消费方运行时 Instantiate 到本容器下，自动排序撑开。</summary>
-        private static void AddListLayout(GameObject go, UIList list)
+        private static void AddListLayout(GameObject go, UIList list, bool layoutExists = false)
         {
             // 持久标记：item prefab 名 + 排序，供 binding 描述器与消费方运行时读取
             var lb = go.AddComponent<UIListBinding>();
             lb.itemPrefab = list.itemPrefab; lb.vertical = list.vertical; lb.spacing = list.spacing;
+            if (layoutExists) return;   // ScrollList 的 Content 已有 LayoutGroup+ContentSizeFitter
 
             var fitter = go.AddComponent<ContentSizeFitter>();
             if (list.vertical)

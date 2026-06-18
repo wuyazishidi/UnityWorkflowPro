@@ -15,17 +15,10 @@
     { "key": "userNameText", "path": "Container_Image/Container/UserName_Text", "type": "Text", "text": "（collector01）" },
     { "key": "refreshBtn", "path": "Container_Image/Refresh_Btn", "type": "Button", "text": "刷 新" },
     { "key": "countMessageText", "path": "Text/CountMessage_Text", "type": "Text", "text": "共 28 个任务，第 1/5 页（点击领取）" },
-    { "key": "taskItemBtn", "path": "Container_1/TaskItem_Btn", "type": "Button", "text": "#1 将水倒入水杯" },
-    { "key": "taskItemBtn1", "path": "Container_1/TaskItem_Btn_1", "type": "Button", "text": "#1 将水倒入水杯" },
-    { "key": "taskItemBtn2", "path": "Container_1/TaskItem_Btn_2", "type": "Button", "text": "#1 将水倒入水杯" },
-    { "key": "taskItemBtn3", "path": "Container_1/TaskItem_Btn_3", "type": "Button", "text": "#1 将水倒入水杯" },
-    { "key": "taskItemBtn4", "path": "Container_1/TaskItem_Btn_4", "type": "Button", "text": "#1 将水倒入水杯" },
-    { "key": "taskItemBtn5", "path": "Container_1/TaskItem_Btn_5", "type": "Button", "text": "#1 将水倒入水杯" },
-    { "key": "taskItemBtn6", "path": "Container_1/TaskItem_Btn_6", "type": "Button", "text": "#1 将水倒入水杯" },
-    { "key": "taskItemBtn7", "path": "Container_1/TaskItem_Btn_7", "type": "Button", "text": "#1 将水倒入水杯" },
-    { "key": "prePageBtn", "path": "Container_2/PrePage_Btn", "type": "Button", "text": "← 上一页" },
-    { "key": "pageTipText", "path": "Container_2/Container_Image/PageTip_Text", "type": "Text", "text": "1 / 5" },
-    { "key": "nextPageBtn", "path": "Container_2/NextPage_Btn", "type": "Button", "text": "下一页 →" },
-    { "key": "assignedTaskBtn", "path": "Container_3/AssignedTask_Btn", "type": "Button", "text": "我的已领任务 / 恢复未传数据" }
+    { "key": "itemParent", "path": "ItemParent", "type": "List", "text": null, "itemPrefab": "TaskItem_Btn" },
+    { "key": "prePageBtn", "path": "Container_1/PrePage_Btn", "type": "Button", "text": "← 上一页" },
+    { "key": "pageTipText", "path": "Container_1/Container/PageTip_Text", "type": "Text", "text": "1 / 5" },
+    { "key": "nextPageBtn", "path": "Container_1/NextPage_Btn", "type": "Button", "text": "下一页 →" },
+    { "key": "assignedTaskBtn", "path": "Container_2/AssignedTask_Btn", "type": "Button", "text": "我的已领任务 / 恢复未传数据" }
   ]
 }

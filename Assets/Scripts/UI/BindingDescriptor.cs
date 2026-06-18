@@ -55,7 +55,9 @@ namespace Game.UI
             var listBind = node.GetComponent<UIListBinding>();
             if (listBind != null)
             {
-                var le = MakeElement(node.gameObject, BindKind.List, path, autoCounts);
+                // 有 ScrollRect=可滚动列表(ScrollList)，否则普通模板列表(List)；两者都带 itemPrefab。
+                var lk = node.GetComponent<ScrollRect>() != null ? BindKind.ScrollList : BindKind.List;
+                var le = MakeElement(node.gameObject, lk, path, autoCounts);
                 le.itemPrefab = listBind.itemPrefab;
                 doc.elements.Add(le);
                 return;

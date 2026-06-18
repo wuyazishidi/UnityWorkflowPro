@@ -697,15 +697,18 @@ def main():
 
     # 递归建嵌套树：镜像 Figma 层级（上下级关系），坐标用整帧绝对值（builder 按 parentAbsX 解算相对偏移）。
     # in_scroll: 已在某个 ScrollList 内部 → 不再把后代识别为 ScrollList（避免 ScrollRect 套 ScrollRect）。
-    def _collapse_list_items(parent, kids):
-        """命名重复 item（用户命名约定：同名 + 类型后缀，≥2 个）→ 模板化：
-        保留位置最靠前的 1 个(标记 isItemTemplate)，删除其余；父容器标记 list(方向/间距/数量)。
-        builder 据此把模板 item 抽成独立 prefab、主 panel 父容器清空 item 并加 LayoutGroup。
-        只认带类型后缀的同名重复(用户显式定义的列表项)，不靠结构猜测。"""
+    def _collapse_list_items(parent, kids, require_suffix=True):
+        """命名重复 item（同名 ≥2）→ 模板化：保留位置最靠前的 1 个(标记 isItemTemplate)，删其余；
+        父容器标记 list(方向/间距/数量/itemPrefab)。builder 据此抽独立 prefab + 父容器加 LayoutGroup。
+        require_suffix=True(普通容器)：只认带类型后缀(_Btn/_Image…)的同名重复(用户显式命名)；
+        require_suffix=False(ScrollList 内)：同名重复即列表项(段行 emit 后名字未必带后缀)。"""
         from collections import Counter
         SUF = ("_Btn", "_Image", "_InputField", "_Dropdown", "_Text", "_Toggle", "_Slider")
         cnt = Counter(k.get("name", "") for k in kids)
-        repeated = [nm for nm, c in cnt.items() if c >= 2 and any(nm.endswith(s) for s in SUF)]
+        if require_suffix:
+            repeated = [nm for nm, c in cnt.items() if nm and c >= 2 and any(nm.endswith(s) for s in SUF)]
+        else:
+            repeated = [nm for nm, c in cnt.items() if nm and c >= 2]
         if not repeated:
             return kids
         base = repeated[0]   # 一个容器一般一种重复 item
@@ -785,6 +788,7 @@ def main():
         kids = [k for k in (build_node(c, child_in_scroll) for c in n.get("children", [])) if k]
         if nd.get("type") == "ScrollList":
             kids = _finalize_scroll_list(nd, kids)
+            kids = _collapse_list_items(nd, kids, require_suffix=False)   # ScrollList 内同名重复即列表项 → 抽模板
         else:
             kids = _collapse_list_items(nd, kids)   # 命名重复 item → 抽模板(保留1个 + 父容器标 list)
         if kids:
@@ -813,7 +817,8 @@ def main():
             if isinstance(o, dict):
                 sfx = suffix.get(o.get("type"))
                 nm = o.get("name")
-                if sfx and isinstance(nm, str) and not nm.endswith(sfx):
+                # item 模板节点不加后缀：名字要与 list.itemPrefab(抽出的 prefab 名)保持一致
+                if not o.get("isItemTemplate") and sfx and isinstance(nm, str) and not nm.endswith(sfx):
                     o["name"] = nm + sfx
                 for c in o.get("children") or []:
                     _walk(c)
