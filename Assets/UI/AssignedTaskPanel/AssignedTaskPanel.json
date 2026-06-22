@@ -122,10 +122,8 @@
                   "fontSize": 30,
                   "color": "#E8F4FF",
                   "alignment": "Center",
-                  "style": {
-                    "bold": true
-                  },
-                  "lineSpacing": -10.0,
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -42.6,
                   "characterSpacing": 6.7
                 }
               },
@@ -134,10 +132,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 438,
+                  "x": 325,
                   "y": 64,
-                  "w": 229,
-                  "h": 20
+                  "w": 427,
+                  "h": 19
                 },
                 "children": [
                   {
@@ -145,7 +143,7 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 379,
+                      "x": 365,
                       "y": 65,
                       "w": 308,
                       "h": 20
@@ -155,6 +153,8 @@
                       "fontSize": 20,
                       "color": "#DEEEFF",
                       "alignment": "MidlineLeft",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -35.1,
                       "characterSpacing": 2.5
                     }
                   }
@@ -177,7 +177,7 @@
         "list": {
           "vertical": true,
           "spacing": 5,
-          "count": 7,
+          "count": 9,
           "itemPrefab": "TaskItem_Btn"
         },
         "children": [
@@ -214,13 +214,13 @@
                       "w": 1042,
                       "h": 50
                     },
-                    "sprite": "Assets/UI/Common/round12.png",
+                    "sprite": "Assets/UI/Common/round8.png",
                     "imageType": "Sliced",
                     "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
+                      "l": 8,
+                      "t": 8,
+                      "r": 8,
+                      "b": 8
                     }
                   },
                   {
@@ -265,19 +265,18 @@
                             "rect": {
                               "x": 56,
                               "y": 105,
-                              "w": 155,
+                              "w": 997,
                               "h": 23
                             },
                             "text": {
                               "content": "桌面小工具归入收纳盒",
-                              "fontSize": 15,
+                              "fontSize": 20,
                               "color": "#E8F4FFD9",
                               "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "characterSpacing": 3.3
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -20.1,
+                              "characterSpacing": 2.5,
+                              "wrap": true
                             }
                           }
                         ]
@@ -312,16 +311,80 @@
               "w": 130,
               "h": 34
             },
-            "text": {
-              "content": "返回",
-              "fontSize": 20,
-              "color": "#A8D4FF",
-              "alignment": "Center",
-              "style": {
-                "bold": true
+            "children": [
+              {
+                "name": "返回_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 1001,
+                  "y": 678,
+                  "w": 41,
+                  "h": 21
+                },
+                "text": {
+                  "content": "返回",
+                  "fontSize": 20,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 5.0
+                }
               },
-              "characterSpacing": 5.0
-            }
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#388BFD80",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 956,
+                  "y": 672,
+                  "w": 130,
+                  "h": 34
+                },
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                }
+              },
+              {
+                "name": "ContainerFill_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                },
+                "rect": {
+                  "x": 956,
+                  "y": 671,
+                  "w": 130,
+                  "h": 34
+                },
+                "stroke": {
+                  "color": "#85B8FF",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring6.png",
+                  "border": {
+                    "l": 6,
+                    "t": 6,
+                    "r": 6,
+                    "b": 6
+                  }
+                }
+              }
+            ]
           }
         ]
       }

@@ -103,28 +103,92 @@
             "rect": {
               "x": 32,
               "y": 11,
-              "w": 95,
+              "w": 121,
               "h": 34
             },
-            "text": {
-              "content": "退出登录",
-              "fontSize": 14,
-              "color": "#FCA5A5",
-              "alignment": "Center",
-              "style": {
-                "bold": true
+            "children": [
+              {
+                "name": "退出登录_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 51,
+                  "y": 17,
+                  "w": 83,
+                  "h": 21
+                },
+                "text": {
+                  "content": "退出登录",
+                  "fontSize": 20,
+                  "color": "#FCA5A5",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 5.0
+                }
               },
-              "characterSpacing": 7.1
-            }
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#DC262680",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 32,
+                  "y": 11,
+                  "w": 121,
+                  "h": 34
+                },
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                }
+              },
+              {
+                "name": "ContainerFill_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                },
+                "rect": {
+                  "x": 32,
+                  "y": 11,
+                  "w": 121,
+                  "h": 34
+                },
+                "stroke": {
+                  "color": "#DC262680",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring6.png",
+                  "border": {
+                    "l": 6,
+                    "t": 6,
+                    "r": 6,
+                    "b": 6
+                  }
+                }
+              }
+            ]
           },
           {
             "name": "Container",
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 127,
+              "x": 153,
               "y": 14,
-              "w": 877,
+              "w": 823,
               "h": 27
             },
             "children": [
@@ -133,21 +197,19 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 445,
+                  "x": 471,
                   "y": 14,
-                  "w": 93,
+                  "w": 169,
                   "h": 27
                 },
                 "text": {
                   "content": "任务列表",
-                  "fontSize": 18,
+                  "fontSize": 24,
                   "color": "#E8F4FF",
                   "alignment": "Center",
-                  "style": {
-                    "bold": true
-                  },
-                  "lineSpacing": 50.0,
-                  "characterSpacing": 11.1,
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -20.1,
+                  "characterSpacing": 8.3,
                   "wrap": true
                 }
               },
@@ -156,21 +218,18 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 538,
+                  "x": 633,
                   "y": 14,
-                  "w": 160,
+                  "w": 175,
                   "h": 27
                 },
                 "text": {
                   "content": "（collector01）",
-                  "fontSize": 18,
+                  "fontSize": 20,
                   "color": "#E8F4FF",
                   "alignment": "Center",
-                  "style": {
-                    "bold": true
-                  },
-                  "lineSpacing": 50.0,
-                  "characterSpacing": 11.1
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "characterSpacing": 10.0
                 }
               }
             ]
@@ -180,21 +239,85 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 1004,
+              "x": 976,
               "y": 11,
-              "w": 70,
+              "w": 98,
               "h": 34
             },
-            "text": {
-              "content": "刷 新",
-              "fontSize": 14,
-              "color": "#A8D4FF",
-              "alignment": "Center",
-              "style": {
-                "bold": true
+            "children": [
+              {
+                "name": "刷 新_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 1002,
+                  "y": 17,
+                  "w": 47,
+                  "h": 21
+                },
+                "text": {
+                  "content": "刷 新",
+                  "fontSize": 20,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 5.0
+                }
               },
-              "characterSpacing": 7.1
-            }
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#388BFD80",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 976,
+                  "y": 11,
+                  "w": 98,
+                  "h": 34
+                },
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                }
+              },
+              {
+                "name": "ContainerFill_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                },
+                "rect": {
+                  "x": 976,
+                  "y": 11,
+                  "w": 98,
+                  "h": 34
+                },
+                "stroke": {
+                  "color": "#388BFD80",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring6.png",
+                  "border": {
+                    "l": 6,
+                    "t": 6,
+                    "r": 6,
+                    "b": 6
+                  }
+                }
+              }
+            ]
           }
         ]
       },
@@ -216,16 +339,17 @@
             "rect": {
               "x": 438,
               "y": 65,
-              "w": 229,
+              "w": 279,
               "h": 20
             },
             "text": {
               "content": "共 28 个任务，第 1/5 页（点击领取）",
-              "fontSize": 15,
-              "color": "#93C5FDB2",
+              "fontSize": 16,
+              "color": "#CCE4FF",
               "alignment": "MidlineLeft",
-              "lineSpacing": 50.0,
-              "characterSpacing": 3.8
+              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+              "lineSpacing": -10.7,
+              "characterSpacing": 3.1
             }
           }
         ]
@@ -243,7 +367,7 @@
         "list": {
           "vertical": true,
           "spacing": 8,
-          "count": 8,
+          "count": 7,
           "itemPrefab": "TaskItem_Btn"
         },
         "children": [
@@ -280,13 +404,13 @@
                       "w": 1042,
                       "h": 50
                     },
-                    "sprite": "Assets/UI/Common/round12.png",
+                    "sprite": "Assets/UI/Common/round8.png",
                     "imageType": "Sliced",
                     "border": {
-                      "l": 12,
-                      "t": 12,
-                      "r": 12,
-                      "b": 12
+                      "l": 8,
+                      "t": 8,
+                      "r": 8,
+                      "b": 8
                     }
                   },
                   {
@@ -307,10 +431,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 56,
-                      "y": 108,
-                      "w": 28,
-                      "h": 22
+                      "x": 40,
+                      "y": 94,
+                      "w": 1034,
+                      "h": 50
                     },
                     "children": [
                       {
@@ -318,10 +442,10 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 56,
-                          "y": 108,
-                          "w": 28,
-                          "h": 22
+                          "x": 40,
+                          "y": 94,
+                          "w": 1034,
+                          "h": 50
                         },
                         "children": [
                           {
@@ -329,21 +453,18 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 56,
-                              "y": 108,
-                              "w": 999,
-                              "h": 23
+                              "x": 44,
+                              "y": 93,
+                              "w": 1027,
+                              "h": 51
                             },
                             "text": {
                               "content": "#1 将水倒入水杯",
-                              "fontSize": 15,
+                              "fontSize": 20,
                               "color": "#93C5FD",
                               "alignment": "MidlineLeft",
-                              "style": {
-                                "bold": true
-                              },
-                              "lineSpacing": 50.0,
-                              "wrap": true
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -20.1
                             }
                           }
                         ]
@@ -373,19 +494,66 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 392,
+              "x": 385,
               "y": 671,
-              "w": 102,
+              "w": 109,
               "h": 34
             },
-            "text": {
-              "content": "← 上一页",
-              "fontSize": 14,
-              "color": "#A8D4FF",
-              "alignment": "Center",
-              "characterSpacing": 3.6
-            },
-            "opacity": 0.3
+            "opacity": 0.3,
+            "children": [
+              {
+                "name": "PrePage_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 405,
+                  "y": 678,
+                  "w": 69,
+                  "h": 21
+                },
+                "text": {
+                  "content": "← 上一页",
+                  "fontSize": 16,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "characterSpacing": 3.1
+                }
+              },
+              {
+                "name": "PrePage1_Image",
+                "type": "Image",
+                "color": "#388BFD80",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 385,
+                  "y": 671,
+                  "w": 102,
+                  "h": 34
+                },
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                }
+              },
+              {
+                "name": "PrePage2_Image",
+                "type": "Image",
+                "color": "#FFFFFF",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/TaskListPanel/Icons/corner8.png",
+                "rect": {
+                  "x": 385,
+                  "y": 671,
+                  "w": 102,
+                  "h": 34
+                }
+              }
+            ]
           },
           {
             "name": "Container",
@@ -409,13 +577,13 @@
                   "w": 70,
                   "h": 34
                 },
-                "sprite": "Assets/UI/Common/round12.png",
+                "sprite": "Assets/UI/Common/round6.png",
                 "imageType": "Sliced",
                 "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
                 }
               },
               {
@@ -423,7 +591,7 @@
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner10.png",
+                "sprite": "Assets/UI/TaskListPanel/Icons/corner9.png",
                 "rect": {
                   "x": 518,
                   "y": 671,
@@ -438,16 +606,16 @@
                 "rect": {
                   "x": 538,
                   "y": 678,
-                  "w": 30,
+                  "w": 34,
                   "h": 21
                 },
                 "text": {
                   "content": "1 / 5",
-                  "fontSize": 15,
+                  "fontSize": 16,
                   "color": "#93C5FDB2",
                   "alignment": "MidlineLeft",
-                  "lineSpacing": 50.0,
-                  "characterSpacing": 3.6
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "characterSpacing": 3.1
                 }
               }
             ]
@@ -459,16 +627,63 @@
             "rect": {
               "x": 612,
               "y": 671,
-              "w": 102,
+              "w": 109,
               "h": 34
             },
-            "text": {
-              "content": "下一页 →",
-              "fontSize": 14,
-              "color": "#A8D4FF",
-              "alignment": "Center",
-              "characterSpacing": 3.6
-            }
+            "children": [
+              {
+                "name": "NextPage_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 632,
+                  "y": 678,
+                  "w": 69,
+                  "h": 21
+                },
+                "text": {
+                  "content": "下一页 →",
+                  "fontSize": 16,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "characterSpacing": 3.1
+                }
+              },
+              {
+                "name": "NextPage1_Image",
+                "type": "Image",
+                "color": "#388BFD80",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 612,
+                  "y": 671,
+                  "w": 102,
+                  "h": 34
+                },
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                }
+              },
+              {
+                "name": "NextPage2_Image",
+                "type": "Image",
+                "color": "#FFFFFF",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/TaskListPanel/Icons/corner8.png",
+                "rect": {
+                  "x": 612,
+                  "y": 671,
+                  "w": 102,
+                  "h": 34
+                }
+              }
+            ]
           }
         ]
       },
@@ -488,21 +703,105 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 32,
+              "x": 208,
               "y": 718,
-              "w": 1042,
+              "w": 704,
               "h": 40
             },
-            "text": {
-              "content": "我的已领任务 / 恢复未传数据",
-              "fontSize": 14,
-              "color": "#A8D4FF",
-              "alignment": "Center",
-              "style": {
-                "bold": true
+            "children": [
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#388BFD80",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 208,
+                  "y": 718,
+                  "w": 704,
+                  "h": 40
+                },
+                "sprite": "Assets/UI/Common/round8.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 8,
+                  "t": 8,
+                  "r": 8,
+                  "b": 8
+                }
               },
-              "characterSpacing": 10.7
-            }
+              {
+                "name": "ContainerFill_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round8.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 8,
+                  "t": 8,
+                  "r": 8,
+                  "b": 8
+                },
+                "rect": {
+                  "x": 208,
+                  "y": 718,
+                  "w": 704,
+                  "h": 40
+                },
+                "stroke": {
+                  "color": "#388BFD66",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring8.png",
+                  "border": {
+                    "l": 8,
+                    "t": 8,
+                    "r": 8,
+                    "b": 8
+                  }
+                }
+              },
+              {
+                "name": "Container_Image_1",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 208,
+                  "y": 718,
+                  "w": 704,
+                  "h": 40
+                },
+                "sprite": "Assets/UI/Common/round8.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 8,
+                  "t": 8,
+                  "r": 8,
+                  "b": 8
+                }
+              },
+              {
+                "name": "我的已领任务 / 恢复未传数据_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 421,
+                  "y": 728,
+                  "w": 279,
+                  "h": 21
+                },
+                "text": {
+                  "content": "我的已领任务 / 恢复未传数据",
+                  "fontSize": 20,
+                  "color": "#FFFFFF",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 7.5
+                }
+              }
+            ]
           }
         ]
       }

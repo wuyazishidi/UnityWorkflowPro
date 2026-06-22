@@ -1,7 +1,7 @@
 # TaskListPanel — UI 绑定描述
 
 - prefab：`Assets/UI/TaskListPanel/TaskListPanel.prefab`
-- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring12`, `round12`, `round16`；图集 `Assets/UI/TaskListPanel/TaskListPanel.spriteatlas`；needsTmpEssentials = `true`
+- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring12`, `ring6`, `ring8`, `round16`, `round6`, `round8`；图集 `Assets/UI/TaskListPanel/TaskListPanel.spriteatlas`；needsTmpEssentials = `true`
 
 YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 

@@ -5,7 +5,7 @@
   "size": { "w": 1106, "h": 778 },
   "dependencies": {
     "font": "MiSans Medium SDF",
-    "commonSprites": ["ring12", "ring16", "round12", "round16"],
+    "commonSprites": ["ring10", "ring16", "round10", "round16"],
     "atlas": "Assets/UI/LoginPanel/LoginPanel.spriteatlas",
     "needsTmpEssentials": true
   },
@@ -17,6 +17,7 @@
     { "key": "containerInputInputField", "path": "Form/Password/ContainerInput_InputField", "type": "InputField", "text": "请输入密码" },
     { "key": "text4", "path": "Form/TOTP/Container/动态码_Text", "type": "Text", "text": "动态码", "keyAuto": true },
     { "key": "containerInputInputField", "path": "Form/TOTP/ContainerInput_InputField", "type": "InputField", "text": "请输入动态码" },
-    { "key": "loginBtn", "path": "Form/Container/Login_Btn", "type": "Button", "text": "登 录" }
+    { "key": "loginBtn", "path": "Form/Container/Login_Btn", "type": "Button", "text": "登 录" },
+    { "key": "loginStateText", "path": "Form/Container_1/Text/LoginState_Text", "type": "Text", "text": "登录中..." }
   ]
 }

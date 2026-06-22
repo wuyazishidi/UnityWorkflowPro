@@ -129,8 +129,11 @@ def _line_spacing(st):
             pct = lh / fs * 100.0
     if pct is None:
         return None
-    sp = round(pct - 100.0, 1)
-    return sp if abs(sp) >= 8 else None  # 只在明显偏紧/偏松时干预
+    # TMP 的行高 = 字体默认行高 + lineSpacing(1/100 em)。MiSans SDF 默认行高 =
+    # m_LineHeight/m_PointSize = 119.34/90 ≈ 132.6%(非 100%)。要还原 Figma 总行高 pct%，
+    # 须以字体默认行高为基准相减，否则每行多算 ~0.33em，多行文本(如 content_Text)累积溢出。
+    sp = round(pct - 132.6, 1)
+    return sp if abs(sp) >= 8 else None  # 只在与默认行高明显偏差时干预
 
 
 def _char_spacing(st):
@@ -163,19 +166,109 @@ def all_vector_leaves(n):
     return ok
 
 
+import hashlib
+
+_COMMON = "Assets/UI/Common"
+_CORNER_META_TMPL = None
+
+# 字重→真实字体：按 Figma fontWeight 选对应字重的 MiSans SDF，而非 faux bold 合成一档。
+# Figma 全工程用 400/500/600/700 → Regular/Medium/Semibold/Bold 四档；阈值取相邻字重中点。
+# builder ResolveFont 找不到对应 SDF 时回退 TMP 默认字体(不报错)。
+_WEIGHT_FONTS = [
+    (450, "Assets/Fonts/MiSans Regular SDF.asset"),    # <450  → Regular(400 正文)
+    (550, "Assets/Fonts/MiSans Medium SDF.asset"),     # 450-550 → Medium(500)
+    (650, "Assets/Fonts/MiSans Semibold SDF.asset"),   # 550-650 → Semibold(600)
+]
+_WEIGHT_FONT_BOLD = "Assets/Fonts/MiSans-Bold SDF.asset"  # >=650 → Bold(700)
+
+
+_FONT_UNIFORM = "Assets/Fonts/MiSans Medium SDF.asset"  # 统一字体：全部文本用 Medium SDF
+
+
+def weight_font(w):
+    """Figma fontWeight → SDF 资源路径。
+    当前策略：统一用 MiSans Medium SDF（不按字重分档）。
+    要恢复按字重四档(Regular/Medium/Semibold/Bold)，删掉下面一行的统一返回即可。"""
+    return _FONT_UNIFORM
+    w = w or 400
+    for thr, path in _WEIGHT_FONTS:
+        if w < thr:
+            return path
+    return _WEIGHT_FONT_BOLD
+
+
+
+def _corner_guid(name):
+    """确定性 GUID(32 hex)：同名圆角 sprite 跨同步/跨工程恒定，prefab 引用不断裂。"""
+    return hashlib.md5(("uiwf-corner-" + name).encode()).hexdigest()
+
+
+def _write_corner_meta(name, border):
+    """按 round12.png.meta 模板写 .meta，仅替换 guid 与 spriteBorder(9-slice 边=圆角半径)。"""
+    global _CORNER_META_TMPL
+    if _CORNER_META_TMPL is None:
+        with io.open(_COMMON + "/round12.png.meta", encoding="utf-8") as f:
+            _CORNER_META_TMPL = f.read()
+    m = re.sub(r"guid: [0-9a-f]+", "guid: " + _corner_guid(name), _CORNER_META_TMPL, count=1)
+    m = re.sub(r"spriteBorder: \{[^}]+\}",
+               "spriteBorder: {x: %d, y: %d, z: %d, w: %d}" % (border, border, border, border), m)
+    with io.open("%s/%s.png.meta" % (_COMMON, name), "w", encoding="utf-8") as f:
+        f.write(m)
+
+
+def ensure_corner_sprite(r, kind="round"):
+    """按 Figma 实际圆角 r 程序化生成精确的 9-slice 圆角 sprite(若缺)，返回(路径, border=r)。
+    取代旧的"r<=12 一律 round12"档位——那会把 r=3.5 的标签圆角放大到 12(差 3.4 倍)，是通用偏差。
+    9-slice 角=r 像素、spritePixelsToUnits=100 → 渲染圆角=r 设计单位，精确还原 cornerRadius。"""
+    from PIL import Image, ImageDraw, ImageChops
+    # 钳到 [2,48]：Figma 的 pill(完全圆角)用超大 cornerRadius(几百~几千)，原样生成会 size 爆内存；
+    # 48 已是足够大的圆角档，UGUI 9-slice 在小元素上会自动按比例缩 border → 渲染成 pill 效果。
+    r = max(2, min(48, int(round(r))))
+    name = "%s%d" % (kind, r)
+    path = "%s/%s.png" % (_COMMON, name)
+    if not os.path.exists(path):
+        pad, ss = 4, 4                        # 中间可拉伸区半边 / 超采样抗锯齿
+        size = 2 * r + 2 * pad
+        S, R = size * ss, r * ss
+        white = Image.new("RGBA", (S, S), (255, 255, 255, 255))
+        out = Image.new("RGBA", (S, S), (255, 255, 255, 0))
+        outer = Image.new("L", (S, S), 0)
+        ImageDraw.Draw(outer).rounded_rectangle([0, 0, S - 1, S - 1], radius=R, fill=255)
+        if kind == "ring":
+            sw = 2 * ss                       # 描边 2px(匹配现有 ring12)
+            inner = Image.new("L", (S, S), 0)
+            ImageDraw.Draw(inner).rounded_rectangle([sw, sw, S - 1 - sw, S - 1 - sw], radius=max(0, R - sw), fill=255)
+            mask = ImageChops.subtract(outer, inner)
+        else:
+            mask = outer
+        out = Image.composite(white, out, mask)
+        out.resize((size, size), Image.LANCZOS).save(path)
+        _write_corner_meta(name, r)
+        print("[corner] gen %s.png (%dx%d border=%d)" % (name, size, size, r))
+    return path, r
+
+
 def round_sprite(r):
-    if r <= 12:
-        return "Assets/UI/Common/round12.png", 12
-    if r <= 18:
-        return "Assets/UI/Common/round16.png", 16
-    return "Assets/UI/Common/round24.png", 24
+    return ensure_corner_sprite(r if r else 12, "round")
 
 
 def ring_sprite(r):
-    """镚空描边环精灵(中间透明)，用于半透面板描边，避免实心底色把半透填充染色。"""
-    if r <= 12:
-        return "Assets/UI/Common/ring12.png", 12
-    return "Assets/UI/Common/ring16.png", 16
+    """镂空描边环精灵(中间透明)，用于半透面板描边，避免实心底色把半透填充染色。"""
+    return ensure_corner_sprite(r if r else 12, "ring")
+
+
+def eff_corner_radius(n, default=12):
+    """有效圆角(设计 px)：永不超过节点短边的一半。
+    Figma 的「完全圆角」pill 用哨兵超大 cornerRadius(几百万)，原先一律钳到 48 会把
+    小 pill(如 62x20 的状态徽标)严重过圆——胶囊变大圆角。这里按 min(w,h)/2 = pill 真实
+    半径封顶，对 cornerRadius 本就合理的节点(r < 短边/2)无影响。"""
+    cr = n.get("cornerRadius")
+    cr = int(cr) if cr else default
+    bb = n.get("absoluteBoundingBox") or {}
+    w, h = bb.get("width"), bb.get("height")
+    if w and h:
+        cr = min(cr, int(min(w, h) // 2))
+    return cr
 
 
 def text_align(n):
@@ -403,8 +496,7 @@ def main():
               "rect": rect(n),
               "text": {"content": n.get("characters", ""), "fontSize": round(st.get("fontSize", 16)),
                        "color": col, "alignment": text_align(n)}}
-        if st.get("fontWeight", 400) >= 600:
-            nd["text"]["style"] = {"bold": True}
+        nd["text"]["fontAsset"] = weight_font(st.get("fontWeight", 400))
         ls = _line_spacing(st)
         if ls is not None:
             nd["text"]["lineSpacing"] = ls
@@ -487,7 +579,7 @@ def main():
         return hexc[:7] if (hexc and len(hexc) == 9) else hexc
 
     def emit_input_field(n):
-        cr = int(n.get("cornerRadius") or 12)
+        cr = eff_corner_radius(n, 12)
         sp, b = round_sprite(cr)
         r = rect(n)
         nm = _san(n.get("name", "Input"))
@@ -521,7 +613,7 @@ def main():
         return nd
 
     def emit_solid(n, name=None):
-        cr = int(n.get("cornerRadius") or 0)
+        cr = eff_corner_radius(n, 0)
         # 无实色填充的节点（如只有描边的分隔/容器框）用透明底，避免误填不透明白把面板冲白
         nd = {"name": name or _san(n.get("name", "Rect")), "type": "Image",
               "color": first_solid_fill(n) or "#FFFFFF00", "raycastTarget": False, "rect": rect(n)}
@@ -535,7 +627,7 @@ def main():
 
     def emit_bordered(n, as_button=False):
         """fill+stroke -> 单节点：round 精灵填充 + v2 stroke(环精灵)，built-in UGUI。"""
-        cr = int(n.get("cornerRadius") or 12)
+        cr = eff_corner_radius(n, 12)
         sp, b = round_sprite(cr)
         r = rect(n)
         nm = _san(n.get("name", "Field"))
@@ -550,8 +642,7 @@ def main():
                 stl = txt.get("style", {})
                 nd["text"] = {"content": txt.get("characters", ""), "fontSize": round(stl.get("fontSize", 16)),
                               "color": first_solid_fill(txt) or "#FFFFFF", "alignment": "Center"}
-                if stl.get("fontWeight", 400) >= 600:
-                    nd["text"]["style"] = {"bold": True}
+                nd["text"]["fontAsset"] = weight_font(stl.get("fontWeight", 400))
                 _cs = _char_spacing(stl)
                 if _cs is not None:
                     nd["text"]["characterSpacing"] = _cs
@@ -738,8 +829,11 @@ def main():
         if _is_input(n):
             return emit_input_field(n)              # 自包含（占位符/眼睛在内）
         if is_button(n):
-            # 简单按钮（有居中 label，内部就是文字）→ 自包含叶子，居中文字作 label，不下钻。
-            if _find_centered_text(n) is not None:
+            # 简单按钮：自身有背景(实色/描边/渐变) + 居中 label → 自包含叶子，居中文字作 label，不下钻。
+            # 背景在子节点的按钮(自身 fills=[]，如 Figma 把底色放进子 Container)→ 落到容器按钮分支：
+            # 保留子树，背景子 Container 作 Image 同步过去，否则按钮背景 sprite 会丢。
+            self_bg = first_solid_fill(n) or first_stroke(n)[0] or first_gradient(n)
+            if _find_centered_text(n) is not None and self_bg:
                 return emit_bordered(n, as_button=True)
             # 容器按钮（列表项等：无居中文字、内部有需保留的子树如图标/左对齐描述）→
             # Button 背景 + 下钻保留子节点（子文本仍作独立 Text 可绑/可刷新）。
@@ -755,6 +849,11 @@ def main():
                 nd["stroke"] = stf
             nd = _apply_v2(nd, n)
             kids = [k for k in (build_node(c, in_scroll) for c in n.get("children", [])) if k]
+            # 按钮底图常被 Figma 设成玻璃态半透明(如 #388BFD a=0.15)，深背景上几乎不可见 →
+            # 把彩色半透明背景子(有 round 精灵的 Image)提到可见；透明白/黑装饰层跳过(避免露白块)。
+            for k in kids:
+                if k.get("type") == "Image" and k.get("sprite") and isinstance(k.get("color"), str):
+                    k["color"] = _bump_btn_bg_alpha(k["color"])
             if kids:
                 nd["children"] = kids
             return nd
@@ -958,6 +1057,23 @@ def _bump_alpha(hexc, minA):
             return hexc[:7] + "%02X" % round(minA * 255)
         return hexc
     return hexc  # 已不透明
+
+
+def _bump_btn_bg_alpha(hexc, minA=0.5):
+    """按钮底图在深背景上需可见：Figma 常把按钮底设成玻璃态半透明(如 #388BFD a=0.15)，
+    在浅色画布上能看见、在深色运行背景上几乎消失 → 把彩色半透明底提到 minA(可见)。
+    跳过接近白/黑的透明装饰层(提了会露白块/黑块)，跳过已足够不透明的。"""
+    if len(hexc) != 9:
+        return hexc  # 不透明，原样
+    r, g, b = int(hexc[1:3], 16), int(hexc[3:5], 16), int(hexc[5:7], 16)
+    a = int(hexc[7:9], 16) / 255.0
+    if a >= minA:
+        return hexc
+    near_white = r > 230 and g > 230 and b > 230
+    near_black = r < 25 and g < 25 and b < 25
+    if near_white or near_black:
+        return hexc  # 透明白/黑装饰层：提 alpha 会变成白块/黑块，保持透明
+    return hexc[:7] + "%02X" % round(minA * 255)
 
 
 def _dump(n, ox, oy, exports, f, d=0):

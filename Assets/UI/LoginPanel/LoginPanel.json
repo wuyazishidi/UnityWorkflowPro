@@ -35,23 +35,14 @@
         }
       },
       {
-        "name": "BackgroundScene_Image",
-        "type": "Image",
-        "color": "#FFFFFF00",
+        "name": "BackgroundScene",
+        "type": "Container",
         "raycastTarget": false,
         "rect": {
           "x": 0,
           "y": 0,
           "w": 1106,
           "h": 778
-        },
-        "sprite": "Assets/UI/Common/round16.png",
-        "imageType": "Sliced",
-        "border": {
-          "l": 16,
-          "t": 16,
-          "r": 16,
-          "b": 16
         },
         "children": [
           {
@@ -130,10 +121,8 @@
                   "fontSize": 20,
                   "color": "#DFF0FF",
                   "alignment": "MidlineLeft",
-                  "style": {
-                    "bold": true
-                  },
-                  "lineSpacing": 50.0,
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": 17.4,
                   "characterSpacing": 18.0
                 }
               }
@@ -189,7 +178,8 @@
                       "fontSize": 20,
                       "color": "#B4DAFFE0",
                       "alignment": "MidlineRight",
-                      "lineSpacing": 14.0,
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -18.6,
                       "characterSpacing": 3.8
                     }
                   }
@@ -199,13 +189,13 @@
                 "name": "ContainerInput_InputField",
                 "type": "InputField",
                 "color": "#06164673",
-                "sprite": "Assets/UI/Common/round12.png",
+                "sprite": "Assets/UI/Common/round10.png",
                 "imageType": "Sliced",
                 "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
+                  "l": 10,
+                  "t": 10,
+                  "r": 10,
+                  "b": 10
                 },
                 "rect": {
                   "x": 436,
@@ -218,12 +208,12 @@
                   "color": "#3C8CFF59",
                   "weight": 0.67,
                   "align": "Inside",
-                  "sprite": "Assets/UI/Common/ring12.png",
+                  "sprite": "Assets/UI/Common/ring10.png",
                   "border": {
-                    "l": 12,
-                    "t": 12,
-                    "r": 12,
-                    "b": 12
+                    "l": 10,
+                    "t": 10,
+                    "r": 10,
+                    "b": 10
                   }
                 },
                 "placeholder": {
@@ -269,9 +259,9 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 376,
+                      "x": 377,
                       "y": 322,
-                      "w": 48,
+                      "w": 47,
                       "h": 23
                     },
                     "text": {
@@ -279,7 +269,8 @@
                       "fontSize": 20,
                       "color": "#B4DAFFE0",
                       "alignment": "MidlineRight",
-                      "lineSpacing": 14.0,
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -18.6,
                       "characterSpacing": 3.8
                     }
                   }
@@ -289,13 +280,13 @@
                 "name": "ContainerInput_InputField",
                 "type": "InputField",
                 "color": "#06164673",
-                "sprite": "Assets/UI/Common/round12.png",
+                "sprite": "Assets/UI/Common/round10.png",
                 "imageType": "Sliced",
                 "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
+                  "l": 10,
+                  "t": 10,
+                  "r": 10,
+                  "b": 10
                 },
                 "rect": {
                   "x": 436,
@@ -308,12 +299,12 @@
                   "color": "#3C8CFF59",
                   "weight": 0.67,
                   "align": "Inside",
-                  "sprite": "Assets/UI/Common/ring12.png",
+                  "sprite": "Assets/UI/Common/ring10.png",
                   "border": {
-                    "l": 12,
-                    "t": 12,
-                    "r": 12,
-                    "b": 12
+                    "l": 10,
+                    "t": 10,
+                    "r": 10,
+                    "b": 10
                   }
                 },
                 "placeholder": {
@@ -379,7 +370,8 @@
                       "fontSize": 20,
                       "color": "#B4DAFFE0",
                       "alignment": "MidlineRight",
-                      "lineSpacing": 14.0,
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -18.6,
                       "characterSpacing": 3.8
                     }
                   }
@@ -389,13 +381,13 @@
                 "name": "ContainerInput_InputField",
                 "type": "InputField",
                 "color": "#06164673",
-                "sprite": "Assets/UI/Common/round12.png",
+                "sprite": "Assets/UI/Common/round10.png",
                 "imageType": "Sliced",
                 "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
+                  "l": 10,
+                  "t": 10,
+                  "r": 10,
+                  "b": 10
                 },
                 "rect": {
                   "x": 436,
@@ -408,12 +400,12 @@
                   "color": "#3C8CFF59",
                   "weight": 0.67,
                   "align": "Inside",
-                  "sprite": "Assets/UI/Common/ring12.png",
+                  "sprite": "Assets/UI/Common/ring10.png",
                   "border": {
-                    "l": 12,
-                    "t": 12,
-                    "r": 12,
-                    "b": 12
+                    "l": 10,
+                    "t": 10,
+                    "r": 10,
+                    "b": 10
                   }
                 },
                 "placeholder": {
@@ -447,6 +439,12 @@
                 "name": "Login_Btn",
                 "type": "Button",
                 "color": "#0E34A085",
+                "rect": {
+                  "x": 403,
+                  "y": 501,
+                  "w": 300,
+                  "h": 54
+                },
                 "sprite": "Assets/UI/Common/round16.png",
                 "imageType": "Sliced",
                 "border": {
@@ -455,20 +453,12 @@
                   "r": 16,
                   "b": 16
                 },
-                "rect": {
-                  "x": 403,
-                  "y": 501,
-                  "w": 300,
-                  "h": 54
-                },
                 "text": {
                   "content": "登 录",
                   "fontSize": 20,
                   "color": "#C8E8FFF2",
                   "alignment": "Center",
-                  "style": {
-                    "bold": true
-                  },
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
                   "characterSpacing": 15.1
                 },
                 "stroke": {
@@ -491,8 +481,8 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 363,
-              "y": 555,
+              "x": 364,
+              "y": 616,
               "w": 380,
               "h": 73
             },
@@ -502,10 +492,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 526,
-                  "y": 603,
-                  "w": 54,
-                  "h": 25
+                  "x": 163,
+                  "y": 643,
+                  "w": 782,
+                  "h": 46
                 },
                 "children": [
                   {
@@ -513,18 +503,18 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 515,
-                      "y": 602,
-                      "w": 77,
+                      "x": 163,
+                      "y": 642,
+                      "w": 782,
                       "h": 26
                     },
                     "text": {
                       "content": "登录中...",
-                      "fontSize": 16,
+                      "fontSize": 20,
                       "color": "#FF8C57F2",
                       "alignment": "Center",
-                      "lineSpacing": 57.5,
-                      "characterSpacing": 18.9
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "characterSpacing": 15.1
                     }
                   }
                 ]

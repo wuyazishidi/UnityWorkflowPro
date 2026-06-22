@@ -23,8 +23,17 @@ namespace Game.UI
         {
             if (g == null || g.stops == null || g.stops.Count < 2) return;
             angle = g.angle;
-            colorA = ColorUtil.ParseHexOr(g.stops[0].color, Color.white);
-            colorB = ColorUtil.ParseHexOr(g.stops[g.stops.Count - 1].color, Color.white);
+            colorA = ParseHex(g.stops[0].color);
+            colorB = ParseHex(g.stops[g.stops.Count - 1].color);
+        }
+
+        // 用 Unity 内置解析(支持 #RRGGBB / #RRGGBBAA)，不依赖自定义 ColorUtil——本组件随 prefab
+        // 交付到消费方工程，自包含才不会因缺 ColorUtil 而编译报错(CS0103)。
+        static Color ParseHex(string hex)
+        {
+            if (string.IsNullOrEmpty(hex)) return Color.white;
+            if (hex[0] != '#') hex = "#" + hex;
+            return ColorUtility.TryParseHtmlString(hex, out var c) ? c : Color.white;
         }
 
         public override void ModifyMesh(VertexHelper vh)

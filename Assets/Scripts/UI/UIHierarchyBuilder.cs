@@ -21,8 +21,9 @@ namespace Game.UI
     /// </summary>
     public static class UIHierarchyBuilder
     {
-        /// <summary>全局字号放大系数：Figma 字号在 TMP 下视觉偏小，统一温和放大。</summary>
-        private const float FontScale = 1.15f;
+        /// <summary>全局字号放大系数：1.0=忠实 Figma 字号。曾设 1.15 放大，但会让字号+行高一起
+        /// 比 Figma 大 ~15%（行高随字号缩放），多行文本(如 CollectPanel content_Text)溢出框，故回 1.0。</summary>
+        private const float FontScale = 1.0f;
 
         public static GameObject Build(UISpec spec, IUIAssetResolver resolver)
         {

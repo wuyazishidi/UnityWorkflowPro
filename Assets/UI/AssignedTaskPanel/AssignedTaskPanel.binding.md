@@ -1,7 +1,7 @@
 # AssignedTaskPanel — UI 绑定描述
 
 - prefab：`Assets/UI/AssignedTaskPanel/AssignedTaskPanel.prefab`
-- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring12`, `round16`；图集 `Assets/UI/AssignedTaskPanel/AssignedTaskPanel.spriteatlas`；needsTmpEssentials = `true`
+- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring12`, `ring6`, `round16`, `round6`；图集 `Assets/UI/AssignedTaskPanel/AssignedTaskPanel.spriteatlas`；needsTmpEssentials = `true`
 
 YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 

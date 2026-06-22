@@ -17,12 +17,14 @@ description: 把 Figma 设计同步成 UGUI prefab 的自治流程。当用户�
 - **Panel 名**：从 URL 文件名 / 既有 `Assets/UI/<Panel>/` / 用户话里推断。已有面板的来源可查 `figma/<Panel>.meta.json`。
 - 用户只说"XX 面板更新了"但没给链接，且 `figma/<Panel>.meta.json` 里的 node 可能已失效 → 先 **发现帧**（见 §3），按名匹配后用 AskUserQuestion 确认 node，**不要瞎猜乱同步**。
 
-### 2. 同步（核对图默认开）
+### 2. 同步（核对图默认开；**默认带 `-Deliver` 交付到 YC-Ego**）
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\Packages\cn.etetet.yiuimcp\Config\figma.ps1 -Url "<URL>" -Panel <Panel>
-# 或： -Node <id> -Panel <Panel> [-FileKey <key>]   渲染慢可加 -NoVerify
+powershell -ExecutionPolicy Bypass -File .\Packages\cn.etetet.yiuimcp\Config\figma.ps1 -Url "<URL>" -Panel <Panel> -Deliver
+# 或： -Node <id> -Panel <Panel> [-FileKey <key>] -Deliver   渲染慢可加 -NoVerify
 ```
-脚本会：设 `NO_PROXY` → 拉取+导资源+生成 `<Panel>.json` → **自动快照** `figma/<Panel>.{nodes,meta}.json` → Refresh+打图集+构建 prefab →（-Verify 时）出 `_render.png` 并算 MAE → 回填 `figma/RECOVERY.md` 索引。
+脚本会：设 `NO_PROXY` → 拉取+导资源+生成 `<Panel>.json` → **自动快照** `figma/<Panel>.{nodes,meta}.json` → Refresh+打图集+构建 prefab →（-Verify 时）出 `_render.png` 并算 MAE → 回填 `figma/RECOVERY.md` 索引 →
+**`-Deliver`：自动 publish（binding + `.unitypackage`）并 sync 到消费方 YC-Ego（`../YC-Ego/Assets/Resources/UI/<Panel>/`，连 item prefab + 依赖脚本）。一条命令走完 Figma → prefab → binding → YC-Ego。**
+> 同步面板**默认带 `-Deliver`**（用户要的"同步后 YC-Ego 也同步完成"）。只想看 prefab、不交付时才去掉 `-Deliver`。
 
 ### 3. node 未知 / 失效 → 发现帧
 ```powershell

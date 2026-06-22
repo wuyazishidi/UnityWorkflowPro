@@ -14,11 +14,12 @@ argument-hint: <Figma URL> 或 <node-id> [Panel名]
    - 是 `node-id [Panel]` → 传 `-Node`（必要时 `-Panel`、`-FileKey`）。
    - **Panel 名**：从 URL 文件名/用户话里推断（如 LoginPanel / UpLoadPanel）；拿不准就用 `-Discover` 先列帧再问用户确认。
 
-2. **同步**（核对图默认开，渲染慢可加 `-NoVerify`）：
+2. **同步**（核对图默认开，渲染慢可加 `-NoVerify`；**默认带 `-Deliver` 自动交付到 YC-Ego**）：
    ```powershell
-   powershell -ExecutionPolicy Bypass -File .\Packages\cn.etetet.yiuimcp\Config\figma.ps1 -Url "<URL>" -Panel <Panel>
-   # 或： -Node <id> -Panel <Panel> [-FileKey <key>]
+   powershell -ExecutionPolicy Bypass -File .\Packages\cn.etetet.yiuimcp\Config\figma.ps1 -Url "<URL>" -Panel <Panel> -Deliver
+   # 或： -Node <id> -Panel <Panel> [-FileKey <key>] -Deliver
    ```
+   `-Deliver`：同步后自动 publish（binding + `.unitypackage`）并 sync 到消费方 YC-Ego（`../YC-Ego/Assets/Resources/UI/<Panel>/`，连 item prefab + 依赖脚本）。一条命令走完 Figma → prefab → binding → YC-Ego。只想看 prefab、不交付时去掉 `-Deliver`。
 
 3. **node 找不到 / 没给链接** → 先发现帧，按 Panel 名匹配后让用户确认 node：
    ```powershell

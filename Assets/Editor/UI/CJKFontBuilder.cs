@@ -22,12 +22,44 @@ namespace Game.UI.EditorTools
         public static void CreateMenu()
         {
             AssetDatabase.Refresh();
+            var asset = BuildOne(TtfPath, OutPath);
+            if (asset != null) SetAsDefault(asset);
+        }
 
-            var font = AssetDatabase.LoadAssetAtPath<Font>(TtfPath);
+        /// <summary>
+        /// 生成全部字重 SDF：按字重映射真实字体(figma_sync.weight_font 用 Regular/Medium/Semibold/Bold)。
+        /// 仅生成缺失的(Medium/Bold 已手工存在则跳过，避免改 GUID 断引用)。Dynamic 模式按需栅格化。
+        /// </summary>
+        [MenuItem("YIUIMCP/UI/Create MiSans Weight Assets")]
+        public static void CreateWeightAssets()
+        {
+            AssetDatabase.Refresh();
+            var weights = new[]
+            {
+                ("MiSans-Regular.ttf",  "MiSans Regular SDF.asset"),
+                ("MiSans-Semibold.ttf", "MiSans Semibold SDF.asset"),
+            };
+            foreach (var (ttf, outName) in weights)
+            {
+                var outp = "Assets/Fonts/" + outName;
+                if (AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(outp) != null)
+                {
+                    Debug.Log($"[CJKFont] 已存在，跳过: {outp}");
+                    continue;
+                }
+                BuildOne("Assets/Fonts/MiSans/ttf/" + ttf, outp);
+            }
+            Debug.Log("[CJKFont] 字重 SDF 生成完成 (Regular/Semibold)");
+        }
+
+        /// <summary>从 ttf 生成一个 Dynamic SDF TMP 字体资源(覆盖式)，返回资源(失败 null)。</summary>
+        private static TMP_FontAsset BuildOne(string ttfPath, string outPath)
+        {
+            var font = AssetDatabase.LoadAssetAtPath<Font>(ttfPath);
             if (font == null)
             {
-                Debug.LogError($"[CJKFont] 找不到字体源文件: {TtfPath}");
-                return;
+                Debug.LogError($"[CJKFont] 找不到字体源文件: {ttfPath}");
+                return null;
             }
 
             // 90 采样点、9 padding、SDFAA、1024x1024 图集、Dynamic 多图集
@@ -36,18 +68,16 @@ namespace Game.UI.EditorTools
                 AtlasPopulationMode.Dynamic, enableMultiAtlasSupport: true);
             if (asset == null)
             {
-                Debug.LogError("[CJKFont] TMP_FontAsset.CreateFontAsset 返回 null");
-                return;
+                Debug.LogError($"[CJKFont] CreateFontAsset 返回 null: {ttfPath}");
+                return null;
             }
 
-            asset.name = Path.GetFileNameWithoutExtension(OutPath);
+            asset.name = Path.GetFileNameWithoutExtension(outPath);
 
-            // 覆盖式创建主资源
-            if (AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(OutPath) != null)
-                AssetDatabase.DeleteAsset(OutPath);
-            AssetDatabase.CreateAsset(asset, OutPath);
+            if (AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(outPath) != null)
+                AssetDatabase.DeleteAsset(outPath);
+            AssetDatabase.CreateAsset(asset, outPath);
 
-            // 把材质与图集纹理作为子资源写入同一 .asset
             if (asset.material != null)
             {
                 asset.material.name = asset.name + " Material";
@@ -66,11 +96,9 @@ namespace Game.UI.EditorTools
 
             EditorUtility.SetDirty(asset);
             AssetDatabase.SaveAssets();
-            AssetDatabase.ImportAsset(OutPath);
-
-            SetAsDefault(asset);
-
-            Debug.Log($"[CJKFont] 已生成 Dynamic SDF 字体并设为 TMP 默认: {OutPath}");
+            AssetDatabase.ImportAsset(outPath);
+            Debug.Log($"[CJKFont] 已生成 Dynamic SDF: {outPath}");
+            return asset;
         }
 
         private static void SetAsDefault(TMP_FontAsset asset)

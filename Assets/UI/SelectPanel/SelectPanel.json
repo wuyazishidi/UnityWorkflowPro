@@ -122,10 +122,8 @@
                   "fontSize": 30,
                   "color": "#E8F4FF",
                   "alignment": "Center",
-                  "style": {
-                    "bold": true
-                  },
-                  "lineSpacing": -10.0,
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -42.6,
                   "characterSpacing": 6.7
                 }
               },
@@ -155,6 +153,8 @@
                       "fontSize": 20,
                       "color": "#DEEEFF",
                       "alignment": "MidlineLeft",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -35.1,
                       "characterSpacing": 2.5
                     }
                   }
@@ -179,30 +179,86 @@
             "name": "Return_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
             "rect": {
               "x": 956,
               "y": 671,
               "w": 130,
               "h": 34
             },
-            "text": {
-              "content": "返回",
-              "fontSize": 20,
-              "color": "#A8D4FF",
-              "alignment": "Center",
-              "style": {
-                "bold": true
+            "children": [
+              {
+                "name": "返回_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 1001,
+                  "y": 678,
+                  "w": 41,
+                  "h": 21
+                },
+                "text": {
+                  "content": "返回",
+                  "fontSize": 20,
+                  "color": "#A8D4FF",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 5.0
+                }
               },
-              "characterSpacing": 5.0
-            }
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#388BFD80",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 956,
+                  "y": 672,
+                  "w": 130,
+                  "h": 34
+                },
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                }
+              },
+              {
+                "name": "ContainerFill_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                },
+                "rect": {
+                  "x": 956,
+                  "y": 671,
+                  "w": 130,
+                  "h": 34
+                },
+                "stroke": {
+                  "color": "#85B8FF",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring6.png",
+                  "border": {
+                    "l": 6,
+                    "t": 6,
+                    "r": 6,
+                    "b": 6
+                  }
+                }
+              }
+            ]
           }
         ]
       },
@@ -211,13 +267,13 @@
         "type": "Image",
         "color": "#08122AC7",
         "raycastTarget": false,
-        "sprite": "Assets/UI/Common/round12.png",
+        "sprite": "Assets/UI/Common/round11.png",
         "imageType": "Sliced",
         "border": {
-          "l": 12,
-          "t": 12,
-          "r": 12,
-          "b": 12
+          "l": 11,
+          "t": 11,
+          "r": 11,
+          "b": 11
         },
         "rect": {
           "x": 154,
@@ -229,12 +285,12 @@
           "color": "#00D4C829",
           "weight": 0.67,
           "align": "Inside",
-          "sprite": "Assets/UI/Common/ring12.png",
+          "sprite": "Assets/UI/Common/ring11.png",
           "border": {
-            "l": 12,
-            "t": 12,
-            "r": 12,
-            "b": 12
+            "l": 11,
+            "t": 11,
+            "r": 11,
+            "b": 11
           }
         },
         "children": [
@@ -253,88 +309,256 @@
                 "name": "ContinueCollect_Btn",
                 "type": "Button",
                 "color": "#FFFFFF00",
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
                 "rect": {
                   "x": 372,
                   "y": 347,
                   "w": 130,
                   "h": 34
                 },
-                "text": {
-                  "content": "继续采集",
-                  "fontSize": 20,
-                  "color": "#A8D4FF",
-                  "alignment": "Center",
-                  "style": {
-                    "bold": true
+                "children": [
+                  {
+                    "name": "继续采集_Text",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 395,
+                      "y": 354,
+                      "w": 83,
+                      "h": 21
+                    },
+                    "text": {
+                      "content": "继续采集",
+                      "fontSize": 20,
+                      "color": "#A8D4FF",
+                      "alignment": "Center",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -27.6,
+                      "characterSpacing": 5.0
+                    }
                   },
-                  "characterSpacing": 5.0
-                }
+                  {
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD80",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 372,
+                      "y": 348,
+                      "w": 130,
+                      "h": 34
+                    },
+                    "sprite": "Assets/UI/Common/round6.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 6,
+                      "t": 6,
+                      "r": 6,
+                      "b": 6
+                    }
+                  },
+                  {
+                    "name": "ContainerFill_Image",
+                    "type": "Image",
+                    "color": "#FFFFFF00",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/Common/round6.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 6,
+                      "t": 6,
+                      "r": 6,
+                      "b": 6
+                    },
+                    "rect": {
+                      "x": 372,
+                      "y": 347,
+                      "w": 130,
+                      "h": 34
+                    },
+                    "stroke": {
+                      "color": "#85B8FF",
+                      "weight": 0.67,
+                      "align": "Inside",
+                      "sprite": "Assets/UI/Common/ring6.png",
+                      "border": {
+                        "l": 6,
+                        "t": 6,
+                        "r": 6,
+                        "b": 6
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "name": "Upload_Btn",
                 "type": "Button",
                 "color": "#FFFFFF00",
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
                 "rect": {
                   "x": 526,
                   "y": 347,
                   "w": 130,
                   "h": 34
                 },
-                "text": {
-                  "content": "上传",
-                  "fontSize": 20,
-                  "color": "#A8D4FF",
-                  "alignment": "Center",
-                  "style": {
-                    "bold": true
+                "children": [
+                  {
+                    "name": "上传_Text",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 570,
+                      "y": 354,
+                      "w": 41,
+                      "h": 21
+                    },
+                    "text": {
+                      "content": "上传",
+                      "fontSize": 20,
+                      "color": "#A8D4FF",
+                      "alignment": "Center",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -27.6,
+                      "characterSpacing": 5.0
+                    }
                   },
-                  "characterSpacing": 5.0
-                }
+                  {
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#388BFD80",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 526,
+                      "y": 348,
+                      "w": 130,
+                      "h": 34
+                    },
+                    "sprite": "Assets/UI/Common/round6.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 6,
+                      "t": 6,
+                      "r": 6,
+                      "b": 6
+                    }
+                  },
+                  {
+                    "name": "ContainerFill_Image",
+                    "type": "Image",
+                    "color": "#FFFFFF00",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/Common/round6.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 6,
+                      "t": 6,
+                      "r": 6,
+                      "b": 6
+                    },
+                    "rect": {
+                      "x": 526,
+                      "y": 347,
+                      "w": 130,
+                      "h": 34
+                    },
+                    "stroke": {
+                      "color": "#85B8FF",
+                      "weight": 0.67,
+                      "align": "Inside",
+                      "sprite": "Assets/UI/Common/ring6.png",
+                      "border": {
+                        "l": 6,
+                        "t": 6,
+                        "r": 6,
+                        "b": 6
+                      }
+                    }
+                  }
+                ]
               },
               {
                 "name": "Abandon_Btn",
                 "type": "Button",
                 "color": "#FFFFFF00",
-                "sprite": "Assets/UI/Common/round12.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 12,
-                  "t": 12,
-                  "r": 12,
-                  "b": 12
-                },
                 "rect": {
                   "x": 680,
                   "y": 347,
                   "w": 130,
                   "h": 34
                 },
-                "text": {
-                  "content": "放弃任务",
-                  "fontSize": 20,
-                  "color": "#FFFFFF",
-                  "alignment": "Center",
-                  "style": {
-                    "bold": true
+                "children": [
+                  {
+                    "name": "返回_Text",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 703,
+                      "y": 354,
+                      "w": 83,
+                      "h": 21
+                    },
+                    "text": {
+                      "content": "放弃任务",
+                      "fontSize": 20,
+                      "color": "#FFFFFF",
+                      "alignment": "Center",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -27.6,
+                      "characterSpacing": 5.0
+                    }
                   },
-                  "characterSpacing": 5.0
-                }
+                  {
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#FD3F3880",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 680,
+                      "y": 348,
+                      "w": 130,
+                      "h": 34
+                    },
+                    "sprite": "Assets/UI/Common/round6.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 6,
+                      "t": 6,
+                      "r": 6,
+                      "b": 6
+                    }
+                  },
+                  {
+                    "name": "ContainerFill_Image",
+                    "type": "Image",
+                    "color": "#FFFFFF00",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/Common/round6.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 6,
+                      "t": 6,
+                      "r": 6,
+                      "b": 6
+                    },
+                    "rect": {
+                      "x": 680,
+                      "y": 347,
+                      "w": 130,
+                      "h": 34
+                    },
+                    "stroke": {
+                      "color": "#FF8585",
+                      "weight": 0.67,
+                      "align": "Inside",
+                      "sprite": "Assets/UI/Common/ring6.png",
+                      "border": {
+                        "l": 6,
+                        "t": 6,
+                        "r": 6,
+                        "b": 6
+                      }
+                    }
+                  }
+                ]
               }
             ]
           }

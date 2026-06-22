@@ -25,24 +25,24 @@
           "w": 588,
           "h": 247
         },
-        "sprite": "Assets/UI/Common/round12.png",
+        "sprite": "Assets/UI/Common/round11.png",
         "imageType": "Sliced",
         "border": {
-          "l": 12,
-          "t": 12,
-          "r": 12,
-          "b": 12
+          "l": 11,
+          "t": 11,
+          "r": 11,
+          "b": 11
         },
         "stroke": {
           "color": "#00D4C829",
           "weight": 0.67,
           "align": "Inside",
-          "sprite": "Assets/UI/Common/ring12.png",
+          "sprite": "Assets/UI/Common/ring11.png",
           "border": {
-            "l": 12,
-            "t": 12,
-            "r": 12,
-            "b": 12
+            "l": 11,
+            "t": 11,
+            "r": 11,
+            "b": 11
           }
         }
       },
@@ -51,13 +51,13 @@
         "type": "Image",
         "color": "#08122AC7",
         "raycastTarget": false,
-        "sprite": "Assets/UI/Common/round12.png",
+        "sprite": "Assets/UI/Common/round11.png",
         "imageType": "Sliced",
         "border": {
-          "l": 12,
-          "t": 12,
-          "r": 12,
-          "b": 12
+          "l": 11,
+          "t": 11,
+          "r": 11,
+          "b": 11
         },
         "rect": {
           "x": 0,
@@ -69,12 +69,12 @@
           "color": "#00D4C829",
           "weight": 0.67,
           "align": "Inside",
-          "sprite": "Assets/UI/Common/ring12.png",
+          "sprite": "Assets/UI/Common/ring11.png",
           "border": {
-            "l": 12,
-            "t": 12,
-            "r": 12,
-            "b": 12
+            "l": 11,
+            "t": 11,
+            "r": 11,
+            "b": 11
           }
         },
         "children": [
@@ -84,9 +84,9 @@
             "raycastTarget": false,
             "rect": {
               "x": 1,
-              "y": 1,
+              "y": 3,
               "w": 587,
-              "h": 245
+              "h": 207
             },
             "children": [
               {
@@ -95,7 +95,7 @@
                 "raycastTarget": false,
                 "rect": {
                   "x": 222,
-                  "y": 22,
+                  "y": 24,
                   "w": 143,
                   "h": 50
                 },
@@ -106,7 +106,7 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 269,
-                      "y": 38,
+                      "y": 40,
                       "w": 50,
                       "h": 17
                     },
@@ -115,7 +115,8 @@
                       "fontSize": 24,
                       "color": "#FFFFFF",
                       "alignment": "MidlineLeft",
-                      "lineSpacing": -31.2,
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -63.8,
                       "characterSpacing": 8.3
                     }
                   }
@@ -127,7 +128,7 @@
                 "raycastTarget": false,
                 "rect": {
                   "x": 29,
-                  "y": 82,
+                  "y": 84,
                   "w": 530,
                   "h": 142
                 },
@@ -138,20 +139,106 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 81,
-                      "y": 83,
+                      "y": 85,
                       "w": 425,
                       "h": 51
                     },
                     "text": {
                       "content": "追踪器断开连接，请检查是否正常工作，重新启动，校准",
                       "fontSize": 20,
-                      "color": "#A8BCD8",
+                      "color": "#BFD3F1",
                       "alignment": "Center",
-                      "lineSpacing": 27.5,
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
                       "wrap": true
                     }
                   }
                 ]
+              }
+            ]
+          },
+          {
+            "name": "Close_Btn",
+            "type": "Button",
+            "color": "#FFFFFF00",
+            "rect": {
+              "x": 246,
+              "y": 210,
+              "w": 96,
+              "h": 34
+            },
+            "children": [
+              {
+                "name": "关闭_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 264,
+                  "y": 216,
+                  "w": 60,
+                  "h": 21
+                },
+                "text": {
+                  "content": "关闭",
+                  "fontSize": 20,
+                  "color": "#FCA5A5",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 5.0,
+                  "wrap": true
+                }
+              },
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#DC262680",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 246,
+                  "y": 210,
+                  "w": 96,
+                  "h": 34
+                },
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                }
+              },
+              {
+                "name": "ContainerFill_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                },
+                "rect": {
+                  "x": 246,
+                  "y": 210,
+                  "w": 96,
+                  "h": 34
+                },
+                "stroke": {
+                  "color": "#DC262680",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring6.png",
+                  "border": {
+                    "l": 6,
+                    "t": 6,
+                    "r": 6,
+                    "b": 6
+                  }
+                }
               }
             ]
           }
