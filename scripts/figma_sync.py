@@ -503,9 +503,8 @@ def main():
         cs = _char_spacing(st)
         if cs is not None:
             nd["text"]["characterSpacing"] = cs
-        # 换行：Figma 固定宽度文本框(HEIGHT/NONE)按盒宽折行；自动宽度(WIDTH_AND_HEIGHT)是单行标签不换行
-        if st.get("textAutoResize") in ("HEIGHT", "NONE"):
-            nd["text"]["wrap"] = True
+        # 换行：默认全部文本自动换行(按盒宽折行，overflow 不裁切高度自增)，含自动宽度标签。
+        nd["text"]["wrap"] = True
         return nd
 
     def _apply_v2(nd, n):
@@ -689,7 +688,11 @@ def main():
             if len(rows) >= 3:
                 hs = sorted(rect(c)["h"] for c in rows)
                 if hs[0] > 4 and hs[-1] <= hs[0] * 1.6:   # 行高聚类（最高≤最矮的1.6倍）
-                    return True
+                    # 仅纵向堆叠才算滚动列表：Y 跨度 > X 跨度。横向并排的等尺寸项(如 3 个模块按钮)不算，
+                    # 否则会被误判成 ScrollList 而只保留首项、丢掉其余兄弟节点。
+                    xs = [rect(c)["x"] for c in rows]; ys = [rect(c)["y"] for c in rows]
+                    if (max(ys) - min(ys)) > (max(xs) - min(xs)):
+                        return True
         return False
 
     def _round_fields(n, default_cr=0):

@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "referenceWidth": 1335,
+  "referenceHeight": 931,
+  "rootName": "CheckDetailPanel",
+  "root": {
+    "name": "CheckDetailPanel",
+    "type": "Container",
+    "anchorPreset": "center",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1335,
+      "h": 931
+    },
+    "children": [
+      {
+        "name": "CardBase_Image",
+        "type": "Image",
+        "color": "#0A1118",
+        "raycastTarget": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1335,
+          "h": 931
+        },
+        "sprite": "Assets/UI/Common/round16.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 16,
+          "t": 16,
+          "r": 16,
+          "b": 16
+        }
+      },
+      {
+        "name": "Container",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1335,
+          "h": 924
+        },
+        "children": [
+          {
+            "name": "PanelBg",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1335,
+              "h": 778
+            },
+            "children": [
+              {
+                "name": "Container1",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 1335,
+                  "h": 929
+                },
+                "children": [
+                  {
+                    "name": "Container1",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 0,
+                      "y": 0,
+                      "w": 1335,
+                      "h": 929
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 0,
+                          "y": 0,
+                          "w": 1335,
+                          "h": 929
+                        },
+                        "children": [
+                          {
+                            "name": "Image_Image",
+                            "type": "Image",
+                            "color": "#FFFFFF",
+                            "raycastTarget": false,
+                            "sprite": "Assets/UI/CheckDetailPanel/Icons/bg.png",
+                            "rect": {
+                              "x": 0,
+                              "y": 0,
+                              "w": 1335,
+                              "h": 929
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Container2",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 1335,
+                  "h": 929
+                }
+              }
+            ]
+          },
+          {
+            "name": "Container",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1335,
+              "h": 924
+            },
+            "children": [
+              {
+                "name": "Container",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 120,
+                  "y": 21,
+                  "w": 1095,
+                  "h": 801
+                },
+                "children": [
+                  {
+                    "name": "Paragraph",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 120,
+                      "y": 21,
+                      "w": 480,
+                      "h": 65
+                    },
+                    "children": [
+                      {
+                        "name": "CheckDescription_Text",
+                        "type": "Text",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 21,
+                          "w": 480,
+                          "h": 65
+                        },
+                        "text": {
+                          "content": "#1 桌面小工具归入收纳盒",
+                          "fontSize": 32,
+                          "color": "#E8F4FFEB",
+                          "alignment": "MidlineLeft",
+                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                          "lineSpacing": -29.5,
+                          "characterSpacing": 4.7,
+                          "wrap": true
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 120,
+                      "y": 126,
+                      "w": 1095,
+                      "h": 679
+                    },
+                    "children": [
+                      {
+                        "name": "Paragraph",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 120,
+                          "y": 126,
+                          "w": 1095,
+                          "h": 679
+                        },
+                        "children": [
+                          {
+                            "name": "CheckDetail_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 120,
+                              "y": 126,
+                              "w": 1095,
+                              "h": 679
+                            },
+                            "text": {
+                              "content": "\"id\": 1001, \n\"package_id\": 7, \n\"title\": \"厨房取放物体\",   \"task_description\": \"...\",\n\"quota_per_user\": 20, \n\"quota_per_user_scene\": 10,    \"teaching_video_url\": \"http://.../demo.mp4\", \n\"reference_img_urls\": [\"http://.../1.jpg\"],   \"initial_state\": \"...\", \n\"collector_initial_pose\": \"...\",\n\"collection_mode\": \"free\",   \"narration_policy\": \"say_then_do\", \n\"sop_steps\": [\"步骤1\",\"步骤2\"],     \"lighting\": \"...\", \n  \"clutter_level\": \"...\",  ",
+                              "fontSize": 32,
+                              "color": "#FFFFFF",
+                              "alignment": "MidlineLeft",
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -23.2,
+                              "characterSpacing": 1.3,
+                              "wrap": true
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Container_1",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 479,
+                  "y": 822,
+                  "w": 378,
+                  "h": 81
+                },
+                "children": [
+                  {
+                    "name": "AssignedAndStartTask_Btn",
+                    "type": "Button",
+                    "color": "#388BFD2E",
+                    "rect": {
+                      "x": 479,
+                      "y": 822,
+                      "w": 378,
+                      "h": 81
+                    },
+                    "sprite": "Assets/UI/Common/round7.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 7,
+                      "t": 7,
+                      "r": 7,
+                      "b": 7
+                    },
+                    "text": {
+                      "content": "返回审核列表",
+                      "fontSize": 32,
+                      "color": "#A8D4FF",
+                      "alignment": "Center",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "characterSpacing": 3.1
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

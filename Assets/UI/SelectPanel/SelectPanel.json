@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "referenceWidth": 1106,
-  "referenceHeight": 778,
+  "referenceWidth": 1337,
+  "referenceHeight": 931,
   "rootName": "SelectPanel",
   "root": {
     "name": "SelectPanel",
@@ -10,8 +10,8 @@
     "rect": {
       "x": 0,
       "y": 0,
-      "w": 1106,
-      "h": 778
+      "w": 1337,
+      "h": 931
     },
     "children": [
       {
@@ -22,8 +22,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 931
         },
         "sprite": "Assets/UI/Common/round16.png",
         "imageType": "Sliced",
@@ -41,8 +41,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 931
         },
         "children": [
           {
@@ -50,7 +50,7 @@
             "type": "Image",
             "color": "#FFFFFF",
             "raycastTarget": false,
-            "sprite": "Assets/UI/SelectPanel/Icons/bg.png",
+            "sprite": "Assets/UI/SelectPanel/Icons/icon1.png",
             "rect": {
               "x": 0,
               "y": 0,
@@ -80,7 +80,7 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
+          "w": 1337,
           "h": 56
         },
         "stroke": {
@@ -103,7 +103,7 @@
             "rect": {
               "x": 32,
               "y": 14,
-              "w": 1042,
+              "w": 1273,
               "h": 27
             },
             "children": [
@@ -112,19 +112,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 501,
+                  "x": 503,
                   "y": 13,
-                  "w": 105,
+                  "w": 317,
                   "h": 27
                 },
                 "text": {
                   "content": "任务#2",
-                  "fontSize": 30,
+                  "fontSize": 32,
                   "color": "#E8F4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": -42.6,
-                  "characterSpacing": 6.7
+                  "lineSpacing": -48.2,
+                  "characterSpacing": 6.2,
+                  "wrap": true
                 }
               },
               {
@@ -145,17 +146,18 @@
                     "rect": {
                       "x": 379,
                       "y": 65,
-                      "w": 431,
+                      "w": 657,
                       "h": 20
                     },
                     "text": {
                       "content": "场景：书房         状态：assigned        已传0段",
-                      "fontSize": 20,
+                      "fontSize": 24,
                       "color": "#DEEEFF",
                       "alignment": "MidlineLeft",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "lineSpacing": -35.1,
-                      "characterSpacing": 2.5
+                      "lineSpacing": -51.3,
+                      "characterSpacing": 2.1,
+                      "wrap": true
                     }
                   }
                 ]
@@ -169,10 +171,10 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 960,
-          "y": 668,
-          "w": 122,
-          "h": 40
+          "x": 1118,
+          "y": 728,
+          "w": 184,
+          "h": 50
         },
         "children": [
           {
@@ -180,10 +182,10 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 956,
-              "y": 671,
-              "w": 130,
-              "h": 34
+              "x": 1118,
+              "y": 728,
+              "w": 184,
+              "h": 50
             },
             "children": [
               {
@@ -191,19 +193,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 1001,
-                  "y": 678,
-                  "w": 41,
+                  "x": 1177,
+                  "y": 742,
+                  "w": 65,
                   "h": 21
                 },
                 "text": {
                   "content": "返回",
-                  "fontSize": 20,
+                  "fontSize": 32,
                   "color": "#A8D4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": -27.6,
-                  "characterSpacing": 5.0
+                  "lineSpacing": -67.0,
+                  "characterSpacing": 3.1,
+                  "wrap": true
                 }
               },
               {
@@ -212,10 +215,10 @@
                 "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 956,
-                  "y": 672,
-                  "w": 130,
-                  "h": 34
+                  "x": 1118,
+                  "y": 728,
+                  "w": 184,
+                  "h": 50
                 },
                 "sprite": "Assets/UI/Common/round6.png",
                 "imageType": "Sliced",
@@ -240,10 +243,10 @@
                   "b": 6
                 },
                 "rect": {
-                  "x": 956,
-                  "y": 671,
-                  "w": 130,
-                  "h": 34
+                  "x": 1118,
+                  "y": 728,
+                  "w": 184,
+                  "h": 50
                 },
                 "stroke": {
                   "color": "#85B8FF",
@@ -276,10 +279,10 @@
           "b": 11
         },
         "rect": {
-          "x": 154,
+          "x": 155,
           "y": 216,
-          "w": 873,
-          "h": 296
+          "w": 1025,
+          "h": 387
         },
         "stroke": {
           "color": "#00D4C829",
@@ -299,8 +302,8 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 530,
-              "y": 344,
+              "x": 606,
+              "y": 389,
               "w": 122,
               "h": 40
             },
@@ -310,10 +313,10 @@
                 "type": "Button",
                 "color": "#FFFFFF00",
                 "rect": {
-                  "x": 372,
-                  "y": 347,
-                  "w": 130,
-                  "h": 34
+                  "x": 382,
+                  "y": 378,
+                  "w": 186,
+                  "h": 63
                 },
                 "children": [
                   {
@@ -321,19 +324,20 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 395,
-                      "y": 354,
-                      "w": 83,
+                      "x": 409,
+                      "y": 399,
+                      "w": 131,
                       "h": 21
                     },
                     "text": {
                       "content": "继续采集",
-                      "fontSize": 20,
+                      "fontSize": 32,
                       "color": "#A8D4FF",
                       "alignment": "Center",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "lineSpacing": -27.6,
-                      "characterSpacing": 5.0
+                      "lineSpacing": -67.0,
+                      "characterSpacing": 3.1,
+                      "wrap": true
                     }
                   },
                   {
@@ -342,10 +346,10 @@
                     "color": "#388BFD80",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 372,
-                      "y": 348,
-                      "w": 130,
-                      "h": 34
+                      "x": 383,
+                      "y": 379,
+                      "w": 186,
+                      "h": 62
                     },
                     "sprite": "Assets/UI/Common/round6.png",
                     "imageType": "Sliced",
@@ -370,10 +374,10 @@
                       "b": 6
                     },
                     "rect": {
-                      "x": 372,
-                      "y": 347,
-                      "w": 130,
-                      "h": 34
+                      "x": 382,
+                      "y": 378,
+                      "w": 187,
+                      "h": 62
                     },
                     "stroke": {
                       "color": "#85B8FF",
@@ -395,10 +399,10 @@
                 "type": "Button",
                 "color": "#FFFFFF00",
                 "rect": {
-                  "x": 526,
-                  "y": 347,
-                  "w": 130,
-                  "h": 34
+                  "x": 592,
+                  "y": 379,
+                  "w": 160,
+                  "h": 61
                 },
                 "children": [
                   {
@@ -406,19 +410,20 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 570,
-                      "y": 354,
-                      "w": 41,
+                      "x": 639,
+                      "y": 399,
+                      "w": 65,
                       "h": 21
                     },
                     "text": {
                       "content": "上传",
-                      "fontSize": 20,
+                      "fontSize": 32,
                       "color": "#A8D4FF",
                       "alignment": "Center",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "lineSpacing": -27.6,
-                      "characterSpacing": 5.0
+                      "lineSpacing": -67.0,
+                      "characterSpacing": 3.1,
+                      "wrap": true
                     }
                   },
                   {
@@ -427,10 +432,10 @@
                     "color": "#388BFD80",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 526,
-                      "y": 348,
-                      "w": 130,
-                      "h": 34
+                      "x": 593,
+                      "y": 379,
+                      "w": 160,
+                      "h": 61
                     },
                     "sprite": "Assets/UI/Common/round6.png",
                     "imageType": "Sliced",
@@ -455,10 +460,10 @@
                       "b": 6
                     },
                     "rect": {
-                      "x": 526,
-                      "y": 347,
-                      "w": 130,
-                      "h": 34
+                      "x": 592,
+                      "y": 379,
+                      "w": 161,
+                      "h": 61
                     },
                     "stroke": {
                       "color": "#85B8FF",
@@ -480,10 +485,10 @@
                 "type": "Button",
                 "color": "#FFFFFF00",
                 "rect": {
-                  "x": 680,
-                  "y": 347,
-                  "w": 130,
-                  "h": 34
+                  "x": 776,
+                  "y": 379,
+                  "w": 177,
+                  "h": 61
                 },
                 "children": [
                   {
@@ -491,19 +496,20 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 703,
-                      "y": 354,
-                      "w": 83,
+                      "x": 799,
+                      "y": 399,
+                      "w": 131,
                       "h": 21
                     },
                     "text": {
                       "content": "放弃任务",
-                      "fontSize": 20,
+                      "fontSize": 32,
                       "color": "#FFFFFF",
                       "alignment": "Center",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "lineSpacing": -27.6,
-                      "characterSpacing": 5.0
+                      "lineSpacing": -67.0,
+                      "characterSpacing": 3.1,
+                      "wrap": true
                     }
                   },
                   {
@@ -512,10 +518,10 @@
                     "color": "#FD3F3880",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 680,
-                      "y": 348,
-                      "w": 130,
-                      "h": 34
+                      "x": 776,
+                      "y": 380,
+                      "w": 177,
+                      "h": 60
                     },
                     "sprite": "Assets/UI/Common/round6.png",
                     "imageType": "Sliced",
@@ -540,10 +546,10 @@
                       "b": 6
                     },
                     "rect": {
-                      "x": 680,
-                      "y": 347,
-                      "w": 130,
-                      "h": 34
+                      "x": 776,
+                      "y": 379,
+                      "w": 177,
+                      "h": 60
                     },
                     "stroke": {
                       "color": "#FF8585",

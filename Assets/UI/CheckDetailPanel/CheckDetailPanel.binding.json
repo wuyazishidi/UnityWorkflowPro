@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "CheckDetailPanel",
+  "prefab": "Assets/UI/CheckDetailPanel/CheckDetailPanel.prefab",
+  "size": { "w": 1335, "h": 931 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["round16", "round7"],
+    "atlas": "Assets/UI/CheckDetailPanel/CheckDetailPanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "checkDescriptionText", "path": "Container/Container/Container/Paragraph/CheckDescription_Text", "type": "Text", "text": "#1 桌面小工具归入收纳盒" },
+    { "key": "checkDetailText", "path": "Container/Container/Container/Container/Paragraph/CheckDetail_Text", "type": "Text", "text": "\"id\": 1001, \n\"package_id\": 7, \n\"title\": \"厨房取放物体\",   \"task_description\": \"...\",\n\"quota_per_user\": 20, \n\"quota_per_user_scene\": 10,    \"teaching_video_url\": \"http://.../demo.mp4\", \n\"reference_img_urls\": [\"http://.../1.jpg\"],   \"initial_state\": \"...\", \n\"collector_initial_pose\": \"...\",\n\"collection_mode\": \"free\",   \"narration_policy\": \"say_then_do\", \n\"sop_steps\": [\"步骤1\",\"步骤2\"],     \"lighting\": \"...\", \n  \"clutter_level\": \"...\",  " },
+    { "key": "assignedAndStartTaskBtn", "path": "Container/Container/Container_1/AssignedAndStartTask_Btn", "type": "Button", "text": "返回审核列表" }
+  ]
+}

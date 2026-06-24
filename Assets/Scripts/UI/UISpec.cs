@@ -178,8 +178,8 @@ namespace Game.UI
         /// <summary>行距(TMP lineSpacing，≈相对默认行高的百分比差，负=收紧)；0=用 TMP 默认。由 Figma 行高换算。</summary>
         public float lineSpacing = 0f;
 
-        /// <summary>自动换行：true=按盒宽折行(Figma 固定宽度段落 textAutoResize=HEIGHT/NONE)；false=单行标签不换行(Figma 自动宽度 WIDTH_AND_HEIGHT)。</summary>
-        public bool wrap = false;
+        /// <summary>自动换行：默认 true=全部文本按盒宽折行(overflow 不裁切，高度自增)；可显式置 false 让单行标签强制不换行。</summary>
+        public bool wrap = true;
 
         /// <summary>字符间距(TMP characterSpacing，≈1/100 em)；0=不调整。由 Figma letterSpacing(px) 按 px/fontSize×100 换算。</summary>
         public float characterSpacing = 0f;

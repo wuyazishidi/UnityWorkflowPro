@@ -8,6 +8,7 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 | key | 类型 | 文案 | path | 备注 |
 |-----|------|------|------|------|
 | `text1` | Text | 数据上传 | `Paragraph/数据上传_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
+| `tipText` | Text | 数据上传 | `Paragraph/Tip_Text` |  |
 | `customScrollList` | ScrollList |  | `CustomScrollList` |  |
 | `buttonBtn` | Button | 继续采集 | `Container_1/Button_Btn` |  |
 | `buttonBtn1` | Button | 去上传 | `Container_1/Button_Btn_1` |  |

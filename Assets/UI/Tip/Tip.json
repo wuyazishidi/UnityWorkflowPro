@@ -107,17 +107,18 @@
                     "rect": {
                       "x": 269,
                       "y": 40,
-                      "w": 50,
+                      "w": 66,
                       "h": 17
                     },
                     "text": {
                       "content": "警告",
-                      "fontSize": 24,
+                      "fontSize": 32,
                       "color": "#FFFFFF",
                       "alignment": "MidlineLeft",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "lineSpacing": -63.8,
-                      "characterSpacing": 8.3
+                      "lineSpacing": -81.0,
+                      "characterSpacing": 6.2,
+                      "wrap": true
                     }
                   }
                 ]
@@ -139,16 +140,17 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 81,
-                      "y": 85,
+                      "y": 72,
                       "w": 425,
-                      "h": 51
+                      "h": 94
                     },
                     "text": {
                       "content": "追踪器断开连接，请检查是否正常工作，重新启动，校准",
-                      "fontSize": 20,
+                      "fontSize": 24,
                       "color": "#BFD3F1",
                       "alignment": "Center",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": 25.7,
                       "wrap": true
                     }
                   }

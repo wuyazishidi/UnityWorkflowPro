@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "referenceWidth": 1106,
-  "referenceHeight": 778,
+  "referenceWidth": 1337,
+  "referenceHeight": 987,
   "rootName": "AssignedTaskPanel",
   "root": {
     "name": "AssignedTaskPanel",
@@ -10,8 +10,8 @@
     "rect": {
       "x": 0,
       "y": 0,
-      "w": 1106,
-      "h": 778
+      "w": 1337,
+      "h": 987
     },
     "children": [
       {
@@ -22,8 +22,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 987
         },
         "sprite": "Assets/UI/Common/round16.png",
         "imageType": "Sliced",
@@ -35,44 +35,6 @@
         }
       },
       {
-        "name": "Container",
-        "type": "Container",
-        "raycastTarget": false,
-        "rect": {
-          "x": 0,
-          "y": 0,
-          "w": 1106,
-          "h": 778
-        },
-        "children": [
-          {
-            "name": "Image_Image",
-            "type": "Image",
-            "color": "#FFFFFF",
-            "raycastTarget": false,
-            "sprite": "Assets/UI/AssignedTaskPanel/Icons/bg.png",
-            "rect": {
-              "x": 0,
-              "y": 0,
-              "w": 1106,
-              "h": 778
-            },
-            "opacity": 0.35
-          },
-          {
-            "name": "Container",
-            "type": "Container",
-            "raycastTarget": false,
-            "rect": {
-              "x": 0,
-              "y": 0,
-              "w": 1106,
-              "h": 778
-            }
-          }
-        ]
-      },
-      {
         "name": "Container_Image",
         "type": "Image",
         "color": "#FFFFFF00",
@@ -80,7 +42,7 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
+          "w": 1337,
           "h": 56
         },
         "stroke": {
@@ -103,7 +65,7 @@
             "rect": {
               "x": 32,
               "y": 14,
-              "w": 1042,
+              "w": 1278,
               "h": 27
             },
             "children": [
@@ -112,19 +74,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 458,
-                  "y": 13,
-                  "w": 190,
+                  "x": 32,
+                  "y": 14,
+                  "w": 1278,
                   "h": 27
                 },
                 "text": {
                   "content": "我的已领任务",
-                  "fontSize": 30,
+                  "fontSize": 36,
                   "color": "#E8F4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": -42.6,
-                  "characterSpacing": 6.7
+                  "lineSpacing": -57.6,
+                  "characterSpacing": 5.6,
+                  "wrap": true
                 }
               },
               {
@@ -133,9 +96,9 @@
                 "raycastTarget": false,
                 "rect": {
                   "x": 325,
-                  "y": 64,
-                  "w": 427,
-                  "h": 19
+                  "y": 65,
+                  "w": 691,
+                  "h": 20
                 },
                 "children": [
                   {
@@ -143,24 +106,63 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 365,
+                      "x": 325,
                       "y": 65,
-                      "w": 308,
+                      "w": 667,
                       "h": 20
                     },
                     "text": {
                       "content": "共3个进行中任务，点击继续/审核",
                       "fontSize": 20,
                       "color": "#DEEEFF",
-                      "alignment": "MidlineLeft",
+                      "alignment": "Center",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
                       "lineSpacing": -35.1,
-                      "characterSpacing": 2.5
+                      "characterSpacing": 2.5,
+                      "wrap": true
                     }
                   }
                 ]
               }
             ]
+          }
+        ]
+      },
+      {
+        "name": "Container",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 0,
+          "y": 56,
+          "w": 1337,
+          "h": 931
+        },
+        "children": [
+          {
+            "name": "Image_Image",
+            "type": "Image",
+            "color": "#FFFFFF",
+            "raycastTarget": false,
+            "sprite": "Assets/UI/AssignedTaskPanel/Icons/bg.png",
+            "rect": {
+              "x": 0,
+              "y": 56,
+              "w": 1335,
+              "h": 931
+            },
+            "opacity": 0.35
+          },
+          {
+            "name": "Container",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 0,
+              "y": 56,
+              "w": 1335,
+              "h": 931
+            }
           }
         ]
       },
@@ -171,13 +173,13 @@
         "rect": {
           "x": 32,
           "y": 92,
-          "w": 1042,
-          "h": 566
+          "w": 1271,
+          "h": 716
         },
         "list": {
           "vertical": true,
           "spacing": 5,
-          "count": 9,
+          "count": 10,
           "itemPrefab": "TaskItem_Btn"
         },
         "children": [
@@ -188,7 +190,7 @@
             "rect": {
               "x": 32,
               "y": 92,
-              "w": 1042,
+              "w": 1271,
               "h": 51
             },
             "children": [
@@ -199,8 +201,8 @@
                 "rect": {
                   "x": 32,
                   "y": 92,
-                  "w": 1042,
-                  "h": 50
+                  "w": 1271,
+                  "h": 51
                 },
                 "children": [
                   {
@@ -211,8 +213,8 @@
                     "rect": {
                       "x": 32,
                       "y": 92,
-                      "w": 1042,
-                      "h": 50
+                      "w": 1271,
+                      "h": 51
                     },
                     "sprite": "Assets/UI/Common/round8.png",
                     "imageType": "Sliced",
@@ -232,8 +234,8 @@
                     "rect": {
                       "x": 32,
                       "y": 92,
-                      "w": 1042,
-                      "h": 50
+                      "w": 1271,
+                      "h": 51
                     }
                   },
                   {
@@ -243,7 +245,7 @@
                     "rect": {
                       "x": 56,
                       "y": 106,
-                      "w": 1006,
+                      "w": 1247,
                       "h": 23
                     },
                     "children": [
@@ -263,19 +265,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 56,
+                              "x": 57,
                               "y": 105,
                               "w": 997,
                               "h": 23
                             },
                             "text": {
                               "content": "桌面小工具归入收纳盒",
-                              "fontSize": 20,
+                              "fontSize": 24,
                               "color": "#E8F4FFD9",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": -20.1,
-                              "characterSpacing": 2.5,
+                              "lineSpacing": -38.8,
+                              "characterSpacing": 2.1,
                               "wrap": true
                             }
                           }
@@ -295,8 +297,8 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 960,
-          "y": 668,
+          "x": 1166,
+          "y": 867,
           "w": 122,
           "h": 40
         },
@@ -306,10 +308,10 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 956,
-              "y": 671,
-              "w": 130,
-              "h": 34
+              "x": 1146,
+              "y": 862,
+              "w": 163,
+              "h": 50
             },
             "children": [
               {
@@ -317,19 +319,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 1001,
-                  "y": 678,
-                  "w": 41,
+                  "x": 1164,
+                  "y": 876,
+                  "w": 127,
                   "h": 21
                 },
                 "text": {
                   "content": "返回",
-                  "fontSize": 20,
+                  "fontSize": 32,
                   "color": "#A8D4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": -27.6,
-                  "characterSpacing": 5.0
+                  "lineSpacing": -67.0,
+                  "characterSpacing": 3.1,
+                  "wrap": true
                 }
               },
               {
@@ -338,10 +341,10 @@
                 "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 956,
-                  "y": 672,
-                  "w": 130,
-                  "h": 34
+                  "x": 1152,
+                  "y": 862,
+                  "w": 150,
+                  "h": 45
                 },
                 "sprite": "Assets/UI/Common/round6.png",
                 "imageType": "Sliced",
@@ -366,10 +369,10 @@
                   "b": 6
                 },
                 "rect": {
-                  "x": 956,
-                  "y": 671,
-                  "w": 130,
-                  "h": 34
+                  "x": 1152,
+                  "y": 862,
+                  "w": 150,
+                  "h": 45
                 },
                 "stroke": {
                   "color": "#85B8FF",

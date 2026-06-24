@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "SelectModulePanel",
+  "prefab": "Assets/UI/SelectModulePanel/SelectModulePanel.prefab",
+  "size": { "w": 1335, "h": 931 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring6", "ring7", "round16", "round6", "round7"],
+    "atlas": "Assets/UI/SelectModulePanel/SelectModulePanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "logoutBtn", "path": "Container/Container/Logout_Btn", "type": "Button", "text": "退出登录" },
+    { "key": "text1", "path": "Container/Paragraph/模块选择_Text", "type": "Text", "text": "模块选择", "keyAuto": true },
+    { "key": "collectBtn", "path": "Container/ContainerFill_Image/Collect_Btn", "type": "Button", "text": "采集模块" },
+    { "key": "checkBtn", "path": "Container/ContainerFill_Image_1/Check_Btn", "type": "Button", "text": "审核模块" },
+    { "key": "uploadBtn", "path": "Container/ContainerFill_Image_2/Upload_Btn", "type": "Button", "text": "上传模块" }
+  ]
+}

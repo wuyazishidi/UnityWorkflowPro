@@ -19,10 +19,10 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 116,
-          "y": 77,
-          "w": 1106,
-          "h": 778
+          "x": 0,
+          "y": 0,
+          "w": 1337,
+          "h": 931
         },
         "children": [
           {
@@ -30,10 +30,10 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 116,
-              "y": 77,
-              "w": 1106,
-              "h": 778
+              "x": 0,
+              "y": 0,
+              "w": 1337,
+              "h": 931
             },
             "children": [
               {
@@ -41,10 +41,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 116,
-                  "y": 77,
-                  "w": 1106,
-                  "h": 778
+                  "x": 0,
+                  "y": 0,
+                  "w": 1337,
+                  "h": 931
                 },
                 "children": [
                   {
@@ -52,10 +52,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 116,
-                      "y": 77,
-                      "w": 1106,
-                      "h": 778
+                      "x": 0,
+                      "y": 0,
+                      "w": 1337,
+                      "h": 931
                     },
                     "children": [
                       {
@@ -63,12 +63,12 @@
                         "type": "Image",
                         "color": "#FFFFFF",
                         "raycastTarget": false,
-                        "sprite": "Assets/UI/CollectPanel/Icons/icon1.png",
+                        "sprite": "Assets/UI/CollectPanel/Icons/bg.png",
                         "rect": {
-                          "x": 116,
-                          "y": 77,
-                          "w": 1106,
-                          "h": 778
+                          "x": 0,
+                          "y": 0,
+                          "w": 1337,
+                          "h": 931
                         }
                       }
                     ]
@@ -80,12 +80,12 @@
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
-                "sprite": "Assets/UI/CollectPanel/Icons/icon2.png",
+                "sprite": "Assets/UI/CollectPanel/Icons/bg.png",
                 "rect": {
-                  "x": 116,
-                  "y": 77,
-                  "w": 1106,
-                  "h": 778
+                  "x": 0,
+                  "y": 0,
+                  "w": 1337,
+                  "h": 931
                 }
               }
             ]
@@ -96,10 +96,10 @@
             "color": "#040A1C94",
             "raycastTarget": false,
             "rect": {
-              "x": 116,
-              "y": 77,
-              "w": 1106,
-              "h": 778
+              "x": 0,
+              "y": 0,
+              "w": 1337,
+              "h": 931
             }
           },
           {
@@ -116,10 +116,10 @@
               "b": 12
             },
             "rect": {
-              "x": 116,
-              "y": 77,
-              "w": 1106,
-              "h": 32
+              "x": 1,
+              "y": 1,
+              "w": 1336,
+              "h": 45
             },
             "stroke": {
               "color": "#00D4C829",
@@ -139,9 +139,9 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 132,
-                  "y": 84,
-                  "w": 439,
+                  "x": 17,
+                  "y": 15,
+                  "w": 781,
                   "h": 16
                 },
                 "children": [
@@ -150,9 +150,9 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 132,
-                      "y": 84,
-                      "w": 59,
+                      "x": 17,
+                      "y": 15,
+                      "w": 128,
                       "h": 16
                     },
                     "children": [
@@ -161,9 +161,9 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 132,
-                          "y": 84,
-                          "w": 20,
+                          "x": 17,
+                          "y": 15,
+                          "w": 53,
                           "h": 16
                         },
                         "children": [
@@ -172,17 +172,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 132,
-                              "y": 84,
-                              "w": 22,
+                              "x": 17,
+                              "y": 15,
+                              "w": 36,
                               "h": 17
                             },
                             "text": {
                               "content": "FPS",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -50.1,
+                              "wrap": true
                             }
                           }
                         ]
@@ -192,9 +194,9 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 155,
-                          "y": 84,
-                          "w": 20,
+                          "x": 74,
+                          "y": 15,
+                          "w": 82,
                           "h": 16
                         },
                         "children": [
@@ -203,18 +205,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 155,
-                              "y": 84,
-                              "w": 26,
+                              "x": 74,
+                              "y": 15,
+                              "w": 36,
                               "h": 17
                             },
                             "text": {
                               "content": "103",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": -14.7
+                              "lineSpacing": -50.1,
+                              "wrap": true
                             }
                           }
                         ]
@@ -224,8 +227,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 179,
-                          "y": 84,
+                          "x": 159,
+                          "y": 15,
                           "w": 13,
                           "h": 16
                         },
@@ -235,8 +238,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 185,
-                              "y": 84,
+                              "x": 165,
+                              "y": 15,
                               "w": 7,
                               "h": 16
                             },
@@ -246,18 +249,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 185,
-                                  "y": 84,
+                                  "x": 165,
+                                  "y": 15,
                                   "w": 7,
                                   "h": 17
                                 },
                                 "text": {
                                   "content": "|",
-                                  "fontSize": 14,
+                                  "fontSize": 11,
                                   "color": "#FFFFFF1F",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": 17.4
+                                  "lineSpacing": 17.4,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -271,9 +275,9 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 202,
-                      "y": 84,
-                      "w": 82,
+                      "x": 156,
+                      "y": 15,
+                      "w": 157,
                       "h": 16
                     },
                     "children": [
@@ -282,9 +286,9 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 202,
-                          "y": 84,
-                          "w": 23,
+                          "x": 156,
+                          "y": 15,
+                          "w": 57,
                           "h": 16
                         },
                         "children": [
@@ -293,17 +297,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 202,
-                              "y": 84,
-                              "w": 24,
+                              "x": 156,
+                              "y": 15,
+                              "w": 40,
                               "h": 17
                             },
                             "text": {
                               "content": "内存",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -50.1,
+                              "wrap": true
                             }
                           }
                         ]
@@ -313,9 +319,9 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 228,
-                          "y": 84,
-                          "w": 40,
+                          "x": 216,
+                          "y": 15,
+                          "w": 73,
                           "h": 16
                         },
                         "children": [
@@ -324,18 +330,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 228,
-                              "y": 84,
-                              "w": 51,
+                              "x": 216,
+                              "y": 15,
+                              "w": 72,
                               "h": 17
                             },
                             "text": {
                               "content": "4/144M",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": -14.7
+                              "lineSpacing": -50.1,
+                              "wrap": true
                             }
                           }
                         ]
@@ -345,8 +352,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 271,
-                          "y": 84,
+                          "x": 292,
+                          "y": 15,
                           "w": 13,
                           "h": 16
                         },
@@ -356,8 +363,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 277,
-                              "y": 84,
+                              "x": 298,
+                              "y": 15,
                               "w": 7,
                               "h": 16
                             },
@@ -367,18 +374,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 277,
-                                  "y": 84,
+                                  "x": 298,
+                                  "y": 15,
                                   "w": 7,
                                   "h": 17
                                 },
                                 "text": {
                                   "content": "|",
-                                  "fontSize": 14,
+                                  "fontSize": 11,
                                   "color": "#FFFFFF1F",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": 17.4
+                                  "lineSpacing": 17.4,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -392,9 +400,9 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 294,
-                      "y": 84,
-                      "w": 82,
+                      "x": 323,
+                      "y": 15,
+                      "w": 157,
                       "h": 16
                     },
                     "children": [
@@ -403,9 +411,9 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 294,
-                          "y": 84,
-                          "w": 23,
+                          "x": 323,
+                          "y": 15,
+                          "w": 47,
                           "h": 16
                         },
                         "children": [
@@ -414,17 +422,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 294,
-                              "y": 84,
-                              "w": 24,
+                              "x": 323,
+                              "y": 15,
+                              "w": 40,
                               "h": 17
                             },
                             "text": {
                               "content": "磁盘",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -50.1,
+                              "wrap": true
                             }
                           }
                         ]
@@ -434,9 +444,9 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 320,
-                          "y": 84,
-                          "w": 40,
+                          "x": 374,
+                          "y": 15,
+                          "w": 81,
                           "h": 16
                         },
                         "children": [
@@ -445,18 +455,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 320,
-                              "y": 84,
-                              "w": 51,
+                              "x": 374,
+                              "y": 15,
+                              "w": 72,
                               "h": 17
                             },
                             "text": {
                               "content": "211.7G",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": -14.7
+                              "lineSpacing": -50.1,
+                              "wrap": true
                             }
                           }
                         ]
@@ -466,8 +477,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 363,
-                          "y": 84,
+                          "x": 458,
+                          "y": 15,
                           "w": 13,
                           "h": 16
                         },
@@ -477,8 +488,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 369,
-                              "y": 84,
+                              "x": 464,
+                              "y": 15,
                               "w": 7,
                               "h": 16
                             },
@@ -488,18 +499,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 369,
-                                  "y": 84,
+                                  "x": 464,
+                                  "y": 15,
                                   "w": 7,
                                   "h": 17
                                 },
                                 "text": {
                                   "content": "|",
-                                  "fontSize": 14,
+                                  "fontSize": 11,
                                   "color": "#FFFFFF1F",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": 17.4
+                                  "lineSpacing": 17.4,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -513,9 +525,9 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 386,
-                      "y": 84,
-                      "w": 70,
+                      "x": 490,
+                      "y": 15,
+                      "w": 156,
                       "h": 16
                     },
                     "children": [
@@ -524,9 +536,9 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 386,
-                          "y": 84,
-                          "w": 59,
+                          "x": 490,
+                          "y": 15,
+                          "w": 100,
                           "h": 16
                         },
                         "children": [
@@ -535,17 +547,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 386,
-                              "y": 84,
-                              "w": 60,
+                              "x": 490,
+                              "y": 15,
+                              "w": 100,
                               "h": 17
                             },
                             "text": {
                               "content": "当前账号：",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -50.1,
+                              "wrap": true
                             }
                           }
                         ]
@@ -555,8 +569,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 449,
-                          "y": 84,
+                          "x": 594,
+                          "y": 15,
                           "w": 7,
                           "h": 16
                         },
@@ -566,18 +580,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 449,
-                              "y": 84,
-                              "w": 93,
+                              "x": 594,
+                              "y": 15,
+                              "w": 132,
                               "h": 17
                             },
                             "text": {
                               "content": "collector01",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": -14.7
+                              "lineSpacing": -50.1,
+                              "wrap": true
                             }
                           }
                         ]
@@ -591,9 +606,9 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 571,
-                  "y": 82,
-                  "w": 651,
+                  "x": 798,
+                  "y": 13,
+                  "w": 533,
                   "h": 21
                 },
                 "children": [
@@ -602,8 +617,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 702,
-                      "y": 84,
+                      "x": 798,
+                      "y": 15,
                       "w": 121,
                       "h": 17
                     },
@@ -613,18 +628,19 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 702,
-                          "y": 84,
-                          "w": 121,
+                          "x": 798,
+                          "y": 15,
+                          "w": 60,
                           "h": 17
                         },
                         "text": {
-                          "content": "任务# ae1 | a#1",
-                          "fontSize": 14,
+                          "content": "任务：",
+                          "fontSize": 20,
                           "color": "#7A90B8",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -14.7
+                          "lineSpacing": -50.1,
+                          "wrap": true
                         }
                       }
                     ]
@@ -634,72 +650,19 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 833,
-                      "y": 82,
-                      "w": 3,
+                      "x": 858,
+                      "y": 13,
+                      "w": 147,
                       "h": 21
-                    },
-                    "children": [
-                      {
-                        "name": "|_Text",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 833,
-                          "y": 82,
-                          "w": 4,
-                          "h": 21
-                        },
-                        "text": {
-                          "content": "|",
-                          "fontSize": 14,
-                          "color": "#FFFFFF26",
-                          "alignment": "MidlineLeft",
-                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
-                        }
-                      }
-                    ]
+                    }
                   },
                   {
                     "name": "Text_2",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 847,
-                      "y": 84,
-                      "w": 31,
-                      "h": 16
-                    },
-                    "children": [
-                      {
-                        "name": "CameraState_Text",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 847,
-                          "y": 84,
-                          "w": 41,
-                          "h": 17
-                        },
-                        "text": {
-                          "content": "相机●",
-                          "fontSize": 14,
-                          "color": "#E2EAF8",
-                          "alignment": "MidlineLeft",
-                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -14.7
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_3",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 889,
-                      "y": 82,
+                      "x": 1005,
+                      "y": 13,
                       "w": 3,
                       "h": 21
                     },
@@ -709,17 +672,19 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 889,
-                          "y": 82,
-                          "w": 4,
+                          "x": 1005,
+                          "y": 13,
+                          "w": 5,
                           "h": 21
                         },
                         "text": {
                           "content": "|",
-                          "fontSize": 14,
+                          "fontSize": 20,
                           "color": "#FFFFFFF7",
                           "alignment": "MidlineLeft",
-                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                          "lineSpacing": -27.6,
+                          "wrap": true
                         }
                       }
                     ]
@@ -738,9 +703,9 @@
                       "b": 10
                     },
                     "rect": {
-                      "x": 903,
-                      "y": 83,
-                      "w": 62,
+                      "x": 1020,
+                      "y": 14,
+                      "w": 76,
                       "h": 20
                     },
                     "stroke": {
@@ -761,29 +726,30 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 910,
-                          "y": 85,
-                          "w": 42,
+                          "x": 1028,
+                          "y": 16,
+                          "w": 60,
                           "h": 15
                         },
                         "text": {
                           "content": "准备中",
-                          "fontSize": 14,
+                          "fontSize": 20,
                           "color": "#00D4C8",
                           "alignment": "Center",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -25.5
+                          "lineSpacing": -57.6,
+                          "wrap": true
                         }
                       }
                     ]
                   },
                   {
-                    "name": "Text_4",
+                    "name": "Text_3",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 975,
-                      "y": 82,
+                      "x": 1105,
+                      "y": 12,
                       "w": 3,
                       "h": 21
                     },
@@ -793,29 +759,30 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 975,
-                          "y": 82,
-                          "w": 4,
+                          "x": 1105,
+                          "y": 12,
+                          "w": 5,
                           "h": 21
                         },
                         "text": {
                           "content": "|",
-                          "fontSize": 14,
+                          "fontSize": 20,
                           "color": "#FFFFFF",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
+                          "lineSpacing": -27.6,
+                          "wrap": true
                         }
                       }
                     ]
                   },
                   {
-                    "name": "Text_5",
+                    "name": "Text_4",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 989,
-                      "y": 84,
+                      "x": 1120,
+                      "y": 16,
                       "w": 102,
                       "h": 16
                     },
@@ -825,18 +792,19 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 989,
-                          "y": 84,
-                          "w": 126,
+                          "x": 1120,
+                          "y": 16,
+                          "w": 180,
                           "h": 17
                         },
                         "text": {
-                          "content": "口述策略：仅当出端",
-                          "fontSize": 14,
+                          "content": "口述策略：仅当出错",
+                          "fontSize": 20,
                           "color": "#7A90B8",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -14.7
+                          "lineSpacing": -50.1,
+                          "wrap": true
                         }
                       }
                     ]
@@ -850,10 +818,10 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 116,
-              "y": 109,
-              "w": 1106,
-              "h": 660
+              "x": 0,
+              "y": 46,
+              "w": 1337,
+              "h": 823
             },
             "children": [
               {
@@ -870,10 +838,10 @@
                   "b": 12
                 },
                 "rect": {
-                  "x": 116,
-                  "y": 109,
-                  "w": 853,
-                  "h": 35
+                  "x": 0,
+                  "y": 46,
+                  "w": 1337,
+                  "h": 53
                 },
                 "stroke": {
                   "color": "#00D4C81A",
@@ -893,10 +861,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 118,
-                      "y": 115,
-                      "w": 86,
-                      "h": 23
+                      "x": 2,
+                      "y": 46,
+                      "w": 123,
+                      "h": 52
                     },
                     "children": [
                       {
@@ -913,10 +881,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 118,
-                          "y": 115,
-                          "w": 86,
-                          "h": 25
+                          "x": 2,
+                          "y": 46,
+                          "w": 114,
+                          "h": 52
                         },
                         "stroke": {
                           "color": "#22C55E61",
@@ -938,10 +906,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
-                              "x": 127,
-                              "y": 117,
-                              "w": 20,
-                              "h": 20
+                              "x": 11,
+                              "y": 57,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -949,17 +917,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 152,
-                              "y": 118,
-                              "w": 42,
+                              "x": 47,
+                              "y": 63,
+                              "w": 60,
                               "h": 18
                             },
                             "text": {
                               "content": "左手柄",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#86EFAC",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -978,10 +948,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 118,
-                          "y": 115,
-                          "w": 86,
-                          "h": 25
+                          "x": 2,
+                          "y": 46,
+                          "w": 114,
+                          "h": 52
                         },
                         "stroke": {
                           "color": "#F8717166",
@@ -1003,10 +973,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
-                              "x": 127,
-                              "y": 117,
-                              "w": 20,
-                              "h": 20
+                              "x": 11,
+                              "y": 57,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1014,17 +984,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 153,
-                              "y": 118,
-                              "w": 42,
+                              "x": 47,
+                              "y": 63,
+                              "w": 60,
                               "h": 18
                             },
                             "text": {
                               "content": "左手柄",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#FCA5A5",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1036,10 +1008,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 211,
-                      "y": 113,
-                      "w": 85,
-                      "h": 23
+                      "x": 125,
+                      "y": 46,
+                      "w": 150,
+                      "h": 52
                     },
                     "children": [
                       {
@@ -1056,10 +1028,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 218,
-                          "y": 113,
-                          "w": 89,
-                          "h": 25
+                          "x": 125,
+                          "y": 46,
+                          "w": 139,
+                          "h": 52
                         },
                         "stroke": {
                           "color": "#22C55E61",
@@ -1079,12 +1051,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art3.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
-                              "x": 228,
-                              "y": 116,
-                              "w": 20,
-                              "h": 20
+                              "x": 134,
+                              "y": 57,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1092,17 +1064,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 253,
-                              "y": 117,
-                              "w": 42,
+                              "x": 170,
+                              "y": 63,
+                              "w": 60,
                               "h": 18
                             },
                             "text": {
                               "content": "右手柄",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#86EFAC",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1121,10 +1095,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 218,
-                          "y": 113,
-                          "w": 89,
-                          "h": 25
+                          "x": 125,
+                          "y": 46,
+                          "w": 139,
+                          "h": 52
                         },
                         "stroke": {
                           "color": "#F8717166",
@@ -1144,12 +1118,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art4.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
-                              "x": 228,
-                              "y": 116,
-                              "w": 20,
-                              "h": 20
+                              "x": 134,
+                              "y": 57,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1157,17 +1131,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 253,
-                              "y": 117,
-                              "w": 46,
+                              "x": 170,
+                              "y": 63,
+                              "w": 65,
                               "h": 18
                             },
                             "text": {
                               "content": "右 手柄",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#FCA5A5",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1179,10 +1155,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 324,
-                      "y": 114,
-                      "w": 96,
-                      "h": 23
+                      "x": 275,
+                      "y": 49,
+                      "w": 133,
+                      "h": 49
                     },
                     "children": [
                       {
@@ -1199,10 +1175,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 323,
-                          "y": 114,
-                          "w": 97,
-                          "h": 25
+                          "x": 274,
+                          "y": 49,
+                          "w": 125,
+                          "h": 48
                         },
                         "stroke": {
                           "color": "#22C55E61",
@@ -1222,12 +1198,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art5.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
-                              "x": 332,
-                              "y": 116,
-                              "w": 20,
-                              "h": 20
+                              "x": 284,
+                              "y": 58,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1235,17 +1211,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 358,
-                              "y": 117,
-                              "w": 28,
+                              "x": 319,
+                              "y": 64,
+                              "w": 40,
                               "h": 18
                             },
                             "text": {
                               "content": "相机",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#86EFAC",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           },
                           {
@@ -1255,10 +1233,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art6.png",
                             "rect": {
-                              "x": 391,
-                              "y": 116,
-                              "w": 20,
-                              "h": 20
+                              "x": 364,
+                              "y": 58,
+                              "w": 30,
+                              "h": 30
                             },
                             "opacity": 0.85
                           }
@@ -1278,10 +1256,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 323,
-                          "y": 114,
-                          "w": 97,
-                          "h": 25
+                          "x": 274,
+                          "y": 50,
+                          "w": 125,
+                          "h": 48
                         },
                         "stroke": {
                           "color": "#F8717166",
@@ -1301,12 +1279,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art7.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
-                              "x": 333,
-                              "y": 117,
-                              "w": 20,
-                              "h": 20
+                              "x": 284,
+                              "y": 59,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1314,17 +1292,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 358,
-                              "y": 118,
-                              "w": 28,
+                              "x": 319,
+                              "y": 65,
+                              "w": 40,
                               "h": 18
                             },
                             "text": {
                               "content": "相机",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#FCA5A5",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           },
                           {
@@ -1334,8 +1314,8 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art8.png",
                             "rect": {
-                              "x": 391,
-                              "y": 117,
+                              "x": 364,
+                              "y": 64,
                               "w": 20,
                               "h": 20
                             },
@@ -1350,10 +1330,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 427,
-                      "y": 112,
-                      "w": 63,
-                      "h": 23
+                      "x": 408,
+                      "y": 49,
+                      "w": 120,
+                      "h": 49
                     },
                     "children": [
                       {
@@ -1370,10 +1350,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 435,
-                          "y": 112,
-                          "w": 58,
-                          "h": 25
+                          "x": 416,
+                          "y": 49,
+                          "w": 103,
+                          "h": 48
                         },
                         "stroke": {
                           "color": "#22C55E61",
@@ -1393,12 +1373,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art5.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
-                              "x": 444,
-                              "y": 114,
-                              "w": 20,
-                              "h": 20
+                              "x": 425,
+                              "y": 58,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1406,17 +1386,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 470,
-                              "y": 115,
-                              "w": 14,
+                              "x": 461,
+                              "y": 64,
+                              "w": 20,
                               "h": 18
                             },
                             "text": {
                               "content": "手",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#86EFAC",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1435,10 +1417,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 435,
-                          "y": 112,
-                          "w": 58,
-                          "h": 25
+                          "x": 416,
+                          "y": 50,
+                          "w": 103,
+                          "h": 48
                         },
                         "stroke": {
                           "color": "#F8717166",
@@ -1458,12 +1440,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art10.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
-                              "x": 445,
-                              "y": 115,
-                              "w": 20,
-                              "h": 20
+                              "x": 425,
+                              "y": 59,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1471,17 +1453,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 470,
-                              "y": 116,
-                              "w": 14,
+                              "x": 461,
+                              "y": 65,
+                              "w": 20,
                               "h": 18
                             },
                             "text": {
                               "content": "手",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#FCA5A5",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1493,10 +1477,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 504,
-                      "y": 114,
-                      "w": 125,
-                      "h": 23
+                      "x": 528,
+                      "y": 46,
+                      "w": 189,
+                      "h": 52
                     },
                     "children": [
                       {
@@ -1513,10 +1497,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 504,
-                          "y": 114,
-                          "w": 114,
-                          "h": 25
+                          "x": 528,
+                          "y": 46,
+                          "w": 175,
+                          "h": 51
                         },
                         "stroke": {
                           "color": "#22C55E61",
@@ -1538,8 +1522,8 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art11.png",
                             "rect": {
-                              "x": 513,
-                              "y": 116,
+                              "x": 537,
+                              "y": 62,
                               "w": 20,
                               "h": 20
                             }
@@ -1549,17 +1533,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 539,
-                              "y": 117,
-                              "w": 70,
+                              "x": 563,
+                              "y": 62,
+                              "w": 100,
                               "h": 18
                             },
                             "text": {
                               "content": "腕手适配度",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#86EFAC",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1578,10 +1564,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 504,
-                          "y": 114,
-                          "w": 114,
-                          "h": 25
+                          "x": 528,
+                          "y": 47,
+                          "w": 175,
+                          "h": 51
                         },
                         "stroke": {
                           "color": "#F8717166",
@@ -1601,12 +1587,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art12.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
-                              "x": 514,
-                              "y": 117,
-                              "w": 20,
-                              "h": 20
+                              "x": 537,
+                              "y": 58,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1614,17 +1600,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 539,
-                              "y": 118,
-                              "w": 70,
+                              "x": 573,
+                              "y": 64,
+                              "w": 100,
                               "h": 18
                             },
                             "text": {
                               "content": "腕手适配度",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#FCA5A5",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1636,10 +1624,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 629,
-                      "y": 115,
-                      "w": 112,
-                      "h": 23
+                      "x": 717,
+                      "y": 46,
+                      "w": 157,
+                      "h": 52
                     },
                     "children": [
                       {
@@ -1656,10 +1644,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 629,
-                          "y": 115,
-                          "w": 112,
-                          "h": 25
+                          "x": 717,
+                          "y": 46,
+                          "w": 146,
+                          "h": 51
                         },
                         "stroke": {
                           "color": "#22C55E61",
@@ -1679,12 +1667,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art11.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
-                              "x": 638,
-                              "y": 117,
-                              "w": 20,
-                              "h": 20
+                              "x": 726,
+                              "y": 56,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1692,17 +1680,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 664,
-                              "y": 118,
-                              "w": 68,
+                              "x": 762,
+                              "y": 62,
+                              "w": 97,
                               "h": 18
                             },
                             "text": {
                               "content": "追踪器 5/5",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#86EFAC",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1721,10 +1711,10 @@
                           "b": 3
                         },
                         "rect": {
-                          "x": 629,
-                          "y": 115,
-                          "w": 109,
-                          "h": 25
+                          "x": 717,
+                          "y": 47,
+                          "w": 142,
+                          "h": 51
                         },
                         "stroke": {
                           "color": "#F8717166",
@@ -1744,12 +1734,12 @@
                             "type": "Image",
                             "color": "#FFFFFF",
                             "raycastTarget": false,
-                            "sprite": "Assets/UI/CollectPanel/Icons/art12.png",
+                            "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
-                              "x": 639,
-                              "y": 118,
-                              "w": 20,
-                              "h": 20
+                              "x": 726,
+                              "y": 58,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1757,17 +1747,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 664,
-                              "y": 119,
-                              "w": 65,
+                              "x": 762,
+                              "y": 64,
+                              "w": 93,
                               "h": 18
                             },
                             "text": {
                               "content": "追踪器5/5",
-                              "fontSize": 14,
+                              "fontSize": 20,
                               "color": "#FCA5A5",
                               "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -42.6,
+                              "wrap": true
                             }
                           }
                         ]
@@ -1779,10 +1771,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 755,
-                      "y": 119,
-                      "w": 79,
-                      "h": 15
+                      "x": 874,
+                      "y": 53,
+                      "w": 143,
+                      "h": 45
                     },
                     "children": [
                       {
@@ -1790,10 +1782,10 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 755,
-                          "y": 119,
-                          "w": 72,
-                          "h": 20
+                          "x": 874,
+                          "y": 53,
+                          "w": 113,
+                          "h": 44
                         },
                         "children": [
                           {
@@ -1803,10 +1795,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art15.png",
                             "rect": {
-                              "x": 755,
-                              "y": 119,
-                              "w": 20,
-                              "h": 20
+                              "x": 874,
+                              "y": 60,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1816,10 +1808,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art16.png",
                             "rect": {
-                              "x": 780,
-                              "y": 119,
-                              "w": 20,
-                              "h": 20
+                              "x": 909,
+                              "y": 60,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1827,8 +1819,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 806,
-                              "y": 122,
+                              "x": 945,
+                              "y": 68,
                               "w": 21,
                               "h": 15
                             },
@@ -1838,18 +1830,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 806,
-                                  "y": 121,
-                                  "w": 28,
+                                  "x": 945,
+                                  "y": 67,
+                                  "w": 40,
                                   "h": 15
                                 },
                                 "text": {
                                   "content": "网络",
-                                  "fontSize": 14,
+                                  "fontSize": 20,
                                   "color": "#22C55E",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": -25.5
+                                  "lineSpacing": -57.6,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -1861,10 +1854,10 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 755,
-                          "y": 119,
-                          "w": 72,
-                          "h": 20
+                          "x": 874,
+                          "y": 54,
+                          "w": 113,
+                          "h": 44
                         },
                         "children": [
                           {
@@ -1874,10 +1867,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art17.png",
                             "rect": {
-                              "x": 755,
-                              "y": 119,
-                              "w": 20,
-                              "h": 20
+                              "x": 874,
+                              "y": 61,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1887,10 +1880,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art18.png",
                             "rect": {
-                              "x": 781,
-                              "y": 119,
-                              "w": 20,
-                              "h": 20
+                              "x": 909,
+                              "y": 61,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1898,9 +1891,9 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 806,
-                              "y": 122,
-                              "w": 21,
+                              "x": 945,
+                              "y": 68,
+                              "w": 42,
                               "h": 15
                             },
                             "children": [
@@ -1909,18 +1902,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 806,
-                                  "y": 121,
-                                  "w": 28,
+                                  "x": 945,
+                                  "y": 68,
+                                  "w": 40,
                                   "h": 15
                                 },
                                 "text": {
                                   "content": "网络",
-                                  "fontSize": 14,
+                                  "fontSize": 20,
                                   "color": "#F87171",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": -25.5
+                                  "lineSpacing": -57.6,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -1934,10 +1928,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 862,
-                      "y": 120,
-                      "w": 79,
-                      "h": 15
+                      "x": 1017,
+                      "y": 46,
+                      "w": 143,
+                      "h": 52
                     },
                     "children": [
                       {
@@ -1945,10 +1939,10 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 862,
-                          "y": 120,
-                          "w": 72,
-                          "h": 20
+                          "x": 1017,
+                          "y": 46,
+                          "w": 135,
+                          "h": 51
                         },
                         "children": [
                           {
@@ -1958,10 +1952,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art15.png",
                             "rect": {
-                              "x": 862,
-                              "y": 120,
-                              "w": 20,
-                              "h": 20
+                              "x": 1017,
+                              "y": 56,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1971,10 +1965,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art20.png",
                             "rect": {
-                              "x": 887,
-                              "y": 120,
-                              "w": 20,
-                              "h": 20
+                              "x": 1052,
+                              "y": 56,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -1982,8 +1976,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 912,
-                              "y": 122,
+                              "x": 1088,
+                              "y": 64,
                               "w": 21,
                               "h": 15
                             },
@@ -1993,18 +1987,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 912,
-                                  "y": 122,
-                                  "w": 28,
+                                  "x": 1088,
+                                  "y": 64,
+                                  "w": 40,
                                   "h": 15
                                 },
                                 "text": {
                                   "content": "音频",
-                                  "fontSize": 14,
+                                  "fontSize": 20,
                                   "color": "#22C55E",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": -25.5
+                                  "lineSpacing": -57.6,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -2016,10 +2011,10 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 862,
-                          "y": 120,
-                          "w": 72,
-                          "h": 20
+                          "x": 1017,
+                          "y": 47,
+                          "w": 143,
+                          "h": 51
                         },
                         "children": [
                           {
@@ -2029,10 +2024,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art17.png",
                             "rect": {
-                              "x": 862,
-                              "y": 120,
-                              "w": 20,
-                              "h": 20
+                              "x": 1017,
+                              "y": 58,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -2042,10 +2037,10 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art22.png",
                             "rect": {
-                              "x": 888,
-                              "y": 120,
-                              "w": 20,
-                              "h": 20
+                              "x": 1052,
+                              "y": 58,
+                              "w": 30,
+                              "h": 30
                             }
                           },
                           {
@@ -2053,8 +2048,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 913,
-                              "y": 123,
+                              "x": 1088,
+                              "y": 65,
                               "w": 21,
                               "h": 15
                             },
@@ -2064,18 +2059,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 913,
-                                  "y": 122,
-                                  "w": 28,
+                                  "x": 1088,
+                                  "y": 65,
+                                  "w": 40,
                                   "h": 15
                                 },
                                 "text": {
                                   "content": "音频",
-                                  "fontSize": 14,
+                                  "fontSize": 20,
                                   "color": "#F87171",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": -25.5
+                                  "lineSpacing": -57.6,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -2091,10 +2087,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 116,
-                  "y": 144,
-                  "w": 1106,
-                  "h": 625
+                  "x": 0,
+                  "y": 99,
+                  "w": 1337,
+                  "h": 770
                 },
                 "children": [
                   {
@@ -2102,10 +2098,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 124,
-                      "y": 144,
-                      "w": 1089,
-                      "h": 625
+                      "x": 0,
+                      "y": 99,
+                      "w": 1337,
+                      "h": 770
                     },
                     "children": [
                       {
@@ -2114,7 +2110,7 @@
                         "raycastTarget": false,
                         "rect": {
                           "x": 275,
-                          "y": 161,
+                          "y": 116,
                           "w": 787,
                           "h": 59
                         },
@@ -2125,7 +2121,7 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 275,
-                              "y": 161,
+                              "y": 116,
                               "w": 787,
                               "h": 59
                             },
@@ -2136,17 +2132,18 @@
                                 "raycastTarget": false,
                                 "rect": {
                                   "x": 275,
-                                  "y": 161,
+                                  "y": 116,
                                   "w": 787,
                                   "h": 48
                                 },
                                 "text": {
                                   "content": "准备中（点「结束采集」取消）",
-                                  "fontSize": 24,
+                                  "fontSize": 32,
                                   "color": "#E2EAF8",
                                   "alignment": "Center",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": -26.3
+                                  "lineSpacing": -52.9,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -2167,10 +2164,10 @@
                           "b": 7
                         },
                         "rect": {
-                          "x": 170,
-                          "y": 228,
-                          "w": 484,
-                          "h": 316
+                          "x": 53,
+                          "y": 183,
+                          "w": 592,
+                          "h": 445
                         },
                         "stroke": {
                           "color": "#FFFFFF12",
@@ -2199,10 +2196,10 @@
                           "b": 7
                         },
                         "rect": {
-                          "x": 677,
-                          "y": 226,
-                          "w": 484,
-                          "h": 316
+                          "x": 672,
+                          "y": 181,
+                          "w": 629,
+                          "h": 445
                         },
                         "stroke": {
                           "color": "#FFFFFF12",
@@ -2223,9 +2220,9 @@
                         "raycastTarget": false,
                         "rect": {
                           "x": 689,
-                          "y": 239,
-                          "w": 471,
-                          "h": 295
+                          "y": 194,
+                          "w": 605,
+                          "h": 432
                         },
                         "children": [
                           {
@@ -2234,9 +2231,9 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 689,
-                              "y": 239,
-                              "w": 471,
-                              "h": 75
+                              "y": 194,
+                              "w": 605,
+                              "h": 107
                             },
                             "children": [
                               {
@@ -2254,9 +2251,9 @@
                                 },
                                 "rect": {
                                   "x": 689,
-                                  "y": 244,
-                                  "w": 471,
-                                  "h": 70
+                                  "y": 194,
+                                  "w": 605,
+                                  "h": 107
                                 },
                                 "stroke": {
                                   "color": "#22C55E61",
@@ -2277,9 +2274,9 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 693,
-                                      "y": 258,
-                                      "w": 20,
-                                      "h": 22
+                                      "y": 208,
+                                      "w": 30,
+                                      "h": 29
                                     },
                                     "children": [
                                       {
@@ -2290,9 +2287,9 @@
                                         "sprite": "Assets/UI/CollectPanel/Icons/art23.png",
                                         "rect": {
                                           "x": 693,
-                                          "y": 260,
-                                          "w": 20,
-                                          "h": 20
+                                          "y": 210,
+                                          "w": 30,
+                                          "h": 30
                                         }
                                       }
                                     ]
@@ -2302,10 +2299,10 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 713,
-                                      "y": 256,
+                                      "x": 718,
+                                      "y": 212,
                                       "w": 432,
-                                      "h": 44
+                                      "h": 27
                                     },
                                     "children": [
                                       {
@@ -2313,8 +2310,8 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 713,
-                                          "y": 256,
+                                          "x": 718,
+                                          "y": 212,
                                           "w": 432,
                                           "h": 21
                                         },
@@ -2324,17 +2321,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 713,
-                                              "y": 256,
-                                              "w": 128,
+                                              "x": 718,
+                                              "y": 212,
+                                              "w": 160,
                                               "h": 21
                                             },
                                             "text": {
                                               "content": "手势识别切换成功",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -27.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -2344,8 +2343,8 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 713,
-                                          "y": 277,
+                                          "x": 718,
+                                          "y": 233,
                                           "w": 435,
                                           "h": 23
                                         },
@@ -2355,10 +2354,10 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 713,
-                                              "y": 283,
-                                              "w": 20,
-                                              "h": 21
+                                              "x": 718,
+                                              "y": 238,
+                                              "w": 30,
+                                              "h": 31
                                             },
                                             "children": [
                                               {
@@ -2368,10 +2367,10 @@
                                                 "raycastTarget": false,
                                                 "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                                 "rect": {
-                                                  "x": 713,
-                                                  "y": 284,
-                                                  "w": 20,
-                                                  "h": 20
+                                                  "x": 718,
+                                                  "y": 239,
+                                                  "w": 30,
+                                                  "h": 30
                                                 }
                                               }
                                             ]
@@ -2381,10 +2380,10 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 733,
-                                              "y": 282,
-                                              "w": 425,
-                                              "h": 18
+                                              "x": 738,
+                                              "y": 238,
+                                              "w": 499,
+                                              "h": 33
                                             },
                                             "children": [
                                               {
@@ -2392,17 +2391,19 @@
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 733,
-                                                  "y": 282,
-                                                  "w": 112,
-                                                  "h": 18
+                                                  "x": 749,
+                                                  "y": 241,
+                                                  "w": 497,
+                                                  "h": 55
                                                 },
                                                 "text": {
                                                   "content": "手势识别切换成功",
-                                                  "fontSize": 14,
+                                                  "fontSize": 20,
                                                   "color": "#86EFAC",
                                                   "alignment": "MidlineLeft",
-                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                                  "lineSpacing": -44.6,
+                                                  "wrap": true
                                                 }
                                               }
                                             ]
@@ -2416,9 +2417,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1071,
-                                      "y": 256,
-                                      "w": 74,
+                                      "x": 1196,
+                                      "y": 209,
+                                      "w": 84,
                                       "h": 22
                                     },
                                     "children": [
@@ -2436,8 +2437,8 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1071,
-                                          "y": 258,
+                                          "x": 1196,
+                                          "y": 211,
                                           "w": 74,
                                           "h": 20
                                         },
@@ -2459,17 +2460,18 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1071,
-                                              "y": 260,
-                                              "w": 74,
+                                              "x": 1191,
+                                              "y": 213,
+                                              "w": 89,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "准备完成",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "Center",
                                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -57.6,
                                               "wrap": true
                                             }
                                           }
@@ -2494,9 +2496,9 @@
                                 },
                                 "rect": {
                                   "x": 689,
-                                  "y": 244,
-                                  "w": 471,
-                                  "h": 70
+                                  "y": 194,
+                                  "w": 605,
+                                  "h": 107
                                 },
                                 "stroke": {
                                   "color": "#F8717166",
@@ -2517,7 +2519,7 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 707,
-                                      "y": 257,
+                                      "y": 207,
                                       "w": 16,
                                       "h": 18
                                     }
@@ -2530,9 +2532,9 @@
                                     "sprite": "Assets/UI/CollectPanel/Icons/art25.png",
                                     "rect": {
                                       "x": 692,
-                                      "y": 259,
-                                      "w": 20,
-                                      "h": 20
+                                      "y": 209,
+                                      "w": 30,
+                                      "h": 30
                                     }
                                   },
                                   {
@@ -2540,10 +2542,10 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 716,
-                                      "y": 257,
+                                      "x": 721,
+                                      "y": 213,
                                       "w": 346,
-                                      "h": 44
+                                      "h": 27
                                     },
                                     "children": [
                                       {
@@ -2551,8 +2553,8 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 716,
-                                          "y": 257,
+                                          "x": 721,
+                                          "y": 213,
                                           "w": 346,
                                           "h": 21
                                         },
@@ -2562,17 +2564,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 716,
-                                              "y": 257,
-                                              "w": 112,
+                                              "x": 721,
+                                              "y": 213,
+                                              "w": 140,
                                               "h": 21
                                             },
                                             "text": {
                                               "content": "手势识别未成功",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#FCA5A5",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -27.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -2582,10 +2586,10 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 716,
-                                          "y": 278,
-                                          "w": 449,
-                                          "h": 23
+                                          "x": 721,
+                                          "y": 234,
+                                          "w": 565,
+                                          "h": 63
                                         },
                                         "children": [
                                           {
@@ -2593,10 +2597,10 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 711,
-                                              "y": 281,
-                                              "w": 20,
-                                              "h": 21
+                                              "x": 716,
+                                              "y": 237,
+                                              "w": 30,
+                                              "h": 31
                                             },
                                             "children": [
                                               {
@@ -2606,10 +2610,10 @@
                                                 "raycastTarget": false,
                                                 "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
                                                 "rect": {
-                                                  "x": 711,
-                                                  "y": 282,
-                                                  "w": 20,
-                                                  "h": 20
+                                                  "x": 716,
+                                                  "y": 238,
+                                                  "w": 30,
+                                                  "h": 30
                                                 }
                                               }
                                             ]
@@ -2619,28 +2623,29 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 735,
-                                              "y": 278,
-                                              "w": 397,
-                                              "h": 18
+                                              "x": 740,
+                                              "y": 234,
+                                              "w": 546,
+                                              "h": 63
                                             },
                                             "children": [
                                               {
-                                                "name": "请将手保持在Pico可视范围内，若长时间未切换，请检查交互方式 是否为手柄和手势识别自由切换模式_Text",
+                                                "name": "请将手保持在Pico可视范围内，若长时间未切换，请检查交互方式是否为手柄和手势识别自由切换模式_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 735,
-                                                  "y": 278,
-                                                  "w": 412,
-                                                  "h": 36
+                                                  "x": 740,
+                                                  "y": 233,
+                                                  "w": 546,
+                                                  "h": 64
                                                 },
                                                 "text": {
-                                                  "content": "请将手保持在Pico可视范围内，若长时间未切换，请检查交互方式\n是否为手柄和手势识别自由切换模式",
-                                                  "fontSize": 14,
+                                                  "content": "请将手保持在Pico可视范围内，若长时间未切换，请检查交互方式是否为手柄和手势识别自由切换模式",
+                                                  "fontSize": 20,
                                                   "color": "#FCA5A5",
                                                   "alignment": "MidlineLeft",
-                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                                  "wrap": true
                                                 }
                                               }
                                             ]
@@ -2654,9 +2659,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1072,
-                                      "y": 257,
-                                      "w": 69,
+                                      "x": 1191,
+                                      "y": 208,
+                                      "w": 99,
                                       "h": 22
                                     },
                                     "children": [
@@ -2674,8 +2679,8 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1072,
-                                          "y": 259,
+                                          "x": 1191,
+                                          "y": 210,
                                           "w": 69,
                                           "h": 20
                                         },
@@ -2697,17 +2702,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1077,
-                                              "y": 261,
-                                              "w": 60,
+                                              "x": 1196,
+                                              "y": 212,
+                                              "w": 80,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "未准备完成",
-                                              "fontSize": 14,
+                                              "fontSize": 11,
                                               "color": "#FCA5A5",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -38.8,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -2724,9 +2731,9 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 689,
-                              "y": 314,
-                              "w": 471,
-                              "h": 75
+                              "y": 301,
+                              "w": 605,
+                              "h": 105
                             },
                             "children": [
                               {
@@ -2744,9 +2751,9 @@
                                 },
                                 "rect": {
                                   "x": 689,
-                                  "y": 319,
-                                  "w": 471,
-                                  "h": 70
+                                  "y": 306,
+                                  "w": 605,
+                                  "h": 100
                                 },
                                 "stroke": {
                                   "color": "#22C55E61",
@@ -2767,9 +2774,9 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 693,
-                                      "y": 333,
-                                      "w": 20,
-                                      "h": 22
+                                      "y": 320,
+                                      "w": 28,
+                                      "h": 29
                                     },
                                     "children": [
                                       {
@@ -2777,12 +2784,12 @@
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
-                                        "sprite": "Assets/UI/CollectPanel/Icons/art23.png",
+                                        "sprite": "Assets/UI/CollectPanel/Icons/art27.png",
                                         "rect": {
                                           "x": 693,
-                                          "y": 335,
-                                          "w": 20,
-                                          "h": 20
+                                          "y": 322,
+                                          "w": 30,
+                                          "h": 30
                                         }
                                       }
                                     ]
@@ -2793,9 +2800,9 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 713,
-                                      "y": 331,
+                                      "y": 318,
                                       "w": 432,
-                                      "h": 44
+                                      "h": 26
                                     },
                                     "children": [
                                       {
@@ -2804,9 +2811,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 713,
-                                          "y": 331,
+                                          "y": 318,
                                           "w": 432,
-                                          "h": 21
+                                          "h": 27
                                         },
                                         "children": [
                                           {
@@ -2814,17 +2821,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 713,
-                                              "y": 331,
-                                              "w": 80,
+                                              "x": 725,
+                                              "y": 325,
+                                              "w": 100,
                                               "h": 21
                                             },
                                             "text": {
                                               "content": "手部未识别",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -27.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -2835,9 +2844,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 713,
-                                          "y": 352,
-                                          "w": 435,
-                                          "h": 23
+                                          "y": 345,
+                                          "w": 560,
+                                          "h": 58
                                         },
                                         "children": [
                                           {
@@ -2846,7 +2855,7 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 713,
-                                              "y": 358,
+                                              "y": 350,
                                               "w": 20,
                                               "h": 21
                                             },
@@ -2856,10 +2865,10 @@
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art28.png",
                                                 "rect": {
                                                   "x": 713,
-                                                  "y": 359,
+                                                  "y": 351,
                                                   "w": 20,
                                                   "h": 20
                                                 }
@@ -2872,27 +2881,28 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 733,
-                                              "y": 357,
-                                              "w": 425,
-                                              "h": 18
+                                              "y": 350,
+                                              "w": 540,
+                                              "h": 53
                                             },
                                             "children": [
                                               {
-                                                "name": "确保环境光线充足，避免手部被遮挡；张开五指，缓慢移入视野中心_Text",
+                                                "name": "相机初始化成功_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
                                                   "x": 733,
-                                                  "y": 357,
-                                                  "w": 420,
-                                                  "h": 18
+                                                  "y": 350,
+                                                  "w": 540,
+                                                  "h": 53
                                                 },
                                                 "text": {
-                                                  "content": "确保环境光线充足，避免手部被遮挡；张开五指，缓慢移入视野中心",
-                                                  "fontSize": 14,
+                                                  "content": "相机初始化成功",
+                                                  "fontSize": 20,
                                                   "color": "#86EFAC",
                                                   "alignment": "MidlineLeft",
-                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                                  "wrap": true
                                                 }
                                               }
                                             ]
@@ -2906,9 +2916,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1071,
-                                      "y": 331,
-                                      "w": 74,
+                                      "x": 1190,
+                                      "y": 321,
+                                      "w": 90,
                                       "h": 22
                                     },
                                     "children": [
@@ -2926,9 +2936,9 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1071,
-                                          "y": 333,
-                                          "w": 74,
+                                          "x": 1190,
+                                          "y": 323,
+                                          "w": 90,
                                           "h": 20
                                         },
                                         "stroke": {
@@ -2949,17 +2959,18 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1071,
-                                              "y": 335,
-                                              "w": 74,
+                                              "x": 1190,
+                                              "y": 325,
+                                              "w": 85,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "准备完成",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "Center",
                                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -57.6,
                                               "wrap": true
                                             }
                                           }
@@ -2984,9 +2995,9 @@
                                 },
                                 "rect": {
                                   "x": 689,
-                                  "y": 319,
-                                  "w": 471,
-                                  "h": 70
+                                  "y": 306,
+                                  "w": 605,
+                                  "h": 100
                                 },
                                 "stroke": {
                                   "color": "#F8717166",
@@ -3007,7 +3018,7 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 707,
-                                      "y": 332,
+                                      "y": 319,
                                       "w": 16,
                                       "h": 18
                                     }
@@ -3020,9 +3031,9 @@
                                     "sprite": "Assets/UI/CollectPanel/Icons/art25.png",
                                     "rect": {
                                       "x": 692,
-                                      "y": 334,
-                                      "w": 20,
-                                      "h": 20
+                                      "y": 321,
+                                      "w": 30,
+                                      "h": 30
                                     }
                                   },
                                   {
@@ -3031,8 +3042,8 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 716,
-                                      "y": 332,
-                                      "w": 346,
+                                      "y": 319,
+                                      "w": 471,
                                       "h": 44
                                     },
                                     "children": [
@@ -3042,9 +3053,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 716,
-                                          "y": 332,
-                                          "w": 346,
-                                          "h": 21
+                                          "y": 319,
+                                          "w": 471,
+                                          "h": 28
                                         },
                                         "children": [
                                           {
@@ -3052,17 +3063,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 716,
-                                              "y": 332,
-                                              "w": 128,
+                                              "x": 721,
+                                              "y": 322,
+                                              "w": 160,
                                               "h": 21
                                             },
                                             "text": {
                                               "content": "相机未初始化成功",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#FCA5A5",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -27.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -3073,9 +3086,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 716,
-                                          "y": 353,
-                                          "w": 449,
-                                          "h": 23
+                                          "y": 347,
+                                          "w": 537,
+                                          "h": 53
                                         },
                                         "children": [
                                           {
@@ -3084,7 +3097,7 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 711,
-                                              "y": 356,
+                                              "y": 350,
                                               "w": 20,
                                               "h": 21
                                             },
@@ -3094,10 +3107,10 @@
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art30.png",
                                                 "rect": {
                                                   "x": 711,
-                                                  "y": 357,
+                                                  "y": 351,
                                                   "w": 20,
                                                   "h": 20
                                                 }
@@ -3110,9 +3123,9 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 735,
-                                              "y": 359,
-                                              "w": 397,
-                                              "h": 18
+                                              "y": 347,
+                                              "w": 518,
+                                              "h": 51
                                             },
                                             "children": [
                                               {
@@ -3121,16 +3134,17 @@
                                                 "raycastTarget": false,
                                                 "rect": {
                                                   "x": 735,
-                                                  "y": 359,
-                                                  "w": 398,
-                                                  "h": 18
+                                                  "y": 347,
+                                                  "w": 543,
+                                                  "h": 60
                                                 },
                                                 "text": {
                                                   "content": "等待一段时间，若长时间不能初始化成功，尝试重启Pico后重试",
-                                                  "fontSize": 14,
+                                                  "fontSize": 20,
                                                   "color": "#FCA5A5",
                                                   "alignment": "MidlineLeft",
-                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                                  "wrap": true
                                                 }
                                               }
                                             ]
@@ -3144,9 +3158,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1072,
-                                      "y": 332,
-                                      "w": 69,
+                                      "x": 1177,
+                                      "y": 322,
+                                      "w": 100,
                                       "h": 22
                                     },
                                     "children": [
@@ -3164,9 +3178,9 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1072,
-                                          "y": 334,
-                                          "w": 69,
+                                          "x": 1177,
+                                          "y": 324,
+                                          "w": 100,
                                           "h": 20
                                         },
                                         "stroke": {
@@ -3187,17 +3201,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1077,
-                                              "y": 336,
-                                              "w": 60,
+                                              "x": 1174,
+                                              "y": 326,
+                                              "w": 105,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "未准备完成",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#FCA5A5",
-                                              "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "alignment": "Center",
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -57.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -3214,9 +3230,9 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 689,
-                              "y": 389,
-                              "w": 471,
-                              "h": 75
+                              "y": 406,
+                              "w": 605,
+                              "h": 106
                             },
                             "children": [
                               {
@@ -3234,9 +3250,9 @@
                                 },
                                 "rect": {
                                   "x": 689,
-                                  "y": 394,
-                                  "w": 471,
-                                  "h": 70
+                                  "y": 411,
+                                  "w": 605,
+                                  "h": 101
                                 },
                                 "stroke": {
                                   "color": "#22C55E61",
@@ -3256,10 +3272,10 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 693,
-                                      "y": 408,
-                                      "w": 20,
-                                      "h": 22
+                                      "x": 689,
+                                      "y": 419,
+                                      "w": 28,
+                                      "h": 29
                                     },
                                     "children": [
                                       {
@@ -3267,12 +3283,12 @@
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
-                                        "sprite": "Assets/UI/CollectPanel/Icons/art23.png",
+                                        "sprite": "Assets/UI/CollectPanel/Icons/art31.png",
                                         "rect": {
-                                          "x": 693,
-                                          "y": 410,
-                                          "w": 20,
-                                          "h": 20
+                                          "x": 689,
+                                          "y": 421,
+                                          "w": 30,
+                                          "h": 30
                                         }
                                       }
                                     ]
@@ -3283,9 +3299,9 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 713,
-                                      "y": 406,
+                                      "y": 423,
                                       "w": 432,
-                                      "h": 44
+                                      "h": 82
                                     },
                                     "children": [
                                       {
@@ -3294,9 +3310,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 713,
-                                          "y": 406,
-                                          "w": 432,
-                                          "h": 21
+                                          "y": 423,
+                                          "w": 427,
+                                          "h": 35
                                         },
                                         "children": [
                                           {
@@ -3305,16 +3321,18 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 713,
-                                              "y": 406,
-                                              "w": 144,
+                                              "y": 423,
+                                              "w": 180,
                                               "h": 21
                                             },
                                             "text": {
                                               "content": "追踪器识别校准成功",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -27.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -3325,9 +3343,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 713,
-                                          "y": 427,
-                                          "w": 435,
-                                          "h": 23
+                                          "y": 458,
+                                          "w": 558,
+                                          "h": 47
                                         },
                                         "children": [
                                           {
@@ -3336,9 +3354,9 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 713,
-                                              "y": 433,
-                                              "w": 20,
-                                              "h": 21
+                                              "y": 464,
+                                              "w": 30,
+                                              "h": 31
                                             },
                                             "children": [
                                               {
@@ -3349,9 +3367,9 @@
                                                 "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                                 "rect": {
                                                   "x": 713,
-                                                  "y": 434,
-                                                  "w": 20,
-                                                  "h": 20
+                                                  "y": 465,
+                                                  "w": 30,
+                                                  "h": 30
                                                 }
                                               }
                                             ]
@@ -3362,9 +3380,9 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 733,
-                                              "y": 432,
-                                              "w": 425,
-                                              "h": 18
+                                              "y": 463,
+                                              "w": 538,
+                                              "h": 42
                                             },
                                             "children": [
                                               {
@@ -3373,16 +3391,17 @@
                                                 "raycastTarget": false,
                                                 "rect": {
                                                   "x": 733,
-                                                  "y": 432,
-                                                  "w": 182,
-                                                  "h": 18
+                                                  "y": 463,
+                                                  "w": 538,
+                                                  "h": 42
                                                 },
                                                 "text": {
                                                   "content": "追踪器识别校准成功，请保持",
-                                                  "fontSize": 14,
+                                                  "fontSize": 20,
                                                   "color": "#86EFAC",
                                                   "alignment": "MidlineLeft",
-                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                                  "wrap": true
                                                 }
                                               }
                                             ]
@@ -3396,9 +3415,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1071,
-                                      "y": 406,
-                                      "w": 74,
+                                      "x": 1193,
+                                      "y": 426,
+                                      "w": 87,
                                       "h": 22
                                     },
                                     "children": [
@@ -3416,9 +3435,9 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1071,
-                                          "y": 408,
-                                          "w": 74,
+                                          "x": 1193,
+                                          "y": 428,
+                                          "w": 87,
                                           "h": 20
                                         },
                                         "stroke": {
@@ -3439,17 +3458,18 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1071,
-                                              "y": 410,
-                                              "w": 74,
+                                              "x": 1196,
+                                              "y": 433,
+                                              "w": 81,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "准备完成",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "Center",
                                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -57.6,
                                               "wrap": true
                                             }
                                           }
@@ -3474,9 +3494,9 @@
                                 },
                                 "rect": {
                                   "x": 689,
-                                  "y": 394,
-                                  "w": 471,
-                                  "h": 70
+                                  "y": 411,
+                                  "w": 605,
+                                  "h": 101
                                 },
                                 "stroke": {
                                   "color": "#F8717166",
@@ -3492,38 +3512,27 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "Container",
-                                    "type": "Container",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 707,
-                                      "y": 407,
-                                      "w": 16,
-                                      "h": 18
-                                    }
-                                  },
-                                  {
                                     "name": "Icon_Image",
                                     "type": "Image",
                                     "color": "#FFFFFF",
                                     "raycastTarget": false,
                                     "sprite": "Assets/UI/CollectPanel/Icons/art25.png",
                                     "rect": {
-                                      "x": 692,
-                                      "y": 409,
-                                      "w": 20,
-                                      "h": 20
+                                      "x": 689,
+                                      "y": 422,
+                                      "w": 30,
+                                      "h": 30
                                     }
                                   },
                                   {
-                                    "name": "Container_1",
+                                    "name": "Container",
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 716,
-                                      "y": 407,
+                                      "y": 424,
                                       "w": 346,
-                                      "h": 44
+                                      "h": 28
                                     },
                                     "children": [
                                       {
@@ -3532,9 +3541,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 716,
-                                          "y": 407,
+                                          "y": 424,
                                           "w": 346,
-                                          "h": 21
+                                          "h": 28
                                         },
                                         "children": [
                                           {
@@ -3543,16 +3552,18 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 716,
-                                              "y": 407,
-                                              "w": 96,
+                                              "y": 424,
+                                              "w": 196,
                                               "h": 21
                                             },
                                             "text": {
                                               "content": "追踪器未就位",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#FCA5A5",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -27.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -3563,9 +3574,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 716,
-                                          "y": 428,
-                                          "w": 449,
-                                          "h": 23
+                                          "y": 452,
+                                          "w": 553,
+                                          "h": 63
                                         },
                                         "children": [
                                           {
@@ -3574,9 +3585,9 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 711,
-                                              "y": 431,
-                                              "w": 20,
-                                              "h": 21
+                                              "y": 455,
+                                              "w": 30,
+                                              "h": 31
                                             },
                                             "children": [
                                               {
@@ -3587,9 +3598,9 @@
                                                 "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
                                                 "rect": {
                                                   "x": 711,
-                                                  "y": 432,
-                                                  "w": 20,
-                                                  "h": 20
+                                                  "y": 456,
+                                                  "w": 30,
+                                                  "h": 30
                                                 }
                                               }
                                             ]
@@ -3600,27 +3611,29 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 735,
-                                              "y": 428,
-                                              "w": 397,
-                                              "h": 18
+                                              "y": 452,
+                                              "w": 550,
+                                              "h": 55
                                             },
                                             "children": [
                                               {
-                                                "name": "请检查追踪器是否配对成功，如果配对成功且长时间未就位，请重新 校准_Text",
+                                                "name": "请检查追踪器是否配对成功，如果配对成功且长时间未就位，请重新校准_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
                                                   "x": 735,
-                                                  "y": 428,
-                                                  "w": 420,
-                                                  "h": 36
+                                                  "y": 461,
+                                                  "w": 550,
+                                                  "h": 46
                                                 },
                                                 "text": {
-                                                  "content": "请检查追踪器是否配对成功，如果配对成功且长时间未就位，请重新\n校准",
-                                                  "fontSize": 14,
+                                                  "content": "请检查追踪器是否配对成功，如果配对成功且长时间未就位，请重新校准",
+                                                  "fontSize": 20,
                                                   "color": "#FCA5A5",
                                                   "alignment": "MidlineLeft",
-                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                                  "lineSpacing": -44.6,
+                                                  "wrap": true
                                                 }
                                               }
                                             ]
@@ -3634,9 +3647,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1072,
-                                      "y": 407,
-                                      "w": 69,
+                                      "x": 1176,
+                                      "y": 427,
+                                      "w": 113,
                                       "h": 22
                                     },
                                     "children": [
@@ -3654,9 +3667,9 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1072,
-                                          "y": 409,
-                                          "w": 69,
+                                          "x": 1176,
+                                          "y": 429,
+                                          "w": 113,
                                           "h": 20
                                         },
                                         "stroke": {
@@ -3677,17 +3690,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1077,
-                                              "y": 411,
-                                              "w": 60,
+                                              "x": 1185,
+                                              "y": 431,
+                                              "w": 103,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "未准备完成",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#FCA5A5",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -57.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -3704,9 +3719,9 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 689,
-                              "y": 464,
-                              "w": 471,
-                              "h": 75
+                              "y": 512,
+                              "w": 605,
+                              "h": 106
                             },
                             "children": [
                               {
@@ -3724,9 +3739,9 @@
                                 },
                                 "rect": {
                                   "x": 689,
-                                  "y": 469,
-                                  "w": 471,
-                                  "h": 70
+                                  "y": 517,
+                                  "w": 605,
+                                  "h": 100
                                 },
                                 "stroke": {
                                   "color": "#22C55E61",
@@ -3746,10 +3761,10 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 693,
-                                      "y": 483,
-                                      "w": 20,
-                                      "h": 22
+                                      "x": 689,
+                                      "y": 525,
+                                      "w": 28,
+                                      "h": 29
                                     },
                                     "children": [
                                       {
@@ -3757,12 +3772,12 @@
                                         "type": "Image",
                                         "color": "#FFFFFF",
                                         "raycastTarget": false,
-                                        "sprite": "Assets/UI/CollectPanel/Icons/art23.png",
+                                        "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                         "rect": {
-                                          "x": 693,
-                                          "y": 485,
-                                          "w": 20,
-                                          "h": 20
+                                          "x": 689,
+                                          "y": 527,
+                                          "w": 30,
+                                          "h": 30
                                         }
                                       }
                                     ]
@@ -3772,10 +3787,10 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 713,
-                                      "y": 481,
+                                      "x": 719,
+                                      "y": 529,
                                       "w": 432,
-                                      "h": 44
+                                      "h": 25
                                     },
                                     "children": [
                                       {
@@ -3783,8 +3798,8 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 713,
-                                          "y": 481,
+                                          "x": 719,
+                                          "y": 529,
                                           "w": 432,
                                           "h": 21
                                         },
@@ -3794,17 +3809,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 713,
-                                              "y": 481,
-                                              "w": 112,
+                                              "x": 719,
+                                              "y": 529,
+                                              "w": 159,
                                               "h": 21
                                             },
                                             "text": {
                                               "content": "腕手匹配度达标",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -27.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -3814,10 +3831,10 @@
                                         "type": "Container",
                                         "raycastTarget": false,
                                         "rect": {
-                                          "x": 713,
-                                          "y": 502,
+                                          "x": 719,
+                                          "y": 550,
                                           "w": 435,
-                                          "h": 23
+                                          "h": 34
                                         },
                                         "children": [
                                           {
@@ -3825,36 +3842,21 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 713,
-                                              "y": 508,
-                                              "w": 20,
-                                              "h": 21
-                                            },
-                                            "children": [
-                                              {
-                                                "name": "Icon_Image",
-                                                "type": "Image",
-                                                "color": "#FFFFFF",
-                                                "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
-                                                "rect": {
-                                                  "x": 713,
-                                                  "y": 509,
-                                                  "w": 20,
-                                                  "h": 20
-                                                }
-                                              }
-                                            ]
+                                              "x": 719,
+                                              "y": 555,
+                                              "w": 30,
+                                              "h": 31
+                                            }
                                           },
                                           {
                                             "name": "Text",
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 733,
-                                              "y": 507,
+                                              "x": 739,
+                                              "y": 555,
                                               "w": 425,
-                                              "h": 18
+                                              "h": 29
                                             },
                                             "children": [
                                               {
@@ -3862,17 +3864,19 @@
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
-                                                  "x": 733,
-                                                  "y": 507,
-                                                  "w": 182,
-                                                  "h": 18
+                                                  "x": 739,
+                                                  "y": 564,
+                                                  "w": 425,
+                                                  "h": 30
                                                 },
                                                 "text": {
                                                   "content": "腕手匹配度符合要求，请保持",
-                                                  "fontSize": 14,
+                                                  "fontSize": 20,
                                                   "color": "#86EFAC",
                                                   "alignment": "MidlineLeft",
-                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                                  "lineSpacing": -44.6,
+                                                  "wrap": true
                                                 }
                                               }
                                             ]
@@ -3886,10 +3890,10 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1071,
-                                      "y": 481,
-                                      "w": 74,
-                                      "h": 22
+                                      "x": 1177,
+                                      "y": 532,
+                                      "w": 103,
+                                      "h": 25
                                     },
                                     "children": [
                                       {
@@ -3906,10 +3910,10 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1071,
-                                          "y": 483,
-                                          "w": 74,
-                                          "h": 20
+                                          "x": 1177,
+                                          "y": 534,
+                                          "w": 103,
+                                          "h": 23
                                         },
                                         "stroke": {
                                           "color": "#22C55E61",
@@ -3929,17 +3933,18 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1071,
-                                              "y": 485,
-                                              "w": 74,
-                                              "h": 15
+                                              "x": 1177,
+                                              "y": 534,
+                                              "w": 103,
+                                              "h": 23
                                             },
                                             "text": {
                                               "content": "准备完成",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "Center",
                                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -57.6,
                                               "wrap": true
                                             }
                                           }
@@ -3964,9 +3969,9 @@
                                 },
                                 "rect": {
                                   "x": 689,
-                                  "y": 469,
-                                  "w": 471,
-                                  "h": 70
+                                  "y": 517,
+                                  "w": 605,
+                                  "h": 100
                                 },
                                 "stroke": {
                                   "color": "#F8717166",
@@ -3982,38 +3987,27 @@
                                 },
                                 "children": [
                                   {
-                                    "name": "Container",
-                                    "type": "Container",
-                                    "raycastTarget": false,
-                                    "rect": {
-                                      "x": 707,
-                                      "y": 482,
-                                      "w": 16,
-                                      "h": 18
-                                    }
-                                  },
-                                  {
                                     "name": "Icon_Image",
                                     "type": "Image",
                                     "color": "#FFFFFF",
                                     "raycastTarget": false,
                                     "sprite": "Assets/UI/CollectPanel/Icons/art25.png",
                                     "rect": {
-                                      "x": 692,
-                                      "y": 484,
-                                      "w": 20,
-                                      "h": 20
+                                      "x": 689,
+                                      "y": 526,
+                                      "w": 30,
+                                      "h": 30
                                     }
                                   },
                                   {
-                                    "name": "Container_1",
+                                    "name": "Container",
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 716,
-                                      "y": 482,
-                                      "w": 346,
-                                      "h": 44
+                                      "y": 530,
+                                      "w": 523,
+                                      "h": 83
                                     },
                                     "children": [
                                       {
@@ -4022,8 +4016,8 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 716,
-                                          "y": 482,
-                                          "w": 346,
+                                          "y": 530,
+                                          "w": 523,
                                           "h": 21
                                         },
                                         "children": [
@@ -4033,16 +4027,18 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 716,
-                                              "y": 482,
-                                              "w": 128,
+                                              "y": 530,
+                                              "w": 164,
                                               "h": 21
                                             },
                                             "text": {
                                               "content": "腕手匹配度未达标",
-                                              "fontSize": 14,
+                                              "fontSize": 20,
                                               "color": "#FCA5A5",
                                               "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -27.6,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -4053,9 +4049,9 @@
                                         "raycastTarget": false,
                                         "rect": {
                                           "x": 716,
-                                          "y": 503,
-                                          "w": 449,
-                                          "h": 23
+                                          "y": 551,
+                                          "w": 490,
+                                          "h": 62
                                         },
                                         "children": [
                                           {
@@ -4064,9 +4060,9 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 711,
-                                              "y": 506,
-                                              "w": 20,
-                                              "h": 21
+                                              "y": 554,
+                                              "w": 30,
+                                              "h": 31
                                             },
                                             "children": [
                                               {
@@ -4074,12 +4070,12 @@
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art37.png",
                                                 "rect": {
                                                   "x": 711,
-                                                  "y": 507,
-                                                  "w": 20,
-                                                  "h": 20
+                                                  "y": 555,
+                                                  "w": 30,
+                                                  "h": 30
                                                 }
                                               }
                                             ]
@@ -4090,27 +4086,28 @@
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 735,
-                                              "y": 503,
-                                              "w": 397,
-                                              "h": 18
+                                              "y": 563,
+                                              "w": 504,
+                                              "h": 50
                                             },
                                             "children": [
                                               {
-                                                "name": "请保持手在Pico可视范围内，并检查追踪器是否配对成功，如果配 对成功且长时间未就位，请重新校准后重试_Text",
+                                                "name": "请保持手在Pico可视范围内，并检查追踪器是否配对成功，如果配对成功且长时间未就位，请重新校准后重试_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
                                                   "x": 735,
-                                                  "y": 503,
-                                                  "w": 412,
-                                                  "h": 36
+                                                  "y": 562,
+                                                  "w": 504,
+                                                  "h": 51
                                                 },
                                                 "text": {
-                                                  "content": "请保持手在Pico可视范围内，并检查追踪器是否配对成功，如果配\n对成功且长时间未就位，请重新校准后重试",
-                                                  "fontSize": 14,
+                                                  "content": "请保持手在Pico可视范围内，并检查追踪器是否配对成功，如果配对成功且长时间未就位，请重新校准后重试",
+                                                  "fontSize": 20,
                                                   "color": "#FCA5A5",
                                                   "alignment": "MidlineLeft",
-                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                                  "wrap": true
                                                 }
                                               }
                                             ]
@@ -4124,9 +4121,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1072,
-                                      "y": 482,
-                                      "w": 69,
+                                      "x": 1179,
+                                      "y": 533,
+                                      "w": 98,
                                       "h": 22
                                     },
                                     "children": [
@@ -4144,9 +4141,9 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1072,
-                                          "y": 484,
-                                          "w": 69,
+                                          "x": 1179,
+                                          "y": 535,
+                                          "w": 98,
                                           "h": 20
                                         },
                                         "stroke": {
@@ -4167,17 +4164,19 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1077,
-                                              "y": 486,
-                                              "w": 60,
+                                              "x": 1179,
+                                              "y": 537,
+                                              "w": 99,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "未准备完成",
-                                              "fontSize": 14,
+                                              "fontSize": 11,
                                               "color": "#FCA5A5",
-                                              "alignment": "MidlineLeft",
-                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                              "alignment": "Center",
+                                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                              "lineSpacing": -38.8,
+                                              "wrap": true
                                             }
                                           }
                                         ]
@@ -4195,10 +4194,10 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 188,
-                          "y": 233,
-                          "w": 460,
-                          "h": 311
+                          "x": 63,
+                          "y": 188,
+                          "w": 585,
+                          "h": 438
                         },
                         "children": [
                           {
@@ -4206,10 +4205,10 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 188,
-                              "y": 233,
-                              "w": 460,
-                              "h": 310
+                              "x": 63,
+                              "y": 188,
+                              "w": 585,
+                              "h": 438
                             },
                             "children": [
                               {
@@ -4217,17 +4216,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 188,
-                                  "y": 233,
-                                  "w": 460,
-                                  "h": 310
+                                  "x": 63,
+                                  "y": 188,
+                                  "w": 578,
+                                  "h": 438
                                 },
                                 "text": {
                                   "content": "\"id\": 1001, \n\"package_id\": 7, \n\"title\": \"厨房取放物体\",   \"task_description\": \"...\",\n\"quota_per_user\": 20, \n\"quota_per_user_scene\": 10,    \"teaching_video_url\": \"http://.../demo.mp4\", \n\"reference_img_urls\": [\"http://.../1.jpg\"],   \"initial_state\": \"...\", \n\"collector_initial_pose\": \"...\",\n\"collection_mode\": \"free\",   \"narration_policy\": \"say_then_do\", \n\"sop_steps\": [\"步骤1\",\"步骤2\"],     \"lighting\": \"...\", \n  \"clutter_level\": \"...\",  ",
-                                  "fontSize": 14,
+                                  "fontSize": 24,
                                   "color": "#FFFFFF",
                                   "alignment": "MidlineLeft",
-                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                                  "lineSpacing": -24.3,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -4248,9 +4249,9 @@
                           "b": 7
                         },
                         "rect": {
-                          "x": 173,
-                          "y": 553,
-                          "w": 991,
+                          "x": 44,
+                          "y": 640,
+                          "w": 1257,
                           "h": 36
                         },
                         "stroke": {
@@ -4271,9 +4272,9 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 192,
-                              "y": 563,
-                              "w": 954,
+                              "x": 63,
+                              "y": 650,
+                              "w": 1220,
                               "h": 16
                             },
                             "children": [
@@ -4282,9 +4283,9 @@
                                 "type": "Container",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 192,
-                                  "y": 556,
-                                  "w": 954,
+                                  "x": 142,
+                                  "y": 643,
+                                  "w": 1061,
                                   "h": 30
                                 },
                                 "children": [
@@ -4293,18 +4294,19 @@
                                     "type": "Text",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 192,
-                                      "y": 556,
-                                      "w": 969,
+                                      "x": 142,
+                                      "y": 643,
+                                      "w": 1061,
                                       "h": 26
                                     },
                                     "text": {
                                       "content": "head:0",
-                                      "fontSize": 20,
+                                      "fontSize": 24,
                                       "color": "#FFFFFF",
                                       "alignment": "Center",
                                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                      "lineSpacing": -50.1
+                                      "lineSpacing": -63.8,
+                                      "wrap": true
                                     }
                                   }
                                 ]
@@ -4318,10 +4320,10 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 173,
-                          "y": 606,
-                          "w": 991,
-                          "h": 62
+                          "x": 42,
+                          "y": 684,
+                          "w": 1250,
+                          "h": 86
                         },
                         "children": [
                           {
@@ -4329,18 +4331,18 @@
                             "type": "Button",
                             "color": "#FFFFFF",
                             "rect": {
-                              "x": 173,
-                              "y": 606,
+                              "x": 100,
+                              "y": 696,
                               "w": 441,
                               "h": 62
                             },
                             "text": {
                               "content": "准备中",
-                              "fontSize": 20,
+                              "fontSize": 32,
                               "color": "#FFFFFF",
                               "alignment": "Center",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "characterSpacing": 5.0
+                              "characterSpacing": 3.1
                             },
                             "gradient": {
                               "type": "Linear",
@@ -4362,18 +4364,18 @@
                             "type": "Button",
                             "color": "#FFFFFF",
                             "rect": {
-                              "x": 723,
-                              "y": 606,
+                              "x": 789,
+                              "y": 696,
                               "w": 441,
                               "h": 62
                             },
                             "text": {
                               "content": "结束采集",
-                              "fontSize": 20,
+                              "fontSize": 32,
                               "color": "#FFFFFF",
                               "alignment": "Center",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "characterSpacing": 5.0
+                              "characterSpacing": 3.1
                             },
                             "gradient": {
                               "type": "Linear",
@@ -4406,10 +4408,10 @@
                           "b": 7
                         },
                         "rect": {
-                          "x": 170,
-                          "y": 685,
-                          "w": 998,
-                          "h": 83
+                          "x": 16,
+                          "y": 780,
+                          "w": 992,
+                          "h": 136
                         },
                         "stroke": {
                           "color": "#FFFFFF12",
@@ -4429,10 +4431,10 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 188,
-                              "y": 696,
-                              "w": 962,
-                              "h": 17
+                              "x": 34,
+                              "y": 791,
+                              "w": 956,
+                              "h": 22
                             },
                             "children": [
                               {
@@ -4440,18 +4442,19 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 188,
-                                  "y": 696,
-                                  "w": 56,
+                                  "x": 34,
+                                  "y": 791,
+                                  "w": 140,
                                   "h": 17
                                 },
                                 "text": {
                                   "content": "使用说明",
-                                  "fontSize": 14,
+                                  "fontSize": 24,
                                   "color": "#A8BCD8",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": -14.7
+                                  "lineSpacing": -63.8,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -4461,10 +4464,10 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 188,
-                              "y": 713,
-                              "w": 962,
-                              "h": 44
+                              "x": 34,
+                              "y": 813,
+                              "w": 956,
+                              "h": 104
                             },
                             "children": [
                               {
@@ -4472,18 +4475,18 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 188,
-                                  "y": 718,
-                                  "w": 962,
-                                  "h": 39
+                                  "x": 34,
+                                  "y": 818,
+                                  "w": 956,
+                                  "h": 99
                                 },
                                 "text": {
-                                  "content": "手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿\n点「开始准备」保持手柄约 1 秒自动开始；结束后点「保存完成」再选",
-                                  "fontSize": 14,
+                                  "content": "手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿\n点「开始准备」保持手柄约 1 秒自动开始；开始后语音说：开始采集;结束前说：结束采集\n结束后点「结束采集」再选相对应的标签，然后重新开始",
+                                  "fontSize": 20,
                                   "color": "#F6F9FE",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": 15.5,
+                                  "lineSpacing": 12.4,
                                   "wrap": true
                                 }
                               }
@@ -4511,10 +4514,10 @@
               "b": 12
             },
             "rect": {
-              "x": 116,
-              "y": 769,
-              "w": 1106,
-              "h": 40
+              "x": 1008,
+              "y": 861,
+              "w": 327,
+              "h": 62
             },
             "stroke": {
               "color": "#00D4C814",
@@ -4534,10 +4537,10 @@
                 "type": "Button",
                 "color": "#4D5A7F",
                 "rect": {
-                  "x": 1048,
-                  "y": 779,
-                  "w": 161,
-                  "h": 30
+                  "x": 1050,
+                  "y": 866,
+                  "w": 244,
+                  "h": 52
                 },
                 "sprite": "Assets/UI/Common/round7.png",
                 "imageType": "Sliced",
@@ -4549,7 +4552,7 @@
                 },
                 "text": {
                   "content": "返回选择任务",
-                  "fontSize": 20,
+                  "fontSize": 32,
                   "color": "#A4BDEB",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
@@ -4572,10 +4575,10 @@
                 "type": "Button",
                 "color": "#FF9898A8",
                 "rect": {
-                  "x": 1048,
-                  "y": 779,
-                  "w": 102,
-                  "h": 30
+                  "x": 1050,
+                  "y": 866,
+                  "w": 244,
+                  "h": 52
                 },
                 "sprite": "Assets/UI/Common/round7.png",
                 "imageType": "Sliced",
@@ -4587,7 +4590,7 @@
                 },
                 "text": {
                   "content": "结束录制",
-                  "fontSize": 20,
+                  "fontSize": 32,
                   "color": "#FFFFFF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"

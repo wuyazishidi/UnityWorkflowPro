@@ -7,7 +7,7 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 
 | key | 类型 | 文案 | path | 备注 |
 |-----|------|------|------|------|
-| `returnLoginBtn` | Button | 退出登录 | `Container_Image/ReturnLogin_Btn` |  |
+| `returnMouduleBtn` | Button | 返回 | `Container_Image/ReturnMoudule_Btn` |  |
 | `text1` | Text | 任务列表 | `Container_Image/Container/任务列表_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `userNameText` | Text | （collector01） | `Container_Image/Container/UserName_Text` |  |
 | `refreshBtn` | Button | 刷 新 | `Container_Image/Refresh_Btn` |  |

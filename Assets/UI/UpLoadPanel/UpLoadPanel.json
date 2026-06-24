@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "referenceWidth": 1106,
-  "referenceHeight": 778,
+  "referenceWidth": 1337,
+  "referenceHeight": 931,
   "rootName": "UpLoadPanel",
   "root": {
     "name": "UpLoadPanel",
@@ -10,8 +10,8 @@
     "rect": {
       "x": 0,
       "y": 0,
-      "w": 1106,
-      "h": 778
+      "w": 1337,
+      "h": 931
     },
     "children": [
       {
@@ -22,8 +22,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 931
         },
         "sprite": "Assets/UI/Common/round16.png",
         "imageType": "Sliced",
@@ -41,8 +41,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 931
         },
         "children": [
           {
@@ -52,8 +52,8 @@
             "rect": {
               "x": 0,
               "y": 0,
-              "w": 1106,
-              "h": 778
+              "w": 1337,
+              "h": 931
             },
             "children": [
               {
@@ -65,8 +65,8 @@
                 "rect": {
                   "x": 0,
                   "y": 0,
-                  "w": 1106,
-                  "h": 778
+                  "w": 1337,
+                  "h": 931
                 }
               }
             ]
@@ -78,8 +78,8 @@
             "rect": {
               "x": 0,
               "y": 0,
-              "w": 1106,
-              "h": 778
+              "w": 1337,
+              "h": 931
             }
           }
         ]
@@ -89,10 +89,10 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 506,
-          "y": 64,
-          "w": 94,
-          "h": 33
+          "x": 230,
+          "y": 28,
+          "w": 876,
+          "h": 110
         },
         "children": [
           {
@@ -100,18 +100,41 @@
             "type": "Text",
             "raycastTarget": false,
             "rect": {
-              "x": 503,
-              "y": 64,
-              "w": 101,
-              "h": 33
+              "x": 240,
+              "y": 38,
+              "w": 856,
+              "h": 45
             },
             "text": {
               "content": "数据上传",
-              "fontSize": 24,
+              "fontSize": 36,
               "color": "#E8F4FFEB",
               "alignment": "Center",
               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-              "characterSpacing": 6.2
+              "lineSpacing": -40.9,
+              "characterSpacing": 4.2,
+              "wrap": true
+            }
+          },
+          {
+            "name": "Tip_Text",
+            "type": "Text",
+            "raycastTarget": false,
+            "rect": {
+              "x": 240,
+              "y": 83,
+              "w": 856,
+              "h": 45
+            },
+            "text": {
+              "content": "数据上传",
+              "fontSize": 20,
+              "color": "#E8F4FFEB",
+              "alignment": "Center",
+              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+              "lineSpacing": 32.4,
+              "characterSpacing": 7.5,
+              "wrap": true
             }
           }
         ]
@@ -121,19 +144,19 @@
         "type": "ScrollList",
         "raycastTarget": true,
         "rect": {
-          "x": 120,
+          "x": 88,
           "y": 129,
-          "w": 866,
-          "h": 485
+          "w": 1162,
+          "h": 590
         },
         "scroll": {
           "horizontal": false,
           "vertical": true,
           "padding": {
-            "l": 15,
-            "t": 15,
-            "r": 30,
-            "b": 15
+            "l": 14,
+            "t": 14,
+            "r": 31,
+            "b": 14
           },
           "spacing": 8
         },
@@ -167,10 +190,10 @@
               "b": 8
             },
             "rect": {
-              "x": 135,
-              "y": 144,
-              "w": 821,
-              "h": 56
+              "x": 102,
+              "y": 143,
+              "w": 1117,
+              "h": 70
             },
             "stroke": {
               "color": "#388BFD26",
@@ -190,10 +213,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 135,
+                  "x": 103,
                   "y": 144,
-                  "w": 819,
-                  "h": 52
+                  "w": 1115,
+                  "h": 86
                 },
                 "children": [
                   {
@@ -202,8 +225,8 @@
                     "color": "#93C5FD59",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 155,
-                      "y": 165,
+                      "x": 123,
+                      "y": 182,
                       "w": 10,
                       "h": 10
                     },
@@ -221,8 +244,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 185,
-                      "y": 159,
+                      "x": 153,
+                      "y": 176,
                       "w": 502,
                       "h": 22
                     },
@@ -232,19 +255,19 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 185,
-                          "y": 160,
+                          "x": 153,
+                          "y": 177,
                           "w": 502,
                           "h": 22
                         },
                         "text": {
                           "content": "20260608_202511",
-                          "fontSize": 20,
+                          "fontSize": 32,
                           "color": "#E8F4FFE5",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -22.6,
-                          "characterSpacing": 1.5,
+                          "lineSpacing": -63.8,
+                          "characterSpacing": 0.9,
                           "wrap": true
                         }
                       }
@@ -255,10 +278,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 707,
-                      "y": 160,
-                      "w": 74,
-                      "h": 20
+                      "x": 675,
+                      "y": 176,
+                      "w": 133,
+                      "h": 23
                     },
                     "children": [
                       {
@@ -266,18 +289,19 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 707,
-                          "y": 160,
-                          "w": 74,
+                          "x": 675,
+                          "y": 176,
+                          "w": 133,
                           "h": 20
                         },
                         "text": {
                           "content": "98.1 MB",
-                          "fontSize": 20,
+                          "fontSize": 36,
                           "color": "#FFFFFF",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -32.6
+                          "lineSpacing": -77.0,
+                          "wrap": true
                         }
                       }
                     ]
@@ -296,10 +320,10 @@
                       "b": 4
                     },
                     "rect": {
-                      "x": 801,
-                      "y": 159,
-                      "w": 72,
-                      "h": 22
+                      "x": 828,
+                      "y": 169,
+                      "w": 122,
+                      "h": 37
                     },
                     "stroke": {
                       "color": "#FFFFFF",
@@ -319,10 +343,10 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 812,
-                          "y": 162,
-                          "w": 34,
-                          "h": 16
+                          "x": 839,
+                          "y": 179,
+                          "w": 97,
+                          "h": 17
                         },
                         "children": [
                           {
@@ -330,19 +354,20 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 812,
-                              "y": 162,
-                              "w": 61,
+                              "x": 839,
+                              "y": 179,
+                              "w": 97,
                               "h": 17
                             },
                             "text": {
                               "content": "待上传",
-                              "fontSize": 20,
+                              "fontSize": 32,
                               "color": "#FFFFFF",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": -50.1,
-                              "characterSpacing": 2.0
+                              "lineSpacing": -81.0,
+                              "characterSpacing": 1.3,
+                              "wrap": true
                             }
                           }
                         ]
@@ -354,9 +379,9 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 893,
-                      "y": 160,
-                      "w": 55,
+                      "x": 970,
+                      "y": 177,
+                      "w": 192,
                       "h": 20
                     },
                     "children": [
@@ -365,19 +390,19 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 893,
-                          "y": 160,
-                          "w": 55,
+                          "x": 970,
+                          "y": 177,
+                          "w": 160,
                           "h": 20
                         },
                         "text": {
                           "content": "—",
-                          "fontSize": 20,
+                          "fontSize": 32,
                           "color": "#FFFFFF",
                           "alignment": "MidlineRight",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -35.1,
-                          "characterSpacing": 2.0,
+                          "lineSpacing": -71.7,
+                          "characterSpacing": 1.3,
                           "wrap": true
                         }
                       }
@@ -391,8 +416,8 @@
                 "color": "#388BFD14",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 135,
-                  "y": 196,
+                  "x": 103,
+                  "y": 230,
                   "w": 819,
                   "h": 3
                 },
@@ -403,8 +428,8 @@
                     "color": "#388BFDA6",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 135,
-                      "y": 196,
+                      "x": 103,
+                      "y": 230,
                       "w": 0,
                       "h": 3
                     }
@@ -421,9 +446,9 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 120,
-          "y": 632,
-          "w": 866,
+          "x": 82,
+          "y": 751,
+          "w": 1173,
           "h": 22
         },
         "children": [
@@ -433,9 +458,9 @@
             "color": "#388BFD1A",
             "raycastTarget": false,
             "rect": {
-              "x": 120,
-              "y": 642,
-              "w": 866,
+              "x": 82,
+              "y": 761,
+              "w": 1173,
               "h": 2
             },
             "sprite": "Assets/UI/Common/round2.png",
@@ -453,8 +478,8 @@
                 "color": "#388BFD99",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 120,
-                  "y": 642,
+                  "x": 82,
+                  "y": 761,
                   "w": 0,
                   "h": 2
                 }
@@ -468,10 +493,10 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 120,
-          "y": 674,
-          "w": 866,
-          "h": 40
+          "x": 123,
+          "y": 804,
+          "w": 1083,
+          "h": 67
         },
         "children": [
           {
@@ -479,10 +504,10 @@
             "type": "Button",
             "color": "#FFFFFF0D",
             "rect": {
-              "x": 120,
-              "y": 674,
-              "w": 423,
-              "h": 40
+              "x": 123,
+              "y": 804,
+              "w": 532,
+              "h": 67
             },
             "sprite": "Assets/UI/Common/round7.png",
             "imageType": "Sliced",
@@ -494,11 +519,11 @@
             },
             "text": {
               "content": "继续采集",
-              "fontSize": 20,
+              "fontSize": 36,
               "color": "#C4E0FFF0",
               "alignment": "Center",
               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-              "characterSpacing": 5.0
+              "characterSpacing": 2.8
             }
           },
           {
@@ -506,10 +531,10 @@
             "type": "Button",
             "color": "#388BFD2E",
             "rect": {
-              "x": 563,
-              "y": 674,
-              "w": 423,
-              "h": 40
+              "x": 674,
+              "y": 804,
+              "w": 532,
+              "h": 67
             },
             "sprite": "Assets/UI/Common/round7.png",
             "imageType": "Sliced",
@@ -521,11 +546,11 @@
             },
             "text": {
               "content": "去上传",
-              "fontSize": 20,
+              "fontSize": 36,
               "color": "#A8D4FF",
               "alignment": "Center",
               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-              "characterSpacing": 5.0
+              "characterSpacing": 2.8
             }
           }
         ]

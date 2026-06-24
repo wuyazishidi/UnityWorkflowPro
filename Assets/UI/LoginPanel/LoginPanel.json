@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "referenceWidth": 1106,
-  "referenceHeight": 778,
+  "referenceWidth": 1337,
+  "referenceHeight": 931,
   "rootName": "LoginPanel",
   "root": {
     "name": "LoginPanel",
@@ -10,8 +10,8 @@
     "rect": {
       "x": 0,
       "y": 0,
-      "w": 1106,
-      "h": 778
+      "w": 1337,
+      "h": 931
     },
     "children": [
       {
@@ -22,8 +22,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 931
         },
         "sprite": "Assets/UI/Common/round16.png",
         "imageType": "Sliced",
@@ -41,8 +41,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 931
         },
         "children": [
           {
@@ -54,8 +54,8 @@
             "rect": {
               "x": 0,
               "y": 0,
-              "w": 1106,
-              "h": 778
+              "w": 1337,
+              "h": 931
             }
           },
           {
@@ -65,8 +65,8 @@
             "rect": {
               "x": 0,
               "y": 0,
-              "w": 1106,
-              "h": 778
+              "w": 1337,
+              "h": 931
             }
           }
         ]
@@ -78,8 +78,8 @@
         "rect": {
           "x": 40,
           "y": 32,
-          "w": 150,
-          "h": 44
+          "w": 166,
+          "h": 60
         },
         "children": [
           {
@@ -91,8 +91,8 @@
             "rect": {
               "x": 40,
               "y": 32,
-              "w": 44,
-              "h": 44
+              "w": 60,
+              "h": 60
             }
           },
           {
@@ -100,8 +100,8 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 96,
-              "y": 39,
+              "x": 112,
+              "y": 47,
               "w": 94,
               "h": 30
             },
@@ -111,19 +111,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 96,
-                  "y": 39,
-                  "w": 91,
+                  "x": 112,
+                  "y": 47,
+                  "w": 139,
                   "h": 30
                 },
                 "text": {
                   "content": "源策未来",
-                  "fontSize": 20,
+                  "fontSize": 32,
                   "color": "#DFF0FF",
                   "alignment": "MidlineLeft",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": 17.4,
-                  "characterSpacing": 18.0
+                  "lineSpacing": -38.8,
+                  "characterSpacing": 11.2,
+                  "wrap": true
                 }
               }
             ]
@@ -137,8 +138,8 @@
         "rect": {
           "x": 323,
           "y": 183,
-          "w": 460,
-          "h": 485
+          "w": 748,
+          "h": 608
         },
         "children": [
           {
@@ -146,10 +147,10 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 363,
-              "y": 223,
-              "w": 380,
-              "h": 58
+              "x": 362,
+              "y": 216,
+              "w": 670,
+              "h": 110
             },
             "children": [
               {
@@ -157,10 +158,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 363,
-                  "y": 240,
-                  "w": 61,
-                  "h": 25
+                  "x": 362,
+                  "y": 239,
+                  "w": 111,
+                  "h": 63
                 },
                 "children": [
                   {
@@ -168,19 +169,20 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 364,
-                      "y": 236,
-                      "w": 62,
+                      "x": 362,
+                      "y": 259,
+                      "w": 110,
                       "h": 23
                     },
                     "text": {
                       "content": "用户名",
-                      "fontSize": 20,
+                      "fontSize": 36,
                       "color": "#B4DAFFE0",
-                      "alignment": "MidlineRight",
+                      "alignment": "Center",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "lineSpacing": -18.6,
-                      "characterSpacing": 3.8
+                      "lineSpacing": -69.3,
+                      "characterSpacing": 2.1,
+                      "wrap": true
                     }
                   }
                 ]
@@ -198,10 +200,10 @@
                   "b": 10
                 },
                 "rect": {
-                  "x": 436,
-                  "y": 223,
-                  "w": 307,
-                  "h": 58
+                  "x": 485,
+                  "y": 231,
+                  "w": 452,
+                  "h": 80
                 },
                 "contentType": "Standard",
                 "stroke": {
@@ -218,14 +220,14 @@
                 },
                 "placeholder": {
                   "content": "请输入用户名",
-                  "fontSize": 16,
+                  "fontSize": 36,
                   "color": "#C8E6FF6C",
                   "alignment": "MidlineLeft"
                 },
                 "padding": {
                   "l": 17,
                   "t": 6,
-                  "r": 17,
+                  "r": 162,
                   "b": 6
                 },
                 "textColor": "#C8E6FF"
@@ -237,10 +239,10 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 363,
-              "y": 281,
-              "w": 380,
-              "h": 86
+              "x": 362,
+              "y": 326,
+              "w": 670,
+              "h": 110
             },
             "children": [
               {
@@ -248,10 +250,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 363,
-                  "y": 326,
-                  "w": 61,
-                  "h": 25
+                  "x": 362,
+                  "y": 340,
+                  "w": 111,
+                  "h": 82
                 },
                 "children": [
                   {
@@ -259,19 +261,20 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 377,
-                      "y": 322,
-                      "w": 47,
-                      "h": 23
+                      "x": 369,
+                      "y": 361,
+                      "w": 97,
+                      "h": 40
                     },
                     "text": {
                       "content": "密 码",
-                      "fontSize": 20,
+                      "fontSize": 36,
                       "color": "#B4DAFFE0",
-                      "alignment": "MidlineRight",
+                      "alignment": "Center",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "lineSpacing": -18.6,
-                      "characterSpacing": 3.8
+                      "lineSpacing": -69.3,
+                      "characterSpacing": 2.1,
+                      "wrap": true
                     }
                   }
                 ]
@@ -289,10 +292,10 @@
                   "b": 10
                 },
                 "rect": {
-                  "x": 436,
-                  "y": 309,
-                  "w": 307,
-                  "h": 58
+                  "x": 485,
+                  "y": 341,
+                  "w": 451,
+                  "h": 80
                 },
                 "contentType": "Password",
                 "stroke": {
@@ -309,14 +312,14 @@
                 },
                 "placeholder": {
                   "content": "请输入密码",
-                  "fontSize": 16,
+                  "fontSize": 36,
                   "color": "#C8E6FF6C",
                   "alignment": "MidlineLeft"
                 },
                 "padding": {
                   "l": 17,
                   "t": 6,
-                  "r": 40,
+                  "r": 62,
                   "b": 6
                 },
                 "textColor": "#C8E6FF",
@@ -324,10 +327,10 @@
                   "sprite": "Assets/UI/LoginPanel/Icons/art1.png",
                   "color": "#FFFFFF",
                   "rect": {
-                    "x": 711,
-                    "y": 330,
-                    "w": 15,
-                    "h": 15
+                    "x": 882,
+                    "y": 366,
+                    "w": 30,
+                    "h": 30
                   }
                 }
               }
@@ -338,10 +341,10 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 363,
-              "y": 367,
-              "w": 380,
-              "h": 86
+              "x": 362,
+              "y": 436,
+              "w": 670,
+              "h": 110
             },
             "children": [
               {
@@ -349,10 +352,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 363,
-                  "y": 412,
-                  "w": 61,
-                  "h": 25
+                  "x": 362,
+                  "y": 451,
+                  "w": 109,
+                  "h": 80
                 },
                 "children": [
                   {
@@ -360,19 +363,20 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 364,
-                      "y": 408,
-                      "w": 62,
+                      "x": 348,
+                      "y": 479,
+                      "w": 110,
                       "h": 23
                     },
                     "text": {
                       "content": "动态码",
-                      "fontSize": 20,
+                      "fontSize": 36,
                       "color": "#B4DAFFE0",
                       "alignment": "MidlineRight",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "lineSpacing": -18.6,
-                      "characterSpacing": 3.8
+                      "lineSpacing": -69.3,
+                      "characterSpacing": 2.1,
+                      "wrap": true
                     }
                   }
                 ]
@@ -390,10 +394,10 @@
                   "b": 10
                 },
                 "rect": {
-                  "x": 436,
-                  "y": 395,
-                  "w": 307,
-                  "h": 58
+                  "x": 483,
+                  "y": 451,
+                  "w": 456,
+                  "h": 80
                 },
                 "contentType": "Standard",
                 "stroke": {
@@ -410,14 +414,14 @@
                 },
                 "placeholder": {
                   "content": "请输入动态码",
-                  "fontSize": 16,
+                  "fontSize": 36,
                   "color": "#C8E6FF6C",
                   "alignment": "MidlineLeft"
                 },
                 "padding": {
                   "l": 17,
                   "t": 6,
-                  "r": 17,
+                  "r": 166,
                   "b": 6
                 },
                 "textColor": "#C8E6FF"
@@ -429,10 +433,10 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 363,
-              "y": 453,
-              "w": 380,
-              "h": 102
+              "x": 362,
+              "y": 546,
+              "w": 670,
+              "h": 139
             },
             "children": [
               {
@@ -440,10 +444,10 @@
                 "type": "Button",
                 "color": "#0E34A085",
                 "rect": {
-                  "x": 403,
-                  "y": 501,
+                  "x": 547,
+                  "y": 594,
                   "w": 300,
-                  "h": 54
+                  "h": 71
                 },
                 "sprite": "Assets/UI/Common/round16.png",
                 "imageType": "Sliced",
@@ -455,11 +459,11 @@
                 },
                 "text": {
                   "content": "登 录",
-                  "fontSize": 20,
+                  "fontSize": 36,
                   "color": "#C8E8FFF2",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "characterSpacing": 15.1
+                  "characterSpacing": 8.4
                 },
                 "stroke": {
                   "color": "#3C8CFF99",
@@ -481,9 +485,9 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 364,
-              "y": 616,
-              "w": 380,
+              "x": 362,
+              "y": 685,
+              "w": 670,
               "h": 73
             },
             "children": [
@@ -492,8 +496,8 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 163,
-                  "y": 643,
+                  "x": 306,
+                  "y": 712,
                   "w": 782,
                   "h": 46
                 },
@@ -503,18 +507,20 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 163,
-                      "y": 642,
+                      "x": 306,
+                      "y": 711,
                       "w": 782,
                       "h": 26
                     },
                     "text": {
                       "content": "登录中...",
-                      "fontSize": 20,
+                      "fontSize": 36,
                       "color": "#FF8C57F2",
                       "alignment": "Center",
                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                      "characterSpacing": 15.1
+                      "lineSpacing": -62.6,
+                      "characterSpacing": 8.4,
+                      "wrap": true
                     }
                   }
                 ]

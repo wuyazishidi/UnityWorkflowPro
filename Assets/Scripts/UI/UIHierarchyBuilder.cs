@@ -641,8 +641,8 @@ namespace Game.UI
             // 字符间距：0=不调整；非 0 时按 Figma letterSpacing 换算的 TMP characterSpacing（标题/字距贴合设计）
             if (Mathf.Abs(text.characterSpacing) > 0.01f)
                 tmp.characterSpacing = text.characterSpacing;
-            // 换行策略：Figma 自动宽度文本(WIDTH_AND_HEIGHT)是单行标签→不换行不裁切(避免窄盒子如“刷 新”被挤断)；
-            // 固定宽度文本(HEIGHT/NONE)是段落→按盒宽自动折行。overflow 一律不裁切，让高度自增。
+            // 换行策略：默认全部文本自动换行(text.wrap 默认 true，含自动宽度标签)，按盒宽折行；
+            // overflow 一律不裁切，让高度自增。如需某文本强制单行，可在 JSON 显式 wrap=false。
             tmp.enableWordWrapping = text.wrap;
             tmp.overflowMode = TextOverflowModes.Overflow;
             if (text.style != null)

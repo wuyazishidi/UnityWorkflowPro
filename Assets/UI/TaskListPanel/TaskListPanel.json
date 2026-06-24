@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "referenceWidth": 1106,
-  "referenceHeight": 778,
+  "referenceWidth": 1337,
+  "referenceHeight": 931,
   "rootName": "TaskListPanel",
   "root": {
     "name": "TaskListPanel",
@@ -10,8 +10,8 @@
     "rect": {
       "x": 0,
       "y": 0,
-      "w": 1106,
-      "h": 778
+      "w": 1337,
+      "h": 931
     },
     "children": [
       {
@@ -22,8 +22,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 931
         },
         "sprite": "Assets/UI/Common/round16.png",
         "imageType": "Sliced",
@@ -41,8 +41,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 778
+          "w": 1337,
+          "h": 931
         },
         "children": [
           {
@@ -54,8 +54,8 @@
             "rect": {
               "x": 0,
               "y": 0,
-              "w": 1106,
-              "h": 778
+              "w": 1337,
+              "h": 931
             },
             "opacity": 0.35
           },
@@ -66,8 +66,8 @@
             "rect": {
               "x": 0,
               "y": 0,
-              "w": 1106,
-              "h": 778
+              "w": 1337,
+              "h": 931
             }
           }
         ]
@@ -80,8 +80,8 @@
         "rect": {
           "x": 0,
           "y": 0,
-          "w": 1106,
-          "h": 56
+          "w": 1337,
+          "h": 64
         },
         "stroke": {
           "color": "#388BFD26",
@@ -97,46 +97,47 @@
         },
         "children": [
           {
-            "name": "ReturnLogin_Btn",
+            "name": "ReturnMoudule_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
               "x": 32,
-              "y": 11,
-              "w": 121,
-              "h": 34
+              "y": 9,
+              "w": 138,
+              "h": 45
             },
             "children": [
               {
-                "name": "退出登录_Text",
+                "name": "返回_Text",
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 51,
-                  "y": 17,
-                  "w": 83,
-                  "h": 21
+                  "x": 32,
+                  "y": 13,
+                  "w": 138,
+                  "h": 37
                 },
                 "text": {
-                  "content": "退出登录",
-                  "fontSize": 20,
-                  "color": "#FCA5A5",
+                  "content": "返回",
+                  "fontSize": 32,
+                  "color": "#A8D4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": -27.6,
-                  "characterSpacing": 5.0
+                  "lineSpacing": -67.0,
+                  "characterSpacing": 3.1,
+                  "wrap": true
                 }
               },
               {
                 "name": "Container_Image",
                 "type": "Image",
-                "color": "#DC262680",
+                "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
-                  "y": 11,
-                  "w": 121,
-                  "h": 34
+                  "y": 9,
+                  "w": 138,
+                  "h": 45
                 },
                 "sprite": "Assets/UI/Common/round6.png",
                 "imageType": "Sliced",
@@ -162,12 +163,12 @@
                 },
                 "rect": {
                   "x": 32,
-                  "y": 11,
-                  "w": 121,
-                  "h": 34
+                  "y": 9,
+                  "w": 138,
+                  "h": 45
                 },
                 "stroke": {
-                  "color": "#DC262680",
+                  "color": "#388BFD80",
                   "weight": 0.67,
                   "align": "Inside",
                   "sprite": "Assets/UI/Common/ring6.png",
@@ -186,9 +187,9 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 153,
-              "y": 14,
-              "w": 823,
+              "x": 170,
+              "y": 18,
+              "w": 1037,
               "h": 27
             },
             "children": [
@@ -197,19 +198,19 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 471,
-                  "y": 14,
+                  "x": 488,
+                  "y": 18,
                   "w": 169,
                   "h": 27
                 },
                 "text": {
                   "content": "任务列表",
-                  "fontSize": 24,
+                  "fontSize": 36,
                   "color": "#E8F4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": -20.1,
-                  "characterSpacing": 8.3,
+                  "lineSpacing": -57.6,
+                  "characterSpacing": 5.6,
                   "wrap": true
                 }
               },
@@ -218,18 +219,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 633,
-                  "y": 14,
-                  "w": 175,
+                  "x": 657,
+                  "y": 18,
+                  "w": 265,
                   "h": 27
                 },
                 "text": {
                   "content": "（collector01）",
-                  "fontSize": 20,
+                  "fontSize": 32,
                   "color": "#E8F4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "characterSpacing": 10.0
+                  "lineSpacing": -48.2,
+                  "characterSpacing": 6.2,
+                  "wrap": true
                 }
               }
             ]
@@ -239,8 +242,8 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 976,
-              "y": 11,
+              "x": 1207,
+              "y": 14,
               "w": 98,
               "h": 34
             },
@@ -250,19 +253,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 1002,
-                  "y": 17,
-                  "w": 47,
-                  "h": 21
+                  "x": 1207,
+                  "y": 11,
+                  "w": 98,
+                  "h": 41
                 },
                 "text": {
                   "content": "刷 新",
-                  "fontSize": 20,
+                  "fontSize": 32,
                   "color": "#A8D4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": -27.6,
-                  "characterSpacing": 5.0
+                  "lineSpacing": -67.0,
+                  "characterSpacing": 3.1,
+                  "wrap": true
                 }
               },
               {
@@ -271,10 +275,10 @@
                 "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 976,
-                  "y": 11,
+                  "x": 1207,
+                  "y": 15,
                   "w": 98,
-                  "h": 34
+                  "h": 45
                 },
                 "sprite": "Assets/UI/Common/round6.png",
                 "imageType": "Sliced",
@@ -299,10 +303,10 @@
                   "b": 6
                 },
                 "rect": {
-                  "x": 976,
-                  "y": 11,
+                  "x": 1207,
+                  "y": 15,
                   "w": 98,
-                  "h": 34
+                  "h": 45
                 },
                 "stroke": {
                   "color": "#388BFD80",
@@ -326,10 +330,10 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 438,
+          "x": 364,
           "y": 64,
-          "w": 229,
-          "h": 20
+          "w": 610,
+          "h": 30
         },
         "children": [
           {
@@ -337,19 +341,20 @@
             "type": "Text",
             "raycastTarget": false,
             "rect": {
-              "x": 438,
-              "y": 65,
-              "w": 279,
+              "x": 364,
+              "y": 64,
+              "w": 610,
               "h": 20
             },
             "text": {
               "content": "共 28 个任务，第 1/5 页（点击领取）",
-              "fontSize": 16,
+              "fontSize": 20,
               "color": "#CCE4FF",
-              "alignment": "MidlineLeft",
+              "alignment": "Center",
               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-              "lineSpacing": -10.7,
-              "characterSpacing": 3.1
+              "lineSpacing": -35.1,
+              "characterSpacing": 2.5,
+              "wrap": true
             }
           }
         ]
@@ -361,13 +366,13 @@
         "rect": {
           "x": 32,
           "y": 92,
-          "w": 1042,
-          "h": 566
+          "w": 1260,
+          "h": 677
         },
         "list": {
           "vertical": true,
           "spacing": 8,
-          "count": 7,
+          "count": 10,
           "itemPrefab": "TaskItem_Btn"
         },
         "children": [
@@ -378,7 +383,7 @@
             "rect": {
               "x": 32,
               "y": 92,
-              "w": 1042,
+              "w": 1260,
               "h": 55
             },
             "children": [
@@ -389,8 +394,8 @@
                 "rect": {
                   "x": 32,
                   "y": 94,
-                  "w": 1042,
-                  "h": 50
+                  "w": 1260,
+                  "h": 51
                 },
                 "children": [
                   {
@@ -401,8 +406,8 @@
                     "rect": {
                       "x": 32,
                       "y": 94,
-                      "w": 1042,
-                      "h": 50
+                      "w": 1260,
+                      "h": 51
                     },
                     "sprite": "Assets/UI/Common/round8.png",
                     "imageType": "Sliced",
@@ -422,8 +427,8 @@
                     "rect": {
                       "x": 32,
                       "y": 94,
-                      "w": 1042,
-                      "h": 50
+                      "w": 1260,
+                      "h": 51
                     }
                   },
                   {
@@ -433,7 +438,7 @@
                     "rect": {
                       "x": 40,
                       "y": 94,
-                      "w": 1034,
+                      "w": 1252,
                       "h": 50
                     },
                     "children": [
@@ -444,7 +449,7 @@
                         "rect": {
                           "x": 40,
                           "y": 94,
-                          "w": 1034,
+                          "w": 1252,
                           "h": 50
                         },
                         "children": [
@@ -453,18 +458,19 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 44,
+                              "x": 40,
                               "y": 93,
-                              "w": 1027,
+                              "w": 1252,
                               "h": 51
                             },
                             "text": {
                               "content": "#1 将水倒入水杯",
-                              "fontSize": 20,
+                              "fontSize": 32,
                               "color": "#93C5FD",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": -20.1
+                              "lineSpacing": -62.3,
+                              "wrap": true
                             }
                           }
                         ]
@@ -483,9 +489,9 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 32,
-          "y": 668,
-          "w": 1042,
+          "x": 31,
+          "y": 776,
+          "w": 1276,
           "h": 40
         },
         "children": [
@@ -494,9 +500,9 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 385,
-              "y": 671,
-              "w": 109,
+              "x": 484,
+              "y": 779,
+              "w": 126,
               "h": 34
             },
             "opacity": 0.3,
@@ -506,18 +512,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 405,
-                  "y": 678,
-                  "w": 69,
+                  "x": 484,
+                  "y": 786,
+                  "w": 126,
                   "h": 21
                 },
                 "text": {
                   "content": "← 上一页",
-                  "fontSize": 16,
+                  "fontSize": 20,
                   "color": "#A8D4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "characterSpacing": 3.1
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 2.5,
+                  "wrap": true
                 }
               },
               {
@@ -526,9 +534,9 @@
                 "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 385,
-                  "y": 671,
-                  "w": 102,
+                  "x": 484,
+                  "y": 779,
+                  "w": 126,
                   "h": 34
                 },
                 "sprite": "Assets/UI/Common/round6.png",
@@ -545,11 +553,11 @@
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner8.png",
+                "sprite": "Assets/UI/TaskListPanel/Icons/corner11.png",
                 "rect": {
-                  "x": 385,
-                  "y": 671,
-                  "w": 102,
+                  "x": 484,
+                  "y": 779,
+                  "w": 126,
                   "h": 34
                 }
               }
@@ -560,8 +568,8 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 518,
-              "y": 671,
+              "x": 634,
+              "y": 779,
               "w": 70,
               "h": 34
             },
@@ -572,8 +580,8 @@
                 "color": "#0A1E464D",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 518,
-                  "y": 671,
+                  "x": 634,
+                  "y": 779,
                   "w": 70,
                   "h": 34
                 },
@@ -591,10 +599,10 @@
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner9.png",
+                "sprite": "Assets/UI/TaskListPanel/Icons/corner12.png",
                 "rect": {
-                  "x": 518,
-                  "y": 671,
+                  "x": 634,
+                  "y": 779,
                   "w": 70,
                   "h": 34
                 }
@@ -604,18 +612,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 538,
-                  "y": 678,
-                  "w": 34,
+                  "x": 637,
+                  "y": 786,
+                  "w": 65,
                   "h": 21
                 },
                 "text": {
                   "content": "1 / 5",
-                  "fontSize": 16,
+                  "fontSize": 20,
                   "color": "#93C5FDB2",
-                  "alignment": "MidlineLeft",
+                  "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "characterSpacing": 3.1
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 2.5,
+                  "wrap": true
                 }
               }
             ]
@@ -625,9 +635,9 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 612,
-              "y": 671,
-              "w": 109,
+              "x": 728,
+              "y": 779,
+              "w": 126,
               "h": 34
             },
             "children": [
@@ -636,18 +646,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 632,
-                  "y": 678,
-                  "w": 69,
+                  "x": 730,
+                  "y": 786,
+                  "w": 124,
                   "h": 21
                 },
                 "text": {
                   "content": "下一页 →",
-                  "fontSize": 16,
+                  "fontSize": 20,
                   "color": "#A8D4FF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "characterSpacing": 3.1
+                  "lineSpacing": -27.6,
+                  "characterSpacing": 2.5,
+                  "wrap": true
                 }
               },
               {
@@ -656,9 +668,9 @@
                 "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 612,
-                  "y": 671,
-                  "w": 102,
+                  "x": 728,
+                  "y": 779,
+                  "w": 126,
                   "h": 34
                 },
                 "sprite": "Assets/UI/Common/round6.png",
@@ -675,11 +687,11 @@
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
-                "sprite": "Assets/UI/TaskListPanel/Icons/corner8.png",
+                "sprite": "Assets/UI/TaskListPanel/Icons/corner11.png",
                 "rect": {
-                  "x": 612,
-                  "y": 671,
-                  "w": 102,
+                  "x": 728,
+                  "y": 779,
+                  "w": 126,
                   "h": 34
                 }
               }
@@ -692,10 +704,10 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 32,
-          "y": 718,
-          "w": 1042,
-          "h": 40
+          "x": 29,
+          "y": 845,
+          "w": 1279,
+          "h": 54
         },
         "children": [
           {
@@ -703,10 +715,10 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 208,
-              "y": 718,
+              "x": 324,
+              "y": 834,
               "w": 704,
-              "h": 40
+              "h": 59
             },
             "children": [
               {
@@ -715,10 +727,10 @@
                 "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 208,
-                  "y": 718,
+                  "x": 324,
+                  "y": 834,
                   "w": 704,
-                  "h": 40
+                  "h": 59
                 },
                 "sprite": "Assets/UI/Common/round8.png",
                 "imageType": "Sliced",
@@ -743,10 +755,10 @@
                   "b": 8
                 },
                 "rect": {
-                  "x": 208,
-                  "y": 718,
+                  "x": 324,
+                  "y": 834,
                   "w": 704,
-                  "h": 40
+                  "h": 59
                 },
                 "stroke": {
                   "color": "#388BFD66",
@@ -767,10 +779,10 @@
                 "color": "#FFFFFF00",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 208,
-                  "y": 718,
+                  "x": 324,
+                  "y": 834,
                   "w": 704,
-                  "h": 40
+                  "h": 59
                 },
                 "sprite": "Assets/UI/Common/round8.png",
                 "imageType": "Sliced",
@@ -786,19 +798,20 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 421,
-                  "y": 728,
-                  "w": 279,
-                  "h": 21
+                  "x": 395,
+                  "y": 834,
+                  "w": 563,
+                  "h": 59
                 },
                 "text": {
                   "content": "我的已领任务 / 恢复未传数据",
-                  "fontSize": 20,
+                  "fontSize": 32,
                   "color": "#FFFFFF",
                   "alignment": "Center",
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                  "lineSpacing": -27.6,
-                  "characterSpacing": 7.5
+                  "lineSpacing": -67.0,
+                  "characterSpacing": 4.7,
+                  "wrap": true
                 }
               }
             ]

@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "panel": "UpLoadPanel",
   "prefab": "Assets/UI/UpLoadPanel/UpLoadPanel.prefab",
-  "size": { "w": 1106, "h": 778 },
+  "size": { "w": 1337, "h": 931 },
   "dependencies": {
     "font": "MiSans Medium SDF",
     "commonSprites": ["round10", "round16", "round2", "round7"],
@@ -11,6 +11,7 @@
   },
   "elements": [
     { "key": "text1", "path": "Paragraph/数据上传_Text", "type": "Text", "text": "数据上传", "keyAuto": true },
+    { "key": "tipText", "path": "Paragraph/Tip_Text", "type": "Text", "text": "数据上传" },
     { "key": "customScrollList", "path": "CustomScrollList", "type": "ScrollList", "text": null, "itemPrefab": "Item_ImageFill" },
     { "key": "buttonBtn", "path": "Container_1/Button_Btn", "type": "Button", "text": "继续采集" },
     { "key": "buttonBtn1", "path": "Container_1/Button_Btn_1", "type": "Button", "text": "去上传" }

@@ -19,10 +19,10 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 116,
-          "y": 77,
-          "w": 1106,
-          "h": 778
+          "x": 0,
+          "y": 0,
+          "w": 1337,
+          "h": 931
         },
         "children": [
           {
@@ -30,10 +30,10 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 116,
-              "y": 77,
-              "w": 1106,
-              "h": 778
+              "x": 0,
+              "y": 0,
+              "w": 1337,
+              "h": 931
             },
             "children": [
               {
@@ -41,10 +41,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 116,
-                  "y": 77,
-                  "w": 1106,
-                  "h": 778
+                  "x": 0,
+                  "y": 0,
+                  "w": 1337,
+                  "h": 931
                 },
                 "children": [
                   {
@@ -52,10 +52,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 116,
-                      "y": 77,
-                      "w": 1106,
-                      "h": 778
+                      "x": 0,
+                      "y": 0,
+                      "w": 1337,
+                      "h": 931
                     },
                     "children": [
                       {
@@ -63,12 +63,12 @@
                         "type": "Image",
                         "color": "#FFFFFF",
                         "raycastTarget": false,
-                        "sprite": "Assets/UI/CountdownPanel/Icons/icon1.png",
+                        "sprite": "Assets/UI/CountdownPanel/Icons/bg.png",
                         "rect": {
-                          "x": 116,
-                          "y": 77,
-                          "w": 1106,
-                          "h": 778
+                          "x": 0,
+                          "y": 0,
+                          "w": 1337,
+                          "h": 931
                         }
                       }
                     ]
@@ -80,12 +80,12 @@
                 "type": "Image",
                 "color": "#FFFFFF",
                 "raycastTarget": false,
-                "sprite": "Assets/UI/CountdownPanel/Icons/icon2.png",
+                "sprite": "Assets/UI/CountdownPanel/Icons/bg.png",
                 "rect": {
-                  "x": 116,
-                  "y": 77,
-                  "w": 1106,
-                  "h": 778
+                  "x": 0,
+                  "y": 0,
+                  "w": 1337,
+                  "h": 931
                 }
               }
             ]
@@ -96,10 +96,10 @@
             "color": "#040A1C94",
             "raycastTarget": false,
             "rect": {
-              "x": 116,
-              "y": 77,
-              "w": 1106,
-              "h": 778
+              "x": 0,
+              "y": 0,
+              "w": 1337,
+              "h": 931
             }
           },
           {
@@ -116,10 +116,10 @@
               "b": 12
             },
             "rect": {
-              "x": 116,
-              "y": 77,
-              "w": 1106,
-              "h": 32
+              "x": 1,
+              "y": 1,
+              "w": 1336,
+              "h": 49
             },
             "stroke": {
               "color": "#00D4C829",
@@ -139,8 +139,8 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 132,
-                  "y": 84,
+                  "x": 17,
+                  "y": 17,
                   "w": 324,
                   "h": 16
                 },
@@ -150,8 +150,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 132,
-                      "y": 84,
+                      "x": 17,
+                      "y": 17,
                       "w": 59,
                       "h": 16
                     },
@@ -161,8 +161,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 132,
-                          "y": 84,
+                          "x": 17,
+                          "y": 17,
                           "w": 20,
                           "h": 16
                         },
@@ -172,8 +172,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 132,
-                              "y": 84,
+                              "x": 17,
+                              "y": 17,
                               "w": 20,
                               "h": 17
                             },
@@ -183,7 +183,8 @@
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": 17.4
+                              "lineSpacing": 17.4,
+                              "wrap": true
                             }
                           }
                         ]
@@ -193,8 +194,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 155,
-                          "y": 84,
+                          "x": 40,
+                          "y": 17,
                           "w": 20,
                           "h": 16
                         },
@@ -204,8 +205,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 155,
-                              "y": 84,
+                              "x": 40,
+                              "y": 17,
                               "w": 20,
                               "h": 17
                             },
@@ -215,7 +216,8 @@
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": 17.4
+                              "lineSpacing": 17.4,
+                              "wrap": true
                             }
                           }
                         ]
@@ -225,8 +227,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 179,
-                          "y": 84,
+                          "x": 64,
+                          "y": 17,
                           "w": 13,
                           "h": 16
                         },
@@ -236,8 +238,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 185,
-                              "y": 84,
+                              "x": 70,
+                              "y": 17,
                               "w": 7,
                               "h": 16
                             },
@@ -247,8 +249,8 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 185,
-                                  "y": 84,
+                                  "x": 70,
+                                  "y": 17,
                                   "w": 7,
                                   "h": 17
                                 },
@@ -258,7 +260,8 @@
                                   "color": "#FFFFFF1F",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": 17.4
+                                  "lineSpacing": 17.4,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -272,8 +275,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 202,
-                      "y": 84,
+                      "x": 87,
+                      "y": 17,
                       "w": 82,
                       "h": 16
                     },
@@ -283,8 +286,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 202,
-                          "y": 84,
+                          "x": 87,
+                          "y": 17,
                           "w": 23,
                           "h": 16
                         },
@@ -294,8 +297,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 202,
-                              "y": 84,
+                              "x": 87,
+                              "y": 17,
                               "w": 22,
                               "h": 17
                             },
@@ -305,7 +308,8 @@
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": 17.4
+                              "lineSpacing": 17.4,
+                              "wrap": true
                             }
                           }
                         ]
@@ -315,8 +319,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 228,
-                          "y": 84,
+                          "x": 113,
+                          "y": 17,
                           "w": 40,
                           "h": 16
                         },
@@ -326,8 +330,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 228,
-                              "y": 84,
+                              "x": 113,
+                              "y": 17,
                               "w": 40,
                               "h": 17
                             },
@@ -337,7 +341,8 @@
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": 17.4
+                              "lineSpacing": 17.4,
+                              "wrap": true
                             }
                           }
                         ]
@@ -347,8 +352,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 271,
-                          "y": 84,
+                          "x": 156,
+                          "y": 17,
                           "w": 13,
                           "h": 16
                         },
@@ -358,8 +363,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 277,
-                              "y": 84,
+                              "x": 162,
+                              "y": 17,
                               "w": 7,
                               "h": 16
                             },
@@ -369,8 +374,8 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 277,
-                                  "y": 84,
+                                  "x": 162,
+                                  "y": 17,
                                   "w": 7,
                                   "h": 17
                                 },
@@ -380,7 +385,8 @@
                                   "color": "#FFFFFF1F",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": 17.4
+                                  "lineSpacing": 17.4,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -394,8 +400,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 294,
-                      "y": 84,
+                      "x": 179,
+                      "y": 17,
                       "w": 82,
                       "h": 16
                     },
@@ -405,8 +411,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 294,
-                          "y": 84,
+                          "x": 179,
+                          "y": 17,
                           "w": 23,
                           "h": 16
                         },
@@ -416,8 +422,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 294,
-                              "y": 84,
+                              "x": 179,
+                              "y": 17,
                               "w": 22,
                               "h": 17
                             },
@@ -427,7 +433,8 @@
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": 17.4
+                              "lineSpacing": 17.4,
+                              "wrap": true
                             }
                           }
                         ]
@@ -437,8 +444,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 320,
-                          "y": 84,
+                          "x": 205,
+                          "y": 17,
                           "w": 40,
                           "h": 16
                         },
@@ -448,8 +455,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 320,
-                              "y": 84,
+                              "x": 205,
+                              "y": 17,
                               "w": 40,
                               "h": 17
                             },
@@ -459,7 +466,8 @@
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": 17.4
+                              "lineSpacing": 17.4,
+                              "wrap": true
                             }
                           }
                         ]
@@ -469,8 +477,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 363,
-                          "y": 84,
+                          "x": 248,
+                          "y": 17,
                           "w": 13,
                           "h": 16
                         },
@@ -480,8 +488,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 369,
-                              "y": 84,
+                              "x": 254,
+                              "y": 17,
                               "w": 7,
                               "h": 16
                             },
@@ -491,8 +499,8 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 369,
-                                  "y": 84,
+                                  "x": 254,
+                                  "y": 17,
                                   "w": 7,
                                   "h": 17
                                 },
@@ -502,7 +510,8 @@
                                   "color": "#FFFFFF1F",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": 17.4
+                                  "lineSpacing": 17.4,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -516,8 +525,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 386,
-                      "y": 84,
+                      "x": 271,
+                      "y": 17,
                       "w": 70,
                       "h": 16
                     },
@@ -527,8 +536,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 386,
-                          "y": 84,
+                          "x": 271,
+                          "y": 17,
                           "w": 59,
                           "h": 16
                         },
@@ -538,8 +547,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 386,
-                              "y": 84,
+                              "x": 271,
+                              "y": 17,
                               "w": 55,
                               "h": 17
                             },
@@ -549,7 +558,8 @@
                               "color": "#7A90B8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": 17.4
+                              "lineSpacing": 17.4,
+                              "wrap": true
                             }
                           }
                         ]
@@ -559,8 +569,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 449,
-                          "y": 84,
+                          "x": 334,
+                          "y": 17,
                           "w": 7,
                           "h": 16
                         },
@@ -570,8 +580,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 449,
-                              "y": 84,
+                              "x": 334,
+                              "y": 17,
                               "w": 73,
                               "h": 17
                             },
@@ -581,7 +591,8 @@
                               "color": "#E2EAF8",
                               "alignment": "MidlineLeft",
                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": 17.4
+                              "lineSpacing": 17.4,
+                              "wrap": true
                             }
                           }
                         ]
@@ -595,8 +606,8 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 456,
-                  "y": 43,
+                  "x": 341,
+                  "y": -25,
                   "w": 100,
                   "h": 100
                 }
@@ -606,8 +617,8 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 556,
-                  "y": 82,
+                  "x": 441,
+                  "y": 15,
                   "w": 754,
                   "h": 21
                 },
@@ -617,8 +628,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 758,
-                      "y": 84,
+                      "x": 643,
+                      "y": 17,
                       "w": 95,
                       "h": 16
                     },
@@ -628,8 +639,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 758,
-                          "y": 84,
+                          "x": 643,
+                          "y": 17,
                           "w": 95,
                           "h": 17
                         },
@@ -639,7 +650,8 @@
                           "color": "#7A90B8",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
+                          "lineSpacing": 17.4,
+                          "wrap": true
                         }
                       }
                     ]
@@ -649,8 +661,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 864,
-                      "y": 82,
+                      "x": 749,
+                      "y": 15,
                       "w": 3,
                       "h": 21
                     },
@@ -660,8 +672,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 864,
-                          "y": 82,
+                          "x": 749,
+                          "y": 15,
                           "w": 4,
                           "h": 21
                         },
@@ -671,7 +683,8 @@
                           "color": "#FFFFFF26",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
+                          "lineSpacing": 17.4,
+                          "wrap": true
                         }
                       }
                     ]
@@ -681,8 +694,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 878,
-                      "y": 84,
+                      "x": 763,
+                      "y": 17,
                       "w": 31,
                       "h": 16
                     },
@@ -692,8 +705,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 878,
-                          "y": 84,
+                          "x": 763,
+                          "y": 17,
                           "w": 32,
                           "h": 17
                         },
@@ -703,7 +716,8 @@
                           "color": "#E2EAF8",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
+                          "lineSpacing": 17.4,
+                          "wrap": true
                         }
                       }
                     ]
@@ -713,8 +727,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 920,
-                      "y": 82,
+                      "x": 805,
+                      "y": 15,
                       "w": 3,
                       "h": 21
                     },
@@ -724,8 +738,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 920,
-                          "y": 82,
+                          "x": 805,
+                          "y": 15,
                           "w": 4,
                           "h": 21
                         },
@@ -735,7 +749,8 @@
                           "color": "#FFFFFF26",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
+                          "lineSpacing": 17.4,
+                          "wrap": true
                         }
                       }
                     ]
@@ -754,8 +769,8 @@
                       "b": 9
                     },
                     "rect": {
-                      "x": 934,
-                      "y": 83,
+                      "x": 819,
+                      "y": 15,
                       "w": 47,
                       "h": 20
                     },
@@ -777,8 +792,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 941,
-                          "y": 85,
+                          "x": 826,
+                          "y": 17,
                           "w": 30,
                           "h": 15
                         },
@@ -788,7 +803,8 @@
                           "color": "#00D4C8",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
+                          "lineSpacing": 17.4,
+                          "wrap": true
                         }
                       }
                     ]
@@ -798,8 +814,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 992,
-                      "y": 82,
+                      "x": 877,
+                      "y": 15,
                       "w": 3,
                       "h": 21
                     },
@@ -809,8 +825,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 992,
-                          "y": 82,
+                          "x": 877,
+                          "y": 15,
                           "w": 4,
                           "h": 21
                         },
@@ -820,7 +836,8 @@
                           "color": "#FFFFFF26",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
+                          "lineSpacing": 17.4,
+                          "wrap": true
                         }
                       }
                     ]
@@ -830,8 +847,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 1006,
-                      "y": 84,
+                      "x": 891,
+                      "y": 17,
                       "w": 102,
                       "h": 16
                     },
@@ -841,8 +858,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 1006,
-                          "y": 84,
+                          "x": 891,
+                          "y": 17,
                           "w": 99,
                           "h": 17
                         },
@@ -852,7 +869,8 @@
                           "color": "#7A90B8",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": 17.4
+                          "lineSpacing": 17.4,
+                          "wrap": true
                         }
                       }
                     ]
@@ -866,10 +884,10 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 116,
-              "y": 109,
-              "w": 1106,
-              "h": 746
+              "x": 0,
+              "y": 50,
+              "w": 1337,
+              "h": 881
             },
             "children": [
               {
@@ -877,10 +895,10 @@
                 "type": "Container",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 116,
-                  "y": 109,
-                  "w": 1106,
-                  "h": 706
+                  "x": 0,
+                  "y": 50,
+                  "w": 1337,
+                  "h": 862
                 },
                 "children": [
                   {
@@ -889,7 +907,7 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 198,
-                      "y": 216,
+                      "y": 235,
                       "w": 941,
                       "h": 492
                     },
@@ -899,8 +917,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 543,
-                          "y": 216,
+                          "x": 542,
+                          "y": 235,
                           "w": 252,
                           "h": 26
                         },
@@ -910,8 +928,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 543,
-                              "y": 216,
+                              "x": 542,
+                              "y": 235,
                               "w": 252,
                               "h": 26
                             },
@@ -922,7 +940,7 @@
                                 "raycastTarget": false,
                                 "rect": {
                                   "x": 551,
-                                  "y": 216,
+                                  "y": 235,
                                   "w": 235,
                                   "h": 26
                                 },
@@ -932,7 +950,8 @@
                                   "color": "#E2EAF8",
                                   "alignment": "Center",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": -26.3
+                                  "lineSpacing": -26.3,
+                                  "wrap": true
                                 }
                               }
                             ]
@@ -954,7 +973,7 @@
                         },
                         "rect": {
                           "x": 201,
-                          "y": 259,
+                          "y": 279,
                           "w": 935,
                           "h": 448
                         },
@@ -977,7 +996,7 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 264,
-                              "y": 295,
+                              "y": 314,
                               "w": 809,
                               "h": 377
                             },
@@ -988,7 +1007,7 @@
                                 "raycastTarget": false,
                                 "rect": {
                                   "x": 642,
-                                  "y": 316,
+                                  "y": 335,
                                   "w": 53,
                                   "h": 37
                                 },
@@ -999,7 +1018,7 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 642,
-                                      "y": 316,
+                                      "y": 335,
                                       "w": 102,
                                       "h": 17
                                     },
@@ -1010,7 +1029,8 @@
                                       "alignment": "MidlineLeft",
                                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
                                       "lineSpacing": -63.8,
-                                      "characterSpacing": 8.3
+                                      "characterSpacing": 8.3,
+                                      "wrap": true
                                     }
                                   }
                                 ]
@@ -1022,7 +1042,7 @@
                                 "raycastTarget": false,
                                 "rect": {
                                   "x": 292,
-                                  "y": 363,
+                                  "y": 383,
                                   "w": 753,
                                   "h": 265
                                 },
@@ -1033,7 +1053,7 @@
                                     "raycastTarget": false,
                                     "rect": {
                                       "x": 361,
-                                      "y": 374,
+                                      "y": 393,
                                       "w": 615,
                                       "h": 244
                                     },
@@ -1044,7 +1064,8 @@
                                       "alignment": "MidlineLeft",
                                       "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
                                       "lineSpacing": -63.8,
-                                      "characterSpacing": 8.3
+                                      "characterSpacing": 8.3,
+                                      "wrap": true
                                     }
                                   }
                                 ]
@@ -1071,9 +1092,9 @@
                   "b": 12
                 },
                 "rect": {
-                  "x": 116,
-                  "y": 815,
-                  "w": 1106,
+                  "x": 0,
+                  "y": 912,
+                  "w": 1337,
                   "h": 40
                 },
                 "stroke": {
@@ -1094,8 +1115,8 @@
                     "type": "Button",
                     "color": "#FFFFFF0A",
                     "rect": {
-                      "x": 1093,
-                      "y": 820,
+                      "x": 1208,
+                      "y": 917,
                       "w": 113,
                       "h": 30
                     },

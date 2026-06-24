@@ -2,7 +2,7 @@
   "schemaVersion": "1.0",
   "panel": "TaskListPanel",
   "prefab": "Assets/UI/TaskListPanel/TaskListPanel.prefab",
-  "size": { "w": 1106, "h": 778 },
+  "size": { "w": 1337, "h": 931 },
   "dependencies": {
     "font": "MiSans Medium SDF",
     "commonSprites": ["ring12", "ring6", "ring8", "round16", "round6", "round8"],
@@ -10,7 +10,7 @@
     "needsTmpEssentials": true
   },
   "elements": [
-    { "key": "returnLoginBtn", "path": "Container_Image/ReturnLogin_Btn", "type": "Button", "text": "退出登录" },
+    { "key": "returnMouduleBtn", "path": "Container_Image/ReturnMoudule_Btn", "type": "Button", "text": "返回" },
     { "key": "text1", "path": "Container_Image/Container/任务列表_Text", "type": "Text", "text": "任务列表", "keyAuto": true },
     { "key": "userNameText", "path": "Container_Image/Container/UserName_Text", "type": "Text", "text": "（collector01）" },
     { "key": "refreshBtn", "path": "Container_Image/Refresh_Btn", "type": "Button", "text": "刷 新" },
