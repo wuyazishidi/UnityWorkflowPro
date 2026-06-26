@@ -16,8 +16,8 @@ namespace Game.Tests.PlayMode
         {
             var go = new GameObject("smoke");
             yield return null; // 等一帧
-            Assert.IsNotNull(go);
-            Object.Destroy(go);
+            Assert.IsNotNull(go);  
+            Object.Destroy(go); 
         }
     }
 }

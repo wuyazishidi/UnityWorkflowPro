@@ -153,12 +153,12 @@
           "horizontal": false,
           "vertical": true,
           "padding": {
-            "l": 14,
-            "t": 14,
-            "r": 31,
-            "b": 14
+            "l": 1149,
+            "t": 12,
+            "r": 9,
+            "b": 12
           },
-          "spacing": 8
+          "spacing": 0
         },
         "color": "#388BFD0A",
         "sprite": "Assets/UI/Common/round10.png",
@@ -169,43 +169,58 @@
           "r": 10,
           "b": 10
         },
-        "list": {
-          "vertical": true,
-          "spacing": 8,
-          "count": 7,
-          "itemPrefab": "Item_ImageFill"
-        },
         "children": [
           {
-            "name": "Item_ImageFill",
+            "name": "Container_Image",
             "type": "Image",
-            "color": "#388BFD14",
+            "color": "#388BFD26",
             "raycastTarget": false,
-            "sprite": "Assets/UI/Common/round8.png",
+            "rect": {
+              "x": 1237,
+              "y": 141,
+              "w": 4,
+              "h": 565
+            },
+            "sprite": "Assets/UI/Common/round2.png",
             "imageType": "Sliced",
             "border": {
-              "l": 8,
-              "t": 8,
-              "r": 8,
-              "b": 8
+              "l": 2,
+              "t": 2,
+              "r": 2,
+              "b": 2
             },
+            "children": [
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#388BFD2E",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 1237,
+                  "y": 141,
+                  "w": 4,
+                  "h": 129
+                },
+                "sprite": "Assets/UI/Common/round2.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 2,
+                  "t": 2,
+                  "r": 2,
+                  "b": 2
+                }
+              }
+            ]
+          },
+          {
+            "name": "UpLoad_Btn",
+            "type": "Button",
+            "color": "#FFFFFF00",
             "rect": {
               "x": 102,
               "y": 143,
               "w": 1117,
-              "h": 70
-            },
-            "stroke": {
-              "color": "#388BFD26",
-              "weight": 0.67,
-              "align": "Inside",
-              "sprite": "Assets/UI/Common/ring8.png",
-              "border": {
-                "l": 8,
-                "t": 8,
-                "r": 8,
-                "b": 8
-              }
+              "h": 77
             },
             "children": [
               {
@@ -214,9 +229,9 @@
                 "raycastTarget": false,
                 "rect": {
                   "x": 103,
-                  "y": 144,
-                  "w": 1115,
-                  "h": 86
+                  "y": 157,
+                  "w": 1116,
+                  "h": 64
                 },
                 "children": [
                   {
@@ -226,7 +241,7 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 123,
-                      "y": 182,
+                      "y": 184,
                       "w": 10,
                       "h": 10
                     },
@@ -245,8 +260,8 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 153,
-                      "y": 176,
-                      "w": 502,
+                      "y": 178,
+                      "w": 467,
                       "h": 22
                     },
                     "children": [
@@ -256,7 +271,7 @@
                         "raycastTarget": false,
                         "rect": {
                           "x": 153,
-                          "y": 177,
+                          "y": 179,
                           "w": 502,
                           "h": 22
                         },
@@ -278,9 +293,9 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 675,
-                      "y": 176,
-                      "w": 133,
+                      "x": 640,
+                      "y": 177,
+                      "w": 191,
                       "h": 23
                     },
                     "children": [
@@ -289,9 +304,9 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 675,
-                          "y": 176,
-                          "w": 133,
+                          "x": 630,
+                          "y": 177,
+                          "w": 201,
                           "h": 20
                         },
                         "text": {
@@ -320,9 +335,9 @@
                       "b": 4
                     },
                     "rect": {
-                      "x": 828,
-                      "y": 169,
-                      "w": 122,
+                      "x": 851,
+                      "y": 170,
+                      "w": 154,
                       "h": 37
                     },
                     "stroke": {
@@ -343,9 +358,9 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 839,
-                          "y": 179,
-                          "w": 97,
+                          "x": 862,
+                          "y": 180,
+                          "w": 144,
                           "h": 17
                         },
                         "children": [
@@ -354,8 +369,8 @@
                             "type": "Text",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 839,
-                              "y": 179,
+                              "x": 862,
+                              "y": 181,
                               "w": 97,
                               "h": 17
                             },
@@ -379,8 +394,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 970,
-                      "y": 177,
+                      "x": 1025,
+                      "y": 179,
                       "w": 192,
                       "h": 20
                     },
@@ -390,8 +405,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 970,
-                          "y": 177,
+                          "x": 1025,
+                          "y": 178,
                           "w": 160,
                           "h": 20
                         },
@@ -413,28 +428,35 @@
               {
                 "name": "Container_Image",
                 "type": "Image",
-                "color": "#388BFD14",
+                "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
                   "x": 103,
-                  "y": 230,
-                  "w": 819,
-                  "h": 3
+                  "y": 156,
+                  "w": 1260,
+                  "h": 65
                 },
-                "children": [
-                  {
-                    "name": "Container_Image",
-                    "type": "Image",
-                    "color": "#388BFDA6",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 103,
-                      "y": 230,
-                      "w": 0,
-                      "h": 3
-                    }
-                  }
-                ]
+                "sprite": "Assets/UI/Common/round8.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 8,
+                  "t": 8,
+                  "r": 8,
+                  "b": 8
+                }
+              },
+              {
+                "name": "Container_Image_1",
+                "type": "Image",
+                "color": "#FFFFFF",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/UpLoadPanel/Icons/corner1.png",
+                "rect": {
+                  "x": 103,
+                  "y": 156,
+                  "w": 1116,
+                  "h": 65
+                }
               }
             ],
             "isItemTemplate": true
@@ -500,7 +522,7 @@
         },
         "children": [
           {
-            "name": "Button_Btn",
+            "name": "Return_Btn",
             "type": "Button",
             "color": "#FFFFFF0D",
             "rect": {
@@ -518,7 +540,7 @@
               "b": 7
             },
             "text": {
-              "content": "继续采集",
+              "content": "返回",
               "fontSize": 36,
               "color": "#C4E0FFF0",
               "alignment": "Center",
@@ -527,7 +549,7 @@
             }
           },
           {
-            "name": "Button_Btn_1",
+            "name": "Upload_Btn",
             "type": "Button",
             "color": "#388BFD2E",
             "rect": {

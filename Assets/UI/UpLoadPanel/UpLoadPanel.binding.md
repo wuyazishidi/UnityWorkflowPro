@@ -10,8 +10,8 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 | `text1` | Text | 数据上传 | `Paragraph/数据上传_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `tipText` | Text | 数据上传 | `Paragraph/Tip_Text` |  |
 | `customScrollList` | ScrollList |  | `CustomScrollList` |  |
-| `buttonBtn` | Button | 继续采集 | `Container_1/Button_Btn` |  |
-| `buttonBtn1` | Button | 去上传 | `Container_1/Button_Btn_1` |  |
+| `returnBtn` | Button | 返回 | `Container_1/Return_Btn` |  |
+| `uploadBtn` | Button | 去上传 | `Container_1/Upload_Btn` |  |
 
 > 命名约定：可绑元素名带类型后缀（`_Btn`/`_InputField`/`_Dropdown`/`_Text`），由翻译器自动加，`key` 即由其驼峰化（如 `returnBtn`）。
 >

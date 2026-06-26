@@ -174,7 +174,7 @@
                             "rect": {
                               "x": 17,
                               "y": 15,
-                              "w": 36,
+                              "w": 53,
                               "h": 17
                             },
                             "text": {
@@ -207,7 +207,7 @@
                             "rect": {
                               "x": 74,
                               "y": 15,
-                              "w": 36,
+                              "w": 64,
                               "h": 17
                             },
                             "text": {
@@ -619,7 +619,7 @@
                     "rect": {
                       "x": 798,
                       "y": 15,
-                      "w": 121,
+                      "w": 207,
                       "h": 17
                     },
                     "children": [
@@ -630,7 +630,7 @@
                         "rect": {
                           "x": 798,
                           "y": 15,
-                          "w": 60,
+                          "w": 207,
                           "h": 17
                         },
                         "text": {
@@ -647,17 +647,6 @@
                   },
                   {
                     "name": "Text_1",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 858,
-                      "y": 13,
-                      "w": 147,
-                      "h": 21
-                    }
-                  },
-                  {
-                    "name": "Text_2",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
@@ -694,30 +683,30 @@
                     "type": "Image",
                     "color": "#00D4C824",
                     "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round10.png",
+                    "sprite": "Assets/UI/Common/round5.png",
                     "imageType": "Sliced",
                     "border": {
-                      "l": 10,
-                      "t": 10,
-                      "r": 10,
-                      "b": 10
+                      "l": 5,
+                      "t": 5,
+                      "r": 5,
+                      "b": 5
                     },
                     "rect": {
-                      "x": 1020,
-                      "y": 14,
-                      "w": 76,
+                      "x": 1027,
+                      "y": 13,
+                      "w": 72,
                       "h": 20
                     },
                     "stroke": {
                       "color": "#00D4C852",
                       "weight": 0.67,
                       "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring10.png",
+                      "sprite": "Assets/UI/Common/ring5.png",
                       "border": {
-                        "l": 10,
-                        "t": 10,
-                        "r": 10,
-                        "b": 10
+                        "l": 5,
+                        "t": 5,
+                        "r": 5,
+                        "b": 5
                       }
                     },
                     "children": [
@@ -726,10 +715,10 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 1028,
-                          "y": 16,
-                          "w": 60,
-                          "h": 15
+                          "x": 1027,
+                          "y": 14,
+                          "w": 72,
+                          "h": 19
                         },
                         "text": {
                           "content": "准备中",
@@ -744,7 +733,7 @@
                     ]
                   },
                   {
-                    "name": "Text_3",
+                    "name": "Text_2",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
@@ -777,7 +766,7 @@
                     ]
                   },
                   {
-                    "name": "Text_4",
+                    "name": "Text_3",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
@@ -1066,7 +1055,7 @@
                             "rect": {
                               "x": 170,
                               "y": 63,
-                              "w": 60,
+                              "w": 85,
                               "h": 18
                             },
                             "text": {
@@ -1133,7 +1122,7 @@
                             "rect": {
                               "x": 170,
                               "y": 63,
-                              "w": 65,
+                              "w": 85,
                               "h": 18
                             },
                             "text": {
@@ -1156,9 +1145,9 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 275,
-                      "y": 49,
+                      "y": 45,
                       "w": 133,
-                      "h": 49
+                      "h": 53
                     },
                     "children": [
                       {
@@ -1176,9 +1165,9 @@
                         },
                         "rect": {
                           "x": 274,
-                          "y": 49,
+                          "y": 45,
                           "w": 125,
-                          "h": 48
+                          "h": 52
                         },
                         "stroke": {
                           "color": "#22C55E61",
@@ -1201,7 +1190,7 @@
                             "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
                               "x": 284,
-                              "y": 58,
+                              "y": 56,
                               "w": 30,
                               "h": 30
                             }
@@ -1212,7 +1201,7 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 319,
-                              "y": 64,
+                              "y": 62,
                               "w": 40,
                               "h": 18
                             },
@@ -1234,7 +1223,7 @@
                             "sprite": "Assets/UI/CollectPanel/Icons/art6.png",
                             "rect": {
                               "x": 364,
-                              "y": 58,
+                              "y": 56,
                               "w": 30,
                               "h": 30
                             },
@@ -1257,9 +1246,9 @@
                         },
                         "rect": {
                           "x": 274,
-                          "y": 50,
+                          "y": 46,
                           "w": 125,
-                          "h": 48
+                          "h": 52
                         },
                         "stroke": {
                           "color": "#F8717166",
@@ -1282,7 +1271,7 @@
                             "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
                               "x": 284,
-                              "y": 59,
+                              "y": 57,
                               "w": 30,
                               "h": 30
                             }
@@ -1293,7 +1282,7 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 319,
-                              "y": 65,
+                              "y": 63,
                               "w": 40,
                               "h": 18
                             },
@@ -1315,9 +1304,9 @@
                             "sprite": "Assets/UI/CollectPanel/Icons/art8.png",
                             "rect": {
                               "x": 364,
-                              "y": 64,
-                              "w": 20,
-                              "h": 20
+                              "y": 57,
+                              "w": 30,
+                              "h": 30
                             },
                             "opacity": 0.85
                           }
@@ -1331,9 +1320,9 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 408,
-                      "y": 49,
+                      "y": 45,
                       "w": 120,
-                      "h": 49
+                      "h": 53
                     },
                     "children": [
                       {
@@ -1351,9 +1340,9 @@
                         },
                         "rect": {
                           "x": 416,
-                          "y": 49,
+                          "y": 45,
                           "w": 103,
-                          "h": 48
+                          "h": 52
                         },
                         "stroke": {
                           "color": "#22C55E61",
@@ -1376,7 +1365,7 @@
                             "sprite": "Assets/UI/CollectPanel/Icons/art1.png",
                             "rect": {
                               "x": 425,
-                              "y": 58,
+                              "y": 56,
                               "w": 30,
                               "h": 30
                             }
@@ -1387,7 +1376,7 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 461,
-                              "y": 64,
+                              "y": 62,
                               "w": 20,
                               "h": 18
                             },
@@ -1418,9 +1407,9 @@
                         },
                         "rect": {
                           "x": 416,
-                          "y": 50,
+                          "y": 46,
                           "w": 103,
-                          "h": 48
+                          "h": 52
                         },
                         "stroke": {
                           "color": "#F8717166",
@@ -1443,7 +1432,7 @@
                             "sprite": "Assets/UI/CollectPanel/Icons/art2.png",
                             "rect": {
                               "x": 425,
-                              "y": 59,
+                              "y": 57,
                               "w": 30,
                               "h": 30
                             }
@@ -1454,7 +1443,7 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 461,
-                              "y": 65,
+                              "y": 63,
                               "w": 20,
                               "h": 18
                             },
@@ -1626,7 +1615,7 @@
                     "rect": {
                       "x": 717,
                       "y": 46,
-                      "w": 157,
+                      "w": 176,
                       "h": 52
                     },
                     "children": [
@@ -1646,7 +1635,7 @@
                         "rect": {
                           "x": 717,
                           "y": 46,
-                          "w": 146,
+                          "w": 176,
                           "h": 51
                         },
                         "stroke": {
@@ -1682,7 +1671,7 @@
                             "rect": {
                               "x": 762,
                               "y": 62,
-                              "w": 97,
+                              "w": 122,
                               "h": 18
                             },
                             "text": {
@@ -1713,7 +1702,7 @@
                         "rect": {
                           "x": 717,
                           "y": 47,
-                          "w": 142,
+                          "w": 176,
                           "h": 51
                         },
                         "stroke": {
@@ -1749,7 +1738,7 @@
                             "rect": {
                               "x": 762,
                               "y": 64,
-                              "w": 93,
+                              "w": 129,
                               "h": 18
                             },
                             "text": {
@@ -1771,10 +1760,10 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 874,
-                      "y": 53,
+                      "x": 920,
+                      "y": 46,
                       "w": 143,
-                      "h": 45
+                      "h": 51
                     },
                     "children": [
                       {
@@ -1782,8 +1771,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 874,
-                          "y": 53,
+                          "x": 920,
+                          "y": 46,
                           "w": 113,
                           "h": 44
                         },
@@ -1795,8 +1784,8 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art15.png",
                             "rect": {
-                              "x": 874,
-                              "y": 60,
+                              "x": 920,
+                              "y": 53,
                               "w": 30,
                               "h": 30
                             }
@@ -1808,8 +1797,8 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art16.png",
                             "rect": {
-                              "x": 909,
-                              "y": 60,
+                              "x": 955,
+                              "y": 53,
                               "w": 30,
                               "h": 30
                             }
@@ -1819,8 +1808,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 945,
-                              "y": 68,
+                              "x": 991,
+                              "y": 60,
                               "w": 21,
                               "h": 15
                             },
@@ -1830,8 +1819,8 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 945,
-                                  "y": 67,
+                                  "x": 991,
+                                  "y": 60,
                                   "w": 40,
                                   "h": 15
                                 },
@@ -1854,8 +1843,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 874,
-                          "y": 54,
+                          "x": 920,
+                          "y": 47,
                           "w": 113,
                           "h": 44
                         },
@@ -1867,8 +1856,8 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art17.png",
                             "rect": {
-                              "x": 874,
-                              "y": 61,
+                              "x": 920,
+                              "y": 54,
                               "w": 30,
                               "h": 30
                             }
@@ -1880,8 +1869,8 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art18.png",
                             "rect": {
-                              "x": 909,
-                              "y": 61,
+                              "x": 955,
+                              "y": 54,
                               "w": 30,
                               "h": 30
                             }
@@ -1891,8 +1880,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 945,
-                              "y": 68,
+                              "x": 991,
+                              "y": 62,
                               "w": 42,
                               "h": 15
                             },
@@ -1902,8 +1891,8 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 945,
-                                  "y": 68,
+                                  "x": 991,
+                                  "y": 61,
                                   "w": 40,
                                   "h": 15
                                 },
@@ -1928,8 +1917,8 @@
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 1017,
-                      "y": 46,
+                      "x": 1063,
+                      "y": 45,
                       "w": 143,
                       "h": 52
                     },
@@ -1939,8 +1928,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 1017,
-                          "y": 46,
+                          "x": 1063,
+                          "y": 45,
                           "w": 135,
                           "h": 51
                         },
@@ -1952,7 +1941,7 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art15.png",
                             "rect": {
-                              "x": 1017,
+                              "x": 1063,
                               "y": 56,
                               "w": 30,
                               "h": 30
@@ -1965,7 +1954,7 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art20.png",
                             "rect": {
-                              "x": 1052,
+                              "x": 1098,
                               "y": 56,
                               "w": 30,
                               "h": 30
@@ -1976,8 +1965,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 1088,
-                              "y": 64,
+                              "x": 1134,
+                              "y": 63,
                               "w": 21,
                               "h": 15
                             },
@@ -1987,8 +1976,8 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 1088,
-                                  "y": 64,
+                                  "x": 1134,
+                                  "y": 63,
                                   "w": 40,
                                   "h": 15
                                 },
@@ -2011,8 +2000,8 @@
                         "type": "Container",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 1017,
-                          "y": 47,
+                          "x": 1063,
+                          "y": 46,
                           "w": 143,
                           "h": 51
                         },
@@ -2024,8 +2013,8 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art17.png",
                             "rect": {
-                              "x": 1017,
-                              "y": 58,
+                              "x": 1063,
+                              "y": 56,
                               "w": 30,
                               "h": 30
                             }
@@ -2037,8 +2026,8 @@
                             "raycastTarget": false,
                             "sprite": "Assets/UI/CollectPanel/Icons/art22.png",
                             "rect": {
-                              "x": 1052,
-                              "y": 58,
+                              "x": 1098,
+                              "y": 56,
                               "w": 30,
                               "h": 30
                             }
@@ -2048,8 +2037,8 @@
                             "type": "Container",
                             "raycastTarget": false,
                             "rect": {
-                              "x": 1088,
-                              "y": 65,
+                              "x": 1134,
+                              "y": 64,
                               "w": 21,
                               "h": 15
                             },
@@ -2059,8 +2048,8 @@
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
-                                  "x": 1088,
-                                  "y": 65,
+                                  "x": 1134,
+                                  "y": 64,
                                   "w": 40,
                                   "h": 15
                                 },
@@ -2659,9 +2648,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1191,
+                                      "x": 1178,
                                       "y": 208,
-                                      "w": 99,
+                                      "w": 112,
                                       "h": 22
                                     },
                                     "children": [
@@ -2679,9 +2668,9 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1191,
+                                          "x": 1178,
                                           "y": 210,
-                                          "w": 69,
+                                          "w": 107,
                                           "h": 20
                                         },
                                         "stroke": {
@@ -2702,18 +2691,18 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1196,
+                                              "x": 1180,
                                               "y": 212,
-                                              "w": 80,
+                                              "w": 102,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "未准备完成",
-                                              "fontSize": 11,
+                                              "fontSize": 20,
                                               "color": "#FCA5A5",
                                               "alignment": "MidlineLeft",
                                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                              "lineSpacing": -38.8,
+                                              "lineSpacing": -57.6,
                                               "wrap": true
                                             }
                                           }
@@ -2817,17 +2806,17 @@
                                         },
                                         "children": [
                                           {
-                                            "name": "手部未识别_Text",
+                                            "name": "相机初始化成功_Text",
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
                                               "x": 725,
                                               "y": 325,
-                                              "w": 100,
+                                              "w": 140,
                                               "h": 21
                                             },
                                             "text": {
-                                              "content": "手部未识别",
+                                              "content": "相机初始化成功",
                                               "fontSize": 20,
                                               "color": "#86EFAC",
                                               "alignment": "MidlineLeft",
@@ -2854,10 +2843,10 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 713,
-                                              "y": 350,
-                                              "w": 20,
-                                              "h": 21
+                                              "x": 706,
+                                              "y": 346,
+                                              "w": 30,
+                                              "h": 31
                                             },
                                             "children": [
                                               {
@@ -2865,12 +2854,12 @@
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art28.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                                 "rect": {
-                                                  "x": 713,
-                                                  "y": 351,
-                                                  "w": 20,
-                                                  "h": 20
+                                                  "x": 706,
+                                                  "y": 347,
+                                                  "w": 30,
+                                                  "h": 30
                                                 }
                                               }
                                             ]
@@ -2887,7 +2876,7 @@
                                             },
                                             "children": [
                                               {
-                                                "name": "相机初始化成功_Text",
+                                                "name": "相机初始化成功，请保持_Text",
                                                 "type": "Text",
                                                 "raycastTarget": false,
                                                 "rect": {
@@ -2897,7 +2886,7 @@
                                                   "h": 53
                                                 },
                                                 "text": {
-                                                  "content": "相机初始化成功",
+                                                  "content": "相机初始化成功，请保持",
                                                   "fontSize": 20,
                                                   "color": "#86EFAC",
                                                   "alignment": "MidlineLeft",
@@ -3044,7 +3033,7 @@
                                       "x": 716,
                                       "y": 319,
                                       "w": 471,
-                                      "h": 44
+                                      "h": 81
                                     },
                                     "children": [
                                       {
@@ -3096,10 +3085,10 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 711,
-                                              "y": 350,
-                                              "w": 20,
-                                              "h": 21
+                                              "x": 705,
+                                              "y": 343,
+                                              "w": 30,
+                                              "h": 31
                                             },
                                             "children": [
                                               {
@@ -3107,12 +3096,12 @@
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art30.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
                                                 "rect": {
-                                                  "x": 711,
-                                                  "y": 351,
-                                                  "w": 20,
-                                                  "h": 20
+                                                  "x": 705,
+                                                  "y": 344,
+                                                  "w": 30,
+                                                  "h": 30
                                                 }
                                               }
                                             ]
@@ -3353,8 +3342,8 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 713,
-                                              "y": 464,
+                                              "x": 706,
+                                              "y": 458,
                                               "w": 30,
                                               "h": 31
                                             },
@@ -3366,8 +3355,8 @@
                                                 "raycastTarget": false,
                                                 "sprite": "Assets/UI/CollectPanel/Icons/art24.png",
                                                 "rect": {
-                                                  "x": 713,
-                                                  "y": 465,
+                                                  "x": 706,
+                                                  "y": 459,
                                                   "w": 30,
                                                   "h": 30
                                                 }
@@ -3632,7 +3621,6 @@
                                                   "color": "#FCA5A5",
                                                   "alignment": "MidlineLeft",
                                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                                  "lineSpacing": -44.6,
                                                   "wrap": true
                                                 }
                                               }
@@ -3842,11 +3830,26 @@
                                             "type": "Container",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 719,
+                                              "x": 709,
                                               "y": 555,
                                               "w": 30,
                                               "h": 31
-                                            }
+                                            },
+                                            "children": [
+                                              {
+                                                "name": "Icon_Image",
+                                                "type": "Image",
+                                                "color": "#FFFFFF",
+                                                "raycastTarget": false,
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art36.png",
+                                                "rect": {
+                                                  "x": 709,
+                                                  "y": 556,
+                                                  "w": 30,
+                                                  "h": 30
+                                                }
+                                              }
+                                            ]
                                           },
                                           {
                                             "name": "Text",
@@ -4070,7 +4073,7 @@
                                                 "type": "Image",
                                                 "color": "#FFFFFF",
                                                 "raycastTarget": false,
-                                                "sprite": "Assets/UI/CollectPanel/Icons/art37.png",
+                                                "sprite": "Assets/UI/CollectPanel/Icons/art26.png",
                                                 "rect": {
                                                   "x": 711,
                                                   "y": 555,
@@ -4121,9 +4124,9 @@
                                     "type": "Container",
                                     "raycastTarget": false,
                                     "rect": {
-                                      "x": 1179,
+                                      "x": 1159,
                                       "y": 533,
-                                      "w": 98,
+                                      "w": 118,
                                       "h": 22
                                     },
                                     "children": [
@@ -4141,9 +4144,9 @@
                                           "b": 3
                                         },
                                         "rect": {
-                                          "x": 1179,
+                                          "x": 1159,
                                           "y": 535,
-                                          "w": 98,
+                                          "w": 118,
                                           "h": 20
                                         },
                                         "stroke": {
@@ -4164,18 +4167,18 @@
                                             "type": "Text",
                                             "raycastTarget": false,
                                             "rect": {
-                                              "x": 1179,
+                                              "x": 1163,
                                               "y": 537,
-                                              "w": 99,
+                                              "w": 109,
                                               "h": 15
                                             },
                                             "text": {
                                               "content": "未准备完成",
-                                              "fontSize": 11,
+                                              "fontSize": 20,
                                               "color": "#FCA5A5",
                                               "alignment": "Center",
                                               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                              "lineSpacing": -38.8,
+                                              "lineSpacing": -57.6,
                                               "wrap": true
                                             }
                                           }
@@ -4438,7 +4441,7 @@
                             },
                             "children": [
                               {
-                                "name": "使用说明_Text",
+                                "name": "使用说明：_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
@@ -4448,7 +4451,7 @@
                                   "h": 17
                                 },
                                 "text": {
-                                  "content": "使用说明",
+                                  "content": "使用说明：",
                                   "fontSize": 24,
                                   "color": "#A8BCD8",
                                   "alignment": "MidlineLeft",
@@ -4471,22 +4474,22 @@
                             },
                             "children": [
                               {
-                                "name": "手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿\n点「开始准备」保持手柄约 1_Text",
+                                "name": "手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿点「开始准备」保持手柄约 1_Text",
                                 "type": "Text",
                                 "raycastTarget": false,
                                 "rect": {
                                   "x": 34,
                                   "y": 818,
-                                  "w": 956,
+                                  "w": 968,
                                   "h": 99
                                 },
                                 "text": {
-                                  "content": "手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿\n点「开始准备」保持手柄约 1 秒自动开始；开始后语音说：开始采集;结束前说：结束采集\n结束后点「结束采集」再选相对应的标签，然后重新开始",
-                                  "fontSize": 20,
+                                  "content": "点「开始准备」放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，等待3秒后自动开始，开始后语音说：任务开始;结束前说：任务结束，结束后点「结束采集」再选相对应的标签，然后重新开始",
+                                  "fontSize": 24,
                                   "color": "#F6F9FE",
                                   "alignment": "MidlineLeft",
                                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                                  "lineSpacing": 12.4,
+                                  "lineSpacing": -11.8,
                                   "wrap": true
                                 }
                               }
@@ -4501,37 +4504,54 @@
             ]
           },
           {
-            "name": "ContainerFill_Image_1",
-            "type": "Image",
-            "color": "#040A1C80",
+            "name": "Container_1",
+            "type": "Container",
             "raycastTarget": false,
-            "sprite": "Assets/UI/Common/round12.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 12,
-              "t": 12,
-              "r": 12,
-              "b": 12
-            },
             "rect": {
               "x": 1008,
               "y": 861,
               "w": 327,
               "h": 62
             },
-            "stroke": {
-              "color": "#00D4C814",
-              "weight": 1.0,
-              "align": "Inside",
-              "sprite": "Assets/UI/Common/ring12.png",
-              "border": {
-                "l": 12,
-                "t": 12,
-                "r": 12,
-                "b": 12
-              }
-            },
             "children": [
+              {
+                "name": "OfflineReturn_Btn",
+                "type": "Button",
+                "color": "#4D5A7F",
+                "rect": {
+                  "x": 1050,
+                  "y": 866,
+                  "w": 244,
+                  "h": 52
+                },
+                "sprite": "Assets/UI/Common/round7.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 7,
+                  "t": 7,
+                  "r": 7,
+                  "b": 7
+                },
+                "text": {
+                  "content": "返回",
+                  "fontSize": 32,
+                  "color": "#A4BDEB",
+                  "alignment": "Center",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+                },
+                "stroke": {
+                  "color": "#1C273D",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring7.png",
+                  "border": {
+                    "l": 7,
+                    "t": 7,
+                    "r": 7,
+                    "b": 7
+                  }
+                }
+              },
               {
                 "name": "Return_Btn",
                 "type": "Button",
@@ -4558,7 +4578,7 @@
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
                 },
                 "stroke": {
-                  "color": "#FFFFFF",
+                  "color": "#1C273D",
                   "weight": 0.67,
                   "align": "Inside",
                   "sprite": "Assets/UI/Common/ring7.png",
@@ -4596,7 +4616,7 @@
                   "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
                 },
                 "stroke": {
-                  "color": "#FFFFFF",
+                  "color": "#FFAAAA",
                   "weight": 0.67,
                   "align": "Inside",
                   "sprite": "Assets/UI/Common/ring7.png",

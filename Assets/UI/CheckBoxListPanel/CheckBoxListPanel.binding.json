@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "CheckBoxListPanel",
+  "prefab": "Assets/UI/CheckBoxListPanel/CheckBoxListPanel.prefab",
+  "size": { "w": 1337, "h": 931 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring12", "ring6", "round16", "round6"],
+    "atlas": "Assets/UI/CheckBoxListPanel/CheckBoxListPanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "returnBtn", "path": "Container/Container/Return_Btn", "type": "Button", "text": "返回" },
+    { "key": "taskDescriptionText", "path": "Container_Image/Container/TaskDescription_Text", "type": "Text", "text": "任务描述：" },
+    { "key": "countMessageText", "path": "Text/CountMessage_Text", "type": "Text", "text": "共 28 个结果，第 1/5 页（点击领取）" },
+    { "key": "itemParent", "path": "ItemParent", "type": "List", "text": null, "itemPrefab": "CheckItem_Btn" },
+    { "key": "prePageBtn", "path": "Container_1/PrePage_Btn", "type": "Button", "text": "← 上一页" },
+    { "key": "pageTipText", "path": "Container_1/Container/PageTip_Text", "type": "Text", "text": "1 / 5" },
+    { "key": "nextPageBtn", "path": "Container_1/NextPage_Btn", "type": "Button", "text": "下一页 →" }
+  ]
+}

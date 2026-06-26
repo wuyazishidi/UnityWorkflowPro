@@ -528,6 +528,45 @@
             ]
           }
         ]
+      },
+      {
+        "name": "OfflineCollect_Btn",
+        "type": "Button",
+        "color": "#0616468C",
+        "rect": {
+          "x": 1199,
+          "y": 870,
+          "w": 118,
+          "h": 41
+        },
+        "sprite": "Assets/UI/Common/round14.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 14,
+          "t": 14,
+          "r": 14,
+          "b": 14
+        },
+        "text": {
+          "content": "离线采集",
+          "fontSize": 14,
+          "color": "#B4DAFFBF",
+          "alignment": "Center",
+          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+          "characterSpacing": 5.0
+        },
+        "stroke": {
+          "color": "#3C8CFF4D",
+          "weight": 0.67,
+          "align": "Inside",
+          "sprite": "Assets/UI/Common/ring14.png",
+          "border": {
+            "l": 14,
+            "t": 14,
+            "r": 14,
+            "b": 14
+          }
+        }
       }
     ]
   }
