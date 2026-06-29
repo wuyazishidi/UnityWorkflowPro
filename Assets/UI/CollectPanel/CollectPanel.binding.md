@@ -20,9 +20,9 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 | `userNameText` | Text | collector01 | `Container/ContainerFill_Image/Container/Text_3/Text_1/UserName_Text` |  |
 | `taskIDText` | Text | 任务： | `Container/ContainerFill_Image/Container_1/Text/TaskID_Text` |  |
 | `text7` | Text | \| | `Container/ContainerFill_Image/Container_1/Text_1/|_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
+| `strategyText` | Text | 口述策略：仅当出错 | `Container/ContainerFill_Image/Container_1/Text_2/Strategy_Text` |  |
 | `stateText` | Text | 准备中 | `Container/ContainerFill_Image/Container_1/TextFill_Image/State_Text` |  |
-| `text8` | Text | \| | `Container/ContainerFill_Image/Container_1/Text_2/|_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
-| `strategyText` | Text | 口述策略：仅当出错 | `Container/ContainerFill_Image/Container_1/Text_3/Strategy_Text` |  |
+| `text8` | Text | \| | `Container/ContainerFill_Image/Container_1/Text_3/|_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `text9` | Text | 左手柄 | `Container/Container/ContainerFill_Image/LeftController/Green_ImageFill_Image/左手柄_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `text10` | Text | 左手柄 | `Container/Container/ContainerFill_Image/LeftController/Red_ImageFill_Image/左手柄_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `text11` | Text | 右手柄 | `Container/Container/ContainerFill_Image/RightController/Green_ImageFill_Image/右手柄_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
@@ -69,7 +69,7 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 | `collectStateBtn` | Button | 准备中 | `Container/Container/Container/Container/Container_3/CollectState_Btn` |  |
 | `endCollectBtn` | Button | 结束采集 | `Container/Container/Container/Container/Container_3/EndCollect_Btn` |  |
 | `text49` | Text | 使用说明： | `Container/Container/Container/Container/ContainerFill_Image_3/Paragraph/使用说明：_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
-| `text50` | Text | 放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始 | `Container/Container/Container/Container/ContainerFill_Image_3/Paragraph_1/手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿点「开始准备」保持手柄约 1_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
+| `text50` | Text | 放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集,进入采集中后语音说口述策略;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始 | `Container/Container/Container/Container/ContainerFill_Image_3/Paragraph_1/手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿点「开始准备」保持手柄约 1_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `offlineReturnBtn` | Button | 返回 | `Container/Container_1/OfflineReturn_Btn` |  |
 | `returnBtn` | Button | 返回选择任务 | `Container/Container_1/Return_Btn` |  |
 | `endRecordBtn` | Button | 结束录制 | `Container/Container_1/EndRecord_Btn` |  |

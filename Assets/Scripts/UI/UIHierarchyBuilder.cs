@@ -28,7 +28,23 @@ namespace Game.UI
         public static GameObject Build(UISpec spec, IUIAssetResolver resolver)
         {
             if (spec == null || spec.root == null) return null;
-            return BuildNode(spec.root, 0f, 0f, resolver);
+            var root = BuildNode(spec.root, 0f, 0f, resolver);
+            WireSelectAllToggles(root);
+            return root;
+        }
+
+        /// <summary>构建期把"全选" SelectAllToggle 的 itemsRoot 指到本面板 ScrollList 的 Content。
+        /// 跨节点引用须在整棵树建好后接（运行期回退会在多面板 Canvas 里误命中别的列表，故构建期写死最稳）。</summary>
+        private static void WireSelectAllToggles(GameObject root)
+        {
+            if (root == null) return;
+            var all = root.GetComponentsInChildren<SelectAllToggle>(true);
+            if (all.Length == 0) return;
+            var sr = root.GetComponentInChildren<ScrollRect>(true);
+            var content = sr != null ? sr.content : null;
+            if (content == null) return;
+            foreach (var sa in all)
+                if (sa.itemsRoot == null) sa.itemsRoot = content;
         }
 
         private static GameObject BuildNode(UINode node, float parentAbsX, float parentAbsY, IUIAssetResolver resolver)
@@ -505,6 +521,14 @@ namespace Game.UI
             return Resources.GetBuiltinResource<Sprite>("UI/Skin/Checkmark.psd");
         }
 
+        /// <summary>是否"全选"开关（按命名识别：含 allselect/selectall/全选）。</summary>
+        private static bool IsSelectAllName(string n)
+        {
+            if (string.IsNullOrEmpty(n)) return false;
+            var low = n.ToLowerInvariant();
+            return low.Contains("allselect") || low.Contains("selectall") || n.Contains("全选");
+        }
+
         /// <summary>Toggle：背景图(targetGraphic 占满节点) + 勾选图(graphic 内缩)。节点带 text 时右侧加 Label。</summary>
         private static void BuildToggle(GameObject go, UINode node, IUIAssetResolver resolver)
         {
@@ -537,6 +561,10 @@ namespace Game.UI
             toggle.graphic = checkImg;
 
             toggle.isOn = node.isOn;
+
+            // "全选"开关：挂联动组件，运行期联动 ScrollList 里所有 Item 的 Toggle（itemsRoot 在 Build() 末尾接好）。
+            if (IsSelectAllName(node.name))
+                go.AddComponent<SelectAllToggle>().master = toggle;
 
             if (node.text != null && !string.IsNullOrEmpty(node.text.content))
             {

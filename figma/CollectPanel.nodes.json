@@ -2050,9 +2050,9 @@
                             "blendMode": "NORMAL",
                             "type": "SOLID",
                             "color": {
-                              "r": 0.47843137383461,
-                              "g": 0.5647059082984924,
-                              "b": 0.7215686440467834,
+                              "r": 1.0,
+                              "g": 1.0,
+                              "b": 1.0,
                               "a": 1.0
                             }
                           }
@@ -2255,6 +2255,145 @@
                     }
                   },
                   {
+                    "id": "1:55",
+                    "name": "Text",
+                    "type": "FRAME",
+                    "scrollBehavior": "SCROLLS",
+                    "children": [
+                      {
+                        "id": "1:56",
+                        "name": "Strategy_Text",
+                        "type": "TEXT",
+                        "scrollBehavior": "SCROLLS",
+                        "blendMode": "PASS_THROUGH",
+                        "fills": [
+                          {
+                            "blendMode": "NORMAL",
+                            "type": "SOLID",
+                            "color": {
+                              "r": 1.0,
+                              "g": 1.0,
+                              "b": 1.0,
+                              "a": 1.0
+                            }
+                          }
+                        ],
+                        "strokes": [],
+                        "strokeWeight": 1.0,
+                        "strokeAlign": "OUTSIDE",
+                        "absoluteBoundingBox": {
+                          "x": 1009.0,
+                          "y": 16.666664123535156,
+                          "width": 180.0,
+                          "height": 17.0
+                        },
+                        "absoluteRenderBounds": {
+                          "x": 1011.5399780273438,
+                          "y": 14.786664009094238,
+                          "width": 176.62005615234375,
+                          "height": 18.5
+                        },
+                        "constraints": {
+                          "vertical": "TOP",
+                          "horizontal": "LEFT"
+                        },
+                        "characters": "口述策略：仅当出错",
+                        "characterStyleOverrides": [
+                          5,
+                          5,
+                          5,
+                          5,
+                          5,
+                          4,
+                          4,
+                          4,
+                          4
+                        ],
+                        "styleOverrideTable": {
+                          "5": {
+                            "fontSize": 20.0
+                          },
+                          "4": {
+                            "fontSize": 20.0,
+                            "fills": [
+                              {
+                                "blendMode": "NORMAL",
+                                "type": "SOLID",
+                                "color": {
+                                  "r": 1.0,
+                                  "g": 1.0,
+                                  "b": 1.0,
+                                  "a": 1.0
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "lineTypes": [
+                          "NONE"
+                        ],
+                        "lineIndentations": [
+                          0
+                        ],
+                        "style": {
+                          "fontFamily": "DM Mono",
+                          "fontPostScriptName": null,
+                          "fontStyle": "Regular",
+                          "fontWeight": 400,
+                          "textAutoResize": "WIDTH_AND_HEIGHT",
+                          "fontSize": 20.0,
+                          "textAlignHorizontal": "LEFT",
+                          "textAlignVertical": "TOP",
+                          "letterSpacing": 0.0,
+                          "lineHeightPx": 16.5,
+                          "lineHeightPercent": 63.364051818847656,
+                          "lineHeightPercentFontSize": 82.5,
+                          "lineHeightUnit": "PIXELS"
+                        },
+                        "layoutVersion": 5,
+                        "effects": [],
+                        "interactions": [],
+                        "complexStrokeProperties": {
+                          "strokeType": "BASIC"
+                        }
+                      }
+                    ],
+                    "blendMode": "PASS_THROUGH",
+                    "clipsContent": false,
+                    "background": [],
+                    "fills": [],
+                    "strokes": [],
+                    "strokeWeight": 1.0,
+                    "strokeAlign": "INSIDE",
+                    "backgroundColor": {
+                      "r": 0.0,
+                      "g": 0.0,
+                      "b": 0.0,
+                      "a": 0.0
+                    },
+                    "absoluteBoundingBox": {
+                      "x": 1009.0,
+                      "y": 17.0,
+                      "width": 180.0,
+                      "height": 17.0
+                    },
+                    "absoluteRenderBounds": {
+                      "x": 1009.0,
+                      "y": 14.786664009094238,
+                      "width": 180.0,
+                      "height": 19.213336944580078
+                    },
+                    "constraints": {
+                      "vertical": "TOP",
+                      "horizontal": "LEFT"
+                    },
+                    "effects": [],
+                    "interactions": [],
+                    "complexStrokeProperties": {
+                      "strokeType": "BASIC"
+                    }
+                  },
+                  {
                     "id": "1:51",
                     "name": "Text",
                     "type": "FRAME",
@@ -2282,16 +2421,16 @@
                         "strokeWeight": 1.0,
                         "strokeAlign": "OUTSIDE",
                         "absoluteBoundingBox": {
-                          "x": 1027.0,
-                          "y": 14.0,
+                          "x": 1214.0,
+                          "y": 16.0,
                           "width": 72.0,
                           "height": 19.0
                         },
                         "absoluteRenderBounds": {
-                          "x": 1033.719970703125,
-                          "y": 13.139999389648438,
+                          "x": 1220.719970703125,
+                          "y": 15.139999389648438,
                           "width": 57.320068359375,
-                          "height": 18.46000099182129
+                          "height": 18.459999084472656
                         },
                         "constraints": {
                           "vertical": "TOP",
@@ -2380,14 +2519,14 @@
                       "a": 0.14000000059604645
                     },
                     "absoluteBoundingBox": {
-                      "x": 1027.0,
-                      "y": 13.0,
+                      "x": 1214.0,
+                      "y": 15.0,
                       "width": 72.0,
                       "height": 20.0
                     },
                     "absoluteRenderBounds": {
-                      "x": 1027.0,
-                      "y": 13.0,
+                      "x": 1214.0,
+                      "y": 15.0,
                       "width": 72.0,
                       "height": 20.0
                     },
@@ -2429,14 +2568,14 @@
                         "strokeWeight": 1.0,
                         "strokeAlign": "OUTSIDE",
                         "absoluteBoundingBox": {
-                          "x": 1105.0,
-                          "y": 12.0,
+                          "x": 1204.0,
+                          "y": 13.0,
                           "width": 5.0,
                           "height": 21.0
                         },
                         "absoluteRenderBounds": {
-                          "x": 1106.8399658203125,
-                          "y": 14.379999160766602,
+                          "x": 1205.8399658203125,
+                          "y": 15.379999160766602,
                           "width": 1.239990234375,
                           "height": 19.000001907348633
                         },
@@ -2490,155 +2629,16 @@
                       "a": 0.0
                     },
                     "absoluteBoundingBox": {
-                      "x": 1105.0,
-                      "y": 12.0,
+                      "x": 1204.0,
+                      "y": 13.0,
                       "width": 3.4479167461395264,
                       "height": 21.0
                     },
                     "absoluteRenderBounds": {
-                      "x": 1105.0,
-                      "y": 12.0,
+                      "x": 1204.0,
+                      "y": 13.0,
                       "width": 3.4479167461395264,
                       "height": 21.380001068115234
-                    },
-                    "constraints": {
-                      "vertical": "TOP",
-                      "horizontal": "LEFT"
-                    },
-                    "effects": [],
-                    "interactions": [],
-                    "complexStrokeProperties": {
-                      "strokeType": "BASIC"
-                    }
-                  },
-                  {
-                    "id": "1:55",
-                    "name": "Text",
-                    "type": "FRAME",
-                    "scrollBehavior": "SCROLLS",
-                    "children": [
-                      {
-                        "id": "1:56",
-                        "name": "Strategy_Text",
-                        "type": "TEXT",
-                        "scrollBehavior": "SCROLLS",
-                        "blendMode": "PASS_THROUGH",
-                        "fills": [
-                          {
-                            "blendMode": "NORMAL",
-                            "type": "SOLID",
-                            "color": {
-                              "r": 0.47843137383461,
-                              "g": 0.5647059082984924,
-                              "b": 0.7215686440467834,
-                              "a": 1.0
-                            }
-                          }
-                        ],
-                        "strokes": [],
-                        "strokeWeight": 1.0,
-                        "strokeAlign": "OUTSIDE",
-                        "absoluteBoundingBox": {
-                          "x": 1120.0,
-                          "y": 15.666664123535156,
-                          "width": 180.0,
-                          "height": 17.0
-                        },
-                        "absoluteRenderBounds": {
-                          "x": 1122.5400390625,
-                          "y": 13.786664009094238,
-                          "width": 176.6199951171875,
-                          "height": 18.5
-                        },
-                        "constraints": {
-                          "vertical": "TOP",
-                          "horizontal": "LEFT"
-                        },
-                        "characters": "口述策略：仅当出错",
-                        "characterStyleOverrides": [
-                          5,
-                          5,
-                          5,
-                          5,
-                          5,
-                          4,
-                          4,
-                          4,
-                          4
-                        ],
-                        "styleOverrideTable": {
-                          "5": {
-                            "fontSize": 20.0
-                          },
-                          "4": {
-                            "fontSize": 20.0,
-                            "fills": [
-                              {
-                                "blendMode": "NORMAL",
-                                "type": "SOLID",
-                                "color": {
-                                  "r": 1.0,
-                                  "g": 1.0,
-                                  "b": 1.0,
-                                  "a": 1.0
-                                }
-                              }
-                            ]
-                          }
-                        },
-                        "lineTypes": [
-                          "NONE"
-                        ],
-                        "lineIndentations": [
-                          0
-                        ],
-                        "style": {
-                          "fontFamily": "DM Mono",
-                          "fontPostScriptName": null,
-                          "fontStyle": "Regular",
-                          "fontWeight": 400,
-                          "textAutoResize": "WIDTH_AND_HEIGHT",
-                          "fontSize": 20.0,
-                          "textAlignHorizontal": "LEFT",
-                          "textAlignVertical": "TOP",
-                          "letterSpacing": 0.0,
-                          "lineHeightPx": 16.5,
-                          "lineHeightPercent": 63.364051818847656,
-                          "lineHeightPercentFontSize": 82.5,
-                          "lineHeightUnit": "PIXELS"
-                        },
-                        "layoutVersion": 5,
-                        "effects": [],
-                        "interactions": [],
-                        "complexStrokeProperties": {
-                          "strokeType": "BASIC"
-                        }
-                      }
-                    ],
-                    "blendMode": "PASS_THROUGH",
-                    "clipsContent": false,
-                    "background": [],
-                    "fills": [],
-                    "strokes": [],
-                    "strokeWeight": 1.0,
-                    "strokeAlign": "INSIDE",
-                    "backgroundColor": {
-                      "r": 0.0,
-                      "g": 0.0,
-                      "b": 0.0,
-                      "a": 0.0
-                    },
-                    "absoluteBoundingBox": {
-                      "x": 1120.0,
-                      "y": 16.0,
-                      "width": 102.0,
-                      "height": 16.5
-                    },
-                    "absoluteRenderBounds": {
-                      "x": 1120.0,
-                      "y": 13.786664009094238,
-                      "width": 179.1600341796875,
-                      "height": 18.713336944580078
                     },
                     "constraints": {
                       "vertical": "TOP",
@@ -2672,9 +2672,9 @@
                 },
                 "absoluteRenderBounds": {
                   "x": 798.0,
-                  "y": 12.0,
+                  "y": 12.666666030883789,
                   "width": 533.0,
-                  "height": 22.380001068115234
+                  "height": 22.33333396911621
                 },
                 "constraints": {
                   "vertical": "TOP",
@@ -20083,7 +20083,7 @@
                                 "absoluteRenderBounds": {
                                   "x": 34.766666412353516,
                                   "y": 820.8866577148438,
-                                  "width": 948.7106323242188,
+                                  "width": 963.2212524414062,
                                   "height": 80.8480224609375
                                 },
                                 "constraints": {
@@ -20094,7 +20094,7 @@
                                 "layoutGrow": 0.0,
                                 "layoutSizingHorizontal": "FIXED",
                                 "layoutSizingVertical": "FIXED",
-                                "characters": "放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始",
+                                "characters": "放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集,进入采集中后语音说口述策略;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始",
                                 "characterStyleOverrides": [],
                                 "styleOverrideTable": {},
                                 "lineTypes": [
@@ -20153,7 +20153,7 @@
                             "absoluteRenderBounds": {
                               "x": 34.16666793823242,
                               "y": 813.1666870117188,
-                              "width": 955.6666870117188,
+                              "width": 963.8212280273438,
                               "height": 104.0
                             },
                             "constraints": {

@@ -636,7 +636,7 @@
                         "text": {
                           "content": "任务：",
                           "fontSize": 20,
-                          "color": "#7A90B8",
+                          "color": "#FFFFFF",
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
                           "lineSpacing": -50.1,
@@ -679,6 +679,39 @@
                     ]
                   },
                   {
+                    "name": "Text_2",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 1009,
+                      "y": 17,
+                      "w": 180,
+                      "h": 17
+                    },
+                    "children": [
+                      {
+                        "name": "Strategy_Text",
+                        "type": "Text",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 1009,
+                          "y": 17,
+                          "w": 180,
+                          "h": 17
+                        },
+                        "text": {
+                          "content": "口述策略：仅当出错",
+                          "fontSize": 20,
+                          "color": "#FFFFFF",
+                          "alignment": "MidlineLeft",
+                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                          "lineSpacing": -50.1,
+                          "wrap": true
+                        }
+                      }
+                    ]
+                  },
+                  {
                     "name": "TextFill_Image",
                     "type": "Image",
                     "color": "#00D4C824",
@@ -692,8 +725,8 @@
                       "b": 5
                     },
                     "rect": {
-                      "x": 1027,
-                      "y": 13,
+                      "x": 1214,
+                      "y": 15,
                       "w": 72,
                       "h": 20
                     },
@@ -715,8 +748,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 1027,
-                          "y": 14,
+                          "x": 1214,
+                          "y": 16,
                           "w": 72,
                           "h": 19
                         },
@@ -733,12 +766,12 @@
                     ]
                   },
                   {
-                    "name": "Text_2",
+                    "name": "Text_3",
                     "type": "Container",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 1105,
-                      "y": 12,
+                      "x": 1204,
+                      "y": 13,
                       "w": 3,
                       "h": 21
                     },
@@ -748,8 +781,8 @@
                         "type": "Text",
                         "raycastTarget": false,
                         "rect": {
-                          "x": 1105,
-                          "y": 12,
+                          "x": 1204,
+                          "y": 13,
                           "w": 5,
                           "h": 21
                         },
@@ -760,39 +793,6 @@
                           "alignment": "MidlineLeft",
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
                           "lineSpacing": -27.6,
-                          "wrap": true
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text_3",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 1120,
-                      "y": 16,
-                      "w": 102,
-                      "h": 16
-                    },
-                    "children": [
-                      {
-                        "name": "Strategy_Text",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 1120,
-                          "y": 16,
-                          "w": 180,
-                          "h": 17
-                        },
-                        "text": {
-                          "content": "口述策略：仅当出错",
-                          "fontSize": 20,
-                          "color": "#7A90B8",
-                          "alignment": "MidlineLeft",
-                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -50.1,
                           "wrap": true
                         }
                       }
@@ -4484,7 +4484,7 @@
                                   "h": 99
                                 },
                                 "text": {
-                                  "content": "放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始",
+                                  "content": "放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集,进入采集中后语音说口述策略;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始",
                                   "fontSize": 24,
                                   "color": "#F6F9FE",
                                   "alignment": "MidlineLeft",

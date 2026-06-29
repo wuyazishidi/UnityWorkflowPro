@@ -16,7 +16,7 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 | `prePageBtn` | Button | ← 上一页 | `Container_1/PrePage_Btn` |  |
 | `pageTipText` | Text | 1 / 5 | `Container_1/Container/PageTip_Text` |  |
 | `nextPageBtn` | Button | 下一页 → | `Container_1/NextPage_Btn` |  |
-| `assignedTaskBtn` | Button | 我的已领任务 / 恢复未传数据 | `Container_2/AssignedTask_Btn` |  |
+| `assignedTaskBtn` | Button | 我的已领任务  | `Container_2/AssignedTask_Btn` |  |
 
 > 命名约定：可绑元素名带类型后缀（`_Btn`/`_InputField`/`_Dropdown`/`_Text`），由翻译器自动加，`key` 即由其驼峰化（如 `returnBtn`）。
 >
