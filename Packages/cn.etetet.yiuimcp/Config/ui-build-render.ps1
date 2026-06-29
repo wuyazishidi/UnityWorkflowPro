@@ -89,3 +89,7 @@ if ($Verify) {
   }
 }
 Write-Host "ALL DONE"
+# 走到这里即所有步骤都过了 Invoke-Retry 的产物刷新判定（真失败会在上面 exit 1）。
+# UTO 工具"成功不设退出码"，$LASTEXITCODE 可能残留重试循环里 invoke 调用的非零值 →
+# 显式 exit 0，否则调用方(figma.ps1)会把成功误判成 "ui-build-render failed"。
+exit 0

@@ -10,10 +10,9 @@
     "needsTmpEssentials": true
   },
   "elements": [
-    { "key": "text1", "path": "Paragraph/数据上传_Text", "type": "Text", "text": "数据上传", "keyAuto": true },
+    { "key": "titleText", "path": "Paragraph/Title_Text", "type": "Text", "text": "数据上传" },
     { "key": "tipText", "path": "Paragraph/Tip_Text", "type": "Text", "text": "数据上传" },
-    { "key": "customScrollList", "path": "CustomScrollList", "type": "ScrollList", "text": null },
-    { "key": "returnBtn", "path": "Container_1/Return_Btn", "type": "Button", "text": "返回" },
-    { "key": "uploadBtn", "path": "Container_1/Upload_Btn", "type": "Button", "text": "去上传" }
+    { "key": "customScrollList", "path": "CustomScrollList", "type": "ScrollList", "text": null, "itemPrefab": "UpLoadBox_Btn" },
+    { "key": "returnBtn", "path": "Container_1/Return_Btn", "type": "Button", "text": "返回" }
   ]
 }

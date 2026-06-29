@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "UploadBoxPanel",
+  "prefab": "Assets/UI/UploadBoxPanel/UploadBoxPanel.prefab",
+  "size": { "w": 1337, "h": 931 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring5", "round10", "round16", "round2", "round5", "round7"],
+    "atlas": "Assets/UI/UploadBoxPanel/UploadBoxPanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "titleText", "path": "Paragraph/Title_Text", "type": "Text", "text": "数据上传" },
+    { "key": "tipText", "path": "Paragraph/Tip_Text", "type": "Text", "text": "数据上传" },
+    { "key": "customScrollList", "path": "CustomScrollList", "type": "ScrollList", "text": null, "itemPrefab": "UpLoad_Btn" },
+    { "key": "allSelectToggle", "path": "Container_1/AllSelect_Toggle", "type": "Toggle", "text": null },
+    { "key": "text1", "path": "Container_1/Paragraph/全选_Text", "type": "Text", "text": "全选", "keyAuto": true },
+    { "key": "returnBtn", "path": "Container_2/Return_Btn", "type": "Button", "text": "返回" },
+    { "key": "uploadBtn", "path": "Container_2/Upload_Btn", "type": "Button", "text": "上传" }
+  ]
+}

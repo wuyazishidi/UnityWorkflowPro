@@ -22,7 +22,7 @@
 | CheckBoxListPanel | Assets/UI/CheckBoxListPanel | `zWHQeVseQCPe5mgS6O2BTO` | `1:3` | ✅ `figma/CheckBoxListPanel.nodes.json` | 2026-06-25T06:38:10Z |
 | CheckDetailPanel | Assets/UI/CheckDetailPanel | `VmGuZ3yXLpyKhKmbfByOkm` | `1:3` | ✅ `figma/CheckDetailPanel.nodes.json` | 2026-06-25T10:21:47Z |
 | CheckListPanel | Assets/UI/CheckListPanel | `LtD46LtwYeQRkHQTu8Gj0m` | `1:3` | ✅ `figma/CheckListPanel.nodes.json` | 2026-06-23T10:27:06Z |
-| CollectPanel | Assets/UI/CollectPanel | `sbY31OCHXCCTlZ5tzXzcw4` | `1:3` | ✅ `figma/CollectPanel.nodes.json` | 2026-06-25T10:02:09Z |
+| CollectPanel | Assets/UI/CollectPanel | `sbY31OCHXCCTlZ5tzXzcw4` | `1:3` | ✅ `figma/CollectPanel.nodes.json` | 2026-06-29T02:54:57Z |
 | CountdownPanel | Assets/UI/CountdownPanel | `wDuOGcqIMMgDVQ2n0EwLDH` | `2:3` | ✅ `figma/CountdownPanel.nodes.json` | 2026-06-22T11:25:06Z |
 | LoginPanel | Assets/UI/LoginPanel | `cB7nxtStcovjQxcc4s4j8P` | `41:427` | ✅ `figma/LoginPanel.nodes.json` | 2026-06-24T11:47:30Z |
 | SelectModulePanel | Assets/UI/SelectModulePanel | `yaul9H2DYwBYcdqp4BBHpH` | `1:3` | ✅ `figma/SelectModulePanel.nodes.json` | 2026-06-23T10:38:16Z |
@@ -30,7 +30,8 @@
 | TaskDetailPanel | Assets/UI/TaskDetailPanel | `hdY9WGGbmggdHVeGiNQEAv` | `8:41` | ✅ `figma/TaskDetailPanel.nodes.json` | 2026-06-23T09:36:44Z |
 | TaskListPanel | Assets/UI/TaskListPanel | `PpTDAzQY2rnSJsx2eZLuxb` | `1:3` | ✅ `figma/TaskListPanel.nodes.json` | 2026-06-23T10:45:17Z |
 | Tip | Assets/UI/Tip | `dSXYelB2Ekl9ULMwG2UkRe` | `1:2` | ✅ `figma/Tip.nodes.json` | 2026-06-22T11:25:49Z |
-| UpLoadPanel | Assets/UI/UpLoadPanel | `AOKqpshNjRquRGBRYgEy9m` | `14:887` | ✅ `figma/UpLoadPanel.nodes.json` | 2026-06-25T05:21:48Z |
+| UpLoadPanel | Assets/UI/UpLoadPanel | `AOKqpshNjRquRGBRYgEy9m` | `14:887` | ✅ `figma/UpLoadPanel.nodes.json` | 2026-06-26T14:08:31Z |
+| UploadBoxPanel | Assets/UI/UploadBoxPanel | `SSd6QXbXWUyOBCzITFVyxZ` | `1:3` | ✅ `figma/UploadBoxPanel.nodes.json` | 2026-06-26T14:13:18Z |
 <!-- END auto-index -->
 
 > ⚠️ 早期面板（Upload/TaskList/TaskDetail）的源 node 因从 **Figma Make 重新粘贴进 Design** 被覆盖/改名而失效（见记忆 `figma-make-paste-corruption`）。它们生成的 `<Panel>.json` 已入库，是当前存活真相；要再改设计须在 Figma 重做并给新 node-id。

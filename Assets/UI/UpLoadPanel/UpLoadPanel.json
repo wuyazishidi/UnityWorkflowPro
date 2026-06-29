@@ -96,7 +96,7 @@
         },
         "children": [
           {
-            "name": "数据上传_Text",
+            "name": "Title_Text",
             "type": "Text",
             "raycastTarget": false,
             "rect": {
@@ -153,10 +153,10 @@
           "horizontal": false,
           "vertical": true,
           "padding": {
-            "l": 1149,
-            "t": 12,
-            "r": 9,
-            "b": 12
+            "l": 14,
+            "t": 14,
+            "r": 31,
+            "b": 14
           },
           "spacing": 0
         },
@@ -169,51 +169,15 @@
           "r": 10,
           "b": 10
         },
+        "list": {
+          "vertical": true,
+          "spacing": 8,
+          "count": 5,
+          "itemPrefab": "UpLoadBox_Btn"
+        },
         "children": [
           {
-            "name": "Container_Image",
-            "type": "Image",
-            "color": "#388BFD26",
-            "raycastTarget": false,
-            "rect": {
-              "x": 1237,
-              "y": 141,
-              "w": 4,
-              "h": 565
-            },
-            "sprite": "Assets/UI/Common/round2.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 2,
-              "t": 2,
-              "r": 2,
-              "b": 2
-            },
-            "children": [
-              {
-                "name": "Container_Image",
-                "type": "Image",
-                "color": "#388BFD2E",
-                "raycastTarget": false,
-                "rect": {
-                  "x": 1237,
-                  "y": 141,
-                  "w": 4,
-                  "h": 129
-                },
-                "sprite": "Assets/UI/Common/round2.png",
-                "imageType": "Sliced",
-                "border": {
-                  "l": 2,
-                  "t": 2,
-                  "r": 2,
-                  "b": 2
-                }
-              }
-            ]
-          },
-          {
-            "name": "UpLoad_Btn",
+            "name": "UpLoadBox_Btn",
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
@@ -261,7 +225,7 @@
                     "rect": {
                       "x": 153,
                       "y": 178,
-                      "w": 467,
+                      "w": 1066,
                       "h": 22
                     },
                     "children": [
@@ -272,7 +236,7 @@
                         "rect": {
                           "x": 153,
                           "y": 179,
-                          "w": 502,
+                          "w": 1035,
                           "h": 22
                         },
                         "text": {
@@ -283,141 +247,6 @@
                           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
                           "lineSpacing": -63.8,
                           "characterSpacing": 0.9,
-                          "wrap": true
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Paragraph_1",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 640,
-                      "y": 177,
-                      "w": 191,
-                      "h": 23
-                    },
-                    "children": [
-                      {
-                        "name": "Contain_Text",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 630,
-                          "y": 177,
-                          "w": 201,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "98.1 MB",
-                          "fontSize": 36,
-                          "color": "#FFFFFF",
-                          "alignment": "MidlineLeft",
-                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -77.0,
-                          "wrap": true
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "ContainerFill_Image",
-                    "type": "Image",
-                    "color": "#388BFD0F",
-                    "raycastTarget": false,
-                    "sprite": "Assets/UI/Common/round4.png",
-                    "imageType": "Sliced",
-                    "border": {
-                      "l": 4,
-                      "t": 4,
-                      "r": 4,
-                      "b": 4
-                    },
-                    "rect": {
-                      "x": 851,
-                      "y": 170,
-                      "w": 154,
-                      "h": 37
-                    },
-                    "stroke": {
-                      "color": "#FFFFFF",
-                      "weight": 0.67,
-                      "align": "Inside",
-                      "sprite": "Assets/UI/Common/ring4.png",
-                      "border": {
-                        "l": 4,
-                        "t": 4,
-                        "r": 4,
-                        "b": 4
-                      }
-                    },
-                    "children": [
-                      {
-                        "name": "Text",
-                        "type": "Container",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 862,
-                          "y": 180,
-                          "w": 144,
-                          "h": 17
-                        },
-                        "children": [
-                          {
-                            "name": "UploadState_Text",
-                            "type": "Text",
-                            "raycastTarget": false,
-                            "rect": {
-                              "x": 862,
-                              "y": 181,
-                              "w": 97,
-                              "h": 17
-                            },
-                            "text": {
-                              "content": "待上传",
-                              "fontSize": 32,
-                              "color": "#FFFFFF",
-                              "alignment": "MidlineLeft",
-                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                              "lineSpacing": -81.0,
-                              "characterSpacing": 1.3,
-                              "wrap": true
-                            }
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "Text",
-                    "type": "Container",
-                    "raycastTarget": false,
-                    "rect": {
-                      "x": 1025,
-                      "y": 179,
-                      "w": 192,
-                      "h": 20
-                    },
-                    "children": [
-                      {
-                        "name": "UploadProgress_Text",
-                        "type": "Text",
-                        "raycastTarget": false,
-                        "rect": {
-                          "x": 1025,
-                          "y": 178,
-                          "w": 160,
-                          "h": 20
-                        },
-                        "text": {
-                          "content": "—",
-                          "fontSize": 32,
-                          "color": "#FFFFFF",
-                          "alignment": "MidlineRight",
-                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-                          "lineSpacing": -71.7,
-                          "characterSpacing": 1.3,
                           "wrap": true
                         }
                       }
@@ -526,9 +355,9 @@
             "type": "Button",
             "color": "#FFFFFF0D",
             "rect": {
-              "x": 123,
+              "x": 1044,
               "y": 804,
-              "w": 532,
+              "w": 220,
               "h": 67
             },
             "sprite": "Assets/UI/Common/round7.png",
@@ -543,33 +372,6 @@
               "content": "返回",
               "fontSize": 36,
               "color": "#C4E0FFF0",
-              "alignment": "Center",
-              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-              "characterSpacing": 2.8
-            }
-          },
-          {
-            "name": "Upload_Btn",
-            "type": "Button",
-            "color": "#388BFD2E",
-            "rect": {
-              "x": 674,
-              "y": 804,
-              "w": 532,
-              "h": 67
-            },
-            "sprite": "Assets/UI/Common/round7.png",
-            "imageType": "Sliced",
-            "border": {
-              "l": 7,
-              "t": 7,
-              "r": 7,
-              "b": 7
-            },
-            "text": {
-              "content": "去上传",
-              "fontSize": 36,
-              "color": "#A8D4FF",
               "alignment": "Center",
               "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
               "characterSpacing": 2.8

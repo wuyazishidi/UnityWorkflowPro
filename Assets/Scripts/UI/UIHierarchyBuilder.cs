@@ -471,7 +471,10 @@ namespace Game.UI
             chrt.sizeDelta = new Vector2(16f, 16f); chrt.anchoredPosition = new Vector2(12f, 0f);
             check.transform.SetParent(item.transform, false);
             var checkImg = check.AddComponent<Image>();
-            checkImg.color = ColorUtil.ParseHexOr("#4F8CFF", Color.white);
+            checkImg.color = ColorUtil.ParseHexOr("#E8F4FF", Color.white);
+            checkImg.preserveAspect = true;
+            var dropCheckSprite = CheckmarkSprite(resolver);
+            if (dropCheckSprite != null) checkImg.sprite = dropCheckSprite;
             itemToggle.graphic = checkImg;
 
             // Item Label
@@ -485,6 +488,21 @@ namespace Game.UI
             itemLabel.raycastTarget = false;
 
             return template;
+        }
+
+        /// <summary>勾选精灵"✓"。优先用工程内白色对勾 Assets/UI/Common/check.png(可被任意颜色着色)；
+        /// 不用 Unity 内置 UI/Skin/Checkmark——其底图是深色，Image.color 是相乘，深×任何色仍是深色，
+        /// 着不成白色(用户反馈"对勾是黑的不是白的")。白底对勾着 #E8F4FF 才是设计要的近白 ✓。
+        /// 兜底(resolver 为空/资源缺失)再退回内置精灵。</summary>
+        private static Sprite CheckmarkSprite(IUIAssetResolver resolver)
+        {
+            var s = resolver != null ? resolver.ResolveSprite("Assets/UI/Common/check.png") : null;
+            if (s != null) return s;
+#if UNITY_EDITOR
+            var b = UnityEditor.AssetDatabase.GetBuiltinExtraResource<Sprite>("UI/Skin/Checkmark.psd");
+            if (b != null) return b;
+#endif
+            return Resources.GetBuiltinResource<Sprite>("UI/Skin/Checkmark.psd");
         }
 
         /// <summary>Toggle：背景图(targetGraphic 占满节点) + 勾选图(graphic 内缩)。节点带 text 时右侧加 Label。</summary>
@@ -508,8 +526,14 @@ namespace Game.UI
             chrt.offsetMin = new Vector2(4f, 4f); chrt.offsetMax = new Vector2(-4f, -4f);
             checkGo.transform.SetParent(go.transform, false);
             var checkImg = checkGo.AddComponent<Image>();
-            checkImg.color = ColorUtil.ParseHexOr("#4F8CFF", Color.white);
+            checkImg.color = ColorUtil.ParseHexOr("#E8F4FF", Color.white);
             checkImg.raycastTarget = false;
+            checkImg.preserveAspect = true;
+            // Figma 的 Toggle 框内勾选矢量在翻译时被丢弃(Toggle 是自包含叶子，不下钻子节点)，
+            // 这里用工程白色对勾精灵画出近白"✓"——否则 graphic 无 sprite 只是一块纯色方块，
+            // 且 isOn=false 时被 Toggle 隐藏，表现为"对勾没画出来"。
+            var checkSprite = CheckmarkSprite(resolver);
+            if (checkSprite != null) checkImg.sprite = checkSprite;
             toggle.graphic = checkImg;
 
             toggle.isOn = node.isOn;

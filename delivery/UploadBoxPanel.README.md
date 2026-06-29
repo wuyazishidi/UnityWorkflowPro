@@ -1,11 +1,11 @@
-# UpLoadPanel — UI delivery package (for YC-Ego)
+# UploadBoxPanel — UI delivery package (for YC-Ego)
 
 ## Import
-1. Import `UpLoadPanel.unitypackage` into the YC-Ego project (exported with .meta -> GUID-faithful).
+1. Import `UploadBoxPanel.unitypackage` into the YC-Ego project (exported with .meta -> GUID-faithful).
 2. First time only: Window > TextMeshPro > Import TMP Essential Resources
    (binding.json sets needsTmpEssentials=true as a reminder).
 
-## How to bind (read only `UpLoadPanel.binding.json` + the prefab; never reference this project)
+## How to bind (read only `UploadBoxPanel.binding.json` + the prefab; never reference this project)
 Each bindable element has: `key` (stable handle), `path` (transform path inside the prefab, root excluded),
 `type` (component kind), `text` (current text, for human cross-check).
 
@@ -24,7 +24,7 @@ Flags to honor:
                         (the interactive was not generated as its matching component). Do not bind it;
                         report back to the design/translator side to fix bindability.
 
-Human-readable element table: `UpLoadPanel.binding.md`.
+Human-readable element table: `UploadBoxPanel.binding.md`.
 
 ## Contract
 Schema v1.0. Full definition: specs/005-ui-binding-contract.md (in the producer project).

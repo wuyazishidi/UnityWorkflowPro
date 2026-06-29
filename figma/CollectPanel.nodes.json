@@ -20081,10 +20081,10 @@
                                   "height": 99.0
                                 },
                                 "absoluteRenderBounds": {
-                                  "x": 35.00666809082031,
-                                  "y": 820.8626708984375,
-                                  "width": 962.7652587890625,
-                                  "height": 80.87200927734375
+                                  "x": 34.766666412353516,
+                                  "y": 820.8866577148438,
+                                  "width": 948.7106323242188,
+                                  "height": 80.8480224609375
                                 },
                                 "constraints": {
                                   "vertical": "TOP",
@@ -20094,7 +20094,7 @@
                                 "layoutGrow": 0.0,
                                 "layoutSizingHorizontal": "FIXED",
                                 "layoutSizingVertical": "FIXED",
-                                "characters": "点「开始准备」放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，等待3秒后自动开始，开始后语音说：任务开始;结束前说：任务结束，结束后点「结束采集」再选相对应的标签，然后重新开始",
+                                "characters": "放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始",
                                 "characterStyleOverrides": [],
                                 "styleOverrideTable": {},
                                 "lineTypes": [
@@ -20153,7 +20153,7 @@
                             "absoluteRenderBounds": {
                               "x": 34.16666793823242,
                               "y": 813.1666870117188,
-                              "width": 963.605224609375,
+                              "width": 955.6666870117188,
                               "height": 104.0
                             },
                             "constraints": {
@@ -20310,7 +20310,6 @@
                   "a": 0.0
                 },
                 "layoutMode": "HORIZONTAL",
-                "counterAxisSizingMode": "FIXED",
                 "primaryAxisSizingMode": "FIXED",
                 "counterAxisAlignItems": "CENTER",
                 "primaryAxisAlignItems": "CENTER",
@@ -20335,7 +20334,7 @@
                 "layoutAlign": "STRETCH",
                 "layoutGrow": 0.0,
                 "layoutSizingHorizontal": "FILL",
-                "layoutSizingVertical": "FIXED",
+                "layoutSizingVertical": "HUG",
                 "effects": [],
                 "interactions": [],
                 "complexStrokeProperties": {

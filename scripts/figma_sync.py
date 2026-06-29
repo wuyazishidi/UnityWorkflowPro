@@ -668,10 +668,12 @@ def main():
     def _is_dropdown(n):
         if n.get("type") not in ("FRAME", "INSTANCE", "COMPONENT"):
             return False
-        # 确定性命名约定：名字以 _Dropdown 结尾 → 下拉。兜底：含 dropdown/下拉/选择器/select。
+        # 确定性命名约定：名字以 _Dropdown 结尾 → 下拉。兜底：含 dropdown/下拉/选择器/selector。
         if (n.get("name", "") or "").lower().endswith("_dropdown"):
             return True
-        return _name_has(n, "dropdown", "下拉", "选择器", "select")
+        # 注意：不用裸 "select" 兜底——它会误命中 "AllSelect"/"Selected" 等描述性名字
+        # （如全选开关 AllSelect_Toggle 被当成下拉）。要下拉请显式命名 _Dropdown/dropdown/选择器/selector。
+        return _name_has(n, "dropdown", "下拉", "选择器", "selector")
 
     def _is_toggle(n):
         return n.get("type") in ("FRAME", "INSTANCE", "COMPONENT", "RECTANGLE", "GROUP") \
@@ -719,6 +721,10 @@ def main():
         for k in kids:
             if k.get("type") == "Container" and k.get("children") \
                     and not k.get("color") and not k.get("sprite"):
+                # 包装容器若已自带 list 绑定(其内部重复行已被 _collapse_list_items 模板化)，
+                # 上提其子时把绑定挪到 ScrollList，否则随容器一起被丢弃 → ScrollList 失去 list 绑定。
+                if k.get("list") and not nd.get("list"):
+                    nd["list"] = k["list"]
                 flat.extend(k["children"])
             else:
                 flat.append(k)
@@ -727,7 +733,15 @@ def main():
         horiz = (nd.get("scroll") or {}).get("horizontal") and not (nd.get("scroll") or {}).get("vertical", True)
         axis, ext = ("x", "w") if horiz else ("y", "h")
         items = [k for k in kids if k.get("rect")]
-        # 用行高(或行宽)中位数过滤掉异常尺寸的装饰（如侧边滚动条轨道、整列底框），只留均匀的列表项。
+        # 先按横轴(竖列表=宽/横列表=高)剔除细条装饰(滚动条轨道/侧栏/分隔线)：它们远窄于真实行，
+        # 却因纵向最先(y 最小)会霸占 padding 计算。用横轴尺寸中位数做相对过滤(留 ≥0.4×中位)，
+        # 这样既能在仅剩 1 行+1 滚动条(主轴 median 需 ≥3 行才生效) 时剔除滚动条，又不会误删尺寸均匀的窄行。
+        cross = "w" if not horiz else "h"
+        if len(items) >= 2:
+            medc = sorted(k["rect"][cross] for k in items)[len(items) // 2]
+            if medc > 0:
+                items = [k for k in items if k["rect"][cross] >= 0.4 * medc]
+        # 再用行高(或行宽)中位数过滤掉异常尺寸的装饰（如整列底框），只留均匀的列表项。
         if len(items) >= 3:
             med = sorted(k["rect"][ext] for k in items)[len(items) // 2]
             if med > 0:
@@ -766,10 +780,27 @@ def main():
         return _apply_v2(nd, n)
 
     def emit_toggle(n):
+        # 复选框的视觉样式（实色填充/圆角/描边）常画在内层 Container 上，而非 toggle 帧本身
+        # （如 Item_Toggle 帧无填充，其子 Container 才有 #388BFD 填充+cr5 圆角+边框）。
+        # 取第一个带实色填充的后代作样式源，否则方框只是无圆角无精灵的纯色块（"缺少勾选填充精灵"）。
+        style = n
+        if first_solid_fill(n) is None:
+            for c in n.get("children", []):
+                if first_solid_fill(c) is not None:
+                    style = c
+                    break
+        # 默认勾选态跟随设计：Figma 帧内若画了对勾(Icon/Vector 矢量) → 设计描绘的是"已勾选" → isOn=True，
+        # 否则 Unity Toggle 在 isOn=False 时会隐藏 graphic(对勾)，表现为"对勾没有了"。
+        def _has_check_vector(x):
+            for c in x.get("children", []):
+                if c.get("type") == "VECTOR" or _has_check_vector(c):
+                    return True
+            return False
         nd = {"name": _san(n.get("name", "Toggle")), "type": "Toggle",
-              "color": first_solid_fill(n) or "#1B2B52", "rect": rect(n), "isOn": False}
-        nd.update(_round_fields(n))
-        st = _stroke_field(n, int(n.get("cornerRadius") or 6))
+              "color": first_solid_fill(style) or "#1B2B52", "rect": rect(n),
+              "isOn": _has_check_vector(n)}
+        nd.update(_round_fields(style))
+        st = _stroke_field(style, int(style.get("cornerRadius") or 6))
         if st:
             nd["stroke"] = st
         return _apply_v2(nd, n)
@@ -866,10 +897,12 @@ def main():
             return emit_scrollbar(n)
         if _is_slider(n):
             return emit_slider(n)
-        if _is_dropdown(n):
-            return emit_dropdown(n)
+        # toggle 先于 dropdown：显式 toggle/checkbox/复选/勾选 关键词应胜过下拉的弱匹配
+        # （如 AllSelect_Toggle 同时含描述性 "select"，必须当复选开关而非下拉）。
         if _is_toggle(n):
             return emit_toggle(n)
+        if _is_dropdown(n):
+            return emit_dropdown(n)
         # ScrollList：容器型，保留子项（下钻），子项落到 builder 的 Content 下。嵌套内不再识别。
         if _is_scroll_list(n) and not in_scroll:
             nd = emit_scroll_list(n)

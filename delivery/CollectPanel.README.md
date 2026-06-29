@@ -1,4 +1,4 @@
-﻿# CollectPanel 鈥?UI delivery package (for YC-Ego)
+# CollectPanel — UI delivery package (for YC-Ego)
 
 ## Import
 1. Import `CollectPanel.unitypackage` into the YC-Ego project (exported with .meta -> GUID-faithful).
@@ -9,7 +9,7 @@
 Each bindable element has: `key` (stable handle), `path` (transform path inside the prefab, root excluded),
 `type` (component kind), `text` (current text, for human cross-check).
 
-Naming convention 鈥?every bindable node name carries a TYPE SUFFIX (also present in `path`):
+Naming convention — every bindable node name carries a TYPE SUFFIX (also present in `path`):
 `_Btn` (Button), `_InputField` (InputField), `_Dropdown` (Dropdown), `_Text` (Text).
 `key` is that suffixed name camelized (e.g. `Return_Btn` -> `returnBtn`): it ENCODES the type and
 never collides across types, so binding by `key` is stable and self-documenting.
@@ -28,4 +28,4 @@ Human-readable element table: `CollectPanel.binding.md`.
 
 ## Contract
 Schema v1.0. Full definition: specs/005-ui-binding-contract.md (in the producer project).
-The consumer depends only on the binding.json FORMAT 鈥?never on this project's code/pipeline.
+The consumer depends only on the binding.json FORMAT — never on this project's code/pipeline.

@@ -1,0 +1,657 @@
+{
+  "schemaVersion": 1,
+  "referenceWidth": 1337,
+  "referenceHeight": 931,
+  "rootName": "UploadBoxPanel",
+  "root": {
+    "name": "UploadBoxPanel",
+    "type": "Container",
+    "anchorPreset": "center",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 1337,
+      "h": 931
+    },
+    "children": [
+      {
+        "name": "CardBase_Image",
+        "type": "Image",
+        "color": "#080F1E",
+        "raycastTarget": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1337,
+          "h": 931
+        },
+        "sprite": "Assets/UI/Common/round16.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 16,
+          "t": 16,
+          "r": 16,
+          "b": 16
+        }
+      },
+      {
+        "name": "PanelBg",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 1337,
+          "h": 931
+        },
+        "children": [
+          {
+            "name": "Container",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1337,
+              "h": 931
+            },
+            "children": [
+              {
+                "name": "Image_Image",
+                "type": "Image",
+                "color": "#FFFFFF",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/UploadBoxPanel/Icons/bg.png",
+                "rect": {
+                  "x": 0,
+                  "y": 0,
+                  "w": 1337,
+                  "h": 931
+                }
+              }
+            ]
+          },
+          {
+            "name": "Container_1",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "w": 1337,
+              "h": 931
+            }
+          }
+        ]
+      },
+      {
+        "name": "Paragraph",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 230,
+          "y": 28,
+          "w": 876,
+          "h": 110
+        },
+        "children": [
+          {
+            "name": "Title_Text",
+            "type": "Text",
+            "raycastTarget": false,
+            "rect": {
+              "x": 240,
+              "y": 38,
+              "w": 856,
+              "h": 45
+            },
+            "text": {
+              "content": "数据上传",
+              "fontSize": 36,
+              "color": "#E8F4FFEB",
+              "alignment": "Center",
+              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+              "lineSpacing": -40.9,
+              "characterSpacing": 4.2,
+              "wrap": true
+            }
+          },
+          {
+            "name": "Tip_Text",
+            "type": "Text",
+            "raycastTarget": false,
+            "rect": {
+              "x": 240,
+              "y": 83,
+              "w": 856,
+              "h": 45
+            },
+            "text": {
+              "content": "数据上传",
+              "fontSize": 20,
+              "color": "#E8F4FFEB",
+              "alignment": "Center",
+              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+              "lineSpacing": 32.4,
+              "characterSpacing": 7.5,
+              "wrap": true
+            }
+          }
+        ]
+      },
+      {
+        "name": "Container",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 82,
+          "y": 751,
+          "w": 1173,
+          "h": 22
+        },
+        "children": [
+          {
+            "name": "Container_Image",
+            "type": "Image",
+            "color": "#388BFD1A",
+            "raycastTarget": false,
+            "rect": {
+              "x": 82,
+              "y": 761,
+              "w": 1173,
+              "h": 2
+            },
+            "sprite": "Assets/UI/Common/round2.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 2,
+              "t": 2,
+              "r": 2,
+              "b": 2
+            },
+            "children": [
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#388BFD99",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 82,
+                  "y": 761,
+                  "w": 0,
+                  "h": 2
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "CustomScrollList",
+        "type": "ScrollList",
+        "raycastTarget": true,
+        "rect": {
+          "x": 88,
+          "y": 164,
+          "w": 1162,
+          "h": 581
+        },
+        "scroll": {
+          "horizontal": false,
+          "vertical": true,
+          "padding": {
+            "l": 14,
+            "t": 14,
+            "r": 31,
+            "b": 14
+          },
+          "spacing": 0
+        },
+        "color": "#388BFD0A",
+        "sprite": "Assets/UI/Common/round10.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 10,
+          "t": 10,
+          "r": 10,
+          "b": 10
+        },
+        "list": {
+          "vertical": true,
+          "spacing": 9,
+          "count": 6,
+          "itemPrefab": "UpLoad_Btn"
+        },
+        "children": [
+          {
+            "name": "UpLoad_Btn",
+            "type": "Button",
+            "color": "#FFFFFF00",
+            "rect": {
+              "x": 102,
+              "y": 178,
+              "w": 1117,
+              "h": 77
+            },
+            "children": [
+              {
+                "name": "Container",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 159,
+                  "y": 192,
+                  "w": 1066,
+                  "h": 64
+                },
+                "children": [
+                  {
+                    "name": "Container_Image",
+                    "type": "Image",
+                    "color": "#93C5FD59",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 179,
+                      "y": 219,
+                      "w": 10,
+                      "h": 10
+                    },
+                    "sprite": "Assets/UI/Common/round5.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 5,
+                      "t": 5,
+                      "r": 5,
+                      "b": 5
+                    }
+                  },
+                  {
+                    "name": "Paragraph",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 209,
+                      "y": 213,
+                      "w": 467,
+                      "h": 22
+                    },
+                    "children": [
+                      {
+                        "name": "FileName_Text",
+                        "type": "Text",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 209,
+                          "y": 214,
+                          "w": 467,
+                          "h": 22
+                        },
+                        "text": {
+                          "content": "20260608_202511",
+                          "fontSize": 28,
+                          "color": "#E8F4FFE5",
+                          "alignment": "MidlineLeft",
+                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                          "lineSpacing": -54.0,
+                          "characterSpacing": 1.1,
+                          "wrap": true
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Paragraph_1",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 696,
+                      "y": 212,
+                      "w": 191,
+                      "h": 23
+                    },
+                    "children": [
+                      {
+                        "name": "Contain_Text",
+                        "type": "Text",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 686,
+                          "y": 212,
+                          "w": 201,
+                          "h": 20
+                        },
+                        "text": {
+                          "content": "98.1 MB",
+                          "fontSize": 36,
+                          "color": "#FFFFFF",
+                          "alignment": "MidlineLeft",
+                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                          "lineSpacing": -77.0,
+                          "wrap": true
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "ContainerFill_Image",
+                    "type": "Image",
+                    "color": "#388BFD0F",
+                    "raycastTarget": false,
+                    "sprite": "Assets/UI/Common/round4.png",
+                    "imageType": "Sliced",
+                    "border": {
+                      "l": 4,
+                      "t": 4,
+                      "r": 4,
+                      "b": 4
+                    },
+                    "rect": {
+                      "x": 907,
+                      "y": 205,
+                      "w": 200,
+                      "h": 37
+                    },
+                    "stroke": {
+                      "color": "#FFFFFF",
+                      "weight": 0.67,
+                      "align": "Inside",
+                      "sprite": "Assets/UI/Common/ring4.png",
+                      "border": {
+                        "l": 4,
+                        "t": 4,
+                        "r": 4,
+                        "b": 4
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Text",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 907,
+                          "y": 205,
+                          "w": 200,
+                          "h": 38
+                        },
+                        "children": [
+                          {
+                            "name": "UploadState_Text",
+                            "type": "Text",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 907,
+                              "y": 205,
+                              "w": 200,
+                              "h": 37
+                            },
+                            "text": {
+                              "content": "待上传",
+                              "fontSize": 28,
+                              "color": "#FFFFFF",
+                              "alignment": "Center",
+                              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                              "lineSpacing": -73.7,
+                              "characterSpacing": 1.4,
+                              "wrap": true
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Text",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 1127,
+                      "y": 214,
+                      "w": 87,
+                      "h": 20
+                    },
+                    "children": [
+                      {
+                        "name": "UploadProgress_Text",
+                        "type": "Text",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 1127,
+                          "y": 214,
+                          "w": 87,
+                          "h": 20
+                        },
+                        "text": {
+                          "content": "100%",
+                          "fontSize": 28,
+                          "color": "#FFFFFF",
+                          "alignment": "Center",
+                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                          "lineSpacing": -63.0,
+                          "characterSpacing": 1.4,
+                          "wrap": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#388BFD80",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 110,
+                  "y": 191,
+                  "w": 1253,
+                  "h": 65
+                },
+                "sprite": "Assets/UI/Common/round8.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 8,
+                  "t": 8,
+                  "r": 8,
+                  "b": 8
+                }
+              },
+              {
+                "name": "Container_Image_1",
+                "type": "Image",
+                "color": "#FFFFFF",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/UploadBoxPanel/Icons/corner1.png",
+                "rect": {
+                  "x": 110,
+                  "y": 191,
+                  "w": 1109,
+                  "h": 65
+                }
+              },
+              {
+                "name": "Item_Toggle",
+                "type": "Toggle",
+                "color": "#388BFD8C",
+                "rect": {
+                  "x": 127,
+                  "y": 211,
+                  "w": 32,
+                  "h": 32
+                },
+                "isOn": true,
+                "sprite": "Assets/UI/Common/round5.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 5,
+                  "t": 5,
+                  "r": 5,
+                  "b": 5
+                },
+                "stroke": {
+                  "color": "#93C5FDE5",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring5.png",
+                  "border": {
+                    "l": 5,
+                    "t": 5,
+                    "r": 5,
+                    "b": 5
+                  }
+                }
+              }
+            ],
+            "isItemTemplate": true
+          }
+        ]
+      },
+      {
+        "name": "Container_1",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 89,
+          "y": 117,
+          "w": 1161,
+          "h": 40
+        },
+        "children": [
+          {
+            "name": "AllSelect_Toggle",
+            "type": "Toggle",
+            "color": "#388BFD8C",
+            "rect": {
+              "x": 109,
+              "y": 125,
+              "w": 32,
+              "h": 32
+            },
+            "isOn": true,
+            "sprite": "Assets/UI/Common/round5.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 5,
+              "t": 5,
+              "r": 5,
+              "b": 5
+            },
+            "stroke": {
+              "color": "#93C5FDE5",
+              "weight": 0.67,
+              "align": "Inside",
+              "sprite": "Assets/UI/Common/ring5.png",
+              "border": {
+                "l": 5,
+                "t": 5,
+                "r": 5,
+                "b": 5
+              }
+            }
+          },
+          {
+            "name": "Paragraph",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 153,
+              "y": 130,
+              "w": 49,
+              "h": 21
+            },
+            "children": [
+              {
+                "name": "全选_Text",
+                "type": "Text",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 153,
+                  "y": 130,
+                  "w": 49,
+                  "h": 21
+                },
+                "text": {
+                  "content": "全选",
+                  "fontSize": 24,
+                  "color": "#E8F4FF",
+                  "alignment": "MidlineLeft",
+                  "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                  "lineSpacing": -45.1,
+                  "characterSpacing": 1.3,
+                  "wrap": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Container_2",
+        "type": "Container",
+        "raycastTarget": false,
+        "rect": {
+          "x": 123,
+          "y": 804,
+          "w": 1083,
+          "h": 67
+        },
+        "children": [
+          {
+            "name": "Return_Btn",
+            "type": "Button",
+            "color": "#FFFFFF0D",
+            "rect": {
+              "x": 123,
+              "y": 804,
+              "w": 532,
+              "h": 67
+            },
+            "sprite": "Assets/UI/Common/round7.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 7,
+              "t": 7,
+              "r": 7,
+              "b": 7
+            },
+            "text": {
+              "content": "返回",
+              "fontSize": 36,
+              "color": "#C4E0FFF0",
+              "alignment": "Center",
+              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+              "characterSpacing": 2.8
+            }
+          },
+          {
+            "name": "Upload_Btn",
+            "type": "Button",
+            "color": "#388BFD2E",
+            "rect": {
+              "x": 674,
+              "y": 804,
+              "w": 532,
+              "h": 67
+            },
+            "sprite": "Assets/UI/Common/round7.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 7,
+              "t": 7,
+              "r": 7,
+              "b": 7
+            },
+            "text": {
+              "content": "上传",
+              "fontSize": 36,
+              "color": "#A8D4FF",
+              "alignment": "Center",
+              "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+              "characterSpacing": 2.8
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
