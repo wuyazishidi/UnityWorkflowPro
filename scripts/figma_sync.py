@@ -868,7 +868,25 @@ def main():
             # 保留子树，背景子 Container 作 Image 同步过去，否则按钮背景 sprite 会丢。
             self_bg = first_solid_fill(n) or first_stroke(n)[0] or first_gradient(n)
             if _find_centered_text(n) is not None and self_bg:
-                return emit_bordered(n, as_button=True)
+                nd = emit_bordered(n, as_button=True)
+                # 带 label 的按钮仍保留非文字视觉子节点(图标等)：否则按钮内的图标
+                # (如"离线采集"按钮里的下载图标 Icon 帧，被导出为 art 却无节点引用→被孤儿清理)会整枚丢失。
+                _lbl = _find_centered_text(n)
+                _lid = _lbl.get("id") if _lbl else None
+                def _has_id(o, tid):
+                    if o.get("id") == tid:
+                        return True
+                    return any(_has_id(c, tid) for c in o.get("children", []))
+                _icons = []
+                for c in n.get("children", []):
+                    if _lid and _has_id(c, _lid):
+                        continue          # 跳过承载 label 文本的子树(emit_bordered 已重建为按钮文字)
+                    k = build_node(c, in_scroll)
+                    if k:
+                        _icons.append(k)
+                if _icons:
+                    nd.setdefault("children", []).extend(_icons)
+                return nd
             # 容器按钮（列表项等：无居中文字、内部有需保留的子树如图标/左对齐描述）→
             # Button 背景 + 下钻保留子节点（子文本仍作独立 Text 可绑/可刷新）。
             cr = int(n.get("cornerRadius") or 0)
