@@ -67,12 +67,12 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 | `contentText` | Text | "id": 1001,  "package_id": 7,  "title": "厨房取放物体",   "task_description": "...", "quota_per_user": 20,  "quota_per_user_scene": 10,    "teaching_video_url": "http://.../demo.mp4",  "reference_img_urls": ["http://.../1.jpg"],   "initial_state": "...",  "collector_initial_pose": "...", "collection_mode": "free",   "narration_policy": "say_then_do",  "sop_steps": ["步骤1","步骤2"],     "lighting": "...",    "clutter_level": "...",   | `Container/Container/Container/Container/Container_2/Paragraph/content_Text` |  |
 | `messageText` | Text | head:0 | `Container/Container/Container/Container/ContainerFill_Image_2/Container/Text/Message_Text` |  |
 | `collectStateBtn` | Button | 准备中 | `Container/Container/Container/Container/Container_3/CollectState_Btn` |  |
-| `endCollectBtn` | Button | 结束采集 | `Container/Container/Container/Container/Container_3/EndCollect_Btn` |  |
+| `endCollectBtn` | Button | 任务结束 | `Container/Container/Container/Container/Container_3/EndCollect_Btn` |  |
 | `text49` | Text | 使用说明： | `Container/Container/Container/Container/ContainerFill_Image_3/Paragraph/使用说明：_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
-| `text50` | Text | 放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集,进入采集中后语音说口述策略;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始 | `Container/Container/Container/Container/ContainerFill_Image_3/Paragraph_1/手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿点「开始准备」保持手柄约 1_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
+| `text50` | Text | 放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集,进入采集中后根据口述策略进行任务描述;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始 | `Container/Container/Container/Container/ContainerFill_Image_3/Paragraph_1/手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿点「开始准备」保持手柄约 1_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `offlineReturnBtn` | Button | 返回 | `Container/Container_1/OfflineReturn_Btn` |  |
 | `returnBtn` | Button | 返回选择任务 | `Container/Container_1/Return_Btn` |  |
-| `endRecordBtn` | Button | 结束录制 | `Container/Container_1/EndRecord_Btn` |  |
+| `endRecordBtn` | Button | 任务结束 | `Container/Container_1/EndRecord_Btn` |  |
 
 > 命名约定：可绑元素名带类型后缀（`_Btn`/`_InputField`/`_Dropdown`/`_Text`），由翻译器自动加，`key` 即由其驼峰化（如 `returnBtn`）。
 >

@@ -40,7 +40,7 @@
         "raycastTarget": false,
         "rect": {
           "x": 0,
-          "y": 0,
+          "y": 1,
           "w": 1337,
           "h": 931
         },
@@ -53,7 +53,7 @@
             "sprite": "Assets/UI/LoginPanel/Icons/bg.png",
             "rect": {
               "x": 0,
-              "y": 0,
+              "y": 1,
               "w": 1337,
               "h": 931
             }
@@ -64,7 +64,7 @@
             "raycastTarget": false,
             "rect": {
               "x": 0,
-              "y": 0,
+              "y": 1,
               "w": 1337,
               "h": 931
             }
@@ -476,7 +476,20 @@
                     "r": 16,
                     "b": 16
                   }
-                }
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 592,
+                      "y": 594,
+                      "w": 209,
+                      "h": 1
+                    }
+                  }
+                ]
               }
             ]
           },
@@ -532,12 +545,12 @@
       {
         "name": "OfflineCollect_Btn",
         "type": "Button",
-        "color": "#0616468C",
+        "color": "#0A2A88A1",
         "rect": {
-          "x": 1199,
-          "y": 870,
-          "w": 118,
-          "h": 41
+          "x": 27,
+          "y": 874,
+          "w": 139,
+          "h": 39
         },
         "sprite": "Assets/UI/Common/round14.png",
         "imageType": "Sliced",
@@ -549,11 +562,11 @@
         },
         "text": {
           "content": "离线采集",
-          "fontSize": 14,
-          "color": "#B4DAFFBF",
+          "fontSize": 24,
+          "color": "#FFFFFF",
           "alignment": "Center",
           "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
-          "characterSpacing": 5.0
+          "characterSpacing": 2.9
         },
         "stroke": {
           "color": "#3C8CFF4D",
@@ -565,6 +578,70 @@
             "t": 14,
             "r": 14,
             "b": 14
+          }
+        },
+        "children": [
+          {
+            "name": "Icon_Image",
+            "type": "Image",
+            "color": "#FFFFFF",
+            "raycastTarget": false,
+            "sprite": "Assets/UI/LoginPanel/Icons/art2.png",
+            "rect": {
+              "x": 36,
+              "y": 885,
+              "w": 18,
+              "h": 18
+            }
+          },
+          {
+            "name": "Text",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 36,
+              "y": 874,
+              "w": 93,
+              "h": 1
+            }
+          }
+        ]
+      },
+      {
+        "name": "Quit_Btn",
+        "type": "Button",
+        "color": "#FF9898A8",
+        "rect": {
+          "x": 1174,
+          "y": 877,
+          "w": 131,
+          "h": 45
+        },
+        "sprite": "Assets/UI/Common/round7.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 7,
+          "t": 7,
+          "r": 7,
+          "b": 7
+        },
+        "text": {
+          "content": "退出程序",
+          "fontSize": 24,
+          "color": "#FFFFFF",
+          "alignment": "Center",
+          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset"
+        },
+        "stroke": {
+          "color": "#FFAAAA",
+          "weight": 0.67,
+          "align": "Inside",
+          "sprite": "Assets/UI/Common/ring7.png",
+          "border": {
+            "l": 7,
+            "t": 7,
+            "r": 7,
+            "b": 7
           }
         }
       }

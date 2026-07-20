@@ -24,7 +24,7 @@ namespace YIUIFramework.Editor.MCP
                 return true;
             }
 
-            var port = YIUIMCPServerConfig.Port;
+            var port = YIUIMCPServerConfig.ResolveStartupPort();
             var prefix = GetPrefix(port);
 
             try

@@ -19,19 +19,19 @@
 | Panel | folder | fileKey | node | 设计快照 | lastModified |
 |-------|--------|---------|------|----------|--------------|
 | AssignedTaskPanel | Assets/UI/AssignedTaskPanel | `T9nvew1BOovlEJisnz1oB8` | `1:3` | ✅ `figma/AssignedTaskPanel.nodes.json` | 2026-06-22T11:36:51Z |
-| CheckBoxListPanel | Assets/UI/CheckBoxListPanel | `zWHQeVseQCPe5mgS6O2BTO` | `1:3` | ✅ `figma/CheckBoxListPanel.nodes.json` | 2026-06-25T06:38:10Z |
+| CheckBoxListPanel | Assets/UI/CheckBoxListPanel | `zWHQeVseQCPe5mgS6O2BTO` | `1:3` | ✅ `figma/CheckBoxListPanel.nodes.json` | 2026-06-30T10:15:16Z |
 | CheckDetailPanel | Assets/UI/CheckDetailPanel | `VmGuZ3yXLpyKhKmbfByOkm` | `1:3` | ✅ `figma/CheckDetailPanel.nodes.json` | 2026-06-29T09:01:57Z |
-| CheckListPanel | Assets/UI/CheckListPanel | `LtD46LtwYeQRkHQTu8Gj0m` | `1:3` | ✅ `figma/CheckListPanel.nodes.json` | 2026-06-23T10:27:06Z |
-| CollectPanel | Assets/UI/CollectPanel | `sbY31OCHXCCTlZ5tzXzcw4` | `1:3` | ✅ `figma/CollectPanel.nodes.json` | 2026-06-29T06:12:09Z |
+| CheckListPanel | Assets/UI/CheckListPanel | `LtD46LtwYeQRkHQTu8Gj0m` | `1:3` | ✅ `figma/CheckListPanel.nodes.json` | 2026-06-30T10:21:07Z |
+| CollectPanel | Assets/UI/CollectPanel | `sbY31OCHXCCTlZ5tzXzcw4` | `1:3` | ✅ `figma/CollectPanel.nodes.json` | 2026-07-02T03:14:06Z |
 | CountdownPanel | Assets/UI/CountdownPanel | `wDuOGcqIMMgDVQ2n0EwLDH` | `2:3` | ✅ `figma/CountdownPanel.nodes.json` | 2026-06-22T11:25:06Z |
-| LoginPanel | Assets/UI/LoginPanel | `cB7nxtStcovjQxcc4s4j8P` | `41:427` | ✅ `figma/LoginPanel.nodes.json` | 2026-06-24T11:47:30Z |
-| SelectModulePanel | Assets/UI/SelectModulePanel | `yaul9H2DYwBYcdqp4BBHpH` | `1:3` | ✅ `figma/SelectModulePanel.nodes.json` | 2026-06-23T10:38:16Z |
-| SelectPanel | Assets/UI/SelectPanel | `3gpCOR7kxoyNoknD3AAtID` | `0:3` | ✅ `figma/SelectPanel.nodes.json` | 2026-06-24T09:41:30Z |
+| LoginPanel | Assets/UI/LoginPanel | `cB7nxtStcovjQxcc4s4j8P` | `41:427` | ✅ `figma/LoginPanel.nodes.json` | 2026-07-07T05:40:15Z |
+| SelectModulePanel | Assets/UI/SelectModulePanel | `yaul9H2DYwBYcdqp4BBHpH` | `1:3` | ✅ `figma/SelectModulePanel.nodes.json` | 2026-07-07T06:02:11Z |
+| SelectPanel | Assets/UI/SelectPanel | `3gpCOR7kxoyNoknD3AAtID` | `0:3` | ✅ `figma/SelectPanel.nodes.json` | 2026-07-01T05:49:55Z |
 | TaskDetailPanel | Assets/UI/TaskDetailPanel | `hdY9WGGbmggdHVeGiNQEAv` | `8:41` | ✅ `figma/TaskDetailPanel.nodes.json` | 2026-06-23T09:36:44Z |
-| TaskListPanel | Assets/UI/TaskListPanel | `PpTDAzQY2rnSJsx2eZLuxb` | `1:3` | ✅ `figma/TaskListPanel.nodes.json` | 2026-06-29T09:01:02Z |
+| TaskListPanel | Assets/UI/TaskListPanel | `PpTDAzQY2rnSJsx2eZLuxb` | `1:3` | ✅ `figma/TaskListPanel.nodes.json` | 2026-06-30T12:18:48Z |
 | Tip | Assets/UI/Tip | `dSXYelB2Ekl9ULMwG2UkRe` | `1:2` | ✅ `figma/Tip.nodes.json` | 2026-06-22T11:25:49Z |
 | UpLoadPanel | Assets/UI/UpLoadPanel | `AOKqpshNjRquRGBRYgEy9m` | `14:887` | ✅ `figma/UpLoadPanel.nodes.json` | 2026-06-26T14:08:31Z |
-| UploadBoxPanel | Assets/UI/UploadBoxPanel | `SSd6QXbXWUyOBCzITFVyxZ` | `1:3` | ✅ `figma/UploadBoxPanel.nodes.json` | 2026-06-26T14:13:18Z |
+| UploadBoxPanel | Assets/UI/UploadBoxPanel | `SSd6QXbXWUyOBCzITFVyxZ` | `1:3` | ✅ `figma/UploadBoxPanel.nodes.json` | 2026-06-29T10:32:33Z |
 <!-- END auto-index -->
 
 > ⚠️ 早期面板（Upload/TaskList/TaskDetail）的源 node 因从 **Figma Make 重新粘贴进 Design** 被覆盖/改名而失效（见记忆 `figma-make-paste-corruption`）。它们生成的 `<Panel>.json` 已入库，是当前存活真相；要再改设计须在 Figma 重做并给新 node-id。

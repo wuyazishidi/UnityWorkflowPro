@@ -171,8 +171,8 @@
         "type": "Container",
         "raycastTarget": false,
         "rect": {
-          "x": 1118,
-          "y": 728,
+          "x": 1127,
+          "y": 864,
           "w": 184,
           "h": 50
         },
@@ -182,8 +182,8 @@
             "type": "Button",
             "color": "#FFFFFF00",
             "rect": {
-              "x": 1118,
-              "y": 728,
+              "x": 1127,
+              "y": 864,
               "w": 184,
               "h": 50
             },
@@ -193,8 +193,8 @@
                 "type": "Text",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 1177,
-                  "y": 742,
+                  "x": 1186,
+                  "y": 878,
                   "w": 65,
                   "h": 21
                 },
@@ -215,8 +215,8 @@
                 "color": "#388BFD80",
                 "raycastTarget": false,
                 "rect": {
-                  "x": 1118,
-                  "y": 728,
+                  "x": 1127,
+                  "y": 864,
                   "w": 184,
                   "h": 50
                 },
@@ -243,8 +243,8 @@
                   "b": 6
                 },
                 "rect": {
-                  "x": 1118,
-                  "y": 728,
+                  "x": 1127,
+                  "y": 864,
                   "w": 184,
                   "h": 50
                 },
@@ -279,10 +279,10 @@
           "b": 11
         },
         "rect": {
-          "x": 155,
-          "y": 216,
-          "w": 1025,
-          "h": 387
+          "x": 0,
+          "y": 112,
+          "w": 1337,
+          "h": 716
         },
         "stroke": {
           "color": "#00D4C829",
@@ -302,8 +302,55 @@
             "type": "Container",
             "raycastTarget": false,
             "rect": {
-              "x": 383,
-              "y": 378,
+              "x": 118,
+              "y": 139,
+              "w": 1101,
+              "h": 599
+            },
+            "children": [
+              {
+                "name": "Paragraph",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 118,
+                  "y": 116,
+                  "w": 1101,
+                  "h": 578
+                },
+                "children": [
+                  {
+                    "name": "TaskDetail_Text",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 118,
+                      "y": 116,
+                      "w": 1101,
+                      "h": 578
+                    },
+                    "text": {
+                      "content": "\"id\": 1001, \n\"package_id\": 7, \n\"title\": \"厨房取放物体\",   \"task_description\": \"...\",\n\"quota_per_user\": 20, \n\"quota_per_user_scene\": 10,    \"teaching_video_url\": \"http://.../demo.mp4\", \n\"reference_img_urls\": [\"http://.../1.jpg\"],   \"initial_state\": \"...\", \n\"collector_initial_pose\": \"...\",\n\"collection_mode\": \"free\",   \"narration_policy\": \"say_then_do\", \n\"sop_steps\": [\"步骤1\",\"步骤2\"],     \"lighting\": \"...\", \n  \"clutter_level\": \"...\",  ",
+                      "fontSize": 32,
+                      "color": "#FFFFFF",
+                      "alignment": "MidlineLeft",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -23.2,
+                      "characterSpacing": 1.3,
+                      "wrap": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Container_1",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 384,
+              "y": 738,
               "w": 569,
               "h": 63
             },
@@ -313,8 +360,8 @@
                 "type": "Button",
                 "color": "#FFFFFF00",
                 "rect": {
-                  "x": 383,
-                  "y": 378,
+                  "x": 384,
+                  "y": 738,
                   "w": 186,
                   "h": 63
                 },
@@ -324,8 +371,8 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 410,
-                      "y": 399,
+                      "x": 411,
+                      "y": 759,
                       "w": 131,
                       "h": 21
                     },
@@ -346,8 +393,8 @@
                     "color": "#388BFD80",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 384,
-                      "y": 379,
+                      "x": 385,
+                      "y": 739,
                       "w": 186,
                       "h": 62
                     },
@@ -374,8 +421,8 @@
                       "b": 6
                     },
                     "rect": {
-                      "x": 383,
-                      "y": 378,
+                      "x": 384,
+                      "y": 738,
                       "w": 187,
                       "h": 62
                     },
@@ -399,8 +446,8 @@
                 "type": "Button",
                 "color": "#FFFFFF00",
                 "rect": {
-                  "x": 775,
-                  "y": 379,
+                  "x": 776,
+                  "y": 739,
                   "w": 177,
                   "h": 61
                 },
@@ -410,8 +457,8 @@
                     "type": "Text",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 798,
-                      "y": 399,
+                      "x": 799,
+                      "y": 759,
                       "w": 131,
                       "h": 21
                     },
@@ -432,8 +479,8 @@
                     "color": "#FD3F3880",
                     "raycastTarget": false,
                     "rect": {
-                      "x": 775,
-                      "y": 380,
+                      "x": 776,
+                      "y": 740,
                       "w": 177,
                       "h": 60
                     },
@@ -460,8 +507,8 @@
                       "b": 6
                     },
                     "rect": {
-                      "x": 775,
-                      "y": 379,
+                      "x": 776,
+                      "y": 739,
                       "w": 177,
                       "h": 60
                     },

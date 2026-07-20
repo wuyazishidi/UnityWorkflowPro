@@ -7,7 +7,9 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 
 | key | 类型 | 文案 | path | 备注 |
 |-----|------|------|------|------|
+| `currentVersionText` | Text | 当前版本： | `Container/CurrentVersion_Text` |  |
 | `logoutBtn` | Button | 退出登录 | `Container/Container/Logout_Btn` |  |
+| `checkRefreshBtn` | Button | 检查更新 | `Container/Container/CheckRefresh_Btn` |  |
 | `text1` | Text | 模块选择 | `Container/Paragraph/模块选择_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `collectBtn` | Button | 采集模块 | `Container/ContainerFill_Image/Collect_Btn` |  |
 | `checkBtn` | Button | 审核模块 | `Container/ContainerFill_Image_1/Check_Btn` |  |

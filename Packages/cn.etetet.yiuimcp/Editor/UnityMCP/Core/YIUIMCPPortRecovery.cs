@@ -88,6 +88,11 @@ namespace YIUIFramework.Editor.MCP
             }
         }
 
+        /// <summary>
+        /// 端口当前是否有监听进程占用（Windows TCP 监听表，IPv4）。
+        /// </summary>
+        public static bool IsPortInUse(int port) => port > 0 && GetListeningProcessIds(port).Count > 0;
+
         private static HashSet<int> GetListeningProcessIds(int port)
         {
             var processIds = new HashSet<int>();

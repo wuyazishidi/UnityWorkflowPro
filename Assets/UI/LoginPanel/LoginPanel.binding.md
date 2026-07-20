@@ -1,7 +1,7 @@
 # LoginPanel — UI 绑定描述
 
 - prefab：`Assets/UI/LoginPanel/LoginPanel.prefab`
-- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring10`, `ring14`, `ring16`, `round10`, `round14`, `round16`；图集 `Assets/UI/LoginPanel/LoginPanel.spriteatlas`；needsTmpEssentials = `true`
+- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring10`, `ring14`, `ring16`, `ring7`, `round10`, `round14`, `round16`, `round7`；图集 `Assets/UI/LoginPanel/LoginPanel.spriteatlas`；needsTmpEssentials = `true`
 
 YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 
@@ -17,6 +17,7 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 | `loginBtn` | Button | 登 录 | `Form/Container/Login_Btn` |  |
 | `loginStateText` | Text | 登录中... | `Form/Container_1/Text/LoginState_Text` |  |
 | `offlineCollectBtn` | Button | 离线采集 | `OfflineCollect_Btn` |  |
+| `quitBtn` | Button | 退出程序 | `Quit_Btn` |  |
 
 > 命名约定：可绑元素名带类型后缀（`_Btn`/`_InputField`/`_Dropdown`/`_Text`），由翻译器自动加，`key` 即由其驼峰化（如 `returnBtn`）。
 >

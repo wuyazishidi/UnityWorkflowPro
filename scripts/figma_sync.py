@@ -901,11 +901,9 @@ def main():
                 nd["stroke"] = stf
             nd = _apply_v2(nd, n)
             kids = [k for k in (build_node(c, in_scroll) for c in n.get("children", [])) if k]
-            # 按钮底图常被 Figma 设成玻璃态半透明(如 #388BFD a=0.15)，深背景上几乎不可见 →
-            # 把彩色半透明背景子(有 round 精灵的 Image)提到可见；透明白/黑装饰层跳过(避免露白块)。
-            for k in kids:
-                if k.get("type") == "Image" and k.get("sprite") and isinstance(k.get("color"), str):
-                    k["color"] = _bump_btn_bg_alpha(k["color"])
+            # 保真原则：按钮玻璃态半透明底按 Figma 原始 alpha 输出，不做可见性抬高
+            # （bg.png 已带设计的深色底，truth 即所见；曾有 _bump_btn_bg_alpha 提到 0.5，
+            # 导致渲染比设计亮一档、MAE 偏大，2026-07-07 移除）。
             if kids:
                 nd["children"] = kids
             return nd
@@ -1102,32 +1100,6 @@ def _dedupe_names(nodes):
 
 def _san(s):
     return re.sub(r"[^0-9A-Za-z_]+", "", (s or "X").split("(")[0]) or "X"
-
-
-def _bump_alpha(hexc, minA):
-    if len(hexc) == 9:
-        a = int(hexc[7:9], 16) / 255.0
-        if a < minA:
-            return hexc[:7] + "%02X" % round(minA * 255)
-        return hexc
-    return hexc  # 已不透明
-
-
-def _bump_btn_bg_alpha(hexc, minA=0.5):
-    """按钮底图在深背景上需可见：Figma 常把按钮底设成玻璃态半透明(如 #388BFD a=0.15)，
-    在浅色画布上能看见、在深色运行背景上几乎消失 → 把彩色半透明底提到 minA(可见)。
-    跳过接近白/黑的透明装饰层(提了会露白块/黑块)，跳过已足够不透明的。"""
-    if len(hexc) != 9:
-        return hexc  # 不透明，原样
-    r, g, b = int(hexc[1:3], 16), int(hexc[3:5], 16), int(hexc[5:7], 16)
-    a = int(hexc[7:9], 16) / 255.0
-    if a >= minA:
-        return hexc
-    near_white = r > 230 and g > 230 and b > 230
-    near_black = r < 25 and g < 25 and b < 25
-    if near_white or near_black:
-        return hexc  # 透明白/黑装饰层：提 alpha 会变成白块/黑块，保持透明
-    return hexc[:7] + "%02X" % round(minA * 255)
 
 
 def _dump(n, ox, oy, exports, f, d=0):

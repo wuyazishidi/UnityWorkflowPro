@@ -44,6 +44,73 @@ namespace YIUIFramework.Editor.MCP
         private const int DefaultPort = 3212;
         private static int _port = -1;
 
+        /// <summary>
+        /// 已配置好的静态端口列表。多个 Unity 工程并行时，启动会按此顺序自动选用第一个空闲端口，
+        /// 避免默认端口(3212)被其他工程抢占后本工程无端口可用。
+        /// 间隔 10 预留 UTO HTTP 端口(=MCP+1)，避免相邻工程互相串口。
+        /// </summary>
+        public static readonly int[] CandidatePorts = { 3212, 3222, 3232, 3242, 3252, 3262 };
+
+        /// <summary>
+        /// 该端口当前是否空闲（系统范围内没有任何监听者占用）。检测失败时保守地按“被占用”处理。
+        /// </summary>
+        public static bool IsPortFree(int port)
+        {
+            try
+            {
+                return !YIUIMCPPortRecovery.IsPortInUse(port);
+            }
+            catch (Exception e)
+            {
+                YIUIMCPLog.LogError($"检测端口占用失败({port}): {e.Message}");
+                return false;
+            }
+        }
+
+        // MCP 端口 + 其 UTO HTTP 端口(=port+1) 都空闲才算可用
+        private static bool IsPortPairFree(int port) => IsPortFree(port) && IsPortFree(port + 1);
+
+        /// <summary>
+        /// 启动时解析实际监听端口：
+        /// 1) 若已保存端口仍空闲 → 沿用（粘性，含手动改过的非列表端口）；
+        /// 2) 否则按静态列表顺序选第一个空闲端口；
+        /// 3) 全被占用 → 回退默认端口。
+        /// 选定后写回 .port，保证 ps1 脚本与编辑器读到同一端口。
+        /// </summary>
+        public static int ResolveStartupPort()
+        {
+            var saved = LoadPortFromFile();
+            var chosen = saved;
+
+            if (!IsPortPairFree(saved))
+            {
+                chosen = -1;
+                foreach (var p in CandidatePorts)
+                {
+                    if (IsPortPairFree(p))
+                    {
+                        chosen = p;
+                        break;
+                    }
+                }
+
+                if (chosen <= 0)
+                {
+                    YIUIMCPLog.LogError($"静态端口列表 [{string.Join(",", CandidatePorts)}] 全部被占用，回退默认 {DefaultPort}");
+                    chosen = DefaultPort;
+                }
+            }
+
+            _port = chosen;
+            if (chosen != saved)
+            {
+                YIUIMCPLog.Log($"端口 {saved} 被占用，自动选用静态列表中的空闲端口: {chosen}");
+                SavePortToFile(chosen);
+            }
+
+            return chosen;
+        }
+
         public static int Port
         {
             get

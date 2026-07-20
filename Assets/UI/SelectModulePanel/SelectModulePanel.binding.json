@@ -10,7 +10,9 @@
     "needsTmpEssentials": true
   },
   "elements": [
+    { "key": "currentVersionText", "path": "Container/CurrentVersion_Text", "type": "Text", "text": "当前版本：" },
     { "key": "logoutBtn", "path": "Container/Container/Logout_Btn", "type": "Button", "text": "退出登录" },
+    { "key": "checkRefreshBtn", "path": "Container/Container/CheckRefresh_Btn", "type": "Button", "text": "检查更新" },
     { "key": "text1", "path": "Container/Paragraph/模块选择_Text", "type": "Text", "text": "模块选择", "keyAuto": true },
     { "key": "collectBtn", "path": "Container/ContainerFill_Image/Collect_Btn", "type": "Button", "text": "采集模块" },
     { "key": "checkBtn", "path": "Container/ContainerFill_Image_1/Check_Btn", "type": "Button", "text": "审核模块" },

@@ -13,7 +13,8 @@
     { "key": "taskIDText", "path": "Container_Image/Container/TaskID_Text", "type": "Text", "text": "任务#2" },
     { "key": "taskDescriptionText", "path": "Container_Image/Container/Text/TaskDescription_Text", "type": "Text", "text": "场景：书房         状态：assigned        已传0段" },
     { "key": "returnBtn", "path": "Container_1/Return_Btn", "type": "Button", "text": "返回" },
-    { "key": "continueCollectBtn", "path": "ContainerFill_Image/Container/ContinueCollect_Btn", "type": "Button", "text": "继续采集" },
-    { "key": "abandonBtn", "path": "ContainerFill_Image/Container/Abandon_Btn", "type": "Button", "text": "放弃任务" }
+    { "key": "taskDetailText", "path": "ContainerFill_Image/Container/Paragraph/TaskDetail_Text", "type": "Text", "text": "\"id\": 1001, \n\"package_id\": 7, \n\"title\": \"厨房取放物体\",   \"task_description\": \"...\",\n\"quota_per_user\": 20, \n\"quota_per_user_scene\": 10,    \"teaching_video_url\": \"http://.../demo.mp4\", \n\"reference_img_urls\": [\"http://.../1.jpg\"],   \"initial_state\": \"...\", \n\"collector_initial_pose\": \"...\",\n\"collection_mode\": \"free\",   \"narration_policy\": \"say_then_do\", \n\"sop_steps\": [\"步骤1\",\"步骤2\"],     \"lighting\": \"...\", \n  \"clutter_level\": \"...\",  " },
+    { "key": "continueCollectBtn", "path": "ContainerFill_Image/Container_1/ContinueCollect_Btn", "type": "Button", "text": "继续采集" },
+    { "key": "abandonBtn", "path": "ContainerFill_Image/Container_1/Abandon_Btn", "type": "Button", "text": "放弃任务" }
   ]
 }

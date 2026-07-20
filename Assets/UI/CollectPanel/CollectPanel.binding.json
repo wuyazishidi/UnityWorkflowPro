@@ -70,11 +70,11 @@
     { "key": "contentText", "path": "Container/Container/Container/Container/Container_2/Paragraph/content_Text", "type": "Text", "text": "\"id\": 1001, \n\"package_id\": 7, \n\"title\": \"厨房取放物体\",   \"task_description\": \"...\",\n\"quota_per_user\": 20, \n\"quota_per_user_scene\": 10,    \"teaching_video_url\": \"http://.../demo.mp4\", \n\"reference_img_urls\": [\"http://.../1.jpg\"],   \"initial_state\": \"...\", \n\"collector_initial_pose\": \"...\",\n\"collection_mode\": \"free\",   \"narration_policy\": \"say_then_do\", \n\"sop_steps\": [\"步骤1\",\"步骤2\"],     \"lighting\": \"...\", \n  \"clutter_level\": \"...\",  " },
     { "key": "messageText", "path": "Container/Container/Container/Container/ContainerFill_Image_2/Container/Text/Message_Text", "type": "Text", "text": "head:0" },
     { "key": "collectStateBtn", "path": "Container/Container/Container/Container/Container_3/CollectState_Btn", "type": "Button", "text": "准备中" },
-    { "key": "endCollectBtn", "path": "Container/Container/Container/Container/Container_3/EndCollect_Btn", "type": "Button", "text": "结束采集" },
+    { "key": "endCollectBtn", "path": "Container/Container/Container/Container/Container_3/EndCollect_Btn", "type": "Button", "text": "任务结束" },
     { "key": "text49", "path": "Container/Container/Container/Container/ContainerFill_Image_3/Paragraph/使用说明：_Text", "type": "Text", "text": "使用说明：", "keyAuto": true },
-    { "key": "text50", "path": "Container/Container/Container/Container/ContainerFill_Image_3/Paragraph_1/手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿点「开始准备」保持手柄约 1_Text", "type": "Text", "text": "放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集,进入采集中后语音说口述策略;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始", "keyAuto": true },
+    { "key": "text50", "path": "Container/Container/Container/Container/ContainerFill_Image_3/Paragraph_1/手柄进视野停约 2 秒 → 双下手柄，双手张开 2~3 秒至状态灯全绿点「开始准备」保持手柄约 1_Text", "type": "Text", "text": "放下手柄，手放进视野停约3秒由手柄模式切换成手势模式，等待除手柄指示外全绿，语音说：任务开始，识别后开始采集,进入采集中后根据口述策略进行任务描述;结束前说：任务结束，会弹出选择标签面板，再选相对应的标签，然后重新开始", "keyAuto": true },
     { "key": "offlineReturnBtn", "path": "Container/Container_1/OfflineReturn_Btn", "type": "Button", "text": "返回" },
     { "key": "returnBtn", "path": "Container/Container_1/Return_Btn", "type": "Button", "text": "返回选择任务" },
-    { "key": "endRecordBtn", "path": "Container/Container_1/EndRecord_Btn", "type": "Button", "text": "结束录制" }
+    { "key": "endRecordBtn", "path": "Container/Container_1/EndRecord_Btn", "type": "Button", "text": "任务结束" }
   ]
 }
