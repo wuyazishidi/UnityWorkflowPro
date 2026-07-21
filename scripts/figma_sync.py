@@ -385,7 +385,11 @@ def main():
                 card["node"] = n; card["r"] = int(n["cornerRadius"])
         for c in n.get("children", []):
             find_card(c)
-    find_card(doc)
+    # 只在 doc 的后代里找卡片，不把 doc(外层画板/App 帧) 自身当候选：画板常自带
+    # cornerRadius+实色底(仅 Figma 画板预览用)，尺寸比例检查对它必然成立，会把整块画板误判成
+    # "卡片"，生成铺满全屏的不透明底(见 ScanPanel：画板底色被当卡片背景，实际应透传相机透视画面)。
+    for _c in doc.get("children", []):
+        find_card(_c)
     card_id = card["node"]["id"] if card["node"] else None
     card_bb = card["node"]["absoluteBoundingBox"] if card["node"] else root_bb
 
@@ -1014,18 +1018,14 @@ def main():
         return nd
 
     # 从卡片节点开始：CardBase(卡片底) + 卡片各子节点（保留各自层级嵌套），跳过外层画板帧。
+    # 注意：不给"外层画板自身的实色底"单独补一层背景——那通常只是 Figma 画板预览用的底色
+    # (方便在白色页面画布上看清设计)，不是真实要呈现的 UI(如扫码面板要透出相机透视画面)。
+    # Figma 单独导出该节点的 truth 图会把这层底色一起烤进去，与画板自身透明的实际效果不同，
+    # 因此比对 MAE 时这里的偏差是预期内的，不代表同步有问题(2026-07-21 按用户反馈改回)。
     card_n = card["node"]
     if card_n:
         out_nodes.append(emit_solid(card_n, name="CardBase"))
         for c in card_n.get("children", []):
-            k = build_node(c)
-            if k:
-                out_nodes.append(k)
-    elif first_solid_fill(doc):
-        # 没找到卡片(卡片相对整帧偏小，如浮窗/弹层)，但外层画板自身有底色 —— 补一层画布底，
-        # 否则收敛到卡片子节点后画板自身的实色背景丢失（面板外围会露出编辑器/相机的透明色）。
-        out_nodes.append(emit_solid(doc, name="CanvasBackground"))
-        for c in doc.get("children", []):
             k = build_node(c)
             if k:
                 out_nodes.append(k)
