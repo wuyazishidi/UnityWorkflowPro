@@ -203,17 +203,49 @@ def _corner_guid(name):
     return hashlib.md5(("uiwf-corner-" + name).encode()).hexdigest()
 
 
-def _write_corner_meta(name, border):
-    """按 round12.png.meta 模板写 .meta，仅替换 guid 与 spriteBorder(9-slice 边=圆角半径)。"""
+def _write_border_meta(name, l, t, r, b):
+    """按 round12.png.meta 模板写 .meta，仅替换 guid 与 spriteBorder(9-slice 边，可各向不同)。"""
     global _CORNER_META_TMPL
     if _CORNER_META_TMPL is None:
         with io.open(_COMMON + "/round12.png.meta", encoding="utf-8") as f:
             _CORNER_META_TMPL = f.read()
     m = re.sub(r"guid: [0-9a-f]+", "guid: " + _corner_guid(name), _CORNER_META_TMPL, count=1)
     m = re.sub(r"spriteBorder: \{[^}]+\}",
-               "spriteBorder: {x: %d, y: %d, z: %d, w: %d}" % (border, border, border, border), m)
+               "spriteBorder: {x: %d, y: %d, z: %d, w: %d}" % (l, b, r, t), m)
     with io.open("%s/%s.png.meta" % (_COMMON, name), "w", encoding="utf-8") as f:
         f.write(m)
+
+
+def _write_corner_meta(name, border):
+    _write_border_meta(name, border, border, border, border)
+
+
+def ensure_scanline_sprite():
+    """扫描指示条精灵：水平两端渐隐、纵向带柔光拖尾的白色发光条(alpha 遮罩，实际颜色由节点 color 着色)。
+    只按左右(水平)9-slice；纵向不拉伸——高度固定在生成尺寸内。返回(路径, 水平 border)。"""
+    from PIL import Image, ImageDraw, ImageFilter, ImageChops
+    name = "scanline"
+    path = "%s/%s.png" % (_COMMON, name)
+    border = 40
+    if not os.path.exists(path):
+        ss = 4
+        W, H = 240 * ss, 64 * ss
+        cy = H // 2
+        core = Image.new("L", (W, H), 0)
+        core_h = 6 * ss
+        ImageDraw.Draw(core).rectangle([border * ss, cy - core_h // 2, W - border * ss, cy + core_h // 2], fill=255)
+        core = core.filter(ImageFilter.GaussianBlur(3 * ss))
+        trail = Image.new("L", (W, H), 0)
+        ImageDraw.Draw(trail).rectangle([border * ss, cy, W - border * ss, H - 1], fill=140)
+        trail = trail.filter(ImageFilter.GaussianBlur(6 * ss))
+        mask = ImageChops.lighter(core, trail)
+        out = Image.new("RGBA", (W, H), (255, 255, 255, 0))
+        out.putalpha(mask)
+        out = out.resize((W // ss, H // ss), Image.LANCZOS)
+        out.save(path)
+        _write_border_meta(name, border, 0, border, 0)
+        print("[scanline] gen %s.png (%dx%d)" % (name, W // ss, H // ss))
+    return path, border
 
 
 def ensure_corner_sprite(r, kind="round"):
@@ -820,8 +852,38 @@ def main():
               "scrollbarSize": 0.3, "range": {"min": 0, "max": 1, "value": 1}}
         return _apply_v2(nd, n)
 
+    def _is_scan_viewport(n):
+        """扫码取景框容器（命名约定：ScanViewport/扫描区/扫码区）。"""
+        return n.get("type") in ("FRAME", "GROUP", "INSTANCE", "COMPONENT") \
+            and _name_has(n, "scanviewport", "扫描区", "扫码区")
+
+    def _is_scan_line_marker(n):
+        """扫描取景框内一条"空"的细长条(无填充/描边/子节点，宽度接近整框宽)——Figma 里只是预留位置和
+        初始坐标，真正的视觉效果(发光条+上下往返动画)由 builder/运行时代码生成，不能直接同步空节点。"""
+        if n.get("children"):
+            return False
+        if first_solid_fill(n) or first_stroke(n)[0]:
+            return False
+        bb = n.get("absoluteBoundingBox")
+        if not bb:
+            return False
+        return bb["height"] <= 6 and bb["width"] >= 80
+
+    def emit_scan_line(n):
+        """生成会被 builder 识别并挂上下移动画组件的发光指示条（名字后缀 _ScanLine 是识别约定）。"""
+        sp, b = ensure_scanline_sprite()
+        r = rect(n)
+        glow_h = 28
+        cy = r["y"] + r["h"] / 2.0
+        r2 = {"x": r["x"], "y": round(cy - glow_h / 2.0), "w": r["w"], "h": glow_h}
+        return {"name": _san(n.get("name", "ScanLine")) + "_ScanLine", "type": "Image",
+                "color": "#BFE6FF", "raycastTarget": False, "rect": r2,
+                "sprite": sp, "imageType": "Sliced", "border": {"l": b, "t": 0, "r": b, "b": 0}}
+
     # 递归建嵌套树：镜像 Figma 层级（上下级关系），坐标用整帧绝对值（builder 按 parentAbsX 解算相对偏移）。
     # in_scroll: 已在某个 ScrollList 内部 → 不再把后代识别为 ScrollList（避免 ScrollRect 套 ScrollRect）。
+    # in_scan: 已在某个 ScanViewport 内部 → 内部的"空细条"标记才会被识别成扫描指示条(避免误伤其它面板的
+    # 普通空白分隔条)。
     def _collapse_list_items(parent, kids, require_suffix=True):
         """命名重复 item（同名 ≥2）→ 模板化：保留位置最靠前的 1 个(标记 isItemTemplate)，删其余；
         父容器标记 list(方向/间距/数量/itemPrefab)。builder 据此抽独立 prefab + 父容器加 LayoutGroup。
@@ -851,7 +913,7 @@ def main():
         parent["list"] = {"vertical": vertical, "spacing": max(0, gap), "count": len(items), "itemPrefab": base}
         return others + [template]
 
-    def build_node(n, in_scroll=False):
+    def build_node(n, in_scroll=False, in_scan=False):
         t = n["type"]
         if t == "VECTOR":
             return None
@@ -859,7 +921,11 @@ def main():
         if role in ("bg", "image", "art", "corner"):
             return emit_image(n, role)              # 位图叶子
         if t == "TEXT":
+            if not (n.get("characters", "") or "").strip():
+                return None                          # 空文本图层（无内容）跳过，避免生成无效 Text 节点
             return text_node(n)                     # 文本叶子
+        if in_scan and _is_scan_line_marker(n):
+            return emit_scan_line(n)                # 扫描视口内的空占位条 → 发光扫描指示条
         if _is_input(n):
             return emit_input_field(n)              # 自包含（占位符/眼睛在内）
         if is_button(n):
@@ -881,7 +947,7 @@ def main():
                 for c in n.get("children", []):
                     if _lid and _has_id(c, _lid):
                         continue          # 跳过承载 label 文本的子树(emit_bordered 已重建为按钮文字)
-                    k = build_node(c, in_scroll)
+                    k = build_node(c, in_scroll, in_scan)
                     if k:
                         _icons.append(k)
                 if _icons:
@@ -900,7 +966,7 @@ def main():
             if stf:
                 nd["stroke"] = stf
             nd = _apply_v2(nd, n)
-            kids = [k for k in (build_node(c, in_scroll) for c in n.get("children", [])) if k]
+            kids = [k for k in (build_node(c, in_scroll, in_scan) for c in n.get("children", [])) if k]
             # 保真原则：按钮玻璃态半透明底按 Figma 原始 alpha 输出，不做可见性抬高
             # （bg.png 已带设计的深色底，truth 即所见；曾有 _bump_btn_bg_alpha 提到 0.5，
             # 导致渲染比设计亮一档、MAE 偏大，2026-07-07 移除）。
@@ -936,7 +1002,8 @@ def main():
                 nd = {"name": _san(n.get("name", "Group")), "type": "Container",
                       "raycastTarget": False, "rect": rect(n)}   # 纯分组容器
         child_in_scroll = in_scroll or nd.get("type") == "ScrollList"
-        kids = [k for k in (build_node(c, child_in_scroll) for c in n.get("children", [])) if k]
+        child_in_scan = in_scan or _is_scan_viewport(n)
+        kids = [k for k in (build_node(c, child_in_scroll, child_in_scan) for c in n.get("children", [])) if k]
         if nd.get("type") == "ScrollList":
             kids = _finalize_scroll_list(nd, kids)
             kids = _collapse_list_items(nd, kids, require_suffix=False)   # ScrollList 内同名重复即列表项 → 抽模板
@@ -951,6 +1018,14 @@ def main():
     if card_n:
         out_nodes.append(emit_solid(card_n, name="CardBase"))
         for c in card_n.get("children", []):
+            k = build_node(c)
+            if k:
+                out_nodes.append(k)
+    elif first_solid_fill(doc):
+        # 没找到卡片(卡片相对整帧偏小，如浮窗/弹层)，但外层画板自身有底色 —— 补一层画布底，
+        # 否则收敛到卡片子节点后画板自身的实色背景丢失（面板外围会露出编辑器/相机的透明色）。
+        out_nodes.append(emit_solid(doc, name="CanvasBackground"))
+        for c in doc.get("children", []):
             k = build_node(c)
             if k:
                 out_nodes.append(k)

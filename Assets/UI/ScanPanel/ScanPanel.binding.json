@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0",
+  "panel": "ScanPanel",
+  "prefab": "Assets/UI/ScanPanel/ScanPanel.prefab",
+  "size": { "w": 2189, "h": 1305 },
+  "dependencies": {
+    "font": "MiSans Medium SDF",
+    "commonSprites": ["ring12", "ring3", "ring6", "round3", "round5", "round6", "round8"],
+    "atlas": "Assets/UI/ScanPanel/ScanPanel.spriteatlas",
+    "needsTmpEssentials": true
+  },
+  "elements": [
+    { "key": "offlineCollectBtn", "path": "Container_Image/Container/Footer_Image_1/OfflineCollect_Btn", "type": "Button", "text": "离线采集" },
+    { "key": "quitBtn", "path": "Container_Image/Container/Footer_Image_1/Quit_Btn", "type": "Button", "text": "退出程序" },
+    { "key": "text1", "path": "Container_Image/Container/Header/扫码采集面板_Text", "type": "Text", "text": "扫码采集面板", "keyAuto": true },
+    { "key": "manualInputBtn", "path": "Container_Image/Container/Header/ManualInput_Btn", "type": "Button", "text": "手动输入" }
+  ]
+}

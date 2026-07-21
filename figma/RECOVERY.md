@@ -24,7 +24,8 @@
 | CheckListPanel | Assets/UI/CheckListPanel | `LtD46LtwYeQRkHQTu8Gj0m` | `1:3` | ✅ `figma/CheckListPanel.nodes.json` | 2026-06-30T10:21:07Z |
 | CollectPanel | Assets/UI/CollectPanel | `sbY31OCHXCCTlZ5tzXzcw4` | `1:3` | ✅ `figma/CollectPanel.nodes.json` | 2026-07-02T03:14:06Z |
 | CountdownPanel | Assets/UI/CountdownPanel | `wDuOGcqIMMgDVQ2n0EwLDH` | `2:3` | ✅ `figma/CountdownPanel.nodes.json` | 2026-06-22T11:25:06Z |
-| LoginPanel | Assets/UI/LoginPanel | `cB7nxtStcovjQxcc4s4j8P` | `41:427` | ✅ `figma/LoginPanel.nodes.json` | 2026-07-07T05:40:15Z |
+| LoginPanel | Assets/UI/LoginPanel | `cB7nxtStcovjQxcc4s4j8P` | `41:427` | ✅ `figma/LoginPanel.nodes.json` | 2026-07-21T04:12:06Z |
+| ScanPanel | Assets/UI/ScanPanel | `id1cjMX5REFdieXRgHq1GH` | `13:63` | ✅ `figma/ScanPanel.nodes.json` | 2026-07-21T04:24:03Z |
 | SelectModulePanel | Assets/UI/SelectModulePanel | `yaul9H2DYwBYcdqp4BBHpH` | `1:3` | ✅ `figma/SelectModulePanel.nodes.json` | 2026-07-07T06:02:11Z |
 | SelectPanel | Assets/UI/SelectPanel | `3gpCOR7kxoyNoknD3AAtID` | `0:3` | ✅ `figma/SelectPanel.nodes.json` | 2026-07-01T05:49:55Z |
 | TaskDetailPanel | Assets/UI/TaskDetailPanel | `hdY9WGGbmggdHVeGiNQEAv` | `8:41` | ✅ `figma/TaskDetailPanel.nodes.json` | 2026-06-23T09:36:44Z |

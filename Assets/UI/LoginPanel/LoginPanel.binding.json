@@ -5,21 +5,22 @@
   "size": { "w": 1337, "h": 931 },
   "dependencies": {
     "font": "MiSans Medium SDF",
-    "commonSprites": ["ring10", "ring14", "ring16", "ring7", "round10", "round14", "round16", "round7"],
+    "commonSprites": ["ring10", "ring16", "ring3", "ring5", "ring7", "round10", "round16", "round3", "round5", "round7", "round8"],
     "atlas": "Assets/UI/LoginPanel/LoginPanel.spriteatlas",
     "needsTmpEssentials": true
   },
   "elements": [
-    { "key": "text1", "path": "Logo/Paragraph/源策未来_Text", "type": "Text", "text": "源策未来", "keyAuto": true },
-    { "key": "text2", "path": "Form/Account/Container/用户名_Text", "type": "Text", "text": "用户名", "keyAuto": true },
-    { "key": "containerInputInputField", "path": "Form/Account/ContainerInput_InputField", "type": "InputField", "text": "请输入用户名" },
-    { "key": "text3", "path": "Form/Password/Container/密 码_Text", "type": "Text", "text": "密 码", "keyAuto": true },
-    { "key": "containerInputInputField", "path": "Form/Password/ContainerInput_InputField", "type": "InputField", "text": "请输入密码" },
-    { "key": "text4", "path": "Form/TOTP/Container/动态码_Text", "type": "Text", "text": "动态码", "keyAuto": true },
-    { "key": "containerInputInputField", "path": "Form/TOTP/ContainerInput_InputField", "type": "InputField", "text": "请输入动态码" },
-    { "key": "loginBtn", "path": "Form/Container/Login_Btn", "type": "Button", "text": "登 录" },
-    { "key": "loginStateText", "path": "Form/Container_1/Text/LoginState_Text", "type": "Text", "text": "登录中..." },
-    { "key": "offlineCollectBtn", "path": "OfflineCollect_Btn", "type": "Button", "text": "离线采集" },
-    { "key": "quitBtn", "path": "Quit_Btn", "type": "Button", "text": "退出程序" }
+    { "key": "text1", "path": "LoginPage_Image/Logo/Paragraph/源策未来_Text", "type": "Text", "text": "源策未来", "keyAuto": true },
+    { "key": "text2", "path": "LoginPage_Image/Form/Account/Container/用户名_Text", "type": "Text", "text": "用户名", "keyAuto": true },
+    { "key": "containerInputInputField", "path": "LoginPage_Image/Form/Account/ContainerInput_InputField", "type": "InputField", "text": "请输入用户名" },
+    { "key": "text3", "path": "LoginPage_Image/Form/Password/Container/密 码_Text", "type": "Text", "text": "密 码", "keyAuto": true },
+    { "key": "containerInputInputField", "path": "LoginPage_Image/Form/Password/ContainerInput_InputField", "type": "InputField", "text": "请输入密码" },
+    { "key": "text4", "path": "LoginPage_Image/Form/TOTP/Container/动态码_Text", "type": "Text", "text": "动态码", "keyAuto": true },
+    { "key": "containerInputInputField", "path": "LoginPage_Image/Form/TOTP/ContainerInput_InputField", "type": "InputField", "text": "请输入动态码" },
+    { "key": "loginBtn", "path": "LoginPage_Image/Form/Container/Login_Btn", "type": "Button", "text": "登 录" },
+    { "key": "loginStateText", "path": "LoginPage_Image/Form/Container_1/Text/LoginState_Text", "type": "Text", "text": "登录中..." },
+    { "key": "scanBtn", "path": "LoginPage_Image/Scan_Btn", "type": "Button", "text": "扫码登录" },
+    { "key": "offlineCollectBtn", "path": "LoginPage_Image/OfflineCollect_Btn", "type": "Button", "text": "离线采集" },
+    { "key": "quitBtn", "path": "LoginPage_Image/Quit_Btn", "type": "Button", "text": "退出程序" }
   ]
 }

@@ -1,23 +1,24 @@
 # LoginPanel — UI 绑定描述
 
 - prefab：`Assets/UI/LoginPanel/LoginPanel.prefab`
-- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring10`, `ring14`, `ring16`, `ring7`, `round10`, `round14`, `round16`, `round7`；图集 `Assets/UI/LoginPanel/LoginPanel.spriteatlas`；needsTmpEssentials = `true`
+- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring10`, `ring16`, `ring3`, `ring5`, `ring7`, `round10`, `round16`, `round3`, `round5`, `round7`, `round8`；图集 `Assets/UI/LoginPanel/LoginPanel.spriteatlas`；needsTmpEssentials = `true`
 
 YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 
 | key | 类型 | 文案 | path | 备注 |
 |-----|------|------|------|------|
-| `text1` | Text | 源策未来 | `Logo/Paragraph/源策未来_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
-| `text2` | Text | 用户名 | `Form/Account/Container/用户名_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
-| `containerInputInputField` | InputField | 请输入用户名 | `Form/Account/ContainerInput_InputField` |  |
-| `text3` | Text | 密 码 | `Form/Password/Container/密 码_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
-| `containerInputInputField` | InputField | 请输入密码 | `Form/Password/ContainerInput_InputField` |  |
-| `text4` | Text | 动态码 | `Form/TOTP/Container/动态码_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
-| `containerInputInputField` | InputField | 请输入动态码 | `Form/TOTP/ContainerInput_InputField` |  |
-| `loginBtn` | Button | 登 录 | `Form/Container/Login_Btn` |  |
-| `loginStateText` | Text | 登录中... | `Form/Container_1/Text/LoginState_Text` |  |
-| `offlineCollectBtn` | Button | 离线采集 | `OfflineCollect_Btn` |  |
-| `quitBtn` | Button | 退出程序 | `Quit_Btn` |  |
+| `text1` | Text | 源策未来 | `LoginPage_Image/Logo/Paragraph/源策未来_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
+| `text2` | Text | 用户名 | `LoginPage_Image/Form/Account/Container/用户名_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
+| `containerInputInputField` | InputField | 请输入用户名 | `LoginPage_Image/Form/Account/ContainerInput_InputField` |  |
+| `text3` | Text | 密 码 | `LoginPage_Image/Form/Password/Container/密 码_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
+| `containerInputInputField` | InputField | 请输入密码 | `LoginPage_Image/Form/Password/ContainerInput_InputField` |  |
+| `text4` | Text | 动态码 | `LoginPage_Image/Form/TOTP/Container/动态码_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
+| `containerInputInputField` | InputField | 请输入动态码 | `LoginPage_Image/Form/TOTP/ContainerInput_InputField` |  |
+| `loginBtn` | Button | 登 录 | `LoginPage_Image/Form/Container/Login_Btn` |  |
+| `loginStateText` | Text | 登录中... | `LoginPage_Image/Form/Container_1/Text/LoginState_Text` |  |
+| `scanBtn` | Button | 扫码登录 | `LoginPage_Image/Scan_Btn` |  |
+| `offlineCollectBtn` | Button | 离线采集 | `LoginPage_Image/OfflineCollect_Btn` |  |
+| `quitBtn` | Button | 退出程序 | `LoginPage_Image/Quit_Btn` |  |
 
 > 命名约定：可绑元素名带类型后缀（`_Btn`/`_InputField`/`_Dropdown`/`_Text`），由翻译器自动加，`key` 即由其驼峰化（如 `returnBtn`）。
 >

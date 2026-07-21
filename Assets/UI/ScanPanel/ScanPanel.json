@@ -1,0 +1,788 @@
+{
+  "schemaVersion": 1,
+  "referenceWidth": 2189,
+  "referenceHeight": 1305,
+  "rootName": "ScanPanel",
+  "root": {
+    "name": "ScanPanel",
+    "type": "Container",
+    "anchorPreset": "center",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "w": 2189,
+      "h": 1305
+    },
+    "children": [
+      {
+        "name": "CardBase_Image",
+        "type": "Image",
+        "color": "#1A1F2E",
+        "raycastTarget": false,
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "w": 2189,
+          "h": 1305
+        },
+        "sprite": "Assets/UI/Common/round8.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 8,
+          "t": 8,
+          "r": 8,
+          "b": 8
+        }
+      },
+      {
+        "name": "Container_Image",
+        "type": "Image",
+        "color": "#FFFFFF00",
+        "raycastTarget": false,
+        "rect": {
+          "x": 905,
+          "y": 421,
+          "w": 380,
+          "h": 463
+        },
+        "sprite": "Assets/UI/Common/round8.png",
+        "imageType": "Sliced",
+        "border": {
+          "l": 8,
+          "t": 8,
+          "r": 8,
+          "b": 8
+        },
+        "children": [
+          {
+            "name": "Container_Image",
+            "type": "Image",
+            "color": "#1C3363",
+            "raycastTarget": false,
+            "rect": {
+              "x": 905,
+              "y": 483,
+              "w": 23,
+              "h": 331
+            }
+          },
+          {
+            "name": "Container_Image_1",
+            "type": "Image",
+            "color": "#1C3363",
+            "raycastTarget": false,
+            "rect": {
+              "x": 1262,
+              "y": 483,
+              "w": 23,
+              "h": 331
+            }
+          },
+          {
+            "name": "Container_Image_2",
+            "type": "Image",
+            "color": "#1B3160",
+            "raycastTarget": false,
+            "rect": {
+              "x": 905,
+              "y": 421,
+              "w": 380,
+              "h": 62
+            }
+          },
+          {
+            "name": "Container_Image_3",
+            "type": "Image",
+            "color": "#1C3363",
+            "raycastTarget": false,
+            "rect": {
+              "x": 905,
+              "y": 814,
+              "w": 380,
+              "h": 70
+            }
+          },
+          {
+            "name": "Container",
+            "type": "Container",
+            "raycastTarget": false,
+            "rect": {
+              "x": 905,
+              "y": 421,
+              "w": 380,
+              "h": 463
+            },
+            "children": [
+              {
+                "name": "ScanViewport",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 905,
+                  "y": 463,
+                  "w": 380,
+                  "h": 371
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 929,
+                      "y": 483,
+                      "w": 327,
+                      "h": 331
+                    },
+                    "children": [
+                      {
+                        "name": "Container_Image",
+                        "type": "Image",
+                        "color": "#FFFFFF",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/ScanPanel/Icons/corner1.png",
+                        "rect": {
+                          "x": 941,
+                          "y": 496,
+                          "w": 22,
+                          "h": 22
+                        }
+                      },
+                      {
+                        "name": "Container_Image_1",
+                        "type": "Image",
+                        "color": "#FFFFFF",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/ScanPanel/Icons/corner2.png",
+                        "rect": {
+                          "x": 1221,
+                          "y": 496,
+                          "w": 22,
+                          "h": 22
+                        }
+                      },
+                      {
+                        "name": "Container_Image_2",
+                        "type": "Image",
+                        "color": "#FFFFFF",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/ScanPanel/Icons/corner3.png",
+                        "rect": {
+                          "x": 941,
+                          "y": 779,
+                          "w": 22,
+                          "h": 22
+                        }
+                      },
+                      {
+                        "name": "Container_Image_3",
+                        "type": "Image",
+                        "color": "#FFFFFF",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/ScanPanel/Icons/corner4.png",
+                        "rect": {
+                          "x": 1221,
+                          "y": 779,
+                          "w": 22,
+                          "h": 22
+                        }
+                      },
+                      {
+                        "name": "Container_Image_4",
+                        "type": "Image",
+                        "color": "#FFFFFF",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/ScanPanel/Icons/corner5.png",
+                        "rect": {
+                          "x": 1079,
+                          "y": 636,
+                          "w": 26,
+                          "h": 26
+                        }
+                      },
+                      {
+                        "name": "Container",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 1079,
+                          "y": 636,
+                          "w": 26,
+                          "h": 26
+                        },
+                        "children": [
+                          {
+                            "name": "Container_Image",
+                            "type": "Image",
+                            "color": "#60A5FA26",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 1087,
+                              "y": 644,
+                              "w": 10,
+                              "h": 10
+                            },
+                            "sprite": "Assets/UI/Common/round5.png",
+                            "imageType": "Sliced",
+                            "border": {
+                              "l": 5,
+                              "t": 5,
+                              "r": 5,
+                              "b": 5
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Container_ScanLine_Image",
+                        "type": "Image",
+                        "color": "#BFE6FF",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 943,
+                          "y": 755,
+                          "w": 297,
+                          "h": 28
+                        },
+                        "sprite": "Assets/UI/Common/scanline.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 40,
+                          "t": 0,
+                          "r": 40,
+                          "b": 0
+                        }
+                      },
+                      {
+                        "name": "Container_Image_5",
+                        "type": "Image",
+                        "color": "#FFFFFF",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/ScanPanel/Icons/corner6.png",
+                        "rect": {
+                          "x": 929,
+                          "y": 483,
+                          "w": 327,
+                          "h": 331
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Footer_Image",
+                "type": "Image",
+                "color": "#FFFFFF0F",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 905,
+                  "y": 834,
+                  "w": 380,
+                  "h": 1
+                }
+              },
+              {
+                "name": "Footer_Image_1",
+                "type": "Image",
+                "color": "#1C3363",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 905,
+                  "y": 835,
+                  "w": 380,
+                  "h": 49
+                },
+                "children": [
+                  {
+                    "name": "OfflineCollect_Btn",
+                    "type": "Button",
+                    "color": "#FFFFFF00",
+                    "rect": {
+                      "x": 905,
+                      "y": 835,
+                      "w": 190,
+                      "h": 49
+                    },
+                    "text": {
+                      "content": "离线采集",
+                      "fontSize": 20,
+                      "color": "#FFFFFF",
+                      "alignment": "Center",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "characterSpacing": 2.8
+                    },
+                    "stroke": {
+                      "color": "#FFFFFF0F",
+                      "weight": 1.0,
+                      "align": "Inside",
+                      "sprite": "Assets/UI/Common/ring12.png",
+                      "border": {
+                        "l": 12,
+                        "t": 12,
+                        "r": 12,
+                        "b": 12
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Container_Image",
+                        "type": "Image",
+                        "color": "#3C83F678",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 919,
+                          "y": 838,
+                          "w": 160,
+                          "h": 42
+                        },
+                        "sprite": "Assets/UI/Common/round6.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 6,
+                          "t": 6,
+                          "r": 6,
+                          "b": 6
+                        },
+                        "children": [
+                          {
+                            "name": "ContainerFill_Image",
+                            "type": "Image",
+                            "color": "#FFFFFF00",
+                            "raycastTarget": false,
+                            "sprite": "Assets/UI/Common/round6.png",
+                            "imageType": "Sliced",
+                            "border": {
+                              "l": 6,
+                              "t": 6,
+                              "r": 6,
+                              "b": 6
+                            },
+                            "rect": {
+                              "x": 919,
+                              "y": 838,
+                              "w": 160,
+                              "h": 42
+                            },
+                            "stroke": {
+                              "color": "#388BFD80",
+                              "weight": 0.67,
+                              "align": "Inside",
+                              "sprite": "Assets/UI/Common/ring6.png",
+                              "border": {
+                                "l": 6,
+                                "t": 6,
+                                "r": 6,
+                                "b": 6
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Container",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 941,
+                          "y": 852,
+                          "w": 15,
+                          "h": 15
+                        },
+                        "children": [
+                          {
+                            "name": "Container",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 940,
+                              "y": 851,
+                              "w": 16,
+                              "h": 16
+                            },
+                            "children": [
+                              {
+                                "name": "Icon",
+                                "type": "Container",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 940,
+                                  "y": 851,
+                                  "w": 16,
+                                  "h": 16
+                                },
+                                "children": [
+                                  {
+                                    "name": "Group_Image",
+                                    "type": "Image",
+                                    "color": "#FFFFFF",
+                                    "raycastTarget": false,
+                                    "sprite": "Assets/UI/ScanPanel/Icons/art1.png",
+                                    "rect": {
+                                      "x": 941,
+                                      "y": 852,
+                                      "w": 15,
+                                      "h": 15
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Quit_Btn",
+                    "type": "Button",
+                    "color": "#FFFFFF00",
+                    "rect": {
+                      "x": 1095,
+                      "y": 835,
+                      "w": 190,
+                      "h": 49
+                    },
+                    "children": [
+                      {
+                        "name": "Container_Image",
+                        "type": "Image",
+                        "color": "#FF9898A8",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 1115,
+                          "y": 836,
+                          "w": 160,
+                          "h": 46
+                        },
+                        "sprite": "Assets/UI/Common/round6.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 6,
+                          "t": 6,
+                          "r": 6,
+                          "b": 6
+                        },
+                        "children": [
+                          {
+                            "name": "ContainerFill_Image",
+                            "type": "Image",
+                            "color": "#FFFFFF00",
+                            "raycastTarget": false,
+                            "sprite": "Assets/UI/Common/round6.png",
+                            "imageType": "Sliced",
+                            "border": {
+                              "l": 6,
+                              "t": 6,
+                              "r": 6,
+                              "b": 6
+                            },
+                            "rect": {
+                              "x": 1115,
+                              "y": 836,
+                              "w": 160,
+                              "h": 46
+                            },
+                            "stroke": {
+                              "color": "#F0B7AE80",
+                              "weight": 0.67,
+                              "align": "Inside",
+                              "sprite": "Assets/UI/Common/ring6.png",
+                              "border": {
+                                "l": 6,
+                                "t": 6,
+                                "r": 6,
+                                "b": 6
+                              }
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Container",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 1149,
+                          "y": 852,
+                          "w": 15,
+                          "h": 15
+                        },
+                        "children": [
+                          {
+                            "name": "Container",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 1152,
+                              "y": 855,
+                              "w": 9,
+                              "h": 9
+                            },
+                            "children": [
+                              {
+                                "name": "Icon_Image",
+                                "type": "Image",
+                                "color": "#FFFFFF",
+                                "raycastTarget": false,
+                                "sprite": "Assets/UI/ScanPanel/Icons/art2.png",
+                                "rect": {
+                                  "x": 1152,
+                                  "y": 855,
+                                  "w": 9,
+                                  "h": 9
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "退出程序_Text",
+                        "type": "Text",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 1169,
+                          "y": 849,
+                          "w": 82,
+                          "h": 21
+                        },
+                        "text": {
+                          "content": "退出程序",
+                          "fontSize": 20,
+                          "color": "#FFFFFF",
+                          "alignment": "Center",
+                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                          "lineSpacing": -27.6,
+                          "characterSpacing": 2.8,
+                          "wrap": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Header",
+                "type": "Container",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 905,
+                  "y": 421,
+                  "w": 380,
+                  "h": 42
+                },
+                "children": [
+                  {
+                    "name": "Container",
+                    "type": "Container",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 921,
+                      "y": 434,
+                      "w": 16,
+                      "h": 16
+                    },
+                    "children": [
+                      {
+                        "name": "Container",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 922,
+                          "y": 435,
+                          "w": 13,
+                          "h": 13
+                        },
+                        "children": [
+                          {
+                            "name": "Icon",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 922,
+                              "y": 435,
+                              "w": 13,
+                              "h": 13
+                            },
+                            "children": [
+                              {
+                                "name": "Group_Image",
+                                "type": "Image",
+                                "color": "#FFFFFF",
+                                "raycastTarget": false,
+                                "sprite": "Assets/UI/ScanPanel/Icons/art3.png",
+                                "rect": {
+                                  "x": 923,
+                                  "y": 436,
+                                  "w": 12,
+                                  "h": 12
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "扫码采集面板_Text",
+                    "type": "Text",
+                    "raycastTarget": false,
+                    "rect": {
+                      "x": 945,
+                      "y": 431,
+                      "w": 123,
+                      "h": 21
+                    },
+                    "text": {
+                      "content": "扫码采集面板",
+                      "fontSize": 20,
+                      "color": "#E8ECF4",
+                      "alignment": "MidlineLeft",
+                      "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                      "lineSpacing": -27.6,
+                      "characterSpacing": 2.8,
+                      "wrap": true
+                    }
+                  },
+                  {
+                    "name": "ManualInput_Btn",
+                    "type": "Button",
+                    "color": "#FFFFFF00",
+                    "rect": {
+                      "x": 1175,
+                      "y": 430,
+                      "w": 94,
+                      "h": 25
+                    },
+                    "children": [
+                      {
+                        "name": "ContainerFill_Image",
+                        "type": "Image",
+                        "color": "#3C83F678",
+                        "raycastTarget": false,
+                        "sprite": "Assets/UI/Common/round3.png",
+                        "imageType": "Sliced",
+                        "border": {
+                          "l": 3,
+                          "t": 3,
+                          "r": 3,
+                          "b": 3
+                        },
+                        "rect": {
+                          "x": 1175,
+                          "y": 430,
+                          "w": 94,
+                          "h": 25
+                        },
+                        "stroke": {
+                          "color": "#388BFD80",
+                          "weight": 0.67,
+                          "align": "Inside",
+                          "sprite": "Assets/UI/Common/ring3.png",
+                          "border": {
+                            "l": 3,
+                            "t": 3,
+                            "r": 3,
+                            "b": 3
+                          }
+                        }
+                      },
+                      {
+                        "name": "Container",
+                        "type": "Container",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 1180,
+                          "y": 436,
+                          "w": 18,
+                          "h": 13
+                        },
+                        "children": [
+                          {
+                            "name": "Container",
+                            "type": "Container",
+                            "raycastTarget": false,
+                            "rect": {
+                              "x": 1179,
+                              "y": 435,
+                              "w": 19,
+                              "h": 15
+                            },
+                            "children": [
+                              {
+                                "name": "Icon",
+                                "type": "Container",
+                                "raycastTarget": false,
+                                "rect": {
+                                  "x": 1179,
+                                  "y": 435,
+                                  "w": 19,
+                                  "h": 15
+                                },
+                                "children": [
+                                  {
+                                    "name": "Group_Image",
+                                    "type": "Image",
+                                    "color": "#FFFFFF",
+                                    "raycastTarget": false,
+                                    "sprite": "Assets/UI/ScanPanel/Icons/art4.png",
+                                    "rect": {
+                                      "x": 1180,
+                                      "y": 436,
+                                      "w": 18,
+                                      "h": 13
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "name": "手动输入_Text",
+                        "type": "Text",
+                        "raycastTarget": false,
+                        "rect": {
+                          "x": 1202,
+                          "y": 432,
+                          "w": 58,
+                          "h": 21
+                        },
+                        "text": {
+                          "content": "手动输入",
+                          "fontSize": 14,
+                          "color": "#E8ECF4",
+                          "alignment": "MidlineLeft",
+                          "fontAsset": "Assets/Fonts/MiSans Medium SDF.asset",
+                          "lineSpacing": 17.4,
+                          "characterSpacing": 4.0,
+                          "wrap": true
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Container_Image_4",
+            "type": "Image",
+            "color": "#FFFFFF",
+            "raycastTarget": false,
+            "sprite": "Assets/UI/ScanPanel/Icons/corner7.png",
+            "rect": {
+              "x": 905,
+              "y": 421,
+              "w": 380,
+              "h": 463
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

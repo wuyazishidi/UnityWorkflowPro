@@ -183,6 +183,17 @@ namespace Game.UI
         private static void BuildImage(GameObject go, UINode node, IUIAssetResolver resolver)
         {
             AddBackground(go, node, resolver, node.raycastTarget);
+            // 扫码采集面板的扫描指示条（命名约定：_ScanLine 后缀，见 figma_sync.py emit_scan_line）：
+            // 挂上下往返动画，运行时在父容器(扫描取景框)高度范围内移动，不依赖 Figma 静态帧。
+            if (IsScanLineName(node.name))
+                go.AddComponent<ScanLineAnimator>();
+        }
+
+        private static bool IsScanLineName(string n)
+        {
+            // 用 Contains 而非 EndsWith：figma_sync.py 的 _apply_type_suffixes 会在 "_ScanLine" 后
+            // 再追加类型后缀(Image → "_ScanLine_Image")，"_ScanLine" 未必是字符串末尾。
+            return !string.IsNullOrEmpty(n) && n.IndexOf("_ScanLine", System.StringComparison.OrdinalIgnoreCase) >= 0;
         }
 
         /// <summary>节点底图：Image(精灵/纯色)。返回所建 Graphic（供 Button/InputField 作 targetGraphic）。</summary>
