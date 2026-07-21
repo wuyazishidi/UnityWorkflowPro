@@ -5,7 +5,7 @@
   "size": { "w": 1337, "h": 931 },
   "dependencies": {
     "font": "MiSans Medium SDF",
-    "commonSprites": ["ring12", "ring6", "ring8", "round16", "round6", "round8"],
+    "commonSprites": ["ring10", "ring12", "ring6", "ring8", "round10", "round16", "round6", "round8"],
     "atlas": "Assets/UI/TaskListPanel/TaskListPanel.spriteatlas",
     "needsTmpEssentials": true
   },
@@ -14,6 +14,8 @@
     { "key": "text1", "path": "Container_Image/Container/任务列表_Text", "type": "Text", "text": "任务列表", "keyAuto": true },
     { "key": "userNameText", "path": "Container_Image/Container/UserName_Text", "type": "Text", "text": "（collector01）" },
     { "key": "refreshBtn", "path": "Container_Image/Refresh_Btn", "type": "Button", "text": "刷 新" },
+    { "key": "containerInputInputField", "path": "Container_Image_1/ContainerInput_InputField", "type": "InputField", "text": "请输入查找内容" },
+    { "key": "findBtn", "path": "Container_Image_1/Find_Btn", "type": "Button", "text": null },
     { "key": "countMessageText", "path": "Text/CountMessage_Text", "type": "Text", "text": "共 28 个任务，第 1/5 页（点击领取）" },
     { "key": "itemParent", "path": "ItemParent", "type": "List", "text": null, "itemPrefab": "TaskItem_Btn" },
     { "key": "prePageBtn", "path": "Container_1/PrePage_Btn", "type": "Button", "text": "← 上一页" },

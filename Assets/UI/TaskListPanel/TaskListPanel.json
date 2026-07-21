@@ -131,7 +131,7 @@
               {
                 "name": "Container_Image",
                 "type": "Image",
-                "color": "#388BFD80",
+                "color": "#388BFD26",
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
@@ -272,7 +272,7 @@
               {
                 "name": "Container_Image",
                 "type": "Image",
-                "color": "#388BFD80",
+                "color": "#388BFD26",
                 "raycastTarget": false,
                 "rect": {
                   "x": 1207,
@@ -307,6 +307,155 @@
                   "y": 15,
                   "w": 98,
                   "h": 45
+                },
+                "stroke": {
+                  "color": "#388BFD80",
+                  "weight": 0.67,
+                  "align": "Inside",
+                  "sprite": "Assets/UI/Common/ring6.png",
+                  "border": {
+                    "l": 6,
+                    "t": 6,
+                    "r": 6,
+                    "b": 6
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Container_Image_1",
+        "type": "Image",
+        "color": "#FFFFFF00",
+        "raycastTarget": false,
+        "rect": {
+          "x": 1,
+          "y": 81,
+          "w": 1297,
+          "h": 65
+        },
+        "stroke": {
+          "color": "#388BFD26",
+          "weight": 1.0,
+          "align": "Inside",
+          "sprite": "Assets/UI/Common/ring12.png",
+          "border": {
+            "l": 12,
+            "t": 12,
+            "r": 12,
+            "b": 12
+          }
+        },
+        "children": [
+          {
+            "name": "ContainerInput_InputField",
+            "type": "InputField",
+            "color": "#06164673",
+            "sprite": "Assets/UI/Common/round10.png",
+            "imageType": "Sliced",
+            "border": {
+              "l": 10,
+              "t": 10,
+              "r": 10,
+              "b": 10
+            },
+            "rect": {
+              "x": 33,
+              "y": 91,
+              "w": 1156,
+              "h": 43
+            },
+            "contentType": "Standard",
+            "stroke": {
+              "color": "#3C8CFF59",
+              "weight": 0.67,
+              "align": "Inside",
+              "sprite": "Assets/UI/Common/ring10.png",
+              "border": {
+                "l": 10,
+                "t": 10,
+                "r": 10,
+                "b": 10
+              }
+            },
+            "placeholder": {
+              "content": "请输入查找内容",
+              "fontSize": 36,
+              "color": "#C8E6FF6C",
+              "alignment": "MidlineLeft"
+            },
+            "padding": {
+              "l": 34,
+              "t": 6,
+              "r": 0,
+              "b": 6
+            },
+            "textColor": "#C8E6FF"
+          },
+          {
+            "name": "Find_Btn",
+            "type": "Button",
+            "color": "#FFFFFF00",
+            "rect": {
+              "x": 1206,
+              "y": 83,
+              "w": 60,
+              "h": 60
+            },
+            "children": [
+              {
+                "name": "FindIcon_Image",
+                "type": "Image",
+                "color": "#FFFFFF",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/TaskListPanel/Icons/art1.png",
+                "rect": {
+                  "x": 1206,
+                  "y": 83,
+                  "w": 60,
+                  "h": 60
+                }
+              },
+              {
+                "name": "Container_Image",
+                "type": "Image",
+                "color": "#388BFD26",
+                "raycastTarget": false,
+                "rect": {
+                  "x": 1206,
+                  "y": 83,
+                  "w": 60,
+                  "h": 60
+                },
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                }
+              },
+              {
+                "name": "ContainerFill_Image",
+                "type": "Image",
+                "color": "#FFFFFF00",
+                "raycastTarget": false,
+                "sprite": "Assets/UI/Common/round6.png",
+                "imageType": "Sliced",
+                "border": {
+                  "l": 6,
+                  "t": 6,
+                  "r": 6,
+                  "b": 6
+                },
+                "rect": {
+                  "x": 1206,
+                  "y": 83,
+                  "w": 60,
+                  "h": 60
                 },
                 "stroke": {
                   "color": "#388BFD80",
@@ -365,9 +514,9 @@
         "raycastTarget": false,
         "rect": {
           "x": 32,
-          "y": 92,
+          "y": 170,
           "w": 1260,
-          "h": 677
+          "h": 599
         },
         "list": {
           "vertical": true,
@@ -382,7 +531,7 @@
             "color": "#FFFFFF00",
             "rect": {
               "x": 32,
-              "y": 92,
+              "y": 170,
               "w": 1260,
               "h": 63
             },
@@ -393,7 +542,7 @@
                 "raycastTarget": false,
                 "rect": {
                   "x": 32,
-                  "y": 92,
+                  "y": 170,
                   "w": 1260,
                   "h": 62
                 },
@@ -405,7 +554,7 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 32,
-                      "y": 91,
+                      "y": 169,
                       "w": 1260,
                       "h": 63
                     },
@@ -426,7 +575,7 @@
                     "sprite": "Assets/UI/TaskListPanel/Icons/corner1.png",
                     "rect": {
                       "x": 32,
-                      "y": 91,
+                      "y": 169,
                       "w": 1260,
                       "h": 63
                     }
@@ -437,7 +586,7 @@
                     "raycastTarget": false,
                     "rect": {
                       "x": 40,
-                      "y": 92,
+                      "y": 170,
                       "w": 1252,
                       "h": 62
                     },
@@ -448,7 +597,7 @@
                         "raycastTarget": false,
                         "rect": {
                           "x": 40,
-                          "y": 92,
+                          "y": 170,
                           "w": 1252,
                           "h": 62
                         },
@@ -459,7 +608,7 @@
                             "raycastTarget": false,
                             "rect": {
                               "x": 40,
-                              "y": 91,
+                              "y": 169,
                               "w": 1252,
                               "h": 63
                             },
@@ -531,7 +680,7 @@
               {
                 "name": "PrePage1_Image",
                 "type": "Image",
-                "color": "#388BFD80",
+                "color": "#388BFD1A",
                 "raycastTarget": false,
                 "rect": {
                   "x": 484,
@@ -665,7 +814,7 @@
               {
                 "name": "NextPage1_Image",
                 "type": "Image",
-                "color": "#388BFD80",
+                "color": "#388BFD1A",
                 "raycastTarget": false,
                 "rect": {
                   "x": 728,
@@ -724,7 +873,7 @@
               {
                 "name": "Container_Image",
                 "type": "Image",
-                "color": "#388BFD80",
+                "color": "#388BFD1F",
                 "raycastTarget": false,
                 "rect": {
                   "x": 467,

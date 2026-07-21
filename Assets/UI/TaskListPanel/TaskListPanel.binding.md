@@ -1,7 +1,7 @@
 # TaskListPanel — UI 绑定描述
 
 - prefab：`Assets/UI/TaskListPanel/TaskListPanel.prefab`
-- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring12`, `ring6`, `ring8`, `round16`, `round6`, `round8`；图集 `Assets/UI/TaskListPanel/TaskListPanel.spriteatlas`；needsTmpEssentials = `true`
+- 依赖：字体 `MiSans Medium SDF`；公共精灵 `ring10`, `ring12`, `ring6`, `ring8`, `round10`, `round16`, `round6`, `round8`；图集 `Assets/UI/TaskListPanel/TaskListPanel.spriteatlas`；needsTmpEssentials = `true`
 
 YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 
@@ -11,6 +11,8 @@ YC-Ego 据 `key` 绑事件（回退用 `path`），不接触 Figma。
 | `text1` | Text | 任务列表 | `Container_Image/Container/任务列表_Text` | ⚠ 自动兜底键，建议在 Figma 用稳定 ASCII 名 |
 | `userNameText` | Text | （collector01） | `Container_Image/Container/UserName_Text` |  |
 | `refreshBtn` | Button | 刷 新 | `Container_Image/Refresh_Btn` |  |
+| `containerInputInputField` | InputField | 请输入查找内容 | `Container_Image_1/ContainerInput_InputField` |  |
+| `findBtn` | Button |  | `Container_Image_1/Find_Btn` |  |
 | `countMessageText` | Text | 共 28 个任务，第 1/5 页（点击领取） | `Text/CountMessage_Text` |  |
 | `itemParent` | List |  | `ItemParent` | 📋 列表：运行时实例化 `TaskItem_Btn.prefab` 到本容器（见末尾说明） |
 | `prePageBtn` | Button | ← 上一页 | `Container_1/PrePage_Btn` |  |
